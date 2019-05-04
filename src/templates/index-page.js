@@ -1,24 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
+import Marsonry from "../components/Masonry";
 
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
-  <div>
-    <h1>{title}</h1>
-    <h2>{heading}</h2>
-    <h3>{subheading}</h3>
-  </div>
+export const IndexPageTemplate = ({posts}) => (
+  <Marsonry posts={posts}/>
 )
 
 IndexPageTemplate.propTypes = {
@@ -34,18 +22,11 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
+  const { edges: posts } = data.allMarkdownRemark;
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        posts={posts}
       />
     </Layout>
   )
@@ -63,36 +44,31 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 400)
+          id
+          fields {
+            slug
           }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
+          frontmatter {
+            title
+            templateKey
+            date(formatString: "YYYY년 MM월 DD일")
+            tags
+            featuredpost
+            featuredimage {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 120, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
-          heading
-          description
         }
       }
     }

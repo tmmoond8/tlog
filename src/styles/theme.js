@@ -19,7 +19,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 
 const color = {
   black: "#282C2F",
-  lightGrey: "#E5E5E5",
+  lightGrey: "#EFF1F2",
   red: "#D74145",
   grey: "#A8A8A8",
   white: "white"

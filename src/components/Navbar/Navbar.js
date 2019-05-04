@@ -5,7 +5,9 @@ import Tags from "../Tags";
 import logo from "../../img/tlog-logo.svg";
 
 const NavbarWapper = styled.div`
+  position: fixed;
   width: 12.67rem;
+  min-height: 100%;
   background: ${props => props.theme.color.black};
 `;
 
@@ -15,13 +17,14 @@ const BLOGO = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 1.5rem 0;
   color: ${props => props.theme.color.white};
 `;
 
 const LOGO = styled.div`
   position: relative;
   font-size: 2rem;
-  padding: 1rem 0;
+  padding-bottom: 1rem;
   &:before {
     content: "";
     position: absolute;
@@ -35,6 +38,10 @@ const LOGO = styled.div`
 
 const Contact = styled.p`
   font-size: .8rem;
+  &:before {
+    content: "✉️";
+    padding-right: 0.5rem;
+  }
 `;
 
 
@@ -76,7 +83,7 @@ const Navbar = class extends React.Component {
       <NavbarWapper>
         <BLOGO>
           <LOGO>Tlog</LOGO>
-          <Contact>✉️ tmmoond8@gmail.com</Contact>
+          <Contact>tmmoond8@gmail.com</Contact>
         </BLOGO>
         <Tags data={group}/>
       </NavbarWapper>

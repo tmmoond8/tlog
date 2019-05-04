@@ -9,9 +9,20 @@ const Tags = styled.ol`
 
 const Tag = styled.li`
   color: ${props => props.theme.color.white};
-  font-weight: 300;
   padding: 1rem 0;
-  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+  }
   &:after {
     content: "(${props => props.totalCount})";
     padding-left: .5rem;

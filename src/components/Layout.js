@@ -4,13 +4,15 @@ import styled, { ThemeProvider } from "styled-components";
 import theme, { GlobalStyle }  from "../styles";
 
 const Layout = styled.div`
-  display: flex;
   width: 100vw;
   height: 100vh;
 `;
 
 const ChildrenWrapper = styled.div`
-  flex: 1;
+  width: calc(100vw - 12.67rem);
+  min-height: 100%;
+  margin-left: 12.67rem;
+  background-color: ${props => props.theme.color.lightGrey}
 `;
 
 const TemplateWrapper = ({ children }) => {
