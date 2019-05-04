@@ -1,50 +1,29 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React, { Fragment } from 'react'
 import Navbar from './Navbar';
-import useSiteMetadata from './SiteMetadata'
+import styled, { ThemeProvider } from "styled-components";
+import theme, { GlobalStyle }  from "../styles";
+
+const Layout = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+`;
+
+const ChildrenWrapper = styled.div`
+  flex: 1;
+`;
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
   return (
-    <div>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-32x32.png"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
-        />
-
-        <link
-          rel="mask-icon"
-          href="/img/safari-pinned-tab.svg"
-          color="#ff4400"
-        />
-        <meta name="theme-color" content="#fff" />
-
-        <meta property="og:type" content="private.blog" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content="/img/og-image.jpg" />
-      </Helmet>
-      <Navbar />
-      <div>{children}</div>
-    </div>
+    <Fragment>
+      <GlobalStyle/>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Navbar />
+          <ChildrenWrapper>{children}</ChildrenWrapper>
+        </Layout>
+      </ThemeProvider>
+    </Fragment>
   )
 }
 
