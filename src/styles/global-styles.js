@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import postStyle from "./post-styles";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
@@ -24,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6{
     font-family:'Maven Pro', sans-serif;
   }
+
+  ${postStyle}
 `;
 
 export default GlobalStyle;

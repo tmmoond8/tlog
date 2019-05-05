@@ -14,7 +14,7 @@ const Masonry = styled.ol`
 
 export default ({posts}) => (
   <Masonry>
-    {posts.map(post => <PostCard key={post.node.id} metaData={post.node.frontmatter}/>)}
+    {posts.map(post => <PostCard key={post.node.id} data={post.node}/>)}
   </Masonry>
 );
 

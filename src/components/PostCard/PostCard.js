@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import PreviewCompatibleImage from '../PreviewCompatibleImage';
+import { Link } from "gatsby";
 
 const PostCard = styled.li`
   width: 20rem;
@@ -67,29 +68,36 @@ const Wrapper = styled.div`
 
 const tagString = (tags) => tags ? tags.join(", ") : "";
 
-export default ({metaData}) => (
+export default ({
+  data: {
+    frontmatter,
+    fields
+  }
+}) => (
   <PostCard>
-    <Image imageInfo={{
-      image: metaData.featuredimage,
-      alt: `featured image thumbnail for post ${metaData.title}`,
-    }}/>
-    <Title>{metaData.title}</Title>
-    <Wrapper>
-      <Meta>
-        <Date>{metaData.date}</Date>
-        <Heart>56</Heart>
-        <Comments>8</Comments>
-        <Tags>{tagString(metaData.tags)}</Tags>
-      </Meta>
-      <Index>
-        <h3>ejdsjflkdsjf</h3>
-        <p>dkflsjfjdskf</p>
-        <p>dfmkldsjfsjfkd</p>
-        <p>dfmkldsjfsjfkd</p>
-        <p>dfmkldsjfsjfkd</p>
-        <p>dfmkldsjfsjfkd</p>
-        <p>dfmkldsjfsjfkd</p>
-      </Index>
-    </Wrapper>
+    <Link to={fields.slug}>
+      <Image imageInfo={{
+        image: frontmatter.featuredimage,
+        alt: `featured image thumbnail for post ${frontmatter.title}`,
+      }}/>
+      <Title>{frontmatter.title}</Title>
+      <Wrapper>
+        <Meta>
+          <Date>{frontmatter.date}</Date>
+          <Heart>56</Heart>
+          <Comments>8</Comments>
+          <Tags>{tagString(frontmatter.tags)}</Tags>
+        </Meta>
+        <Index>
+          <h3>ejdsjflkdsjf</h3>
+          <p>dkflsjfjdskf</p>
+          <p>dfmkldsjfsjfkd</p>
+          <p>dfmkldsjfsjfkd</p>
+          <p>dfmkldsjfsjfkd</p>
+          <p>dfmkldsjfsjfkd</p>
+          <p>dfmkldsjfsjfkd</p>
+        </Index>
+      </Wrapper>
+    </Link>
   </PostCard>
 );
