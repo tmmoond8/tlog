@@ -12,7 +12,7 @@ const ChildrenWrapper = styled.div`
   width: calc(100vw - 12.67rem);
   min-height: 100%;
   margin-left: 12.67rem;
-  background-color: ${props => props.theme.color.lightGrey}
+  background-color: ${props => props.theme.color.lightGrey};
 `;
 
 const TemplateWrapper = ({ children }) => {

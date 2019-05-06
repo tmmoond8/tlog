@@ -26,10 +26,10 @@ const StyledLink = styled(Link)`
     margin-right: 1rem;
     vertical-align: middle;
   }
-  &:after {
-    content: "(${props => props.totalCount})";
-    padding-left: .5rem;
-  }
+`;
+
+const TotalCount = styled.span`
+  padding-left: .5rem;
 `;
 
 const sort = (data) => {
@@ -41,14 +41,21 @@ const sort = (data) => {
   return data;
 }
 
+const rednerTag = (data) => {
+  if(!data) return false;
+  return sort(data).map((tag, index) => (
+    <Tag key={index}>
+      <StyledLink to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`}>
+        {tag.fieldValue} 
+        <TotalCount>({tag.totalCount})</TotalCount>
+      </StyledLink>
+    </Tag>
+    )
+  )
+}
+
 export default ({ data }) => (
   <Tags>
-    {sort(data).map((tag, index) => (
-      <Tag key={index}>
-        <StyledLink to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`} totalCount={tag.totalCount}>
-          {tag.fieldValue}
-        </StyledLink>
-      </Tag>)
-    )}
+    {rednerTag(data)}
   </Tags>
 );

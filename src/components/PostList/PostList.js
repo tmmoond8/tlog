@@ -37,8 +37,8 @@ const Description = styled.p`
 
 const renderPost = posts => {
   if(!posts) return false;
-  return posts.map(post => (
-    <Post>
+  return posts.map((post) => (
+    <Post key={post.node.id}>
       <Date>1년 전</Date>
       <StyledLink to={post.node.fields.slug}>
         <Title>{post.node.frontmatter.title}</Title>
