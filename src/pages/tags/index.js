@@ -1,56 +1,75 @@
 import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
+import Marsonry from "../../components/Masonry";
 
-const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
-  <Layout>
-    <section className="section">
-      <Helmet title={`Tags | ${title}`} />
-      <div className="container content">
-        <div className="columns">
-          <div
-            className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
-          >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
-              {group.map(tag => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </Layout>
+
+export const TagsIndexTemplate = ({posts}) => (
+  <Marsonry posts={posts}/>
 )
 
-export default TagsPage
+TagsIndexTemplate.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  title: PropTypes.string,
+  heading: PropTypes.string,
+  subheading: PropTypes.string,
+  mainpitch: PropTypes.object,
+  description: PropTypes.string,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
+}
 
-export const tagPageQuery = graphql`
-  query TagQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+const TagsIndex = ({ data }) => {
+  const { edges: posts } = data.allMarkdownRemark;
+  return (
+    <Layout>
+      <TagsIndexTemplate
+        posts={posts}
+      />
+    </Layout>
+  )
+}
+
+TagsIndex.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+}
+
+export default TagsIndex
+
+export const tagsIndexQuery = graphql`
+  query TagsIndexTemplate {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 400)
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
+            date(formatString: "YYYY년 MM월 DD일")
+            tags
+            featuredpost
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 120, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

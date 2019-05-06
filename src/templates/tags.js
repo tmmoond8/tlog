@@ -1,68 +1,117 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Content, { HTMLContent } from '../components/Content'
+import styled from "styled-components";
+import PostList from "../components/PostList";
 
-class TagRoute extends React.Component {
-  render() {
-    const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
-      <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-        </Link>
-      </li>
-    ))
-    const tag = this.props.pageContext.tag
-    const title = this.props.data.site.siteMetadata.title
-    const totalCount = this.props.data.allMarkdownRemark.totalCount
-    const tagHeader = `${totalCount} post${
-      totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`
+const PostSection = styled.section`
+  margin-left: ${props => props.theme.size.postListWidth};
+  padding: 3rem;
+  background-color: ${props => props.theme.color.white};
+`;
+const ContentContainer = styled.div`
+  max-width: 48rem;
+  margin: 0 auto;
+`;
+const Title = styled.h1``;
+const Description = styled.p``;
 
-    return (
-      <Layout>
-        <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
-          <div className="container content">
-            <div className="columns">
-              <div
-                className="column is-10 is-offset-1"
-                style={{ marginBottom: '6rem' }}
-              >
-                <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-                <ul className="taglist">{postLinks}</ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Layout>
-    )
-  }
+export const TagPostTemplate = ({
+  content,
+  contentComponent,
+  description,
+  tags,
+  title,
+  helmet,
+  posts,
+}) => {
+  const PostContent = contentComponent || Content;
+
+
+  return (
+    <Fragment>
+      <PostList posts={posts}/>
+      <PostSection className="post-section">
+        {helmet || ''}
+        <ContentContainer>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <PostContent content={content} />
+        </ContentContainer>
+      </PostSection>
+    </Fragment>
+  )
 }
 
-export default TagRoute
+TagPostTemplate.propTypes = {
+  content: PropTypes.node.isRequired,
+  contentComponent: PropTypes.func,
+  description: PropTypes.string,
+  title: PropTypes.string,
+  helmet: PropTypes.object,
+}
 
-export const tagPageQuery = graphql`
-  query TagPage($tag: String) {
-    site {
-      siteMetadata {
-        title
-      }
+const TagPost = ({ data }) => {
+  const { 
+    allMarkdownRemark: {
+      edges: posts
     }
+  } = data;
+  const { node: post } = posts[0];
+
+  return (
+    <Layout>
+      <TagPostTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        helmet={
+          <Helmet titleTemplate="%s | Blog">
+            <title>{`${post.frontmatter.title}`}</title>
+            <meta
+              name="description"
+              content={`${post.frontmatter.description}`}
+            />
+          </Helmet>
+        }
+        tags={post.frontmatter.tags}
+        title={post.frontmatter.title}
+        posts={posts}
+      />
+    </Layout>
+  )
+}
+
+TagPost.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+    allMarkdownRemark: PropTypes.object,
+  }),
+}
+
+export default TagPost
+
+export const tagPostQuery = graphql`
+  query TagPostByID($tag: String!) {
     allMarkdownRemark(
-      limit: 1000
+      limit: 100
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {
         node {
+          id
+          html
           fields {
             slug
           }
           frontmatter {
             title
+            description
           }
         }
       }
