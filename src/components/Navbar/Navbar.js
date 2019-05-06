@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import Tags from "../Tags";
 import logo from "../../img/tlog-logo.svg";
 
@@ -21,7 +21,7 @@ const BLOGO = styled.div`
   color: ${props => props.theme.color.white};
 `;
 
-const LOGO = styled.div`
+const LOGO = styled(Link)`
   position: relative;
   font-size: 2rem;
   padding-bottom: 1rem;
@@ -82,7 +82,7 @@ const Navbar = class extends React.Component {
     return (
       <NavbarWapper>
         <BLOGO>
-          <LOGO>Tlog</LOGO>
+          <LOGO to="/">Tlog</LOGO>
           <Contact>tmmoond8@gmail.com</Contact>
         </BLOGO>
         <Tags data={group}/>

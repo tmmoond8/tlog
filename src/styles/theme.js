@@ -25,11 +25,15 @@ const color = {
   white: "white"
 }
 
+const size = {
+  postListWidth: "14rem"
+}
+
  
 const theme = {
   media,
-  main: "mediumseagreen",
-  color
+  color,
+  size
 }
 
 export default theme;

@@ -9,13 +9,8 @@ const PostCard = styled.li`
   margin-bottom: 1rem;
 `;
 
-const Image = styled(PreviewCompatibleImage)`
-  height: 10rem;
-  width: 100%;
-`;
-
 const Title = styled.h2`
-  padding: 1.5rem; 2rem;
+  padding: 1.5rem;
 `;
 
 const Index = styled.div`
@@ -76,7 +71,7 @@ export default ({
 }) => (
   <PostCard>
     <Link to={fields.slug}>
-      <Image imageInfo={{
+      <PreviewCompatibleImage imageInfo={{
         image: frontmatter.featuredimage,
         alt: `featured image thumbnail for post ${frontmatter.title}`,
       }}/>

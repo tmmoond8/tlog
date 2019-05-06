@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const Tags = styled.ol`
   ${props => props.theme.media.phone`
@@ -7,7 +8,9 @@ const Tags = styled.ol`
   `}
 `;
 
-const Tag = styled.li`
+const Tag = styled.li``;
+const StyledLink = styled(Link)`
+  display: block;
   color: ${props => props.theme.color.white};
   padding: 1rem 0;
   text-overflow: ellipsis;
@@ -29,9 +32,23 @@ const Tag = styled.li`
   }
 `;
 
+const sort = (data) => {
+  if(!data) return data;
+  data.sort((a, b) => {
+    const countDiff = b.totalCount - a.totalCount;
+    return countDiff !== 0 ? countDiff : a.fieldValue - b.fieldValue;
+  })
+  return data;
+}
 
 export default ({ data }) => (
   <Tags>
-    {data.map((tag, index) => <Tag totalCount={tag.totalCount} key={index}>{tag.fieldValue}</Tag>)}
+    {sort(data).map((tag, index) => (
+      <Tag key={index}>
+        <StyledLink to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`} totalCount={tag.totalCount}>
+          {tag.fieldValue}
+        </StyledLink>
+      </Tag>)
+    )}
   </Tags>
 );

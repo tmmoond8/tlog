@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import styled from "styled-components";
+import PostList from "../components/PostList";
 
 const PostSection = styled.section`
+  margin-left: ${props => props.theme.size.postListWidth};
   padding: 3rem;
   background-color: ${props => props.theme.color.white};
 `;
@@ -18,7 +19,6 @@ const ContentContainer = styled.div`
 const Title = styled.h1``;
 const Description = styled.p``;
 
-
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -26,30 +26,35 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  posts,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
+
 
   return (
-    <PostSection className="post-section">
-      {helmet || ''}
-      <ContentContainer>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <PostContent content={content} />
-        {tags && tags.length ? (
-          <div style={{ marginTop: `4rem` }}>
-            <h4>Tags</h4>
-            <ul className="taglist">
-              {tags.map(tag => (
-                <li key={tag + `tag`}>
-                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </ContentContainer>
-    </PostSection>
+    <Fragment>
+      <PostList posts={posts}/>
+      <PostSection className="post-section">
+        {helmet || ''}
+        <ContentContainer>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <PostContent content={content} />
+        </ContentContainer>
+      </PostSection>
+    </Fragment>
+    // {tags && tags.length ? (
+    //   <div style={{ marginTop: `4rem` }}>
+    //     <h4>Tags</h4>
+    //     <ul className="taglist">
+    //       {tags.map(tag => (
+    //         <li key={tag + `tag`}>
+    //           <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   </div>
+    // ) : null}
   )
 }
 
@@ -62,7 +67,12 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { 
+    markdownRemark: post, 
+    allMarkdownRemark: {
+      edges: posts
+    }
+  } = data;
 
   return (
     <Layout>
@@ -81,6 +91,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        posts={posts}
       />
     </Layout>
   )
@@ -89,13 +100,14 @@ const BlogPost = ({ data }) => {
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
+    allMarkdownRemark: PropTypes.object,
   }),
 }
 
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query BlogPostByID($id: String!, $tags: [String]!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -104,6 +116,24 @@ export const pageQuery = graphql`
         title
         description
         tags
+      }
+    }
+    allMarkdownRemark(
+      limit: 100
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: $tags } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+          }
+        }
       }
     }
   }
