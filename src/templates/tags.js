@@ -112,6 +112,7 @@ export const tagPostQuery = graphql`
           frontmatter {
             title
             description
+            date
           }
         }
       }

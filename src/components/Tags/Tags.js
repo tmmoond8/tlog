@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { getImage, getEmoji } from "../../lib/tagcon";
 
 const Tags = styled.ol`
   ${props => props.theme.media.phone`
@@ -16,16 +17,19 @@ const StyledLink = styled(Link)`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  &:before {
-    content: "";
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background-color: red;
-    margin-left: 1.5rem;
-    margin-right: 1rem;
-    vertical-align: middle;
-  }
+`;
+
+const Tagcon = styled.span`
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+  background-image: url(${props => props.image});
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 2rem;
 `;
 
 const TotalCount = styled.span`
@@ -45,7 +49,10 @@ const rednerTag = (data) => {
   if(!data) return false;
   return sort(data).map((tag, index) => (
     <Tag key={index}>
-      <StyledLink to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`}>
+      <StyledLink 
+        to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`}
+      >
+        <Tagcon image={getImage(tag.fieldValue.replace(/ /gi, "-"))}>{getEmoji(tag.fieldValue.replace(/ /gi, "-"))}</Tagcon>
         {tag.fieldValue} 
         <TotalCount>({tag.totalCount})</TotalCount>
       </StyledLink>

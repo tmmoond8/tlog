@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import getNiceDate from "../../lib/getNiceDate";
 
 const Posts = styled.ol`
   position: fixed;
@@ -33,13 +34,14 @@ const Title = styled.h3`
 
 const Description = styled.p`
   font-size: .8rem;
+  line-height: 1.3;
 `;
 
 const renderPost = posts => {
   if(!posts) return false;
   return posts.map((post) => (
     <Post key={post.node.id}>
-      <Date>1년 전</Date>
+      <Date>{getNiceDate(post.node.frontmatter.date)}</Date>
       <StyledLink to={post.node.fields.slug}>
         <Title>{post.node.frontmatter.title}</Title>
           <Description>{post.node.frontmatter.description}</Description>
