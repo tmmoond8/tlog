@@ -1,7 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "gatsby";
 import { getImage, getEmoji } from "../../lib/tagcon";
+
+const fadeIn = keyframes`
+  from {
+    background-color: rgba(100, 100, 100, 0);
+      color: transparent;
+  }
+  to {
+    background-color: rgba(100, 100, 100, .8);
+      color: white;
+  }
+`;
 
 const Tags = styled.ol`
   ${props => props.theme.media.phone`
@@ -20,10 +31,20 @@ const StyledLink = styled(Link)`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
+  &:hover {
+    & > span::after {
+      background-color: rgba(100, 100, 100, .8);
+      color: white;
+      animation: ${fadeIn} .2s ease-in;
+    }
+    color: ${props => props.theme.color.grey};
+  }
 `;
 
 const Tagcon = styled.span`
   display: inline-block;
+  position: relative;
   width: 2rem;
   height: 2rem;
   vertical-align: middle;
@@ -32,14 +53,24 @@ const Tagcon = styled.span`
   background-repeat: no-repeat;
   font-size: 2rem;
   border-radius: 1rem;
-  margin-right: .5rem;
-`;
+  margin: 0 .7rem;
+  
+  &::after {
+    display: inline-block;
+    position: absolute;
+    content: "${props => props.totalCount}";
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(100, 100, 100, 0);
+    color: transparent;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 2rem;
+  }
 
-const TotalCount = styled.span`
-  display: inline-block;
-  width: 2rem;
-  color: ${props => props.theme.color.deepGrey};
-  text-align: center;
 `;
 
 const sort = (data) => {
@@ -59,8 +90,12 @@ const rednerTag = (data) => {
         to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`}
         title={tag.fieldValue}
       >
-        <TotalCount>{tag.totalCount}</TotalCount>
-        <Tagcon image={getImage(tag.fieldValue.replace(/ /gi, "-"))}>{getEmoji(tag.fieldValue.replace(/ /gi, "-"))}</Tagcon>
+        <Tagcon 
+          image={getImage(tag.fieldValue.replace(/ /gi, "-"))}
+          totalCount={tag.totalCount}
+        >
+          {getEmoji(tag.fieldValue.replace(/ /gi, "-"))}
+        </Tagcon>
         {tag.fieldValue} 
       </StyledLink>
     </Tag>

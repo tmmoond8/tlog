@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import getNiceDate from "../../lib/getNiceDate";
 
+
 const Posts = styled.ol`
   position: fixed;
   height: 100vh;
@@ -18,6 +19,10 @@ const Post = styled.li`
   padding: .8rem;
   color: ${props => props.theme.color.grey};
   border-bottom: 1px solid ${props => props.theme.color.lightGrey};
+
+  &:hover {
+    font-weight: 500;
+  }
 `;
 
 const Date = styled.p`
@@ -45,6 +50,7 @@ const Title = styled.h3`
 const Description = styled.p`
   font-size: .8rem;
   line-height: 1.3;
+  padding: .5rem 0;
 `;
 
 const renderPost = posts => {

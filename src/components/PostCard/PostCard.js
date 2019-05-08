@@ -8,10 +8,15 @@ const PostCard = styled.li`
   width: 20rem;
   background: ${prop => prop.theme.color.white};
   margin-bottom: 1rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: -3px 1px 10px 3px rgba(97,95,97,0.4);
+  -moz-box-shadow: -3px 1px 10px 3px rgba(97,95,97,0.4);
+  box-shadow: -3px 1px 10px 3px rgba(97,95,97,0.4);
 `;
 
 const Title = styled.h2`
   padding: 1.5rem;
+  border-bottom: 1px solid ${props => props.theme.color.lightGrey};
 `;
 
 const Description = styled.div`

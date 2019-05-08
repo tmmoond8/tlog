@@ -11,7 +11,6 @@ const Masonry = styled.ol`
 
 
 export default ({posts}) => {
-  console.log(posts);
   return (
 
     <Masonry>
