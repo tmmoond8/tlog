@@ -22,6 +22,7 @@ const color = {
   lightGrey: "#EFF1F2",
   red: "#D74145",
   grey: "#A8A8A8",
+  deepGrey: "#707070",
   white: "white"
 }
 

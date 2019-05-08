@@ -10,6 +10,7 @@ const Posts = styled.ol`
   background-color: ${props => props.theme.color.white};
   font-weight: 300;
   border-right: 1px solid ${props => props.theme.color.lightGrey}; 
+  overflow: auto;
 `;
 
 const Post = styled.li`

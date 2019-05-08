@@ -7,13 +7,16 @@ const Tags = styled.ol`
   ${props => props.theme.media.phone`
     background: ${props => props.theme.color.red};
   `}
+  height: calc(100vh - 9rem);
+  overflow: auto;
 `;
 
 const Tag = styled.li``;
 const StyledLink = styled(Link)`
   display: block;
   color: ${props => props.theme.color.white};
-  padding: 1rem 0;
+  padding: 1rem;
+  padding-left: .5rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -23,17 +26,20 @@ const Tagcon = styled.span`
   display: inline-block;
   width: 2rem;
   height: 2rem;
-  margin-left: 1.5rem;
-  margin-right: 1rem;
   vertical-align: middle;
   background-image: url(${props => props.image});
   background-size: contain;
   background-repeat: no-repeat;
   font-size: 2rem;
+  border-radius: 1rem;
+  margin-right: .5rem;
 `;
 
 const TotalCount = styled.span`
-  padding-left: .5rem;
+  display: inline-block;
+  width: 2rem;
+  color: ${props => props.theme.color.deepGrey};
+  text-align: center;
 `;
 
 const sort = (data) => {
@@ -51,10 +57,11 @@ const rednerTag = (data) => {
     <Tag key={index}>
       <StyledLink 
         to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`}
+        title={tag.fieldValue}
       >
+        <TotalCount>{tag.totalCount}</TotalCount>
         <Tagcon image={getImage(tag.fieldValue.replace(/ /gi, "-"))}>{getEmoji(tag.fieldValue.replace(/ /gi, "-"))}</Tagcon>
         {tag.fieldValue} 
-        <TotalCount>({tag.totalCount})</TotalCount>
       </StyledLink>
     </Tag>
     )
