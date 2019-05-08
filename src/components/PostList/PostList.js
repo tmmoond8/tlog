@@ -13,23 +13,31 @@ const Posts = styled.ol`
 `;
 
 const Post = styled.li`
-  display: flex;
+  position: relative;
   padding: .8rem;
   color: ${props => props.theme.color.grey};
   border-bottom: 1px solid ${props => props.theme.color.lightGrey};
 `;
 
 const Date = styled.p`
-  padding-right: .5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: .5rem;
   font-size: .8rem;
 `;
 
 const StyledLink = styled(Link)`
-  flex: 1;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 `;
 
 const Title = styled.h3`
   padding: .5rem 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 const Description = styled.p`

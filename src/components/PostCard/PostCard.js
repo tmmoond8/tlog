@@ -4,6 +4,7 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import { Link } from "gatsby";
 
 const PostCard = styled.li`
+  position: relative;
   width: 20rem;
   background: ${prop => prop.theme.color.white};
   margin-bottom: 1rem;
@@ -13,8 +14,19 @@ const Title = styled.h2`
   padding: 1.5rem;
 `;
 
-const Index = styled.div`
+const Description = styled.div`
   flex: 1;
+  padding: 1rem;
+  font-size: .7rem;
+  line-height: 1.3;
+  font-weight: 300;
+`;
+
+const Index = styled.div`
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 1rem;
 `;
 
@@ -36,24 +48,12 @@ const Date = styled.li`
   }
 `;
 
-const Heart = styled.li`
-  &:before {
-    content: "❤️";
-    padding-right: .5rem;
-  }
-`;
-
-const Comments = styled.li`
-  &:before {
-    content: "💬";
-    padding-right: .5rem;
-  }
-`;
-
 const Tags = styled.li`
   &:before {
-    content: "#️⃣";
+    content: "#";
     padding-right: .5rem;
+    color: ${prop => prop.theme.color.black};
+    font-size: 1rem;
   }
 `;
 
@@ -80,10 +80,11 @@ export default ({
       <Wrapper>
         <Meta>
           <Date>{frontmatter.date}</Date>
-          <Heart>56</Heart>
-          <Comments>8</Comments>
           <Tags>{tagString(frontmatter.tags)}</Tags>
         </Meta>
+        <Description>
+          {frontmatter.description}
+        </Description>
         <Index dangerouslySetInnerHTML={{ __html: tableOfContents }}>
         </Index>
       </Wrapper>

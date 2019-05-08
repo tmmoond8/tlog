@@ -620,6 +620,7 @@ export default `
 
   .post-section li {
     word-wrap: break-all;
+    list-style: square;
   }
 
   .post-section li>p {
