@@ -66,7 +66,8 @@ const tagString = (tags) => tags ? tags.join(", ") : "";
 export default ({
   data: {
     frontmatter,
-    fields
+    fields,
+    tableOfContents
   }
 }) => (
   <PostCard>
@@ -83,14 +84,7 @@ export default ({
           <Comments>8</Comments>
           <Tags>{tagString(frontmatter.tags)}</Tags>
         </Meta>
-        <Index>
-          <h3>ejdsjflkdsjf</h3>
-          <p>dkflsjfjdskf</p>
-          <p>dfmkldsjfsjfkd</p>
-          <p>dfmkldsjfsjfkd</p>
-          <p>dfmkldsjfsjfkd</p>
-          <p>dfmkldsjfsjfkd</p>
-          <p>dfmkldsjfsjfkd</p>
+        <Index dangerouslySetInnerHTML={{ __html: tableOfContents }}>
         </Index>
       </Wrapper>
     </Link>

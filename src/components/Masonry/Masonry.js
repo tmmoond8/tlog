@@ -10,11 +10,13 @@ const Masonry = styled.ol`
 `;
 
 
+export default ({posts}) => {
+  console.log(posts);
+  return (
 
-
-export default ({posts}) => (
-  <Masonry>
+    <Masonry>
     {posts.map(post => <PostCard key={post.node.id} data={post.node}/>)}
   </Masonry>
-);
+  )
+};
 
