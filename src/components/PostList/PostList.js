@@ -25,6 +25,7 @@ const Date = styled.p`
   top: 0;
   padding: .5rem;
   font-size: .8rem;
+  color: ${props => props.theme.color.red};
 `;
 
 const StyledLink = styled(Link)`
