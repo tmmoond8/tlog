@@ -20,6 +20,7 @@ const TAGCON = {
   twilio: { image: twilio },
   mailgun: { image: mailgun },
   postgresql: { image: postgresql },
+  "project-setup": { emoji: "🧙" }
 }
 
 export const getImage = (tag) => {

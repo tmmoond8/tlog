@@ -8,7 +8,6 @@ featuredimage: /img/nuber_clone.jpg
 tags:
   - nomad coders
   - 우버 클론 코딩
-  - pubsub
   - graphql-yoga
 ---
 # 
