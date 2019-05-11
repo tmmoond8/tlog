@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import styled, { ThemeProvider } from "styled-components";
-import theme, { GlobalStyle }  from "../styles";
+import theme, { GlobalStyle }  from "../../styles";
 
 const Layout = styled.div`
   width: 100vw;

@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/Layout'
 import Marsonry from "../components/Masonry";
+import THelmet from "../components/THelmet";
 
 
 export const IndexPageTemplate = ({posts}) => (
@@ -25,6 +26,7 @@ const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Layout>
+      <THelmet/>
       <IndexPageTemplate
         posts={posts}
       />

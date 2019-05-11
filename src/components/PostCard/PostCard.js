@@ -27,13 +27,13 @@ const Description = styled.div`
   font-weight: 300;
 `;
 
-const Index = styled.div`
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-`;
+// const Index = styled.div`
+//   visibility: hidden;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   padding: 1rem;
+// `;
 
 const Meta = styled.ol`
   width: 50%;
@@ -90,8 +90,8 @@ export default ({
         <Description>
           {frontmatter.description}
         </Description>
-        <Index dangerouslySetInnerHTML={{ __html: tableOfContents }}>
-        </Index>
+        {/* <Index dangerouslySetInnerHTML={{ __html: tableOfContents }}>
+        </Index> */}
       </Wrapper>
     </Link>
   </PostCard>

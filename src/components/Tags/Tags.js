@@ -15,9 +15,6 @@ const fadeIn = keyframes`
 `;
 
 const Tags = styled.ol`
-  ${props => props.theme.media.phone`
-    background: ${props => props.theme.color.red};
-  `}
   height: calc(100vh - 9rem);
   overflow: auto;
 `;

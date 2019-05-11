@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import styled from "styled-components";
 import PostList from "../components/PostList";
+import THelmet from "../components/THelmet";
 
 const PostSection = styled.section`
   margin-left: ${props => props.theme.size.postListWidth};
@@ -69,13 +69,10 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
+          <THelmet 
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+          />
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
