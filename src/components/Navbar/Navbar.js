@@ -5,7 +5,6 @@ import Tags from "../Tags";
 import logo from "../../img/tlog-logo.svg";
 
 const NavbarWapper = styled.div`
-  position: fixed;
   width: 12.67rem;
   min-height: 100%;
   background: ${props => props.theme.color.black};

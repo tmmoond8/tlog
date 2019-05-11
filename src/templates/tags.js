@@ -11,6 +11,9 @@ const PostSection = styled.section`
   margin-left: ${props => props.theme.size.postListWidth};
   padding: 3rem;
   background-color: ${props => props.theme.color.white};
+  ${props => props.theme.media.tablet`
+    display: none;
+  `}
 `;
 const ContentContainer = styled.div`
   max-width: 48rem;
@@ -29,7 +32,6 @@ export const TagPostTemplate = ({
   posts,
 }) => {
   const PostContent = contentComponent || Content;
-
 
   return (
     <Fragment>

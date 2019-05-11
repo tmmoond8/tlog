@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
@@ -7,10 +7,24 @@ import styled from "styled-components";
 import PostList from "../components/PostList";
 import THelmet from "../components/THelmet";
 
+const PostWrapper = styled.div`
+  display: flex;
+
+  ${props => props.theme.media.tablet`
+    flex-direction: column-reverse;
+  `}
+`;
+
 const PostSection = styled.section`
+  flex: 1;
   margin-left: ${props => props.theme.size.postListWidth};
   padding: 3rem;
   background-color: ${props => props.theme.color.white};
+
+  ${props => props.theme.media.tablet`
+    margin-left: 0;
+    padding: 1rem;
+  `}
 `;
 const ContentContainer = styled.div`
   max-width: 48rem;
@@ -32,7 +46,7 @@ export const BlogPostTemplate = ({
 
 
   return (
-    <Fragment>
+    <PostWrapper>
       <PostList posts={posts}/>
       <PostSection className="post-section">
         {helmet || ''}
@@ -42,7 +56,7 @@ export const BlogPostTemplate = ({
           <PostContent content={content} />
         </ContentContainer>
       </PostSection>
-    </Fragment>
+    </PostWrapper>
   )
 }
 
