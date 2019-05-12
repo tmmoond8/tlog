@@ -8,7 +8,7 @@ featuredimage: /img/nuber_clone.jpg
 tags:
   - nomad coders
   - 우버 클론 코딩
-  - mailgun
+  - Mailgun
 ---
 # 
 
@@ -16,7 +16,7 @@ tags:
 
 이번에는 이메일을 통한 사용자 인증을 구현할 차례인데, 저번에 했던 SMS인증이랑 유사하다고 생각하면 된다. 다만 PHONE이 아닌 EMAIL을 통해 특정 인증 번호를 주고 확인하는 것이다. 
 
-메시지를 보낼때는 twilio를 썼고, 이번에는 mailgun이라는 서비스를 이용한다.
+메시지를 보낼때는 Twilio를 썼고, 이번에는 Mailgun이라는 서비스를 이용한다.
 
 [https://app.mailgun.com](https://app.mailgun.com/) 가서 회원가입을 한 후 대시보드로 이동하자.
 

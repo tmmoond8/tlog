@@ -41,18 +41,19 @@ const DrawableNavbar = styled.div`
   display: flex;
   position: fixed;
   height: 100%;
-  width: 100%;
   transform: translateX(0);
   z-index: 100;
 
   ${props => props.theme.media.tablet`
+    width: 100%;
     transform: translateX(${props => props.open ? 0 : '-100%'})
   `}
 `;
 
 const Dimmed = styled.div`
-  flex: 1;
   ${props => props.theme.media.tablet`
+    flex: 1;
+    display: static;
     background-color: rgba(100, 100, 100, .4);
   `}
 `;

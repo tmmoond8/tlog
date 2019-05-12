@@ -12,8 +12,7 @@ const Posts = styled.ol`
   font-weight: 300;
   border-right: 1px solid ${props => props.theme.color.lightGrey}; 
   overflow: auto;
-  z-index: 110;
-
+  -webkit-overflow-scrolling: touch;
   ${props => props.theme.media.tablet`
     position: static;
     width: 100%;

@@ -2,25 +2,27 @@ import gatsby from "../img/tagcon/gatsby.png";
 import react from "../img/tagcon/react.svg";
 import nomadcoders from "../img/tagcon/nomadcoders.jpg";
 import typeorm from "../img/tagcon/typeorm.png";
-import jwt from "../img/tagcon/jwt.png";
+import JWT from "../img/tagcon/JWT.png";
 import graphql from "../img/tagcon/graphql.png";
 import twilio from "../img/tagcon/twilio.jpg";
 import mailgun from "../img/tagcon/mailgun.png";
 import postgresql from "../img/tagcon/postgresql.png";
+import nextjs from "../img/tagcon/nextjs.png";
 
 const TAGCON = {
-  gatsby: { image: gatsby },
-  react: { image: react },
+  "Gatsby.js": { image: gatsby },
+  React: { image: react },
   "nomad-coders": { image: nomadcoders },
   "우버-클론-코딩": { emoji: "🚕" },
   "graphql-yoga": { emoji: "🧘" },
-  typeorm: { image: typeorm },
-  jwt: { image: jwt },
-  graphql: { image: graphql },
-  twilio: { image: twilio },
-  mailgun: { image: mailgun },
-  postgresql: { image: postgresql },
-  "project-setup": { emoji: "🧙" }
+  TypeORM: { image: typeorm },
+  JWT: { image: JWT },
+  GraphQL: { image: graphql },
+  Twilio: { image: twilio },
+  Mailgun: { image: mailgun },
+  PostgreSQL: { image: postgresql },
+  "project-setup": { emoji: "🧙" },
+  "Next.js": { image: nextjs },
 }
 
 export const getImage = (tag) => {

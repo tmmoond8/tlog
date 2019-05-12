@@ -17,6 +17,7 @@ const fadeIn = keyframes`
 const Tags = styled.ol`
   height: calc(100vh - 9rem);
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const Tag = styled.li``;
@@ -84,7 +85,7 @@ const rednerTag = (data) => {
   return sort(data).map((tag, index) => (
     <Tag key={index}>
       <StyledLink 
-        to={`/tags/${tag.fieldValue.replace(/ /gi, "-")}`}
+        to={`/tags/${tag.fieldValue.toLowerCase().replace(/([ \.])/gi, "-")}`}
         title={tag.fieldValue}
       >
         <Tagcon 
