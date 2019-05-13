@@ -10,19 +10,19 @@ import postgresql from "../img/tagcon/postgresql.png";
 import nextjs from "../img/tagcon/nextjs.png";
 
 const TAGCON = {
-  "Gatsby.js": { image: gatsby },
+  gatsby: { image: gatsby, name: "Gatsby.js" },
   React: { image: react },
   "nomad-coders": { image: nomadcoders },
   "우버-클론-코딩": { emoji: "🚕" },
   "graphql-yoga": { emoji: "🧘" },
-  TypeORM: { image: typeorm },
-  JWT: { image: jwt },
-  GraphQL: { image: graphql },
+  typeorm: { image: typeorm, name: "TypeORM" },
+  jwt: { image: jwt, name: "JWT" },
+  graphql: { image: graphql, name: "GraphQL" },
   Twilio: { image: twilio },
   Mailgun: { image: mailgun },
-  PostgreSQL: { image: postgresql },
+  postgresql: { image: postgresql, name: "PostgreSQL" },
   "project-setup": { emoji: "🧙" },
-  "Next.js": { image: nextjs },
+  nextjs: { image: nextjs, name: "Next.js" },
 }
 
 export const getImage = (tag) => {
@@ -37,4 +37,11 @@ export const getEmoji = (tag) => {
     return TAGCON[tag].emoji;
   }
   return "";
+}
+
+export const getName = (tag) => {
+  if(TAGCON[tag] && TAGCON[tag].name) {
+    return TAGCON[tag].name;
+  }
+  return tag;
 }

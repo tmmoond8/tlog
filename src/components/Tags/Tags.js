@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "gatsby";
-import { getImage, getEmoji } from "../../lib/tagcon";
+import { getImage, getEmoji, getName } from "../../lib/tagcon";
 
 const fadeIn = keyframes`
   from {
@@ -94,7 +94,7 @@ const rednerTag = (data) => {
         >
           {getEmoji(tag.fieldValue.replace(/ /gi, "-"))}
         </Tagcon>
-        {tag.fieldValue} 
+        {getName(tag.fieldValue)} 
       </StyledLink>
     </Tag>
     )

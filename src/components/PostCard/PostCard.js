@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import { Link } from "gatsby";
+import { getName } from "../../lib/tagcon";
 
 const PostCard = styled.li`
   position: relative;
@@ -26,14 +27,6 @@ const Description = styled.div`
   line-height: 1.3;
   font-weight: 300;
 `;
-
-// const Index = styled.div`
-//   visibility: hidden;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   padding: 1rem;
-// `;
 
 const Meta = styled.ol`
   width: 50%;
@@ -66,7 +59,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const tagString = (tags) => tags ? tags.join(", ") : "";
+const tagString = tags => !tags ? "" : tags.map(tag => getName(tag)).join(", ");
 
 export default ({
   data: {
