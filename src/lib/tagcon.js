@@ -2,7 +2,7 @@ import gatsby from "../img/tagcon/gatsby.png";
 import react from "../img/tagcon/react.svg";
 import nomadcoders from "../img/tagcon/nomadcoders.jpg";
 import typeorm from "../img/tagcon/typeorm.png";
-import JWT from "../img/tagcon/JWT.png";
+import jwt from "../img/tagcon/jwt.png";
 import graphql from "../img/tagcon/graphql.png";
 import twilio from "../img/tagcon/twilio.jpg";
 import mailgun from "../img/tagcon/mailgun.png";
@@ -16,7 +16,7 @@ const TAGCON = {
   "우버-클론-코딩": { emoji: "🚕" },
   "graphql-yoga": { emoji: "🧘" },
   TypeORM: { image: typeorm },
-  JWT: { image: JWT },
+  JWT: { image: jwt },
   GraphQL: { image: graphql },
   Twilio: { image: twilio },
   Mailgun: { image: mailgun },
