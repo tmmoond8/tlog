@@ -56,13 +56,14 @@ TagPostTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const TagPost = ({ data }) => {
+const TagPost = ({ data, pageContext: { tag }}) => {
   const { 
     allMarkdownRemark: {
       edges: posts
     }
   } = data;
   const { node: post } = posts[0];
+  
 
   return (
     <Layout>
@@ -74,6 +75,7 @@ const TagPost = ({ data }) => {
           <THelmet 
             title={post.frontmatter.title}
             description={post.frontmatter.description}
+            tag={tag}
           />
         }
         tags={post.frontmatter.tags}

@@ -1,8 +1,28 @@
 import React, { Fragment } from 'react'
 import Navbar from '../Navbar';
 import { Link } from "gatsby";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, keyframes } from "styled-components";
 import theme, { GlobalStyle }  from "../../styles";
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;
+
+const slideOut = keyframes`
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+`;
 
 const Layout = styled.div`
   width: 100vw;
@@ -45,17 +65,16 @@ const DrawableNavbar = styled.div`
   z-index: 100;
 
   ${props => props.theme.media.tablet`
-    width: 100%;
-    transform: translateX(${props => props.open ? 0 : '-100%'})
+    width: 140%;
+    transform: translateX(${props => props.open ? 0 : '-100%'});
+    animation: ${props => props.open ? slideIn : props.initial ? '' : slideOut} .3s ease-out;
   `}
 `;
 
 const Dimmed = styled.div`
-  ${props => props.theme.media.tablet`
-    flex: 1;
-    display: static;
-    background-color: rgba(100, 100, 100, .4);
-  `}
+  flex: 1;
+  display: static;
+  background: linear-gradient(90deg, rgba(79,78,79,0.7875525210084033) 0%, rgba(79,78,79,0.5578606442577031) 67%, rgba(227,227,227,0.06486344537815125) 100%);
 `;
 
 const Hambuger = styled.span`
@@ -82,7 +101,8 @@ class TemplateWrapper extends React.Component {
   }
 
   state = {
-    open: false
+    open: false,
+    initial: true
   }
 
   render() {
@@ -93,7 +113,7 @@ class TemplateWrapper extends React.Component {
         <GlobalStyle/>
         <ThemeProvider theme={theme}>
           <Layout>
-            <DrawableNavbar open={this.state.open}>
+            <DrawableNavbar open={this.state.open} initial={this.state.initial}>
               <Navbar/>
               <Dimmed onClick={this.handleCloseNav}/>
             </DrawableNavbar>
@@ -115,15 +135,16 @@ class TemplateWrapper extends React.Component {
   }
 
   handleToggle() {
-    this.setState({
-      open: !this.state.open
-    });
+    this.setState(state => ({
+      open: !this.state.open,
+      initial: false
+    }));
   }
 
   handleCloseNav() {
-    this.setState({
+    this.setState(state => ({
       open: false
-    })
+    }));
   }
 }
 

@@ -86,6 +86,7 @@ const BlogPost = ({ data }) => {
           <THelmet 
             title={post.frontmatter.title}
             description={post.frontmatter.description}
+            tag={post.frontmatter.tags[0]}
           />
         }
         tags={post.frontmatter.tags}

@@ -53,34 +53,15 @@ const Navbar = class extends React.Component {
     }
   }
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
-
   render() {
     const {
       data: {
         allMarkdownRemark: { group },
-      }
+      },
+      className
     } = this.props;
     return (
-      <NavbarWapper>
+      <NavbarWapper className={className}>
         <BLOGO>
           <LOGO to="/">Tlog</LOGO>
           <Contact>tmmoond8@gmail.com</Contact>
@@ -91,7 +72,7 @@ const Navbar = class extends React.Component {
   }
 };
 
-export default () => (
+export default ({ className }) => (
   <StaticQuery
     query={graphql`
       query GetTags {
@@ -103,6 +84,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <Navbar data={data} count={count} />}
+    render={(data) => <Navbar data={data} className={className} />}
   />
 )

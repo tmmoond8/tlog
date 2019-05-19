@@ -1,13 +1,13 @@
 ---
 templateKey: blog-post
-title: 🚕 9 우버 클론 코딩 (nomad coders)
+title: 9 우버 클론 코딩 (nomad coders)
 date: 2019-04-26T08:56:56.243Z
 description: 우버 코딩 강의 로그 1.49 ~ 1.55
 featuredpost: true
 featuredimage: /img/nuber_clone.jpg
 tags:
-  - nomad coders
   - 우버 클론 코딩
+  - nomad coders
   - Mailgun
 ---
 # 
