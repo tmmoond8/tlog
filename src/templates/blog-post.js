@@ -6,6 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import styled from "styled-components";
 import PostList from "../components/PostList";
 import THelmet from "../components/THelmet";
+import FeaturedImage from "../components/PreviewCompatibleImage";
 
 const PostWrapper = styled.div`
   display: flex;
@@ -41,8 +42,16 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   posts,
+  featuredimage,
 }) => {
   const PostContent = contentComponent || Content;
+  const {
+    childImageSharp: {
+      original: {
+        src
+      }
+    }
+  } = featuredimage;
 
 
   return (
@@ -53,6 +62,10 @@ export const BlogPostTemplate = ({
         <ContentContainer>
           <Title>{title}</Title>
           <Description>{description}</Description>
+          <FeaturedImage imageInfo={{
+            image: src,
+            alt: `featured image thumbnail for post ${title}`,
+          }}/>
           <PostContent content={content} />
         </ContentContainer>
       </PostSection>
@@ -92,6 +105,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         posts={posts}
+        featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
   )
@@ -116,6 +130,13 @@ export const pageQuery = graphql`
         title
         description
         tags
+        featuredimage {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
       }
     }
     allMarkdownRemark(
