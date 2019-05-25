@@ -12,10 +12,11 @@ import graphqlYoga from "../img/tagcon/graphql-yoga.png";
 import ssr from "../img/tagcon/ssr.jpg";
 import uberCloneCoding from "../img/tagcon/uber.png";
 import projectSetup from "../img/tagcon/project-setup.png";
+import apollo from "../img/tagcon/apollo.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
-  React: { image: react },
+  react: { image: react, name: "React" },
   "nomad-coders": { image: nomadcoders },
   "우버-클론-코딩": { image: uberCloneCoding },
   "graphql-yoga": { image: graphqlYoga },
@@ -27,7 +28,8 @@ const TAGCON = {
   postgresql: { image: postgresql, name: "PostgreSQL" },
   "project-setup": { image: projectSetup },
   nextjs: { image: nextjs, name: "Next.js" },
-  ssr: { image: ssr, name: "SSR" }
+  ssr: { image: ssr, name: "SSR" },
+  apollo: { image: apollo, name: "Apollo" }
 }
 
 export const getImage = (tag) => {
