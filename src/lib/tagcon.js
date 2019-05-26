@@ -13,6 +13,7 @@ import ssr from "../img/tagcon/ssr.jpg";
 import uberCloneCoding from "../img/tagcon/uber.png";
 import projectSetup from "../img/tagcon/project-setup.png";
 import apollo from "../img/tagcon/apollo.png";
+import styledComponents from "../img/tagcon/styled_components.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -29,7 +30,8 @@ const TAGCON = {
   "project-setup": { image: projectSetup },
   nextjs: { image: nextjs, name: "Next.js" },
   ssr: { image: ssr, name: "SSR" },
-  apollo: { image: apollo, name: "Apollo" }
+  apollo: { image: apollo, name: "Apollo" },
+  "styled-components": { image: styledComponents, name: "styled components"}
 }
 
 export const getImage = (tag) => {

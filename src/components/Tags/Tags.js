@@ -47,7 +47,7 @@ const Tagcon = styled.span`
   height: 2rem;
   vertical-align: middle;
   background-image: url(${props => props.image});
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   font-size: 2rem;
   border-radius: 1rem;
