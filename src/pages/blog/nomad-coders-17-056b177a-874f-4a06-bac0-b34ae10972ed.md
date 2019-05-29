@@ -244,7 +244,7 @@ tags:
         
         export default R;
 
-- src/routes/Ride/index.t
+- src/routes/Ride/index.tsx
 
         import React from "react";
         

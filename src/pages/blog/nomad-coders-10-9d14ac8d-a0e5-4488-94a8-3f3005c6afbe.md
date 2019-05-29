@@ -217,7 +217,7 @@ tags:
 
 이제 ReportMovement의 type과 Mutation을 정의하자.
 
-- src/api/User/ReportMovement/ReportMovement.grpahql
+- src/api/User/ReportMovement/ReportMovement.graphql
 
         type ReportMovementResponse {
           ok: Boolean!
