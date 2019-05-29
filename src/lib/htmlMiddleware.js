@@ -9,7 +9,8 @@ import "prismjs/components/prism-scss";
 import "prismjs/components/prism-markdown";
 import "prismjs/components/prism-graphql";
 
-const DOM = document.createElement('div');
+import { parse, getCodeCaption, findAll, serialize } from '../lib/domUtil';
+
 const filePathRegex = /([(A-Z)|(a-z)|\/|\.])+\.([a-z])+/;
 
 const alias = {
@@ -41,33 +42,28 @@ const findLanguageExtenstion = (text) => {
 }
 
 const highlighteCode = (codeBlock, extension) => {
-  const { firstElementChild: codeContent } = codeBlock;
+  const codeContent = codeBlock.childNodes.find(el => el.tagName === 'code').childNodes[0];
   if(!alias[extension]) {
     throw new Error(`Unsupported extension : ${extension}`);
   }
   const { grammer, language } =  alias[extension];
-  const code = Prism.highlight(codeContent.textContent, grammer, language);
-  codeContent.innerHTML = code;
-  codeBlock.className = `language-${language}`;
-  codeContent.className = `language-${language}`;
+  const codeHtml = Prism.highlight(codeContent.value, grammer, language);
+  const code = parse(codeHtml);
+  codeBlock.childNodes = code.childNodes;
+  codeBlock.attrs = [{ name: 'class', value: `language-${language}`}];
+  codeContent.attrs = [{ name: 'class', value: `language-${language}`}];
 }
 
 const htmlMiddleware = (html) => {
-  DOM.innerHTML = html.replace(/\.\.\./gi, '// ...');
-  const codeBlocks = DOM.querySelectorAll('pre');
+  const DOM = parse(html);
+  const codeBlocks = findAll(DOM.childNodes, (el) => el.tagName === 'pre');
   
-  // const codeBlock = codeBlocks[10];
   codeBlocks.forEach(codeBlock => {
     try {
-      const {
-        parentNode :{
-          firstElementChild: codeCaption
-        }
-      } = codeBlock;
-      // console.log(codeCaption);
-      // console.log(codeBlock)
-      if(codeCaption.tagName === 'P') {
-        const extension = findLanguageExtenstion(codeCaption.textContent);
+      const { parentNode } = codeBlock;
+      if(parentNode && parentNode.tagName === 'li') {
+        const caption = getCodeCaption(parentNode);
+        const extension = findLanguageExtenstion(caption);
         highlighteCode(codeBlock, extension);
       } else {
         highlighteCode(codeBlock, 'bash');
@@ -76,7 +72,8 @@ const htmlMiddleware = (html) => {
       console.error(error);
     }
   });
-  return DOM.innerHTML;
+  
+  return serialize(DOM);
 }
 
 export default htmlMiddleware;

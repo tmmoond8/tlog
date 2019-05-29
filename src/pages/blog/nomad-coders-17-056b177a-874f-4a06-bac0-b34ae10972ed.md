@@ -469,24 +469,24 @@ tags:
 
 - src/components/App/AppPresenter.tsx
 
-    ...
-    import Home from "routes/Home";
-    import Login from "routes/Login";
-    import PhoneLogin from "routes/PhoneLogin";
-    
-    ...
-    
-    const LoggedOutRoutes: React.SFC = () => (
-      <Switch>
-        <Route ath={"/"} exact={true} component={Login}/>
-        <Route path={"/phone-login"} exact={true} component={PhoneLogin}/>
-        <Route path={"/verify-phone/:number"} exact={true} component={VerifyPhone}/>
-        <Route path={"/social-login"} exact={true} component={SocialLogin}/>
-        <Redirect from={"*"} to={"/"} />
-      </Switch>
-    );
-    
-    ...
+        ...
+        import Home from "routes/Home";
+        import Login from "routes/Login";
+        import PhoneLogin from "routes/PhoneLogin";
+        
+        ...
+        
+        const LoggedOutRoutes: React.SFC = () => (
+          <Switch>
+            <Route ath={"/"} exact={true} component={Login}/>
+            <Route path={"/phone-login"} exact={true} component={PhoneLogin}/>
+            <Route path={"/verify-phone/:number"} exact={true} component={VerifyPhone}/>
+            <Route path={"/social-login"} exact={true} component={SocialLogin}/>
+            <Redirect from={"*"} to={"/"} />
+          </Switch>
+        );
+      
+      ...
 
 - src/images/bg.png  images 디렉토리를 넣고 이미지 하나를 다운 받아서 bg.png로 저장하자.
 
