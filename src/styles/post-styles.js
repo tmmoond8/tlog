@@ -207,11 +207,6 @@ export default `
     font-weight: bolder;
   }
 
-  .post-section h1 {
-    font-size: 2em;
-    margin: .67em 0;
-  }
-
   .post-section img {
     border-style: none;
   }
@@ -309,9 +304,10 @@ export default `
     margin-bottom: 0;
     margin-top: 0;
   }
-
+  
   .post-section h1 {
-    font-size: 32px;
+    font-size: 2em;
+    margin: .67em 0;
   }
 
   .post-section h1,
@@ -573,9 +569,11 @@ export default `
     margin-bottom: 16px;
     margin-top: 24px;
   }
-
+  
   .post-section h1 {
     font-size: 2em;
+    margin: .67em 0;
+    text-align: center;
   }
 
   .post-section h1,
