@@ -7,6 +7,8 @@ import styled from "styled-components";
 import PostList from "../components/PostList";
 import THelmet from "../components/THelmet";
 import FeaturedImage from "../components/PreviewCompatibleImage";
+import AuthorCard from '../components/AuthorCard';
+import MetaData from '../components/PostMetaData';
 
 const PostWrapper = styled.div`
   display: flex;
@@ -16,28 +18,50 @@ const PostWrapper = styled.div`
   `}
 `;
 
-const PostSection = styled.section`
+const ContentWrapper = styled.div`
   flex: 1;
   margin-left: ${props => props.theme.size.postListWidth};
   padding: 3rem;
   background-color: ${props => props.theme.color.white};
-
+  
   ${props => props.theme.media.tablet`
     margin-left: 0;
     padding: 1rem;
   `}
 `;
+
 const ContentContainer = styled.div`
   max-width: 48rem;
   margin: 0 auto;
 `;
-const Title = styled.h1``;
-const Description = styled.p``;
+
+const ContentBody = styled.section`
+  max-width: 48rem;
+  margin: 0 auto;
+`;
+
+const StyledFeaturedImage = styled(FeaturedImage)`
+  width: 100%;
+  margin: 2rem 0;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+`;
+const Description = styled.p`
+  font-size: 1.2rem;
+  padding-top: 3rem;
+`;
+
+const ContentHeader = styled.div``;
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
+  date,
   tags,
   title,
   helmet,
@@ -57,18 +81,24 @@ export const BlogPostTemplate = ({
   return (
     <PostWrapper>
       <PostList posts={posts}/>
-      <PostSection className="post-section">
-        {helmet || ''}
+      <ContentWrapper>
         <ContentContainer>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-          <FeaturedImage imageInfo={{
-            image: src,
-            alt: `featured image thumbnail for post ${title}`,
-          }}/>
-          <PostContent content={content} />
+          <ContentHeader>
+            <AuthorCard/>
+            <Title>{title}</Title>
+            <MetaData createAt={date} tags={tags}/>
+            <Description>{description}</Description>
+            <StyledFeaturedImage imageInfo={{
+              image: src,
+              alt: `featured image thumbnail for post ${title}`,
+            }}/>
+          </ContentHeader>
+          <ContentBody className="post-section">
+            {helmet || ''}
+            <PostContent content={content} />
+          </ContentBody>
         </ContentContainer>
-      </PostSection>
+      </ContentWrapper>
     </PostWrapper>
   )
 }
@@ -89,12 +119,16 @@ const BlogPost = ({ data }) => {
     }
   } = data;
 
+  const date = new Date(post.frontmatter.date);
+  const localeDate = date.toLocaleDateString();
+
   return (
     <Layout>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        date={localeDate.substring(0, localeDate.length - 1)}
         helmet={
           <THelmet 
             title={post.frontmatter.title}
@@ -126,7 +160,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         title
         description
         tags
