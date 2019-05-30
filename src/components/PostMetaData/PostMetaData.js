@@ -9,6 +9,7 @@ const MetaData = styled.ul`
   padding: 0 !important;
   margin: 0 auto;
   color: gray;
+  font-size: .8rem;
   & > li {
     padding: 0 1rem;
   }
@@ -35,7 +36,6 @@ const Tags = styled.ul`
 
 const renderTags = (tags) => {
   if(!tags) return false;
-  console.log(tags);
   return (
     <li style={{listStyle: 'none', margin: '0 !important'}}>
       <Tags>

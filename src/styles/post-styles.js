@@ -951,8 +951,14 @@ export default `
   .post-section .pl-11 {
     padding-left: 112px!important;
   }
-
   .post-section .pl-12 {
     padding-left: 128px!important;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .post-section pre,
+    .post-section pre * {
+      font-size: .7rem !important;
+    }
   }
 `;

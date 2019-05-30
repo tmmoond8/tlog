@@ -11,7 +11,8 @@ const Card = styled.div`
   max-width: 60em;
   
   ${props => props.theme.media.tablet`
-    padding: 1rem;
+    padding: 0rem;
+    height: 6rem;
   `}
 `;
 
@@ -25,11 +26,8 @@ const Profile = styled.div`
 
 const Info = styled.div`
   display: flex;
+  flex-direction: column;
   flex: 1;
-
-  ${props => props.theme.media.tablet`
-    flex-direction: column;
-  `}
 `;
 
 const Name = styled.span`
@@ -40,11 +38,12 @@ const Name = styled.span`
 
 const Introduction = styled.span`
   flex: 1;
-  text-align: right;
-  line-height: ${contentSize};
+  text-align: left;
+  color: ${props => props.theme.color.gray};
+  font-weight: 300;
   ${props => props.theme.media.tablet`
-    text-align: left;
     line-height: 1.5;
+    font-size: .8rem;
   `}
 `;
 
@@ -55,7 +54,7 @@ const AuthorCard = () => {
         <Profile/>
         <Info>
           <Name>tmmoond8</Name>
-          <Introduction>자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 있습니다.</Introduction>
+          <Introduction>자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 많은 개발자 입니다.</Introduction>
         </Info>
       </Card>
     </Wrapper>

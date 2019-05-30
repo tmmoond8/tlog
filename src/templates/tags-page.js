@@ -42,7 +42,7 @@ const ContentWrapper = styled.div`
   
   ${props => props.theme.media.tablet`
     margin-left: 0;
-    padding: 1rem;
+    padding: 0 1rem;
   `}
 `;
 
