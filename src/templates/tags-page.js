@@ -10,22 +10,6 @@ import FeaturedImage from "../components/PreviewCompatibleImage";
 import AuthorCard from '../components/AuthorCard';
 import MetaData from '../components/PostMetaData';
 
-// const PostSection = styled.section`
-//   margin-left: ${props => props.theme.size.postListWidth};
-//   padding: 3rem;
-//   background-color: ${props => props.theme.color.white};
-//   ${props => props.theme.media.tablet`
-//     display: none;
-//   `}
-// `;
-// const ContentContainer = styled.div`
-//   max-width: 48rem;
-//   margin: 0 auto;
-// `;
-// const Title = styled.h1``;
-// const Description = styled.p``;
-
-
 const PostWrapper = styled.div`
   display: flex;
 

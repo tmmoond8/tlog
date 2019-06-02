@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import 'prismjs/themes/prism-tomorrow.css';
 import htmlMiddleware from '../../lib/htmlMiddleware';
 
 export const HTMLContent = ({ content, className }) => {
