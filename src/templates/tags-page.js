@@ -68,16 +68,9 @@ export const TagPostTemplate = ({
   title,
   helmet,
   posts,
-  featuredimage
+  featuredImageUrl
 }) => {
   const PostContent = contentComponent || Content;
-  const {
-    childImageSharp: {
-      original: {
-        src
-      }
-    }
-  } = featuredimage;
 
   return (
     <PostWrapper>
@@ -90,7 +83,7 @@ export const TagPostTemplate = ({
             <MetaData createAt={date} tags={tags}/>
             <Description>{description}</Description>
             <StyledFeaturedImage imageInfo={{
-              image: src,
+              image: featuredImageUrl,
               alt: `featured image thumbnail for post ${title}`,
             }}/>
           </ContentHeader>
@@ -119,6 +112,14 @@ const TagPost = ({ data, pageContext: { tag }}) => {
     }
   } = data;
   const { node: post } = posts[0];
+  const featuredImage = post.frontmatter.featuredimage;
+  const {
+    childImageSharp: {
+      original: {
+        src: featuredImageUrl
+      }
+    }
+  } = featuredImage;
   
   const date = new Date(post.frontmatter.date);
   const localeDate = date.toLocaleDateString();
@@ -134,13 +135,14 @@ const TagPost = ({ data, pageContext: { tag }}) => {
           <THelmet 
             title={post.frontmatter.title}
             description={post.frontmatter.description}
-            tag={tag}
+            tags={[tag]}
+            featuredImageUrl={featuredImageUrl}
           />
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         posts={posts}
-        featuredimage={post.frontmatter.featuredimage}
+        featuredImageUrl={featuredImageUrl}
       />
     </Layout>
   )

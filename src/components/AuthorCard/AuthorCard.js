@@ -53,7 +53,7 @@ const AuthorCard = () => {
       <Card>
         <Profile/>
         <Info>
-          <Name>tmmoond8</Name>
+          <Name>Tamm</Name>
           <Introduction>자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 많은 개발자 입니다.</Introduction>
         </Info>
       </Card>
