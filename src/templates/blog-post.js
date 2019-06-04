@@ -66,16 +66,9 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   posts,
-  featuredimage,
+  featuredImageUrl,
 }) => {
   const PostContent = contentComponent || Content;
-  const {
-    childImageSharp: {
-      original: {
-        src
-      }
-    }
-  } = featuredimage;
 
 
   return (
@@ -89,7 +82,7 @@ export const BlogPostTemplate = ({
             <MetaData createAt={date} tags={tags}/>
             <Description>{description}</Description>
             <StyledFeaturedImage imageInfo={{
-              image: src,
+              image: featuredImageUrl,
               alt: `featured image thumbnail for post ${title}`,
             }}/>
           </ContentHeader>
@@ -118,6 +111,14 @@ const BlogPost = ({ data }) => {
       edges: posts
     }
   } = data;
+  const featuredImage = post.frontmatter.featuredimage;
+  const {
+    childImageSharp: {
+      original: {
+        src: featuredImageUrl
+      }
+    }
+  } = featuredImage;
 
   const date = new Date(post.frontmatter.date);
   const localeDate = date.toLocaleDateString();
@@ -133,13 +134,14 @@ const BlogPost = ({ data }) => {
           <THelmet 
             title={post.frontmatter.title}
             description={post.frontmatter.description}
-            tag={post.frontmatter.tags[0]}
+            tags={post.frontmatter.tags}
+            featuredImageUrl={featuredImageUrl}
           />
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         posts={posts}
-        featuredimage={post.frontmatter.featuredimage}
+        featuredImageUrl={featuredImageUrl}
       />
     </Layout>
   )

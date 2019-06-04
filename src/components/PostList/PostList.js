@@ -16,6 +16,8 @@ const Posts = styled.ol`
   ${props => props.theme.media.tablet`
     position: static;
     width: 100%;
+    max-height: 100vh;
+    height: auto;
   `}
 `;
 
