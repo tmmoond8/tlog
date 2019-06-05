@@ -35,6 +35,7 @@ export default ({
       <meta name="twitter:creator" content="Tamm"/>
       <meta name="twitter:title" content={metaTitle}/>
       <meta name="twitter:description" content={metaDescription}/>
+      <meta name="google-site-verification" content="PIRsHmgoZCLzu2POg5y_DUts70ScOpV2oLVfpIpFmYg"/>
       <link rel="apple-touch-icon" href={metaFavicon} />
       <link rel="apple-touch-icon" sizes="64x64" href={metaFavicon} /> 
       <link rel="canonical" href="http://tlog.tammolo.com" />
