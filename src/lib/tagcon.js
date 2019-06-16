@@ -10,6 +10,7 @@ import postgresql from "../img/tagcon/postgresql.png";
 import nextjs from "../img/tagcon/nextjs.png";
 import graphqlYoga from "../img/tagcon/graphql-yoga.png";
 import ssr from "../img/tagcon/ssr.jpg";
+import oauth from "../img/tagcon/oauth.png";
 import uberCloneCoding from "../img/tagcon/uber.png";
 import projectSetup from "../img/tagcon/project-setup.png";
 import apollo from "../img/tagcon/apollo.png";
@@ -30,6 +31,7 @@ const TAGCON = {
   "project-setup": { image: projectSetup },
   nextjs: { image: nextjs, name: "Next.js" },
   ssr: { image: ssr, name: "SSR" },
+  oauth: { image: oauth, name: "OAuth" },
   apollo: { image: apollo, name: "Apollo" },
   "styled-components": { image: styledComponents, name: "styled components"}
 }
