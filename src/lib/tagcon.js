@@ -15,6 +15,7 @@ import uberCloneCoding from "../img/tagcon/uber.png";
 import projectSetup from "../img/tagcon/project-setup.png";
 import apollo from "../img/tagcon/apollo.png";
 import styledComponents from "../img/tagcon/styled_components.png";
+import googlemap from "../img/tagcon/googlemap.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -33,7 +34,8 @@ const TAGCON = {
   ssr: { image: ssr, name: "SSR" },
   oauth: { image: oauth, name: "OAuth" },
   apollo: { image: apollo, name: "Apollo" },
-  "styled-components": { image: styledComponents, name: "styled components"}
+  "styled-components": { image: styledComponents, name: "styled components"},
+  'google-map-api': { image: googlemap, name: "Google Map API" }
 }
 
 export const getImage = (tag) => {
