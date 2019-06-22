@@ -6,8 +6,8 @@ description: 우버 코딩 강의 로그 2.18 ~ 2.21
 featuredpost: true
 featuredimage: /img/nuber_clone.jpg
 tags:
-  - 우버 클론 코딩
-  - nomad coders
+  - uber-clone-coding
+  - nomad-coders
   - apollo
   - graphql
 ---

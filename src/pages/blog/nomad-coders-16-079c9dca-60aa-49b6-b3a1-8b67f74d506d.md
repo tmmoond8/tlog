@@ -6,11 +6,11 @@ description: 우버 코딩 강의 로그 2.0 ~ 2.6
 featuredpost: true
 featuredimage: /img/nuber_clone.jpg
 tags:
-  - 우버 클론 코딩
-  - nomad coders
+  - uber-clone-coding
+  - nomad-coders
   - react
   - apollo
-  - project setup
+  - project-setup
 ---
 # 
 
