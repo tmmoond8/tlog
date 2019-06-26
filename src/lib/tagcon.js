@@ -16,6 +16,7 @@ import projectSetup from "../img/tagcon/project-setup.png";
 import apollo from "../img/tagcon/apollo.png";
 import styledComponents from "../img/tagcon/styled_components.png";
 import googlemap from "../img/tagcon/googlemap.png";
+import http from "../img/tagcon/http.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -35,7 +36,8 @@ const TAGCON = {
   oauth: { image: oauth, name: "OAuth" },
   apollo: { image: apollo, name: "Apollo" },
   "styled-components": { image: styledComponents, name: "styled components"},
-  'google-map-api': { image: googlemap, name: "Google Map API" }
+  'google-map-api': { image: googlemap, name: "Google Map API" },
+  http: { image: http, name: "HTTP" }
 }
 
 export const getImage = (tag) => {
