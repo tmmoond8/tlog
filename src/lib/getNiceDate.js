@@ -7,11 +7,20 @@ const niceFilter = [
   { unit: 1000, nice: "초" },
 ];
 
-export default lastModifiedDate => {
-  const diffTime = new Date().getTime() - new Date(lastModifiedDate).getTime();
+export default (lastModifiedDate) => {
+  const emptyString = "";
+  if (!lastModifiedDate) {
+    return emptyString;
+  }
+  const lastDateTime = new Date(lastModifiedDate).getTime();
+  if (lastModifiedDate !== lastModifiedDate) {
+    return emptyString;
+  }
+  const diffTime = new Date().getTime() - lastDateTime;
+  if (diffTime < 0) return emptyString;
   return niceFilter.reduce((accum, { unit, nice }) => {
-    if(accum) return accum;
+    if (accum) return accum;
     const d = Math.floor(diffTime / unit);
-    return d === 0 ? null : `${d}${nice} 전` ;
-  }, null);
+    return d === 0 ? emptyString : `${d}${nice} 전`;
+  }, emptyString);
 }
