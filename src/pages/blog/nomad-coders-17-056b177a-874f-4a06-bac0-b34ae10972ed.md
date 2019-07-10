@@ -13,13 +13,16 @@ tags:
 ---
 #
 
-## #2.7 Typescript and Styled Components part One
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
+## #2.7 Typescript and Styled Components part One
 ## #2.6 Typescript and Styled Components part Two
 
 이번에 짧게 styled-components 모듈의 설치하고 사용법을 간단히 살펴 보자. 
 
-강의 기준은 styled-components V3 인데, 지금은 V4가 최신이다. 내가 처음 강의 볼때는 문제가 좀 발생해서 나 나름대로 조금 수정했다.
+강의 기준은 styled-components V3 인데, 지금은 V4가 최신이다. V4를 기준으로 설명을 하기 때문에 강의와 조금 다르다.
 
     $ yarn add styled-components
     $ yarn add @types/styled-components
@@ -39,8 +42,15 @@ tags:
 - src/typed-compoennts.ts
 
         import * as styledComponents from "styled-components";
-        import { ThemedStyledComponentsModule } from "styled-components";
         import { Theme } from "./theme";
+        
+        type StyledFunction<T> = styledComponents.ThemedStyledFunction<any, Theme>;
+        
+        function withProps<T, U extends HTMLElement = HTMLElement>(
+          styledFunction: StyledFunction<React.HTMLProps<U>>,
+        ): StyledFunction<T & React.HTMLProps<U>> {
+          return styledFunction;
+        }
         
         const {
           default: styled,
@@ -48,16 +58,16 @@ tags:
           createGlobalStyle,
           keyframes,
           ThemeProvider
-        } = styledComponents as ThemedStyledComponentsModule<Theme>;
+        } = styledComponents as styledComponents.ThemedStyledComponentsModule<Theme>;
         
-        export { css, createGlobalStyle, keyframes, ThemeProvider };
+        export { css, createGlobalStyle, keyframes, ThemeProvider, withProps };
         export default styled;
 
 - src/components/App/AppContainer.tsx
 
         import React from "react";
         import { graphql } from "react-apollo";
-        import theme from '../../theme';
+        import { theme } from '../../theme';
         import { ThemeProvider } from '../../typed-components';
         import AppPresenter from './AppPresenter';
         import { IS_LOGGED_IN } from "./AppQueries";
@@ -78,10 +88,10 @@ tags:
 
 - src/components/App/AppContainer.tsx
 
-        import React, { Fragment } from "react";
+        import React from "react";
         import { graphql } from "react-apollo";
         import reset from "styled-reset";
-        import theme from '../../theme';
+        import { theme } from '../../theme';
         import { createGlobalStyle, ThemeProvider } from '../../typed-components';
         import AppPresenter from './AppPresenter';
         import { IS_LOGGED_IN } from "./AppQueries";
@@ -89,12 +99,12 @@ tags:
         const GlobalStyle = createGlobalStyle`${reset}`;
         
         const AppContainer: any = (props) => (
-        	<Fragment>
+        	<>
         		<GlobalStyle/>
         		<ThemeProvider theme={theme}>
         	    <AppPresenter isLoggedIn={props.data.auth.isLoggedIn}/>
         	  </ThemeProvider>
-        	</Fragment>
+        	</>
         );
         
         export default graphql(IS_LOGGED_IN)(AppContainer);
@@ -143,21 +153,21 @@ tags:
 
 - src/components/App/AppContainer.tsx
 
-        import GlobalStyle from "global-styles";
-        import React, { Fragment } from "react";
+        import React from "react";
         import { graphql } from "react-apollo";
-        import { theme } from 'theme';
-        import { ThemeProvider } from 'typed-components';
+        import GlobalStyle from "../../global-styles";
+        import { theme } from '../../theme';
+        import { ThemeProvider } from '../../typed-components';
         import AppPresenter from './AppPresenter';
         import { IS_LOGGED_IN } from "./AppQueries";
         
         const AppContainer : any = ({ data })  => (
-          <Fragment>
+          <>
             <GlobalStyle/>
             <ThemeProvider theme={theme}>
               <AppPresenter isLoggedIn={data.auth.isLoggedIn}/>
             </ThemeProvider>
-          </Fragment>
+          </>
         );
         
         export default graphql(IS_LOGGED_IN)(AppContainer);
@@ -445,51 +455,33 @@ tags:
 
         export { default } from "./LoginPresenter";
 
-전역으로 사용할 theme 객체에 greyColor가 등록되어 있지 않아서 발생한 문제다.
-
-- src/theme.ts greyColor 값을 추가하자.
-
-        const theme = {
-          blueColor: "#3498db",
-          greyColor: "#7f8c8d"
-        };
-        
-        export default theme;
-
-- src/types-compoennts theme 객체는 우리가 정의한 인터페이스에 맞게 작성이 되어야 한다. theme을 수정하면 interface에도 같이 해줘야 한다.
-
-        ...
-        interface IThemeInterface {
-          blueColor: string;
-          greyColor: string;
-        }
-        ...
-
 이제 Login 을 연결하자.
 
 - src/components/App/AppPresenter.tsx
 
-        ...
-        import Home from "routes/Home";
-        import Login from "routes/Login";
-        import PhoneLogin from "routes/PhoneLogin";
-        
-        ...
-        
-        const LoggedOutRoutes: React.SFC = () => (
-          <Switch>
-            <Route ath={"/"} exact={true} component={Login}/>
-            <Route path={"/phone-login"} exact={true} component={PhoneLogin}/>
-            <Route path={"/verify-phone/:number"} exact={true} component={VerifyPhone}/>
-            <Route path={"/social-login"} exact={true} component={SocialLogin}/>
-            <Redirect from={"*"} to={"/"} />
-          </Switch>
-        );
-      
-      ...
+    ...
+    import Home from "routes/Home";
+    import Login from "routes/Login";
+    import PhoneLogin from "routes/PhoneLogin";
+    
+    ...
+    
+    const LoggedOutRoutes: React.SFC = () => (
+      <Switch>
+        <Route ath={"/"} exact={true} component={Login}/>
+        <Route path={"/phone-login"} exact={true} component={PhoneLogin}/>
+        <Route path={"/verify-phone/:number"} exact={true} component={VerifyPhone}/>
+        <Route path={"/social-login"} exact={true} component={SocialLogin}/>
+        <Redirect from={"*"} to={"/"} />
+      </Switch>
+    );
+    
+    ...
 
 - src/images/bg.png  images 디렉토리를 넣고 이미지 하나를 다운 받아서 bg.png로 저장하자.
 
     ![](bg-964df903-7754-4ddc-a12b-40c0e3dbdc80.png)
 
 자 이제 리액트를 다시 띄우고 접속하면, 페이지가 잘 보일 것이다.
+
+![](_2019-06-29__3-842a07d4-faf2-4bb8-baaa-5a74e34b5c43.01.23.png)

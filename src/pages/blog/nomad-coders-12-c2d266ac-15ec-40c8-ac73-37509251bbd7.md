@@ -12,8 +12,11 @@ tags:
 ---
 # 
 
-## #1.64 GetNearbyDrivers Resolver part One
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
+## #1.64 GetNearbyDrivers Resolver part One
 ## #1.64 GetNearbyDrivers Resolver part Two
 
 이번에는 사용자가 근처에서 운행 중인 운전자를 찾을 때의 Query를 구현할 것이다.
@@ -76,6 +79,8 @@ tags:
 
 > 이 부분은 나도 이해를 잘 못했지만, 일단 작성하면서 정리하고 나중에 추가 하도록 하자.
 
+pubSub을 사용하려면 요청에 pubSub을 할 수 있는 객체를 넣어줘야 한다.
+
 - src/app.ts  pubSub 객체를 graphql의 context로 넘기자.
 
         ...
@@ -100,13 +105,13 @@ tags:
             });
         ...
 
-- src/api/User/DriversSubscription/DriversSubscription.graphql
+- src/api/User/DriversSubscription/DriversSubscription.graphql       지금까지는 Query 또는 Mutation을 다뤘고 이번에 처음으로 Subscription 타입을 정의했다. Subscription 타입은  pusSub할 때 보내는 데이터 타입이다.
 
         type Subscription {
           DriversSubscription: User
         }
 
-    지금까지는 Query 또는 Mutation을 다뤘고 이번에 처음으로 Subscription 타입을 정의했다. Subscription 타입은  pusSub할 때 보내는 데이터 타입이다.
+src/app.ts 에서 요청객체(req)에 pubSub 객체를 넣어줬다. resolver에서 context 안에 들어 있는 pubSub을 꺼내 사용할 수 있다. 
 
 - src/api/User/DriverSubscription/DriversSubscription.resolvers.ts
 
@@ -124,11 +129,13 @@ tags:
 
     일단은 `driverUpdate` 가 채널 명이라고 생각하자.
 
+`driverUpdate` 라는 채널 명으로 데이터가 오면 `DriversSubscription` 라는  타입 타입으로 데이터를 받게 된다. 아직은 받도록만 설정했고, 받은 데이터를 처리하는 부분은 아직이다.
+
 ## #1.66 DriversSubscription part Two
 
-위에서 `driverUpdate` 채널을 구독하도록 했다. 그럼 이번엔 데이터를 변경하고 데이터가 변경됐음을 알리는 코드를 작성하자.
+위에서 `driverUpdate` 채널을 구독하도록 했다. 그럼 이번엔 데이터를 변경하고 데이터가 변경됐음을 알리는(publish) 코드를 작성하자.
 
-- src/api/User/ReportMovement/ReportMovement.resolvers.ts
+- src/api/User/ReportMovement/ReportMovement.resolvers.ts    마찬가지로 context로 넘어온 pubSub 객체를 사용한다.
 
         ...
               async (
@@ -173,7 +180,7 @@ tags:
 
 우리가 token을 통해 인증하는 방식은 http통신에 헤더를 통해서 이뤄졌다. subscription은 http통신 방식이 아닌 websocket이기 때문에 헤더가 없기 때문에 현재 인증이 되지 않는데
 
-graphql-yoga를 실행할 때, subscription에 대한 옵션을 넣어줄 수 있다. 
+graphql-yoga를 실행할 때, subscription에 대한 옵션을 넣어줄 수 있다. /subscription 을 엔드포인트로 하는 요청에 대해서 아래처럼 별도의 처리를 할 수 있다.
 
 - src/index.ts
 
@@ -207,6 +214,8 @@ graphql-yoga를 실행할 때, subscription에 대한 옵션을 넣어줄 수 �
       }
     }
 
+> endpoint를 /subscription 일때만 토큰을 콘솔해야 하지만, /graphql 일때도 토큰을 콘솔로  찍던데,, 이것은 무엇이지...
+
 ## #1.69 Authenticating WebSocket Subscriptions part Two
 
 - src/index.ts  onConnect 할 때 토큰 값을 통해 user 정보를 꺼내도록 하자.
@@ -235,7 +244,7 @@ graphql-yoga를 실행할 때, subscription에 대한 옵션을 넣어줄 수 �
 
     onConnect의 함수는 currentUser에 user가 들어간 객체를 리턴 하는 것을 확인하자.
 
-- src/app.ts onConnect 에서 리턴하는 객체를 graphql의 context 객체에 넣어주자.
+- src/app.ts    onConnect 에서 리턴하는 객체를 graphql의 context 객체에 넣어주자.
 
         ...
             this.app = new GraphQLServer({
@@ -313,8 +322,6 @@ withFilter 함수는 첫 번째 인자로 기존의 구독함수를 받고, 두 
 
 위처럼 작성하고 구독 시작 후 reportMovement를 하면 payload는 운전자가 갱신한 자신의 정보가, currentUser에는 구독한 유저에 대한 정보가 들어 있다.
 
-> 같은 아이디로 테스트하면 헷갈리니까 임의의 계정 하나를 더 만들어서 테스트 하면 좋을 것 이다.
-
 - src/api/User/DriversSubscription/DriversSubscription.resovlers.ts
 
         import { withFilter } from 'graphql-yoga';
@@ -350,8 +357,8 @@ withFilter 함수는 첫 번째 인자로 기존의 구독함수를 받고, 두 
 
 테스트 방법은 계정 두개를 만들고, 계정 하나는 드라이버로, 나머지 계정은 사용자 역할을 한다.
 
-드라이버는 ToggleDriveMode를 호출하여 isDriving을 true로 만들고 lastLat, lastLng 모두 10으로 바꾸자. 사용자는 lastLat, lastLng 모두 10으로 바꾸자. 이제 같은 위치이기 때문에 subscription을 받을 것인데
+드라이버는 ToggleDriveMode를 호출하여 isDriving을 true로 만들고 lastLat, lastLng 모두 10으로 바꾸자. 사용자는 lastLat, lastLng 모두 10으로 바꾸자. 
 
-lastLat을 10.3, 10.7 로 증가시켜보자. 10.7은 값을 받지 않을 것이다.
+이제 DriversSubscription 을 실행시키고 lastLat을 10.3, 10.7 로 증가시켜보자. 10.7은 값을 받지 않을 것이다.
 
 이렇게 subscription을 필터링하는 것을 했다.

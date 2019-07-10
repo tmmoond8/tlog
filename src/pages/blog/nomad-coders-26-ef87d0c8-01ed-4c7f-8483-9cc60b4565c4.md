@@ -13,6 +13,10 @@ tags:
 ---
 #
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #2.44 AddPlace Mutation
 
 이전에는 view 작업을 했고 이제 장소를 추가하는 mutation을 작성하자.

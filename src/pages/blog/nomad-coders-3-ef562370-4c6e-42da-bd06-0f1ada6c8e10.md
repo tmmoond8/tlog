@@ -12,6 +12,10 @@ tags:
 ---
 # 
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #1.12 User Entity GraphQL Type
 
 이제 우리는 Entity를 만들고 그에 대한 모델을 정의해야 한다. 그러나 먼저 graphql 타입을 만들어야 한다. 현재 Graphql Type to Type ORM Entity를 만들어주는 라이브러리가 없다. 그래서 귀찮지만 지금은 손수 작성해야 한다.
@@ -99,7 +103,7 @@ tags:
 
 ## #1.14 User Entity part Two
 
-- src/entities/User.ts 파일을 마져 작성하자.
+- src/entities/User.ts 파일을 마져 작성하자. 몇개 속성을 추가 하고 fullName이라는 getter를 정의했다.
 
         import { IsEmail } from 'class-validator';
         import { 
@@ -218,7 +222,7 @@ tags:
         
           ...
         
-          private hashPassword(password: string): Promise<string> {
+          hashPassword(password: string): Promise<string> {
             return bcrypt.hash(password, BCRYPT_ROUNDS);
           }
         
@@ -258,25 +262,3 @@ tags:
             return `${this.firstName} ${this.lasttName}`
           }
           ...
-
-## #1.25 Resolver Types
-
-이번에는 Resolver에 타입을 정의한다. Resolver는 쿼리에 대한 응답이라고 생각하자. (나도 아직까지는 개념이 없다.)
-
-- src/types/resolvers.d.ts 을 생성해서 다음처럼 정의하자
-
-        export type Resolver = (parent: any, args: any, context: any, info: any) => any;
-        
-        export interface Resolvers {
-          [key: string]: {
-            [key: string]: Resolver;
-          }
-        }
-        
-        // const resolvers: Resolvers = {
-        //   Query: {
-        //     sayHello: () => ""
-        //   }
-        // }
-
-지금 생성한 Resolver를 사용하여 응답을 만드는 것을 다음에 진행할 것 같다.

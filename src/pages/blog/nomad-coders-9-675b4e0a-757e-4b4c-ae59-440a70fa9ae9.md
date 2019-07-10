@@ -12,11 +12,15 @@ tags:
 ---
 # 
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #1.49 Sending Confirmation Email part One
 
 이번에는 이메일을 통한 사용자 인증을 구현할 차례인데, 저번에 했던 SMS인증이랑 유사하다고 생각하면 된다. 다만 PHONE이 아닌 EMAIL을 통해 특정 인증 번호를 주고 확인하는 것이다. 
 
-메시지를 보낼때는 Twilio를 썼고, 이번에는 Mailgun이라는 서비스를 이용한다.
+메시지를 보낼때는 twilio를 썼고, 이번에는 mailgun이라는 서비스를 이용한다.
 
 [https://app.mailgun.com](https://app.mailgun.com/) 가서 회원가입을 한 후 대시보드로 이동하자.
 
@@ -35,6 +39,8 @@ tags:
 
 - src/utils/sendEmail.ts 파일을 생성해서 다음을 입력하자.
 
+        import dotenv from 'dotenv';
+        dotenv.config();
         import Mailgun from 'mailgun-js';
         
         const mailGunClient = new Mailgun({
@@ -72,37 +78,16 @@ tags:
           return sendEmail(emailSubject, emailBody);
         };
 
-- src/api/User/EmailSignUp/EmailSignUp.resolvers.ts
-
-        ...
-        import Verification from "../../../entities/Verification";
-        
-        ...
-                  const newUser = await User.create({ ...args }).save();
-                  if(newUser.email) {
-                    const emailVerification = await Verification.create({
-                      payload: newUser.email
-                    });
-                  }
-                  const token = createJWT(newUser.id);
-                  return {
-                    ok: true,
-                    error: null,
-                    tokenno
-                  }
-                }
-        ...
-
 ## #1.51 Sending Confirmation Email part Three
 
 - src/api/User/EmailSignUp/EmailSignUp.resolvers.ts 에 수정하자
 
-        import { Resolvers } from "src/types/resolvers";
         import { EmailSignUpMutationArgs, EmailSignUpResponse } from "src/types/graph";
-        import createJWT from "../../../utils/createJWT";
-        import { sendVerificationEmail } from "../../../utils/sendEmail";
+        import { Resolvers } from "src/types/resolvers";
         import User from "../../../entities/User";
         import Verification from "../../../entities/Verification";
+        import createJWT from "../../../utils/createJWT";
+        import { sendVerificationEmail } from "../../../utils/sendEmail";
         
         const resolvers: Resolvers = {
           Mutation: {
@@ -140,7 +125,7 @@ tags:
                     return {
                       ok: true,
                       error: null,
-                      token: token
+                      token
                     };
                   } else {
                     return {
@@ -199,7 +184,7 @@ postgresql은 쿼리 날리는 것이 익숙하지가 않다. 조금 특이한�
 그리고 차례대로 다음의 테스트를 진행하자
 
     mutation {
-      StartPhoneVerification(phoneNumber: "+82-폰넘버") {
+      StartPhoneVerification(phoneNumber: "+82폰넘버") {
         ok
         error
       }
@@ -208,7 +193,7 @@ postgresql은 쿼리 날리는 것이 익숙하지가 않다. 조금 특이한�
 로 인증 번호를 받아서
 
     mutation {
-      CompletePhoneVerification(phoneNumber: "+82-폰넘버", key: "받은 인증 번호") {
+      CompletePhoneVerification(phoneNumber: "+82폰넘버", key: "받은 인증 번호") {
         ok
         error
       }
@@ -217,7 +202,7 @@ postgresql은 쿼리 날리는 것이 익숙하지가 않다. 조금 특이한�
 지금 이메일에 상관없이 sendSMS에 넣은 사용자 이메일로 보내도록 되어있다.
 
     mutation {
-      EmailSignUp(firstName: "test", lastName: "tamm", email: "이메일", password: "12345", profilePhoto: "", age: 30, phoneNumber: "+82-폰넘버") {
+      EmailSignUp(firstName: "test", lastName: "tamm", email: "이메일", password: "12345", profilePhoto: "", age: 30, phoneNumber: "+82폰넘버") {
         ok
         error
         token
@@ -244,9 +229,9 @@ postgresql은 쿼리 날리는 것이 익숙하지가 않다. 조금 특이한�
 - src/api/User/RequestEmailVerification/RequestEmailVerification.resolvers.ts
 
         import { Resolvers } from "src/types/resolvers";
-        import privateResolver from "../../../utils/privateResolver";
         import User from "../../../entities/User";
         import Verification from "../../../entities/Verification";
+        import privateResolver from "../../../utils/privateResolver";
         import { sendVerificationEmail } from "../../../utils/sendEmail";
         
         const resolvers: Resolvers = {
@@ -314,9 +299,9 @@ postgresql은 쿼리 날리는 것이 익숙하지가 않다. 조금 특이한�
           CompleteEmailVerificationResponse 
         } from "src/types/graph";
         import { Resolvers } from "src/types/resolvers";
-        import privateResolver from "../../../utils/privateResolver";
         import User from "../../../entities/User";
         import Verification from "../../../entities/Verification";
+        import privateResolver from "../../../utils/privateResolver";
         
         const resolvers: Resolvers = {
           Mutation: {
@@ -384,7 +369,7 @@ postgresql은 쿼리 날리는 것이 익숙하지가 않다. 조금 특이한�
 [http://www.number.com/verification/0audpk3ldoyf/](http://www.number.com/verification/0audpk3ldoyf/)  처럼 링크가 이동이 되는데 verification 다음 값은 사용자 키가 된다. 아마 리액트 앱에서는 저 주소를 통해 인증 처리가 될 것으로 보인다. 아마 내부적으로 아래의 mutation을 호출할 것이다. 직접 아래의 mutation을 실행시켜보자. 그리고 키를 달리하여 결과를 살펴보자.
 
     mutation {
-      CompleteEmailVerification(key: "받은 키") {
+      CompleteEmailVerification(key: "0audpk3ldoyf") {
         ok
         error
       }

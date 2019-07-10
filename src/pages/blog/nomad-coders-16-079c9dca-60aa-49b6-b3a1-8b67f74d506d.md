@@ -14,6 +14,10 @@ tags:
 ---
 # 
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 nomad coders의 우버 클론 코딩 클라이언트 파트를 시작한다.
 
 ## #2.0 Create React App with Typescript
@@ -25,7 +29,7 @@ nomad coders의 우버 클론 코딩 클라이언트 파트를 시작한다.
     $ npm install -g create-react-app
     $ create-react-app -V
 
-    $ yarn create react-app nc-d --typescript
+    $ yarn create react-app nuber-client --typescript
     
     # 18년 10월부터인가 react도 typescript를 지원하기 때문에 react-scripts-ts 모듈을 안쓰고 위처럼 할 수 있다고 한다
 
@@ -33,7 +37,7 @@ nomad coders의 우버 클론 코딩 클라이언트 파트를 시작한다.
 
     $ create-react-app —scripts-version=react-scripts-ts
 
-> $ yarn create react-app nc-d --typescript 으로 프로젝트를 생성했을 때 tsconfig.json에 baseUrl 을 "src"로 해줘야 한다고 경고가 떴다. react-scripts-ts 모듈을 사용할 때랑 차이가 좀 있는 것 같다.
+> $ yarn create react-app nuber-client --typescript 으로 프로젝트를 생성했을 때 tsconfig.json에 baseUrl 을 "src"로 해줘야 한다고 경고가 떴다. react-scripts-ts 모듈을 사용할 때랑 차이가 좀 있는 것 같다.
 
 프로젝트가 생성되면 이제 불필요한 것들을 제거 하고 프로젝트를 시작하면 된다.
 
@@ -160,7 +164,7 @@ react 에서 apollo를 사용하여 graphql 쿼리를 할수 있도록 셋팅을
 
 ## #2.2 Apollo Setup part Two
 
-우리는 JWT를 사용해서 인증을 하는데, apollo에서는 굉장히 간단하게 관리할 수 있다.
+우리는 JWT를 사용해서 인증을 하는데, apollo에서는 굉장히 간단하게 관리할 수 있다. clientState는 앱의 global State를 설정하는 것으로 보인다. request는 요청을 보낼 때 사용하는 미들웨어 같은 것으로 이해하면 될 것같다. 클라이언트에서 보내는 모든 요청 헤더에 JWT 토큰을 추가해서 보낸다.
 
 - src/apollo.ts ApolloClient 객체를 생성할 때, `clientState`와 `request`를 추가하자. clientState로 공용의 상태를 가지는 것 같다. request에는 매 요청마다 header에 값을 넣어주는 것 같다.
 
@@ -191,7 +195,7 @@ react 에서 apollo를 사용하여 graphql 쿼리를 할수 있도록 셋팅을
 
 ## #2.4 Apollo Setup Recap
 
-로그인, 로그아웃 Mutation 2개를 작성한다. 어떻게 동작하는지는 잘 모르지만, 작성을 했다. 
+global state인 에는 clientState로 사용자의 로그인 정보를 가진다. 로그인/로그아웃을 하면 이 정보를 변경해야 하는데 이 처리를  Mutation 안에 작성 했다. 서버와는 별개로 clientState를 조작하는데 resolvers안에 Mutation을 작성했다.
 
 - src/apollo.ts clientState 하위에 resolvers를 정의한다. resolvers안에서는 localStorage와 cache를 각각 사용하는데, localStoage가 하드디스크 같은 저장소면 cache는 앱이 사용하는 램 같은 거라는 생각이 들었다. 실제로 앱에서 사용하는 값은 cache 값이다.
 
@@ -284,9 +288,20 @@ react 에서 apollo를 사용하여 graphql 쿼리를 할수 있도록 셋팅을
 
 - src/index.tsx 에서 App.tsx가 아닌 데이터를 가진 AppContainer를 index.tsx에서 사용하도록 변경하자.
 
-        import App from "components/App";
+        import React from 'react';
+        import { ApolloProvider } from "react-apollo"
+        import ReactDOM from 'react-dom';
+        import apolloClient from "./apollo";
+        import App from './components/App';
+        
+        ReactDOM.render(
+          <ApolloProvider client={apolloClient}>
+            <App />
+          </ApolloProvider>,
+          document.getElementById('root') as HTMLElement
+        );
 
-아제 src/App.tsx를 사용하지 않으므로 삭제하자.
+이제 src/App.tsx를 사용하지 않으므로 삭제하자.
 
 이렇게 까지 하고 클라이언트를 실행시키자. client의 스크립트는 yarn start다.
 
@@ -296,15 +311,15 @@ react 에서 apollo를 사용하여 graphql 쿼리를 할수 있도록 셋팅을
 
 - src/apollo.ts auth 객체는 현재 clientState 객체인데, 아무 조작을 안했기 때문에 defaults로 설정한 값들이 들어 있을 것이다. auth외에도 공용으로 사용할 값들은 저렇게 관리하는 것 같다.
 
-    ...
-    clientState: {
-    	defaults: {
-    	  auth: {
-    	    __typename: "Auth",
-    	    isLoggedIn: Boolean(localStorage.getItem("jwt"))
-    	  }
-    	},
-    ...
+        ...
+        clientState: {
+        	defaults: {
+        	  auth: {
+        	    __typename: "Auth",
+        	    isLoggedIn: Boolean(localStorage.getItem("jwt"))
+        	  }
+        	},
+        ...
 
 ## #2.6 Typescript and React Components
 

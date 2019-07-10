@@ -12,6 +12,10 @@ tags:
 ---
 # 
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #1.72 RequestRide Resolver
 
 이번에는 RequestRide 의 Query를 정의할 것이다. 내가 우버 택시에 대해서 오해한 점이 있다. 나는 이 서비스가 카풀인줄 알았다.그런데 그게 아니라 카카오 택시 같은 택시였다. 그렇기 때문에 탑승자는 자신이 가고자 하는 길을 요청하고, 이 요청은 가장 가까이 있는 운전자에게가는 것이다.
@@ -129,7 +133,9 @@ tags:
                     status: "REQUESTING",
                     pickUpLat: Between(lastLat - 0.05, lastLat + 0.05),
                     pickUpLng: Between(lastLng - 0.05, lastLng + 0.05)
-                  });
+                  },
+                  { relations: ["passenger"]}
+        					);
                   return {
                     ok: true,
                     error: null,
@@ -284,8 +290,38 @@ Ride 구독 기능을 테스트 할 텐데,  테스트 하기 앞서 간단한 �
       }
     }
 
-마찬가지로 같은 위치로 맞추고 위치를 변화하면서 구독이 되는지 확인해보자.
+일단 위도와 경도를 모두 10으로 맞추자.
+
+운전자 token으로 subscription을 실행하자.
+
+    subscription {
+      NearbyRideSubscription {
+        passenger {
+          fullName
+        }
+        pickUpLat
+        pickUpLng
+    	}
+    }
+
+이제 사용자 아이디로 요청을 만들어보자.
+
+    mutation {
+      RequestRide(pickUpAddress:"동네", pickUpLat: 10, pickUpLng: 10, dropOffAddress: "옆 동네", dropOffLat: 11, dropOffLng: 11, price: 1110.2, distance: "멀어", duration: "오래걸려") {
+        ok
+        error
+        ride {
+          id
+          pickUpLat
+          pickUpLng
+        }
+      }
+    }
+
+위도를 10 에서 10.03, 10.06 으로 변화해가면서 0.05 거리가 벗어나면 데이터가 안들어오는지 확인하자.
 
 테스트가 끝났다면 임시 코드를 복구 하여, 중복 체킹이 되는지도 확인하자.
 
-    if(true || !user.isRiding) {// 임시로 true
+    if(!user.isRiding) {// 임시로 true
+
+RequestRide 요청을 하고 결과로 id를 받는데 여기서 받은 id를 뒤에서 사용하니 값을 기억하자. 나의 경우는 5가 나왔다.

@@ -13,11 +13,17 @@ tags:
 ---
 #
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #2.18 PhoneLogin Mutation part One
 
-이번에 클라이언트에서 첫 Mutation을 작성할 거다. 강의를 들어보니 조금 복잡한 형태고, 나도 충분히 이해하지 못한 상태이다. 일단 시작하자.
+이번에 클라이언트에서 첫 Mutation을 작성할 거다. Query가 get 이라면 Mutation은 Post, Delete, Put, Patch 처럼 조작하는 모든 것을 가르킨다고 생각하자.
 
 chome extension 중에 apollo가 설치되어 있지 않다면, 설치하자.
+
+[http://localhost:3000/](http://localhost:3000/) 에 들어가서 Apollo 탭에 들어가면 사용할 수 있는 Query나 Mutation이 보인다.
 
 ![](_2019-05-07__1-17e413b4-71ea-4f8b-8ff7-2b25738166ec.57.17.png)
 
@@ -37,7 +43,7 @@ chome extension 중에 apollo가 설치되어 있지 않다면, 설치하자.
           }
         `;
 
-위쿼리를 실행한 컴포넌트로 연결을 할 때, react-apollo에 있는 Mutation을 상속받은 클래스를 정의할 것이다. 그렇게되면 파일안에 class가 2개가 생겨서 tslin를 간단히 수정해줘야 한다.
+위 mutation를 실행한 컴포넌트로 연결을 할 때, react-apollo에 있는 Mutation을 상속받은 클래스를 정의할 것이다. 그렇게되면 파일안에 class가 2개가 생겨서 tslin를 간단히 수정해줘야 한다.
 
 - {root}/tslint.json
 
@@ -88,19 +94,19 @@ chome extension 중에 apollo가 설치되어 있지 않다면, 설치하자.
         
           public render() {
             const { countryCode, phoneNumber } = this.state;
+        		const internationalPhoneNumber = `${countryCode}-${phoneNumber}`;
             return (
               <PhoneSignInMutation
                 mutation={PHONE_SIGN_IN}
                 variables={{
-                  phoneNumber: `${countryCode}-${phoneNumber}`
+                  phoneNumber: internationalPhoneNumber
                 }}
               >
                 { (mutation, { loading }) => {
                   const onSubmit: React.FormEventHandler<HTMLFormElement> = event => {
                     event.preventDefault();
-                    const isValid =  /^\+[1-9]{1}[0-9]{7,11}$/.test(
-                      `${countryCode}${phoneNumber}`
-                    );
+        
+                    const isValid = /^\+[1-9]+-[0-9]{7,11}$/.test(internationalPhoneNumber);
                     if(isValid) {
                       mutation();
                     } else {
@@ -284,18 +290,19 @@ Container 에서 PhoneSignInMutation 클래스를 Mutation 클래스를 상속�
             "build": "react-scripts build",
             "dev": "react-scripts start",
             "test": "react-scripts test --env=jsdom",
-            "eject": "react-scripts eject",    "precodegen": "apollo schema:download --endpoint=http://localhost:4000/graphql",
+            "eject": "react-scripts eject",    
+        		"precodegen": "apollo schema:download --endpoint=http://localhost:4000/graphql",
             "codegen": "apollo codegen:generate src/types/api.d.ts --queries=src/**/*.queries.ts --addTypename --localSchemaFile=schema.json --target typescript --outputFlat"
           },
         ...
 
-먼저 yarn precodegen 을 실행하면  schema.json 파일이 생성되는 것을 확인할 수 있다. schema.json에는 백엔드에 정의된 모든 스키마를 다운 받는다.
+먼저 yarn precodegen 을 실행하면  schema.json 파일이 생성되는 것을 확인할 수 있다. schema.json 파일에 백엔드에 정의된 모든 스키마를 다운 받는다.
 
  위에서 다운받은 스키마를 이용하여 실제로 클라이언트에서 사용하는 타입을 생성한다. 
 
 - src/types  디렉토리를 생성하자. 이 디렉토리는 비어있고, 스크립트를 통해 생성한 파일이 위치한다.
 
-yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 대한 타입들이 정의된 것을 확인할 수 있다.
+yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 대한 타입들이 정의된 것을 확인할 수 있다. schema.json에는 모든 스키마가 들어있지만, api.d.ts에는 클라이언트에서 실제로 사용하는 스키마만 타입으로 생성한다.
 
 - src/types/api.d.ts
 
@@ -372,20 +379,21 @@ yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 �
         
           public render() {
             const { countryCode, phoneNumber } = this.state;
+        		const internationalPhoneNumber = `${countryCode}-${phoneNumber}`;
+        
             return (
               <PhoneSignInMutation
                 mutation={PHONE_SIGN_IN}
                 variables={{
-                  phoneNumber: `${countryCode}-${phoneNumber}`
+                  phoneNumber: internationalPhoneNumber
                 }}
                 update={this.afterSubmit}
               >
                 { (mutation, { loading }) => {
                   const onSubmit: React.FormEventHandler<HTMLFormElement> = event => {
                     event.preventDefault();
-                    const isValid =  /^\+[1-9]{1}[0-9]{7,11}$/.test(
-                      `${countryCode}${phoneNumber}`
-                    );
+        
+                    const isValid = /^\+[1-9]+-[0-9]{7,11}$/.test(internationalPhoneNumber);
                     if(isValid) {
                       mutation();
                     } else {
@@ -436,7 +444,7 @@ yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 �
 
 폰 인증 파트를 마무리 하자. 
 
-- src/routes/PhoneLogin/PhoneLoginContainer.tsx 몇몇개가 조금 수정이 되었다. MutationUpdaterFn을 임포트에서 제거했고, PhoneSignInMutation에서 update 대신 onCompleted로 변경하였다. afterSubmit를 제거하였고 afterSubmit의 로직을 onComplete에서 바로 람다 함수로 넣어버렸다.
+- src/routes/PhoneLogin/PhoneLoginContainer.tsx 몇가지가 조금 수정이 되었다. MutationUpdaterFn을 임포트에서 제거했고, PhoneSignInMutation에서 update 대신 onCompleted로 변경하였다. afterSubmit를 제거하였고 afterSubmit의 로직을 onComplete에서 바로 람다 함수로 넣어버렸다.
 
         import React from "react";
         import { Mutation } from "react-apollo";
@@ -447,7 +455,7 @@ yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 �
               <PhoneSignInMutation
                 mutation={PHONE_SIGN_IN}
                 variables={{
-                  phoneNumber: `${countryCode}-${phoneNumber}`
+                  phoneNumber: internationalPhoneNumber
                 }}
                 onCompleted={data => {
                   const { StartPhoneVerification } = data;
@@ -460,19 +468,10 @@ yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 �
         
         ...
         
-          public onInputChange: React.ChangeEventHandler<
-            HTMLInputElement | HTMLSelectElement
-          > = event => {
-            const {
-              target: { name, value }
-            } = event;
-            this.setState({
-              [name]: value
-            } as any);
-          };
+        	// afterSubmit 제거
         }
         
-        // afterSubmit 제거
+        
         
         export default PhoneLoginContainer;
 

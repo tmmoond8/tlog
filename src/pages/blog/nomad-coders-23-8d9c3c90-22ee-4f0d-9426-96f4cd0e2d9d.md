@@ -13,6 +13,10 @@ tags:
 ---
 #
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #2.36 EditProfile Screen part One
 
 이번에는 계정 정보 변경인데 중요하진 않지만 필요한 기능이다. 아직 뷰가 없어서 니콜라스가 미리 만들어논 뷰로 채우자.
@@ -340,7 +344,7 @@ tags:
               <ProfileQuery 
         				query={USER_PROFILE} 
         				onCompleted={this.updateFields}
-        				fetchPolicy="cache-and-network"
+        				fetchPolicy="no-cache"
         			>
                 {() => (
                   <UpdateProfileMutation
@@ -411,3 +415,5 @@ tags:
         export default EditAccountContainer;
 
 ![](_2019-05-26__3-dbd7f701-0caa-4f81-93c0-30eeafc8b19e.19.23.png)
+
+> ProfileQuery에 fetchPolicy의 값은 여러 값을 사용할 수 있다. 니콜라스의 경우 cache-and-network 를 값으로 사용했는데, 업데이트 한 후 쿼리가 다시 호출되지 않아서 no-cache로 변경했다.

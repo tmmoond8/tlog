@@ -12,6 +12,10 @@ tags:
 ---
 # 
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #1.17 Verification Entity part One
 
 이번에는 Verification 에 대한 graphql type과 entity를 만들거다. 이전에 User에 대해 graphql type과 entity를 만든 것과 거의 동일하다.
@@ -48,9 +52,9 @@ Verification 타입은 유저 정보를 통해 추가적으로 생성되는 검�
         import {
           BaseEntity,
           Column,
+          CreateDateColumn,
           Entity,
           PrimaryGeneratedColumn,
-          CreateDateColumn,
           UpdateDateColumn
          } from 'typeorm'
         
@@ -86,10 +90,10 @@ Verification 타입은 유저 정보를 통해 추가적으로 생성되는 검�
 
 - src/api/entities/Verification.ts 에 target의 데이터형을 위에서 정의한 verificationTarget 타입으로 변경하자.
 
+        import { verificationTarget } from 'src/types/types';
         import {
           ...
          } from 'typeorm'
-        import { verificationTarget } from 'src/types/types';
         
         @Entity()
         class Verification extends BaseEntity {
@@ -122,6 +126,11 @@ src/types/graph.d.ts 에 Verification 인터페이스가 정의된 것을 확인
 
 - src/entities/Verification.ts 에 createKey 메소드를 추가하자.
 
+        import {
+          BaseEntity,
+          BeforeInsert,
+          Column,
+         } from 'typeorm'
         ...
         
         const PHONE = "PHONE";
@@ -235,6 +244,7 @@ Math.random 또는 Math.floor는 별도 설명을 드리지 않겠다. 궁금하
 
 - src/entities/Ride.ts entity를 정의하자
 
+        import { rideStatus } from 'src/types/types';
         import {
           BaseEntity,
           Column,
@@ -243,7 +253,6 @@ Math.random 또는 Math.floor는 별도 설명을 드리지 않겠다. 궁금하
           PrimaryGeneratedColumn,
           UpdateDateColumn,
          } from 'typeorm'
-        import { rideStatus } from 'src/types/types';
         
         @Entity()
         class Ride extends BaseEntity {

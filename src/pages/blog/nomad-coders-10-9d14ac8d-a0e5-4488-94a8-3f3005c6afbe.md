@@ -12,8 +12,11 @@ tags:
 ---
 # 
 
-## #1.56 UpdateMyProfile Resolver part One
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
+## #1.56 UpdateMyProfile Resolver part One
 ## #1.56 UpdateMyProfile Resolver part Two
 
 유저의 정보를 업데이트 하는 type과 mutation을 작성하자
@@ -40,8 +43,8 @@ tags:
 - src/api/User/UpdateMyProfile/UpdateMyProfile.resolvers.ts
 
         import { Resolvers } from "src/types/resolvers";
-        import privateResolver from "../../../utils/privateResolver";
         import User from "../../../entities/User";
+        import privateResolver from "../../../utils/privateResolver";
         
         const resolvers: Resolvers = {
           Mutation: {
@@ -157,8 +160,8 @@ tags:
 - src/api/User/ToggleDrivingMode/ToggleDrivingMode.resolvers.ts
 
         import { Resolvers } from "src/types/resolvers";
-        import privateResolver from "../../../utils/privateResolver";
         import User from "../../../entities/User";
+        import privateResolver from "../../../utils/privateResolver";
         
         const resolvers: Resolvers = {
           Mutation: {
@@ -234,34 +237,37 @@ tags:
 
 - src/api/User/ReportMovement/ReportMovement.resolvers.ts
 
-        import { AddPlaceMutationArgs, AddPlaceResponse } from "src/types/graph";
-        import { Resolvers } from "src/types/resolvers";
-        import Place from "../../../entities/Place";
-        import User from "../../../entities/User";
-        import privateResolver from "../../../utils/privateResolver";
+        import { ReportMovementMutationArgs, ReportMovementResponse } from 'src/types/graph'; 
+        import { Resolvers } from "src/types/resolvers"; 
+        import User from "../../../entities/User"; 
+        import cleanNullArgs from "../../../utils/cleanNullArgs"; 
+        import privateResolver from "../../../utils/privateResolver"; 
         
-        const resolvers: Resolvers = {
-          Mutation: {
-            AddPlace: privateResolver(async (
-              _, 
-              args: AddPlaceMutationArgs, 
-              { req }
-            ) : Promise<AddPlaceResponse> => {
-              const user: User = req.user;
-              try {
-                await Place.create({ ...args, user }).save();
-                return {
-                  ok: true,
-                  error: null
-                }
-              } catch(error) {
-                return {
-                  ok: false,
-                  error: error.message
-                }
-              } 
-            })
-          }
-        };
-        
+        const resolvers: Resolvers = { 
+          Mutation: { 
+            ReportMovement: privateResolver(
+              async (
+                _, 
+                args: ReportMovementMutationArgs, 
+                { req }
+              ): Promise<ReportMovementResponse> => { 
+                const user: User = req.user; 
+                const notNull = cleanNullArgs(args); 
+                try { 
+                  await User.update({ id: user.id }, { ...notNull }); 
+                  return { 
+                    ok: true, 
+                    error: null 
+                  } 
+                } catch (error) { 
+                  return { 
+                    ok: false, 
+                    error: error.message 
+                  }; 
+                } 
+              }
+            ) 
+          } 
+        } 
+              
         export default resolvers;

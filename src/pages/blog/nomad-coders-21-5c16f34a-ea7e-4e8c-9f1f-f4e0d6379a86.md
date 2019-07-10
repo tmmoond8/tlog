@@ -14,13 +14,17 @@ tags:
 ---
 #
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## 2.26 Updating Local State
 
 저번에 메일 인증을 하고 넘어온 토큰을 콘솔로 찍어봤다. 이번에는 이 토큰을 통해 로그인 상태를 변경하는 것을 해보자.
 
-앱 전반으로 사용하는 공용 쿼리를 위해 파일을 생성하자.
+서비스 공통으로 사용하는 공용 쿼리를 위해 파일을 생성하자.
 
-- src/sharedQueries.ts
+- src/innerQueries.ts
 
         import { gql } from "apollo-boost";
         
@@ -36,7 +40,7 @@ tags:
         import { Mutation } from "react-apollo";
         import { RouteComponentProps } from "react-router-dom";
         import { toast } from "react-toastify";
-        import { LOG_USER_IN } from "../../sharedQueries";
+        import { LOG_USER_IN } from "../../innerQueries";
         import { verfiyPhone, verfiyPhoneVariables } from "../../types/api";
         import { VERIFY_PHONE } from "./VerifyPhone.queries";
         import VerifyPhonePresenter from "./VerifyPhonePresenter";
@@ -118,6 +122,8 @@ tags:
         export default VerifyPhoneContainer;
 
 처음에는 Mutation 컴포넌트가 어떻게 동작하는지 이해가 되지 않아 살펴보았는데, 동작 흐름은 이제좀 이해했다. 여기서 Mutation이 두 개인데, 밖에 선언된 Mutation이 로그인 Mutation이고, VerifyMutation이 인증 Mutation이다. 
+
+ 로그인 Mutation이 밖에 감싸 있다고 해서 바로 실행되는 것이 아니다. 로그인 mutation 로그인 성공하고 받은 토큰을 브라우저에 localStorage 형태로 저장하기 위한 값이다. 
 
  로그인 Mutation이 먼저 실행되는 것이 아니라 callback 처럼 VerifyMutation에 로그인 gql 쿼리를 넘긴다.
 
@@ -258,7 +264,7 @@ render에 워래 있던 Link 컴포넌트를 넣어줬다.
 
 facebook에서 토큰을 확인해보자.
 
-- src/routes/SocialLogin/SocialLoginPresenter.tsx  callback을 넘겨받아서 callback을 호출 할 수 있도록 넣어주었다.
+- src/routes/SocialLogin/SocialLoginPresenter.tsx  callback을 넘겨받아서 callback을 호출 할 수 있도록 넣어주었다. appId는 페이스북에서 발급 받으셔야 됩니다.
 
         ...
         
@@ -396,7 +402,7 @@ loginCallback은 facebook 로그인 응답을 콘솔에 찍도록 했다.
 
             ...
             import { toast } from "react-toastify";
-            import { LOG_USER_IN } from 'sharedQueries';
+            import { LOG_USER_IN } from '../../innerQueries';
             import { facebookConnect, facebookConnectVariables } from "../../types/api";
             
             ...
@@ -431,7 +437,7 @@ loginCallback은 facebook 로그인 응답을 콘솔에 찍도록 했다.
               }
             ...
 
-    - src/routes/PhoneLogin/PhoneLoginContainer.tsx 도 onSubmit함수를 분리하여 좀 보기 좋ㄷ게 바꾸자.
+    - src/routes/PhoneLogin/PhoneLoginContainer.tsx 도 onSubmit함수를 분리하여 좀 보기 좋게 바꾸자.
 
             import React from "react";
             import { Mutation, MutationFn } from "react-apollo";
@@ -532,3 +538,5 @@ loginCallback은 facebook 로그인 응답을 콘솔에 찍도록 했다.
             }
             
             export default PhoneLoginContainer;
+
+이제 로그인 처리가 마무리 됐다.

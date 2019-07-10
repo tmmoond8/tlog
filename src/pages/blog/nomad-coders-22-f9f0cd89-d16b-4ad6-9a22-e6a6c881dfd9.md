@@ -13,9 +13,15 @@ tags:
 ---
 #
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #2.31 Home Sidebar Component
 
-이제 실제 기능에 대해서 뷰를 만들어 가는 과정을 진행할 거다. Home 페이지부터 차차 만들자. 나는 기존에 slidebar를 구현해서 사용했었는데, react-sidebar 모듈을 설치해서 사용하며 될 것 같다.
+이제 실제 기능에 대해서 뷰를 만들어 가는 과정을 진행할 거다. Home 페이지부터 차차 만들자. 
+
+이번에는  react-sidebar 라는 모듈로 사이드 바를 만들 것이다. 기존에 slidebar를 구현해서 사용했었는데, react-sidebar 모듈을 설치해서 사용하며 될 것 같다.
 
     $ yarn add react-sidebar
     $ yarn add @types/react-sidebar --dev
@@ -155,12 +161,12 @@ tags:
 
 Sidebar에 텍스트만 덩그러니 들어있다. Menu 컴포넌트 컴포넌트를 만들어서 Sidebar 안에 넣어보자.
 
-Menu 컴포넌트는 그냥 니콜라스가 만들었다. 우리가 생각해볼 것들은 ToggleDriving 컴포넌트가 prop으로 isDriving를 받아서 styled에서 처리하는 것을 간단히 살펴보자.
+우리가 생각해볼 것들은 ToggleDriving 컴포넌트가 prop으로 isDriving를 받아서 styled에서 처리하는 것을 간단히 살펴보자.
 
 - src/theme.ts
 
         ...
-        const theme = {
+        export const theme = {
           blueColor: "#3498db",
           greenColor: "#1abc9c",
           greyColor: "#7f8c8d",
@@ -299,12 +305,15 @@ Menu 컴포넌트는 그냥 니콜라스가 만들었다. 우리가 생각해볼
         
             <Sidebar
               sidebar={<Menu/>}
-              open={isMenuOpen}
         ...
 
-메뉴에 내 정보 상태를 나타내줘야 한다. apollo에는 apollo 캐시라는 것을 사용해서 같은 쿼리를 서버에 더 조용하지 않는다고 하는데 잘은 모르겠다.
+메뉴에 내 정보 상태를 나타내줘야 한다. apollo에는 apollo 캐시를 사용해서 이곳 저곳에서 쿼리를 사용해서 값을 가져오게 해도 요청은 한 번하고 캐시된 값을 사용한다고 한다.
 
-- src/sharedQueries.queries.ts
+chrome의 extentions 인 Apollo를 사용하면 cache 탭이 있어서 확인할 수 있다.
+
+![](_2019-07-09__11-17f27b84-42e7-4242-8ebb-1b677ad1561b.11.36.png)
+
+- src/sharedQueries.queries.ts  이 파일은 새로 만들어야 한다.
 
         import { gql } from "apollo-boost";
         
@@ -322,6 +331,8 @@ Menu 컴포넌트는 그냥 니콜라스가 만들었다. 우리가 생각해볼
           }
         `;
 
+yarn code을 한 번 해주자.
+
 ## #2.33 Home Sidebar Query part Two
 
 이번에는 위에서 정의한 쿼리를 호출하여 Menu에 유저 정보를 나타내보자.
@@ -331,7 +342,7 @@ Menu 컴포넌트는 그냥 니콜라스가 만들었다. 우리가 생각해볼
         import React from "react";
         import { Query } from "react-apollo";
         import { RouteComponentProps } from "react-router";
-        import { USER_PROFILE } from "sharedQueries.queries";
+        import { USER_PROFILE } from "../../shared.queries";
         import { userProfile } from "../../types/api";
         import HomePresenter from "./HomePresenter";
         
@@ -448,11 +459,22 @@ Menu 컴포넌트는 그냥 니콜라스가 만들었다. 우리가 생각해볼
         
         ...
         
+        const ToggleDriving = styled<any>("button")`
+          -webkit-appearance: none;
+          background-color: ${props => ()
+            props.isDriving ? props.theme.yellowColor : props.theme.greenColor};
+          width: 100%;
+          color: white;
+          font-size: 18px;
+          border: 0;
+          padding: 15px 0px;
+          cursor: pointer;
+        `;
+        
         interface IProps {
           data?: userProfile;
           loading: boolean;
         }
-        
         
         const MenuPresenter: React.SFC<IProps> = ({
           data: { GetMyProfile: { user = null } = {} } = { GetMyProfile: {}},
@@ -565,15 +587,13 @@ yarn codegen 한번 하고 위에서 작성한 쿼리를 추가해주자. 이렇
         import styled from "../../typed-components";
         import { toggleDriving, userProfile } from "../../types/api";
         
-        
+        ...
         
         interface IProps {
           data?: userProfile;
           loading: boolean;
           ToggleDrivingMutation: MutationFn<toggleDriving>;
         }
-        
-        ...
         
         const MenuPresenter: React.SFC<IProps> = ({
           data: { GetMyProfile: { user = null } = {} } = { GetMyProfile: {}},
@@ -613,7 +633,7 @@ yarn codegen 한번 하고 위에서 작성한 쿼리를 추가해주자. 이렇
         
         export default MenuPresenter;
 
-이렇게 해놓고 앱을 켠 후 Start Driving 토글 버튼을 누른후 새로고침하면 토글이 정상적으로 된다.
+이렇게 해놓고 앱을 켠 후 Start Driving 토글 버튼을 누른 후 새로고침 하면 토글이 정상적으로 된다.
 
 새로고침 없이 바로 반영하는 멋진것을 소개 한다.
 

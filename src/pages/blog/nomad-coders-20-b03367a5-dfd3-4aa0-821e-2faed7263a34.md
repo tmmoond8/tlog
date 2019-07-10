@@ -13,6 +13,10 @@ tags:
 ---
 #
 
+이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
+
+[https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course](https://academy.nomadcoders.co/p/nuber-fullstack-javascript-graphql-course)
+
 ## #2.22 VerifyPhone Screen
 
 지금까지 phoneLogin 페이지에서 입력한 폰 번호가 유효한지 검사하고, 유효 하면 해당 폰 번호로 번호를 메시지로 보내게 된다. 사용자는 메시지로 온 번호를 입력해야 한다. 이번에 만들 것이 폰으로 넘어온 코드를 입력하는  인증 페이지다.
@@ -198,8 +202,8 @@ tags:
                   const onSubmit: React.FormEventHandler<HTMLFormElement> = event => {
                     event.preventDefault();
         			
-                    const phone = `${countryCode}${phoneNumber}`;
-                    const isValid = /^\+[1-9]{1}[0-9]{7,11}$/.test(phone);
+        						const phone = `${countryCode}-${phoneNumber}`;
+                    const isValid = /^\+[1-9]+-[0-9]{7,11}$/.test(phone);
                     if(isValid) {
                       // mutation();
                       history.push({
@@ -287,23 +291,16 @@ tags:
           public render() {
             const { history } = this.props;
             const { countryCode, phoneNumber } = this.state;
-            const phone = `${countryCode}-${phoneNumber}`;
             return (
               <PhoneSignInMutation
                 mutation={PHONE_SIGN_IN}
                 variables={{
-                  phoneNumber: phone
+                  phoneNumber: `${countryCode}-${phoneNumber}`
                 }}
                 onCompleted={data => {
                   const { StartPhoneVerification } = data;
                   if (StartPhoneVerification.ok) {
-                    toast.success("SMS Sent! Redirecting you...")
-                    history.push({
-                      pathname: "/verify-phone",
-                      state: {
-                        phone
-                      }
-                    });
+                    return;
                   } else {
                     toast.error(StartPhoneVerification.error);
                   }
@@ -312,9 +309,17 @@ tags:
                 { (mutation, { loading }) => {
                   const onSubmit: React.FormEventHandler<HTMLFormElement> = event => {
                     event.preventDefault();
+        			
+                    const phone = `${countryCode}${phoneNumber}`;
                     const isValid = /^\+[1-9]{1}[0-9]{7,11}$/.test(phone);
                     if(isValid) {
                       mutation();
+                      history.push({
+                        pathname: "/verify-phone",
+                        state: {
+                          phone
+                        }
+                      });
                     } else {
                       toast.error("please write a valid phone number!!!");
                     }
@@ -621,4 +626,6 @@ tags:
         
         export default VerifyPhoneContainer;
 
-폰으로 온 번호를 입력하면 콘솔에 응답이 들어 있다. 응답에 토큰이 들어있다.
+폰으로 온 번호를 입력하면 콘솔에 응답이 들어 있다. 
+
+> 강의의 오류를 찾았다. verfiyPhone은 EmailSignUp 을 한 뒤 호출되야 한다. 리액트 프로젝트에는 EMailSignUp를 호출하는 부분이 없다.
