@@ -17,6 +17,7 @@ import apollo from "../img/tagcon/apollo.png";
 import styledComponents from "../img/tagcon/styled_components.png";
 import googlemap from "../img/tagcon/googlemap.png";
 import http from "../img/tagcon/http.png";
+import typescript from "../img/tagcon/typescript.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -28,7 +29,7 @@ const TAGCON = {
   jwt: { image: jwt, name: "JWT" },
   graphql: { image: graphql, name: "GraphQL" },
   Twilio: { image: twilio },
-  Mailgun: { image: mailgun },
+  mailgun: { image: mailgun },
   postgresql: { image: postgresql, name: "PostgreSQL" },
   "project-setup": { image: projectSetup, name: "프로젝트 셋팅" },
   nextjs: { image: nextjs, name: "Next.js" },
@@ -37,7 +38,8 @@ const TAGCON = {
   apollo: { image: apollo, name: "Apollo" },
   "styled-components": { image: styledComponents, name: "styled components"},
   'google-map-api': { image: googlemap, name: "Google Map API" },
-  http: { image: http, name: "HTTP" }
+  http: { image: http, name: "HTTP" },
+  typescript: { image: typescript, name: "TypeScript" },
 }
 
 export const getImage = (tag) => {

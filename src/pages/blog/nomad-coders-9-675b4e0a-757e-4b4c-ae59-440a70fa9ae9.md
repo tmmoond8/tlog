@@ -8,7 +8,7 @@ featuredimage: /img/nuber_clone.jpg
 tags:
   - uber-clone-coding
   - nomad-coders
-  - Mailgun
+  - mailgun
 ---
 # 
 
