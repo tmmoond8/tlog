@@ -18,6 +18,8 @@ import styledComponents from "../img/tagcon/styled_components.png";
 import googlemap from "../img/tagcon/googlemap.png";
 import http from "../img/tagcon/http.png";
 import typescript from "../img/tagcon/typescript.png";
+import book from "../img/tagcon/book.jpg";
+import seminar from "../img/tagcon/seminar.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -40,6 +42,8 @@ const TAGCON = {
   'google-map-api': { image: googlemap, name: "Google Map API" },
   http: { image: http, name: "HTTP" },
   typescript: { image: typescript, name: "TypeScript" },
+  book: { image: book, name: "book review" },
+  seminar: { image: seminar, name: "seminar" },
 }
 
 export const getImage = (tag) => {

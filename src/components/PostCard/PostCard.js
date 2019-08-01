@@ -28,6 +28,14 @@ const Description = styled.div`
   font-weight: 300;
 `;
 
+const FeatureImageWrapper = styled.div`
+  height: 200px;
+
+  & > div {
+    height: 100%;
+  }
+`;
+
 const Meta = styled.ol`
   width: 50%;
   padding: 1rem;
@@ -70,10 +78,12 @@ export default ({
 }) => (
   <PostCard>
     <Link to={fields.slug}>
-      <PreviewCompatibleImage imageInfo={{
-        image: frontmatter.featuredimage,
-        alt: `featured image thumbnail for post ${frontmatter.title}`,
-      }}/>
+      <FeatureImageWrapper>
+        <PreviewCompatibleImage imageInfo={{
+          image: frontmatter.featuredimage,
+          alt: `featured image thumbnail for post ${frontmatter.title}`,
+        }}/>
+      </FeatureImageWrapper>
       <Title>{frontmatter.title}</Title>
       <Wrapper>
         <Meta>
