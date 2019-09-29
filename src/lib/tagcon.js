@@ -20,6 +20,7 @@ import http from "../img/tagcon/http.png";
 import typescript from "../img/tagcon/typescript.png";
 import book from "../img/tagcon/book.jpg";
 import seminar from "../img/tagcon/seminar.png";
+import html from "../img/tagcon/html.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -44,6 +45,7 @@ const TAGCON = {
   typescript: { image: typescript, name: "TypeScript" },
   book: { image: book, name: "book review" },
   seminar: { image: seminar, name: "seminar" },
+  html: { image: html, name: "html" },
 }
 
 export const getImage = (tag) => {
