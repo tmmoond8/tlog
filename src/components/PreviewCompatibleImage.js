@@ -1,23 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import GatsbyImage from 'gatsby-image'
+import styled from "styled-components";
 
-const PreviewCompatibleImage = ({ imageInfo, className }) => {
-  const imageStyle = { borderRadius: '5px' }
+const StyledPreviewCompatibleImage = styled.div`
+  transition: transform 0.5s;
+    :hover { 
+      transform: scale(1.2);
+    }
+`;
+
+const PreviewCompatibleImage = ({ imageInfo, className, imgStyle, wrapperStyle }) => {
   const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
     return (
-      <Img className={className} style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
+      <StyledPreviewCompatibleImage>
+        <GatsbyImage className={className} style={wrapperStyle} fluid={image.childImageSharp.fluid} alt={alt} imgStyle={imgStyle}/>
+      </StyledPreviewCompatibleImage>
     )
   }
 
   if (!!childImageSharp) {
-    return <Img  className={className} style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
+    return (
+      <StyledPreviewCompatibleImage>
+        <GatsbyImage  className={className} style={wrapperStyle} fluid={childImageSharp.fluid} alt={alt} imgStyle={imgStyle}/>
+      </StyledPreviewCompatibleImage>
+    )
   }
 
   if (!!image && typeof image === 'string')
-    return <img  className={className} style={imageStyle} src={image} alt={alt} />
+    return <img  className={className} style={wrapperStyle} src={image} alt={alt} />
 
   return null
 }
