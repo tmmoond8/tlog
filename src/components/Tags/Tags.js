@@ -75,7 +75,8 @@ const sort = (data) => {
   if(!data) return data;
   data.sort((a, b) => {
     const countDiff = b.totalCount - a.totalCount;
-    return countDiff !== 0 ? countDiff : a.fieldValue - b.fieldValue;
+    if (countDiff !== 0) return countDiff;
+    return a.fieldValue > b.fieldValue ? 1 : -1
   })
   return data;
 }
