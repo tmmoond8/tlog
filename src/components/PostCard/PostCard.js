@@ -9,7 +9,7 @@ const PostCard = styled.li`
   width: 20rem;
   background: ${prop => prop.theme.color.white};
   margin-bottom: 1rem;
-  border-radius: .5rem;
+  border-radius: 3px;
   -webkit-box-shadow: -3px 1px 10px 3px rgba(97,95,97,0.4);
   -moz-box-shadow: -3px 1px 10px 3px rgba(97,95,97,0.4);
   box-shadow: -3px 1px 10px 3px rgba(97,95,97,0.4);
@@ -29,11 +29,8 @@ const Description = styled.div`
 `;
 
 const FeatureImageWrapper = styled.div`
-  height: 200px;
-
-  & > div {
-    height: 100%;
-  }
+  max-height: 200px;
+  overflow: hidden;
 `;
 
 const Meta = styled.ol`
@@ -82,7 +79,10 @@ export default ({
         <PreviewCompatibleImage imageInfo={{
           image: frontmatter.featuredimage,
           alt: `featured image thumbnail for post ${frontmatter.title}`,
-        }}/>
+        }}
+        imgStyle={{ objectFit: 'contain', height: 'auto', maxHeight: '200px' }}
+        wrapperStyle={{ borderRadius: '3px 3px 0 0' }}
+        />
       </FeatureImageWrapper>
       <Title>{frontmatter.title}</Title>
       <Wrapper>

@@ -82,8 +82,8 @@ const sort = (data) => {
 
 const rednerTag = (data) => {
   if(!data) return false;
-  return sort(data).map((tag, index) => (
-    <Tag key={index}>
+  return sort(data).map(tag => (
+    <Tag key={tag.fieldValue}>
       <StyledLink 
         to={`/tags/${tag.fieldValue.toLowerCase().replace(/([ .])/gi, "-")}`}
         title={tag.fieldValue}
