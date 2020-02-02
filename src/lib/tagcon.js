@@ -23,6 +23,7 @@ import seminar from "../img/tagcon/seminar.png";
 import html from "../img/tagcon/html.png";
 import svg from "../img/tagcon/svg.png";
 import npm from "../img/tagcon/npm.jpg";
+import db from "../img/tagcon/db.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -50,6 +51,7 @@ const TAGCON = {
   html: { image: html, name: "html" },
   svg: { image: svg, name: "svg" },
   npm: { image: npm, name: "npm" },
+  db: { image: db, name: "db" },
 }
 
 export const getImage = (tag) => {
