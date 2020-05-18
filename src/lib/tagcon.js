@@ -25,6 +25,8 @@ import svg from "../img/tagcon/svg.png";
 import npm from "../img/tagcon/npm.jpg";
 import db from "../img/tagcon/db.png";
 import css from "../img/tagcon/css.png";
+import babel from "../img/tagcon/babel.png";
+import javascript from "../img/tagcon/javascript.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -54,6 +56,8 @@ const TAGCON = {
   npm: { image: npm, name: "npm" },
   db: { image: db, name: "db" },
   css: { image: css, name: "css" },
+  babel: { image: babel, name: "babel" },
+  javascript: { image: javascript, name: "javascript" },
 }
 
 export const getImage = (tag) => {

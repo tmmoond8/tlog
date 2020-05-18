@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: CSS 1. Selector
-date: 2019-18-26T08:56:56.243Z
+date: 2019-12-22T08:56:56.243Z
 description: CSS Selector를 공부해봅시다.
 featuredpost: true
 featuredimage: /img/cover/css-cover.jpg

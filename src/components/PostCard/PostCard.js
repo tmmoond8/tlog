@@ -80,7 +80,7 @@ export default ({
           image: frontmatter.featuredimage,
           alt: `featured image thumbnail for post ${frontmatter.title}`,
         }}
-        imgStyle={{ objectFit: 'contain', height: 'auto', maxHeight: '200px' }}
+        imgStyle={{ objectFit: 'cover', height: 'auto', maxHeight: '200px' }}
         wrapperStyle={{ borderRadius: '3px 3px 0 0' }}
         />
       </FeatureImageWrapper>
