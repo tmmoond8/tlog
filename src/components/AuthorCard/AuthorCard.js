@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import profileImage from '../../img/profile.jpeg';
+import profileImage from '../../img/profile.png';
 
 const Wrapper = styled.div``;
 const contentSize = '3rem';
