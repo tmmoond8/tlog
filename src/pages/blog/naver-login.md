@@ -9,10 +9,8 @@ tags:
   - oauth
   - react
 ---
+
 #
-
-
-Created: Jul 14, 2019 4:53 PM
 
 네이버 로그인은 react용 모듈이 존재하지 않았다. 뭔가 개발하기가 까다로운 느낌이었다.
 
@@ -28,11 +26,11 @@ Created: Jul 14, 2019 4:53 PM
 
 [https://developers.naver.com/apps](https://developers.naver.com/apps)
 
- Application 탭에 가서 권한을 설정 하자. 여기서 주의해야 할 점은 
+Application 탭에 가서 권한을 설정 하자. 여기서 주의해야 할 점은
 
 [localhost](http://localhost) 대신 127.0.0.1 처럼 IP로 넣어야 하는 점이다.
 
-우리 서비스에서는 허용하는 웹URL을 [http://127.0.0.1:3000](http://127.0.0.1:3000/), 성공 콜백을 [http://127.0.0.1:3000](http://127.0.0.1:3000/)/login?naver=true로 했다. 쿼리로 naver=true를 준 것을 기억하자. 
+우리 서비스에서는 허용하는 웹URL을 [http://127.0.0.1:3000](http://127.0.0.1:3000/), 성공 콜백을 [http://127.0.0.1:3000](http://127.0.0.1:3000/)/login?naver=true로 했다. 쿼리로 naver=true를 준 것을 기억하자.
 
 적용 가이드가 있다. 인터넷에는 이전 버전 기준으로 설명하는 블로그가 많다. 헷갈리는 부분이다.
 
@@ -42,13 +40,13 @@ Created: Jul 14, 2019 4:53 PM
 
 html에 다음과 같이 naverIdLogin이라는 id의 엘리먼트를 만듭니다.
 
-1. [https://developers.naver.com/main/](https://developers.naver.com/main/) 에서 네아로 를 사용할 어플리케이션을 등록한다.
-2. `<div id="naverIdLogin"></div>`  처럼 html에 버튼이 들어갈 엘리먼트를 만든다.
-3. html에 스크립트를 삽입한다. 
+1.  [https://developers.naver.com/main/](https://developers.naver.com/main/) 에서 네아로 를 사용할 어플리케이션을 등록한다.
+2.  `<div id="naverIdLogin"></div>` 처럼 html에 버튼이 들어갈 엘리먼트를 만든다.
+3.  html에 스크립트를 삽입한다.
 
         <script type="text/javascript" src="[https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js](https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js)" charset="utf-8"></script>
 
-4. 네아로에서 설정한 셋팅 값으로 초기화를 한다.
+4.  네아로에서 설정한 셋팅 값으로 초기화를 한다.
 
         var naverLogin = new naver.LoginWithNaverId(
         		{
@@ -58,11 +56,11 @@ html에 다음과 같이 naverIdLogin이라는 id의 엘리먼트를 만듭니�
         			loginButton: {color: "green", type: 3, height: 60} /* 로그인 버튼의 타입을 지정 */
         		}
         	);
-        	
+
         	/* 설정정보를 초기화하고 연동을 준비 */
         	naverLogin.init();
 
-5. 로그인 결과 처리를 위한 이벤트를 등록한다.
+5.  로그인 결과 처리를 위한 이벤트를 등록한다.
 
         window.addEventListener('load', function () {
         			naverLogin.getLoginStatus(function (status) {
@@ -76,13 +74,13 @@ html에 다음과 같이 naverIdLogin이라는 id의 엘리먼트를 만듭니�
 
 성공 콜백을 [http://127.0.0.1:3000](http://127.0.0.1:3000/)/login?naver=true로 준 이유.
 
-OAuth로 로그인 API는 있지만 로그아웃은 없다. 그 이유는 로그아웃 시켜버리면 원래 서비스 (네이버면 네이버 포탈) 서비스에서도 로그아웃이 되기 때문에 원래 서비스에 영향을 미치기 때문이다. 그렇기 때문에 로그인 쿠키 정보는 [http://127.0.0.1:3000](http://127.0.0.1:3000) 에 남아 있지만 우리 어플리케이션 상에서만 로그인 정보를 없애서 로그인 처리를 한다. 이렇게 네이버 쿠키가 남고 우리 애플리케이션에서는 로그아웃 한 후 /login 에 접근을 하면 네아로 초기화를 한다. 그런데 이 때 기존의 쿠기 정보가 있기 때문에 바로 로그인을 해버린다. 쿠키 정보가 남았지만, 구글이나 카카오 처럼 다른 서비스로 로그인을 하려고 할 때 문제가 생긴다. ( 내 계정을 로그인한 피씨에서 다른 사람의 계정으로 로그인할 때 그럴때 문제가 생길 것이다.)  
+OAuth로 로그인 API는 있지만 로그아웃은 없다. 그 이유는 로그아웃 시켜버리면 원래 서비스 (네이버면 네이버 포탈) 서비스에서도 로그아웃이 되기 때문에 원래 서비스에 영향을 미치기 때문이다. 그렇기 때문에 로그인 쿠키 정보는 [http://127.0.0.1:3000](http://127.0.0.1:3000) 에 남아 있지만 우리 어플리케이션 상에서만 로그인 정보를 없애서 로그인 처리를 한다. 이렇게 네이버 쿠키가 남고 우리 애플리케이션에서는 로그아웃 한 후 /login 에 접근을 하면 네아로 초기화를 한다. 그런데 이 때 기존의 쿠기 정보가 있기 때문에 바로 로그인을 해버린다. 쿠키 정보가 남았지만, 구글이나 카카오 처럼 다른 서비스로 로그인을 하려고 할 때 문제가 생긴다. ( 내 계정을 로그인한 피씨에서 다른 사람의 계정으로 로그인할 때 그럴때 문제가 생길 것이다.)
 
     	if (status && naver) {
         // 로그인 성공
-    	} 
+    	}
 
-이렇게 해놓으면 단순히 [http://127.0.0.1:3000](http://127.0.0.1:3000/)/login 로 접근했을 때는 로그인 성공 처리가 되지 않고, 
+이렇게 해놓으면 단순히 [http://127.0.0.1:3000](http://127.0.0.1:3000/)/login 로 접근했을 때는 로그인 성공 처리가 되지 않고,
 
 버튼을 누른 후 [http://127.0.0.1:3000](http://127.0.0.1:3000/)/login?naver=true 로 들어올 때만 로그인 성공을 한다.
 
@@ -90,20 +88,20 @@ OAuth로 로그인 API는 있지만 로그아웃은 없다. 그 이유는 로그
 
 이런 저런 방법으로 하다가 하나의 컴포넌트에서 기능이 되도록 고민을 했다.
 
-    componentDidMount() {  
-    	if(process.browser) {    
-    		const script = document.createElement('script');    
-    		script.src = "https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js";    
-    		script.async = true;    
-    		this.ref.appendChild(script);    
-    		const initLoop = setInterval(() => {      
-    			if(window.naver) {        
-    				initLoginButton(this.props)        
-    				clearInterval(initLoop);      
-    			}    
-    		}, 300);  
+    componentDidMount() {
+    	if(process.browser) {
+    		const script = document.createElement('script');
+    		script.src = "https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js";
+    		script.async = true;
+    		this.ref.appendChild(script);
+    		const initLoop = setInterval(() => {
+    			if(window.naver) {
+    				initLoginButton(this.props)
+    				clearInterval(initLoop);
+    			}
+    		}, 300);
     }}
-    
+
     // initLoginButton는 위 초기화 하고 성공 이벤트 등록하는 부분
 
 진행하면서 authStore의 존재여부 가 무의미 하다고 느낌.

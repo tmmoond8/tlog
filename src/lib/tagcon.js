@@ -28,6 +28,7 @@ import css from "../img/tagcon/css.png";
 import babel from "../img/tagcon/babel.png";
 import javascript from "../img/tagcon/javascript.png";
 import etc from "../img/tagcon/etc.png";
+import webpack from "../img/tagcon/webpack.png";
 
 const TAGCON = {
   gatsby: { image: gatsby, name: "Gatsby.js" },
@@ -46,8 +47,8 @@ const TAGCON = {
   ssr: { image: ssr, name: "SSR" },
   oauth: { image: oauth, name: "OAuth" },
   apollo: { image: apollo, name: "Apollo" },
-  "styled-components": { image: styledComponents, name: "styled components"},
-  'google-map-api': { image: googlemap, name: "Google Map API" },
+  "styled-components": { image: styledComponents, name: "styled components" },
+  "google-map-api": { image: googlemap, name: "Google Map API" },
   http: { image: http, name: "HTTP" },
   typescript: { image: typescript, name: "TypeScript" },
   book: { image: book, name: "book review" },
@@ -60,18 +61,19 @@ const TAGCON = {
   babel: { image: babel, name: "babel" },
   javascript: { image: javascript, name: "javascript" },
   etc: { image: etc, name: "etc" },
-}
+  webpack: { image: webpack, name: "webpack" },
+};
 
 export const getImage = (tag) => {
-  if(TAGCON[tag] && TAGCON[tag].image) {
+  if (TAGCON[tag] && TAGCON[tag].image) {
     return TAGCON[tag].image;
   }
   return "";
-}
+};
 
 export const getName = (tag) => {
-  if(TAGCON[tag] && TAGCON[tag].name) {
+  if (TAGCON[tag] && TAGCON[tag].name) {
     return TAGCON[tag].name;
   }
   return tag;
-}
+};

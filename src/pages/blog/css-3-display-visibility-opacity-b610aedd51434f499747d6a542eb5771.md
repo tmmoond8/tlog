@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: CSS 3. display, visibility, opacity
-date: 2019-12-22T08:56:56.243Z
+date: 2020-04-01T08:56:56.243Z
 description: 보여지는 속성 정리
 featuredpost: true
 featuredimage: /img/cover/css-cover.jpg
@@ -10,8 +10,6 @@ tags:
 ---
 
 #
-
-Created: Feb 15, 2020 3:35 PM
 
 [CSS3 Display | PoiemaWeb](https://poiemaweb.com/css3-display)
 
