@@ -1,0 +1,23 @@
+{
+  "name": "tlog",
+  "version": "2.0.1",
+  "description": "tmmoond8's blog",
+  "repository": "https://github.com/tmmoond8/tlog",
+  "author": "moonti <tmmoond8@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.21",
+    "typescript": "^4.4.3"
+  }
+}
