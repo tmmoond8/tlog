@@ -1,5 +1,7 @@
 import App from 'next/app';
+import * as NotionUI from 'notion-ui';
 import GlobalStyles from '../styles/globalStyles';
+import Aside from '../components/Aside';
 
 class TlogApp extends App {
   public render() {
@@ -7,10 +9,12 @@ class TlogApp extends App {
     return (
       <>
         <GlobalStyles />
-        {
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          <Component {...pageProps} />
-        }
+        <NotionUI.Layout.App aside={<Aside />}>
+          {
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            <Component {...pageProps} />
+          }
+        </NotionUI.Layout.App>
       </>
     );
   }

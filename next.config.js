@@ -3,10 +3,11 @@
 const dotenv = require('dotenv');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const withSvgr = require('next-plugin-svgr');
 
 dotenv.config();
 
-module.exports = {
+module.exports = withSvgr({
   webpack: (_config) => {
     const config = _config;
     config.plugins = config.plugins || [];
@@ -18,12 +19,6 @@ module.exports = {
         systemvars: true,
       }),
     ];
-
-    config.module.rules = config.module.rules || [];
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
     return config;
   },
-};
+});
