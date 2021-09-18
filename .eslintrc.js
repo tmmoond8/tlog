@@ -13,6 +13,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     'linebreak-style': 0,
     'import/prefer-default-export': 0,
     'prettier/prettier': 0,
