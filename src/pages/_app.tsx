@@ -2,6 +2,7 @@ import App from 'next/app';
 import * as NotionUI from 'notion-ui';
 import GlobalStyles from '../styles/globalStyles';
 import Aside from '../components/Aside';
+import DesktopHead from '../components/DesktopHead';
 
 class TlogApp extends App {
   public render() {
@@ -9,7 +10,11 @@ class TlogApp extends App {
     return (
       <>
         <GlobalStyles />
-        <NotionUI.Layout.App aside={<Aside />}>
+        <NotionUI.Layout.App
+          aside={<Aside />}
+          leftMenus={<DesktopHead.Left />}
+          rightMenus={<DesktopHead.Right />}
+        >
           {
             // eslint-disable-next-line react/jsx-props-no-spreading
             <Component {...pageProps} />
