@@ -1,5 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import cx from 'classnames';
-
 import { colors } from 'notion-ui';
 import * as icons from './icons';
 import * as styles from './styles';
@@ -26,7 +28,7 @@ export type IconProps = {
 function Icon(props: IconProps): JSX.Element {
   const {
     icon,
-    color = colors.grey08,
+    color = colors.grey60,
     className,
     size = '1em',
     onClick,
@@ -42,7 +44,7 @@ function Icon(props: IconProps): JSX.Element {
   const SVGIcon = icons[icon];
   return (
     <SVGIcon
-      // css={[styles.base, customStyle, styles.size(size)]}
+      css={[styles.base, customStyle, styles.size(size)]}
       className={cx('Icon', className, icon)}
       onClick={handleClick}
     />
