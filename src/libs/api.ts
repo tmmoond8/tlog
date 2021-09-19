@@ -19,10 +19,10 @@ export function getPostBySlug(slug) {
     'title',
     'date',
     'slug',
-    'author',
-    'coverImage',
-    'excerpt',
     'date',
+    'coverImage',
+    'description',
+    'ogImage',
     'content',
   ];
 
