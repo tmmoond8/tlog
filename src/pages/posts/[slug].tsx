@@ -28,7 +28,10 @@ export default function Post({ post, morePosts, preview }) {
                 <p>{post.date}</p>
                 <p>{JSON.stringify(post.author)}</p>
               </div>
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              <div
+                className="post-section"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
             </article>
           </>
         )}

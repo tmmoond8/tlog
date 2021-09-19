@@ -1,6 +1,7 @@
 import { Global, css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
 import { colorCss, colors, useTheme } from 'notion-ui';
+import { postCss } from './post';
 
 const customReset = css`
   html,
@@ -99,5 +100,5 @@ const customReset = css`
 
 export default function GlobalStyles(): JSX.Element {
   useTheme();
-  return <Global styles={[emotionReset, customReset, colorCss]} />;
+  return <Global styles={[emotionReset, customReset, colorCss, postCss]} />;
 }
