@@ -2,12 +2,10 @@
 title: 1장 HTTP 개관
 date: '2019-06-20T08:56:56.243Z'
 description: HTTP 완벽 가이드 1장 정리
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-ogImage: '/assets/blog/dynamic-routing/cover.jpg'
+image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - http
 ---
-#
 
 이번 장에서 다룰 내용들
 
@@ -56,7 +54,8 @@ URN(uniform resource name): 이름을 통해 접근.
 
 클라이언트의 요청과 서버의 응답의 쌍을 하나의 트랜잭션이라고 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7d1bcce2-14ed-40ef-94da-f302a30393e3_m8aikg.png)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7d1bcce2-14ed-40ef-94da-f302a30393e3_m8aikg.png)  
+
 **1.4.1 메서드**
 
 get, post, put, delete, head

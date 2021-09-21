@@ -20,9 +20,8 @@ export function getPostBySlug(slug) {
     'date',
     'slug',
     'date',
-    'coverImage',
+    'image',
     'description',
-    'ogImage',
     'content',
   ];
 

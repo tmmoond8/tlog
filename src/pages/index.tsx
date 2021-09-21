@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getAllPosts } from '../libs/api';
 
 const Index = ({ allPosts }) => {
@@ -6,7 +7,9 @@ const Index = ({ allPosts }) => {
       <p>Tlog V2</p>
       <ul>
         {allPosts.map(({ slug, title }) => (
-          <li key={slug}>{title}</li>
+          <Link key={slug} href={`/posts/${slug}`}>
+            {title}
+          </Link>
         ))}
       </ul>
     </div>
