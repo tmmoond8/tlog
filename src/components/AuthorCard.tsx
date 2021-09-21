@@ -4,43 +4,6 @@ import { colors } from 'notion-ui';
 import Squircle from '../components/Squircle';
 import { desktop } from '../styles';
 
-const Wrapper = styled.div``;
-const contentSize = '3rem';
-
-const Card = styled.div`
-  display: flex;
-  padding: 1rem 2rem;
-  max-width: 60em;
-
-  ${desktop(css`
-    padding: 0rem;
-    height: 6rem;
-  `)}
-`;
-
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`;
-
-const Name = styled.span`
-  padding-left: 1rem;
-  line-height: ${contentSize};
-  color: ${colors.red};
-`;
-
-const Introduction = styled.span`
-  flex: 1;
-  text-align: left;
-  color: ${colors.grey};
-  font-weight: 300;
-  ${desktop(css`
-    line-height: 1.5;
-    font-size: 0.8rem;
-  `)}
-`;
-
 const AuthorCard = () => {
   return (
     <Wrapper>
@@ -62,3 +25,42 @@ const AuthorCard = () => {
 };
 
 export default AuthorCard;
+
+const Wrapper = styled.div`
+  margin-top: 64px;
+`;
+const contentSize = '3rem';
+
+const Card = styled.div`
+  display: flex;
+  padding: 0rem;
+  max-width: 60em;
+
+  ${desktop(css`
+    height: 6rem;
+  `)}
+`;
+
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 1rem;
+`;
+
+const Name = styled.span`
+  line-height: ${contentSize};
+  color: ${colors.red};
+`;
+
+const Introduction = styled.span`
+  flex: 1;
+  text-align: left;
+  color: ${colors.grey};
+  font-weight: 300;
+  line-height: 1.5rem;
+  ${desktop(css`
+    line-height: 1.5;
+    font-size: 0.8rem;
+  `)}
+`;

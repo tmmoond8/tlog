@@ -5,6 +5,7 @@ description: HTTP 완벽 가이드 1장 정리
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - http
+  - cs
 ---
 
 이번 장에서 다룰 내용들

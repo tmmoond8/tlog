@@ -22,6 +22,7 @@ export function getPostBySlug(slug) {
     'date',
     'image',
     'description',
+    'tags',
     'content',
   ];
 
