@@ -4008,10 +4008,10 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
-notion-ui@^0.3.9-b:
-  version "0.3.9-b"
-  resolved "https://registry.yarnpkg.com/notion-ui/-/notion-ui-0.3.9-b.tgz#68a6fd329d8d9e71d653a2675e0145e52c2f13e0"
-  integrity sha512-Yi9we2cG/c7UwM9YtVZ9gbgqMUh5mp2PMWJeTk+Gsn6ZO4fiU62w6thKncxpz6t/RkmQqh/euZ52T36Pv/MpMg==
+notion-ui@^0.3.10:
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/notion-ui/-/notion-ui-0.3.10.tgz#bd8c2ddffe6a3353fd26dc7f6647e2e90d917efb"
+  integrity sha512-71Rc7VMvKSOhz0+DAeLxJ+P3rEA82bREf7Jg8fA8cghUDmzMhGqgrWaU2ns7y9Fo8P/IV5ELE4fiIw3obdVg+w==
 
 nth-check@^1.0.2:
   version "1.0.2"

@@ -21,7 +21,7 @@
     "gray-matter": "^4.0.3",
     "next": "^11.1.2",
     "next-plugin-svgr": "^1.0.0",
-    "notion-ui": "^0.3.9-b",
+    "notion-ui": "^0.3.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark-html": "^14.0.1",

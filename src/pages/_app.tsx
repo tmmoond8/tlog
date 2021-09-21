@@ -14,6 +14,11 @@ class TlogApp extends App {
           aside={<Aside />}
           leftMenus={<DesktopHead.Left />}
           rightMenus={<DesktopHead.Right />}
+          center={
+            <NotionUI.Content.Text>
+              {pageProps.post?.title ?? ''}
+            </NotionUI.Content.Text>
+          }
         >
           {
             // eslint-disable-next-line react/jsx-props-no-spreading
