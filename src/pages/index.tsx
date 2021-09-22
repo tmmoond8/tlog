@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { getAllPosts } from '../libs/api';
 import Gallery from '../components/Gallery';
 
