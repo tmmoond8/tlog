@@ -542,7 +542,7 @@ export const postCSS = css`
 
   .post-section blockquote {
     border-left: 0.25em solid #dfe2e5;
-    color: #6a737d;
+    color: ${colors.grey60};
     padding: 0 1em;
   }
 

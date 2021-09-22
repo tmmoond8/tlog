@@ -4,8 +4,8 @@ date: '2019-06-20T08:56:56.243Z'
 description: HTTP 완벽 가이드 1장 정리
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
-  - http
-  - cs
+  - HTTP
+  - CS
 ---
 
 이번 장에서 다룰 내용들
@@ -71,7 +71,7 @@ get, post, put, delete, head
 
 ### 1.5 메시지
 
-![](Untitled-695830ca-6bbf-4294-820b-5ffc4f3a9bd7.png)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-695830ca-6bbf-4294-820b-5ffc4f3a9bd7_tkirlx.png)
 
 시작줄: 첫 줄로, 요청이라면 무엇을 해야 하는지 응답이라면 무슨 작업을 했는지 나타낸다.
 

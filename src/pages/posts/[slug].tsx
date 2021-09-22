@@ -122,7 +122,7 @@ const Tags = styled.ol`
 
   li {
     background-color: ${colors.grey08};
-    padding: 6px 6px;
+    padding: 8px 6px 6px 6px;
     color: ${colors.red};
     border-radius: 3px;
     margin-right: 8px;
