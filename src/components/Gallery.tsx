@@ -109,4 +109,5 @@ const CoverImage = styled(Image)`
   max-height: unset !important;
   min-height: unset !important;
   height: auto !important;
+  margin: 0 0 auto 0 !important;
 `;
