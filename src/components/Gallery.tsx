@@ -24,9 +24,7 @@ export default function Gallery({ allPosts }) {
                 <Tags>
                   {tags && tags.map((tag) => <li key={tag}>{tag}</li>)}
                 </Tags>
-                <Content.Text fontSize={14}>
-                  {getDateGoodLook(date)}
-                </Content.Text>
+                <Date fontSize={14}>{getDateGoodLook(date)}</Date>
               </PostInfo>
             </PostBody>
           </PostCard>
@@ -89,9 +87,13 @@ const Tags = styled.ol`
     padding: 8px 6px 6px 6px;
     color: ${colors.red};
     border-radius: 3px;
-    margin-right: 8px;
+    margin: 8px 8px 0 0;
     font-size: 14px;
   }
+`;
+
+const Date = styled(Content.Text)`
+  min-width: fit-content;
 `;
 
 const Description = styled(Content.Text)`
