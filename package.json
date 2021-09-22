@@ -24,6 +24,7 @@
     "notion-ui": "^0.3.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-topbar-progress-indicator": "^4.1.0",
     "remark-html": "^14.0.1",
     "remark-parse": "^10.0.0",
     "throttle-debounce": "^3.0.1",

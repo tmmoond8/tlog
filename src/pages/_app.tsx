@@ -1,3 +1,4 @@
+import Router from 'next/router';
 import App from 'next/app';
 import * as NotionUI from 'notion-ui';
 import { throttle } from 'throttle-debounce';
@@ -37,9 +38,25 @@ const addScroll = () => {
 };
 
 class TlogApp extends App {
+  state = {
+    isLoading: false,
+  };
+
   public componentDidMount() {
     restoreScroll();
     addScroll();
+    Router.events.on('routeChangeStart', () => {
+      this.setState({
+        ...this.state,
+        isLoading: true,
+      });
+    });
+    Router.events.on('routeChangeComplete', () => {
+      this.setState({
+        ...this.state,
+        isLoading: false,
+      });
+    });
   }
 
   public componentDidUpdate() {
@@ -62,10 +79,12 @@ class TlogApp extends App {
             </NotionUI.Content.Text>
           }
         >
-          {
+          {this.state.isLoading ? (
+            <NotionUI.Loader.ParentFull />
+          ) : (
             // eslint-disable-next-line react/jsx-props-no-spreading
             <Component {...pageProps} />
-          }
+          )}
         </NotionUI.Layout.App>
       </>
     );
