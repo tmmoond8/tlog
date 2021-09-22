@@ -5,7 +5,7 @@ description: Loader로 다양한 파일 다루기
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/webpack_zceueo.png'
 tags:
   - Webpack
-  - Javascript
+  - JavaScript
 ---
 
 #

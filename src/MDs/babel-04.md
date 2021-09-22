@@ -5,7 +5,7 @@ description: 더 많은 브라우저 지원하기
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
 tags:
   - Babel
-  - Javascript
+  - JavaScript
 ---
 # 
 

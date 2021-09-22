@@ -4,7 +4,7 @@ date: '2020-03-11T08:56:56.263Z'
 description: JavaScript에서 클로저란?
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
-  - Javascript
+  - JavaScript
 ---
 
 #

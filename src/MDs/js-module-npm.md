@@ -4,7 +4,7 @@ date: '2019-10-30T08:56:56.263Z'
 description: 전통적인 JS의 의존성 관리 방식과 한계, CommonJS, AMD 등장. JS의 패키지 관리자인 NPM
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
-  - Javascript
+  - JavaScript
   - React
   - NPM
 ---

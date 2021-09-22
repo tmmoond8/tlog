@@ -4,7 +4,7 @@ date: '2020-05-18T08:56:56.263Z'
 description: 왜 Symbol이 필요할까?
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
-  - Javascript
+  - JavaScript
 ---
 
 #

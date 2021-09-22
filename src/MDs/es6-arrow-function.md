@@ -4,7 +4,7 @@ date: '2020-04-10T08:56:56.263Z'
 description: 화살표 함수에 대해 깊게 이해하기
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
-  - Javascript
+  - JavaScript
 ---
 
 #

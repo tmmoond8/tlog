@@ -5,7 +5,7 @@ description: Plugin으로 더 강력한 Webpack
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/webpack_zceueo.png'
 tags:
   - Webpack
-  - Javascript
+  - JavaScript
 ---
 
 #

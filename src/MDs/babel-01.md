@@ -5,7 +5,7 @@ description: babel에 대한 기본 이해
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
 tags:
   - Babel
-  - Javascript
+  - JavaScript
 ---
 # 
 

@@ -4,7 +4,7 @@ date: '2020-04-23T08:56:56.263Z'
 description: 콜백 지옥을 벗어나자
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
-  - Javascript
+  - JavaScript
 ---
 
 #

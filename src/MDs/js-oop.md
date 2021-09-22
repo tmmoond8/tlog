@@ -4,7 +4,7 @@ date: '2020-03-26T08:56:56.263Z'
 description: 대체가능성, 내적동질성
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
-  - Javascript
+  - JavaScript
 ---
 
 #
