@@ -96,12 +96,13 @@ const Tags = styled.ol`
 
 const Description = styled(Content.Text)`
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   align-items: flex-start;
-  height: 52px;
-  max-height: 52px;
+  height: 58px;
+  line-height: 26px;
+  max-height: 58px;
 `;
 
 const CoverImage = styled(Image)`
