@@ -26,9 +26,9 @@ tags:
 
 단점: 의도한 콘텐츠를 접근하는 데 최소 두 번의 요청이 필요하다.
 
-![17/_2019-09-07__9.49.02.png](17/_2019-09-07__9.49.02.png)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/_2019-09-07__9.49.02_xs4s3o.png)
 
-![17/_2019-09-07__9.49.40.png](17/_2019-09-07__9.49.40.png)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2019-09-07__9.49.40_dou6d1.png)
 
 ### 17.3 서버 주도 협상
 

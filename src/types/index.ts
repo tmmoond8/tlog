@@ -3,6 +3,5 @@ export interface Post {
   date: string;
   slug: string;
   content: string;
-  ogImage: string;
-  coverImage: string;
+  image: string;
 }

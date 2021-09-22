@@ -1,17 +1,11 @@
 import Link from 'next/link';
 import { getAllPosts } from '../libs/api';
+import Gallery from '../components/Gallery';
 
 const Index = ({ allPosts }) => {
   return (
     <div>
-      <p>Tlog V2</p>
-      <ul>
-        {allPosts.map(({ slug, title }) => (
-          <Link key={slug} href={`/posts/${slug}`}>
-            {title}
-          </Link>
-        ))}
-      </ul>
+      <Gallery allPosts={allPosts} />
     </div>
   );
 };

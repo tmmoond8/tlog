@@ -31,8 +31,7 @@ export function getPostBySlug(slug) {
     date: '',
     slug: '',
     content: '',
-    ogImage: '',
-    coverImage: '',
+    image: '',
   };
 
   // Ensure only the minimal needed data is exposed

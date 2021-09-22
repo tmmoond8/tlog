@@ -24,10 +24,10 @@ export default function Post({ post, morePosts, preview }) {
           <p>Loading…</p>
         ) : (
           <>
-            <article className="mb-32">
+            <section className="mb-32">
               <Head>
                 <title>{post.title} | tlog</title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:image" content={post.image} />
               </Head>
               <Main>
                 <Content.Text as="H1" marginTop={18}>
@@ -55,7 +55,7 @@ export default function Post({ post, morePosts, preview }) {
                 />
                 <AuthorCard />
               </Main>
-            </article>
+            </section>
           </>
         )}
       </div>
