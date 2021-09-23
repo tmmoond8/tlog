@@ -13,24 +13,13 @@ import styled from '@emotion/styled';
 import { desktop } from '../styles';
 import type { Post } from '../types';
 import Icon from '../components/Icon';
+import AsideTags from './AsideTags';
 
 interface AsideProps {
   allPosts: Post[];
 }
 
 export default function Aside({ allPosts }: AsideProps) {
-  const tags = allPosts.reduce((accum: Record<string, any>, post) => {
-    if (post.tags) {
-      post.tags.forEach((tag: string) => {
-        if (!Array.isArray(accum[tag])) {
-          accum[tag] = [];
-        }
-        accum[tag].push(post);
-      });
-    }
-    return accum;
-  }, {} as Record<string, any>);
-  console.log('aa;, pageProp', tags);
   const theme = loadTheme();
   const [isDark, setIsDark] = React.useState(theme === 'Dark');
   const handleToggleTheme = React.useCallback(() => {
@@ -56,15 +45,8 @@ export default function Aside({ allPosts }: AsideProps) {
           iconUrl="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631854824/noticon/q4gbwdq0xkik6xiybdmp.png"
         />
       </AsideUI.Group>
-      <AsideUI.Group title="TAG">
-        <AsideUI.Menu
-          key="abc"
-          title="bbb"
-          handleClick={() => console.log('aa')}
-          iconUrl="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631854824/noticon/q4gbwdq0xkik6xiybdmp.png"
-        />
-      </AsideUI.Group>
-      <div style={{ flex: 100 }} />
+      <AsideTags allPosts={allPosts} />
+      <Content.Spacing size={20} />
       <BottomMenus>
         {/* <Content.Spacing size={20} /> */}
         <GithubMenu
@@ -94,9 +76,9 @@ const Column = styled.div`
 `;
 
 const BottomMenus = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  padding-bottom: 20px;
 `;
 
 const GithubMenu = styled(AsideUI.Menu)`

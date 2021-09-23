@@ -4,7 +4,7 @@ date: '2019-05-09T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.0 ~ 2.6
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
-  - 'Clone Coding'
+  - 'Uber Clone Coding'
   - 'Nomad Coder'
   - React
   - Apollo
