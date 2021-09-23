@@ -2,7 +2,7 @@
 title: eslint & prettier
 date: '2020-02-11T08:56:56.263Z'
 description: eslint & prettier 설정하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/eslint-prettier_vwmdm2.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/eslint-prettier_vwmdm2.png'
 tags:
   - 'Project Setup'
 ---

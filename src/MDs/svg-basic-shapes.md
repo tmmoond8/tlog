@@ -2,11 +2,10 @@
 title: SVG Basic Shapes
 date: '2019-11-09T08:56:56.243Z'
 description: SVG의 기본 도형들
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
-# 
 
 [기본 도형](https://developer.mozilla.org/ko/docs/Web/SVG/Tutorial/%EA%B8%B0%EB%B3%B8_%EB%8F%84%ED%98%95)
 

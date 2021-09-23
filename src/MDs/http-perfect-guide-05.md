@@ -2,7 +2,7 @@
 title: 5장 웹서버
 date: '2019-06-29T08:56:56.243Z'
 description: HTTP 완벽 가이드 5장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -26,7 +26,7 @@ tags:
 
 nginx, apache, 마소꺼, 구글꺼가 있다. 최근에는 nginx를 가장 많이 사용한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-24__2-094f59c9-2b42-465c-b986-a8ad93071d66.37.46_vfrpce.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-24__2-094f59c9-2b42-465c-b986-a8ad93071d66.37.46_vfrpce.png)
 
 **5.1.3 임베디드 웹 서버**
 
@@ -38,7 +38,7 @@ nginx, apache, 마소꺼, 구글꺼가 있다. 최근에는 nginx를 가장 많�
 
 ### 5.3 진짜 웹 서버가 하는 일
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-e6f2ebb6-3d9f-4855-b9a7-2750f74d96dc_fyjlkz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-e6f2ebb6-3d9f-4855-b9a7-2750f74d96dc_fyjlkz.png)
 
 1. 커넥션을 맺는다. — 클라이언트의 접속을 받아들이거나, 원치 않는 클라이언트라면 닫는다.
 2. 요청을 받는다. — 요청 메시지를 해석하고 행동을 취한다.
@@ -68,7 +68,7 @@ nginx, apache, 마소꺼, 구글꺼가 있다. 최근에는 nginx를 가장 많�
 
 서버에서는 요청 메시지를 파싱한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-1003319b-6b36-4a9a-bc41-ec357799a459_ioq04g.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-1003319b-6b36-4a9a-bc41-ec357799a459_ioq04g.png)
 
 - 요청 메시지의 시작줄을 파싱하여 요청 메서드, 리소스, 버전 정보를 찾는다. 각 값은 스페이스 한 개로 분리되어 있으며, 끝에는 CRLF 문자열로 끝난다.
 - 메시지의 헤더를 읽는다. 각 헤더 메시지는 CRLF로 끝난다.
@@ -79,13 +79,13 @@ nginx, apache, 마소꺼, 구글꺼가 있다. 최근에는 nginx를 가장 많�
 
 메시지를 내부의 자료구조로 파싱해서 가지고 있는다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7b7220d4-d7d9-4e8c-b71e-3d202ab260e1_utfafx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7b7220d4-d7d9-4e8c-b71e-3d202ab260e1_utfafx.png)
 
 **5.5.2 커넥션 입력/출력 처리 아키텍쳐**
 
 간단히 그림만 봐도 이해 되지 않습니까?
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-1ca30496-1c21-4ddc-943c-4659b6c7b0c9_fk6sgb.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-1ca30496-1c21-4ddc-943c-4659b6c7b0c9_fk6sgb.png)
 
 ### 5.6 단계 3: 요청 처리
 
@@ -122,7 +122,7 @@ docroot를 사용하면 가상 호스팅 방식으로 하나의 웹서버에서 
      </VirtualHost> 
      ...
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-68be840e-cfa3-4ccf-8d7d-a123e2ee7885_jsmxr2.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-68be840e-cfa3-4ccf-8d7d-a123e2ee7885_jsmxr2.png)
 
 **5.7.2 디렉터리 목록**
 

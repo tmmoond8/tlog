@@ -2,7 +2,7 @@
 title: CSS 5. font & text
 date: '2020-06-10T08:56:56.243Z'
 description: font와 text
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
 tags:
   - CSS
 ---
@@ -19,7 +19,7 @@ font-family는 device마다 font의 존재 유무가 다르고, 존재하지 않
 
 ### mac 의 generic-font
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/css-5-font_t0w5yt.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/css-5-font_t0w5yt.png)
 
 - font-family.html
 
@@ -63,7 +63,7 @@ font-family는 device마다 font의 존재 유무가 다르고, 존재하지 않
   </html>
   ```
 
-  ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-18__11.29.20_hs9ozg.png)
+  ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-18__11.29.20_hs9ozg.png)
 
 ## font Shorthand
 
@@ -129,9 +129,9 @@ line-height는 기준이 무엇일까? 아래에는 16px라고 되어 있는데 
 
 poiemaweb이 white-space 속성을 아주 잘 정리해놨다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-18__11.52.40_rhxkuh.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-18__11.52.40_rhxkuh.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-18__11.40.27_vr77zv.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-18__11.40.27_vr77zv.png)
 
 ```html
 <!DOCTYPE html>
@@ -218,7 +218,7 @@ text-overflow 를 사용하기 위해선 다음의 조건을 따라야 한다.
 
 word-wrap과 word-break 두 속성 모두 한 단어의 길이가 길어서 부모 영역을 벗어날 때 텍스트 처리 방식을 정의한다. 그래도 차이점은 존재하는데, word-wrap은 단어를 고려해서 개행하지만, word-break는 단어를 고려하지 않고 부모 영역에 맞추어 강제로 개행 할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-19__12.01.35_afzs9j.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-03-19__12.01.35_afzs9j.png)
 
 ```html
 <!DOCTYPE html>

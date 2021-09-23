@@ -2,12 +2,11 @@
 title: (4)Babel - polyfill
 date: '2020-02-15T08:56:56.243Z'
 description: 더 많은 브라우저 지원하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
 tags:
   - Babel
   - JavaScript
 ---
-# 
 
 바벨을 사용하더라도 폴리필에 대한 설정은 별도로 해야 한다. 그 이유는 폴리필은 런타임에 기능이 존재하는지 검사하여 없는 경우 추가하기 때문이다.
 

@@ -2,7 +2,7 @@
 title: NEXT.JS
 date: '2019-05-12T13:33:01.092Z'
 description: 공식 문서 튜토리얼을 따라 하며 기록
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/nextjs8_k2cxq7.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/nextjs8_k2cxq7.png'
 tags:
   - NextJS
   - React

@@ -2,7 +2,7 @@
 title: CSS 3. display, visibility, opacity
 date: '2020-04-01T08:56:56.243Z'
 description: 보여지는 속성 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
 tags:
   - CSS
 ---
@@ -60,11 +60,11 @@ CSS 2.1 버전에서는 3가지 positioning schemes에 따라 박스의 레이�
 
 inline 요소들을 연속적으로 나열하면 아래와 같이 위에서 부터 쌓이게 된다. 만약 세로 정렬을 중앙으로 하고 싶으면 어떻게 해야 할까?
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-23__6.59.41_qwcuqo.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-23__6.59.41_qwcuqo.png)
 
 vertical-align 속성을 사용하여 중앙으로 정렬할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-23__7.04.36_pcloyo.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-23__7.04.36_pcloyo.png)
 
 모두 중앙으로 정렬을 할 때, 중앙이라고 판단해야 할 기준이 있을 것이다. vertical-align에서 받을 수 있는 속성은 baseline, bottom, initial, middle, sub, super, text-bottom, text-top, top, unset 등이 있다. 이러한 값들이 적용되게 하려면 어떤 명확한 기준이 필요할 것이다.
 이 기준이 line-box다. inline 요소가 존재하면 바로 line-box 모델이 inline 요소를 감싸게 된다. line-box는 가상의 엘리먼트로 DOM에는 표현이 되지 않지만, layout을 할 때 기준이 되기 때문에 명확히 존재한다.
@@ -94,7 +94,7 @@ display : none 과 visibility : hidden 의 차이점.
 
 visibility 는 공간이 존재하고 보이지만 않는 것이라면, display : none은 공간도 존재 하지 않는다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/_2020-02-23__11.39.34_ga13zr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/_2020-02-23__11.39.34_ga13zr.png)
 
 ## Opacity
 
@@ -137,7 +137,7 @@ opacity 요소는 자식 요소들에게도 영향을 미치게 된다.
 </html>
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-23__11.53.06_ixflsb.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-23__11.53.06_ixflsb.png)
 
 만약 자손에게 영향을 주지 않고 투명도를 사용하고 싶다면 rgba(0,0,0, 0.5) 식으로 주면 된다.
 

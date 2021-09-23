@@ -2,12 +2,11 @@
 title: (2)Babel - 실행편
 date: '2020-01-09T08:56:56.243Z'
 description: 실습을 통한 더 깊은 이해
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
 tags:
   - Babel
   - JavaScript
 ---
-# 
 
 
 > 바벨이란?

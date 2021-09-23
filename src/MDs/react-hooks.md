@@ -2,7 +2,7 @@
 title: React Hooks - 기본편
 date: '2020-02-05T08:56:56.243Z'
 description: Hooks에 대한 기본적인 이해
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/react-hooks_crng6c.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/react-hooks_crng6c.png'
 tags:
   - React
 ---

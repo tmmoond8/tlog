@@ -2,7 +2,7 @@
 title: 23 우버 클론 코딩 (nomad coders)
 date: '2019-06-04T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.36 ~ 2.38
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -412,6 +412,6 @@ tags:
         
         export default EditAccountContainer;
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-26__3-dbd7f701-0caa-4f81-93c0-30eeafc8b19e.19.23_h45ry4.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-26__3-dbd7f701-0caa-4f81-93c0-30eeafc8b19e.19.23_h45ry4.png)
 
 > ProfileQuery에 fetchPolicy의 값은 여러 값을 사용할 수 있다. 니콜라스의 경우 cache-and-network 를 값으로 사용했는데, 업데이트 한 후 쿼리가 다시 호출되지 않아서 no-cache로 변경했다.

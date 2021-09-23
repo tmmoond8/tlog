@@ -2,7 +2,7 @@
 title: 16 우버 클론 코딩 (nomad coders)
 date: '2019-05-09T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.0 ~ 2.6
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -10,7 +10,6 @@ tags:
   - Apollo
   - 'Project Setup'
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -303,7 +302,7 @@ global state인 에는 clientState로 사용자의 로그인 정보를 가진다
 
 이렇게 까지 하고 클라이언트를 실행시키자. client의 스크립트는 yarn start다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-02__5-445bf5d7-db4b-424d-a4f7-213315ccb4b7.55.54_regodr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-02__5-445bf5d7-db4b-424d-a4f7-213315ccb4b7.55.54_regodr.png)
 
 위 데이터를 살짝 살펴보면, 일단 variables, loading, networkStatus, auth 필드가 있다. 아직은 auth 객체 외에는 설명할 수 있는 것들이 없다. 나도 apollo-boost를 공부해야 한다. 
 

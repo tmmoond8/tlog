@@ -2,12 +2,11 @@
 title: gatsby 블로그 만들기
 date: '2019-05-01T08:56:56.243Z'
 description: gatsby + Netlify 사용해서 블로그 만들기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/gatsby_zucriz.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/gatsby_zucriz.jpg'
 tags:
   - Gatsby
   - React
 ---
-# 
 
 gatsby 블로그를 만들기 위해 먼저  gatsby에서 컨셉을 이해했다. 
 
@@ -25,7 +24,7 @@ gatsby + netlify CMS를 사용해서 포스트 쓰고 배포도 쉽게 할 수 �
 
 <https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-starter-netlify-cms&stack=cms> 에서 먼저 github 계정을 연동한다. 계정이 연동되면 새 프로젝트를 위한 레포지토리를 생성한다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-01__5-aaa67035-0c6a-40bf-bffa-9c011d5db4c3.26.26_wgsfx2.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-01__5-aaa67035-0c6a-40bf-bffa-9c011d5db4c3.26.26_wgsfx2.png)
 
 이렇게 저장하면 내 github에 myapp 레포지토리가 생성된다. 내 github로 가서 확인하자. 생성된 레포지토리를 로컬에 클론하자.
 
@@ -49,9 +48,9 @@ $ npm run serve
 
 Domain settings 버튼을 누르고, mystifying-cu\*\*.netlify.com(청록색) 링크를 누르면 Your Netlify site URL 로 이동한다. 이동한 주소를 복사해서 입력해주자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-01__5-95757168-0b53-4e33-93ff-b91337b669c9.31.05_bblgcc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-01__5-95757168-0b53-4e33-93ff-b91337b669c9.31.05_bblgcc.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-01__5-295ce5a2-dd72-4a62-9cf8-43fa3d85491f.32.37_orsmoc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-01__5-295ce5a2-dd72-4a62-9cf8-43fa3d85491f.32.37_orsmoc.png)
 
 [https://mystifying-curie-7c034e.netlify.com](https://mystifying-curie-7c034e.netlify.com/)
 

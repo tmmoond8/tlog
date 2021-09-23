@@ -2,13 +2,12 @@
 title: 9 우버 클론 코딩 (nomad coders)
 date: '2019-04-26T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.49 ~ 1.55
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - Mailgun
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -24,7 +23,7 @@ tags:
 
 [https://app.mailgun.com/app/account/security/api_keys](https://app.mailgun.com/app/account/security/api_keys) 로 이동하면 나의 private api key가 있다. 이 키를 .env에 저장하자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-04-21__1-1ed7188e-0843-4ab4-8827-efed333b22df.32.58_cqafld.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-04-21__1-1ed7188e-0843-4ab4-8827-efed333b22df.32.58_cqafld.png)
 
 이메일을 통해 인증하는 코드를 마져 작성하자. 설치해줘야 할 모듈이 있다.
 

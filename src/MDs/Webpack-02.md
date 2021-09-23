@@ -2,7 +2,7 @@
 title: Webpack(2) - Loader
 date: '2020-03-20T08:56:56.243Z'
 description: Loader로 다양한 파일 다루기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/webpack_zceueo.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/webpack_zceueo.png'
 tags:
   - Webpack
   - JavaScript

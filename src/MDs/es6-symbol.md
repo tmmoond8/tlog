@@ -2,7 +2,7 @@
 title: ES6 - Symbol
 date: '2020-05-18T08:56:56.263Z'
 description: 왜 Symbol이 필요할까?
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---
@@ -106,7 +106,7 @@ const Github = ((_) => {
 
 다음은 console.dir(Symbol) 을 호출했을 때 나오는 객체다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952590/tlog/_2020-02-06__11.22.50_hzjfus.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/_2020-02-06__11.22.50_hzjfus.png)
 
 Symbol 객체의 프로퍼티 중에 length와 prototype을 제외한 프로퍼티를 `well-known Symbol` 이라고 부른다.
 

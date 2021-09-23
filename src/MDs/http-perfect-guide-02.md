@@ -2,7 +2,7 @@
 title: 2장 URL과 리소스
 date: '2019-06-23T08:56:56.243Z'
 description: HTTP 완벽 가이드 2장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -24,7 +24,7 @@ URL에는 스킴, 호스트, 패스, 쿼리, 프래그먼트가 구성 요소지
 
 스킴, 호스트, 패스 정도가 URL의 항상 포함해야 하는 것들이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-20__12-7f10e661-1e5f-4b63-a657-2f45af02ef03.23.11_ffcvms.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-20__12-7f10e661-1e5f-4b63-a657-2f45af02ef03.23.11_ffcvms.png)
 
 mailto:tamm@google.com
 

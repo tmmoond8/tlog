@@ -2,7 +2,7 @@
 title: 17 우버 클론 코딩 (nomad coders)
 date: '2019-05-20T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.7 ~ 2.12
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -482,4 +482,4 @@ tags:
 
 자 이제 리액트를 다시 띄우고 접속하면, 페이지가 잘 보일 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-29__3-842a07d4-faf2-4bb8-baaa-5a74e34b5c43.01.23_scxtvl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-29__3-842a07d4-faf2-4bb8-baaa-5a74e34b5c43.01.23_scxtvl.png)

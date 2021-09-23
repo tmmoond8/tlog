@@ -2,13 +2,12 @@
 title: 30 우버 클론 코딩 (nomad coders)
 date: '2019-06-23T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.57 ~ 2.60
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -18,7 +17,7 @@ tags:
 
 구글맵의 기능을 계속 확장하고 있다. 이전에 목적지를 표시했다면, 목적지와 내 위치를 둘다 적절히 표시할 수 있게 하자. google maps에서는 bounds를 생성하는 것인데 아래 그림 그럼 두 위치를 포함하는 bounds를 생성해서 필요한 만큼 줌을 조절하여 화면에 보여준다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1632313834/tlog/aaa_gjhqri.gif)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632313834/tlog/aaa_gjhqri.gif)
 
 - src/routes/Home/HomeContainer.tsx   `setBounds` 라는 함수를 별도로 빼서 목적지를 검색하면 state를 업데이트하고 두 지점간에 bounds를 생성하게 했다.
 
@@ -131,7 +130,7 @@ tags:
 
 주변을 이제 장소를 검색하고 버튼을 누르면 경로를 콘솔에 찍도록 했다. 잘 찍히는데, 이게 한국에서 장소 API를 못쓰게 해서 그런지 결과가 안나온다... 그냥 일본으로 검색해서 테스트 했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-27__2-67539d84-2f3c-4c3f-b5bc-06c96559e6e1.48.55_albruo.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-27__2-67539d84-2f3c-4c3f-b5bc-06c96559e6e1.48.55_albruo.png)
 
 위 처럼 결과가 나온다. routes 아 길에 대한 정보인거같고, overview_path, overview_polyline에  지도에 나타낼 시각 자료가 있는거 같다. 또, legs 안쪽에는 거리 정보와 이동 시간 등이 있다. 이 건 나중에 앱에 표시할 예정이다.
 
@@ -156,7 +155,7 @@ tags:
             })
         ... 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/_2019-05-28__10-60d9f0dc-de2e-41e1-80d2-4991aed0b348.31.33_s1um38.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/_2019-05-28__10-60d9f0dc-de2e-41e1-80d2-4991aed0b348.31.33_s1um38.png)
 
 ## #2.59 Calculating the Price
 
@@ -296,7 +295,7 @@ tags:
 
 여기까지 진행하면 가격을 정해서 Ride를 요청하는 버튼이 생성된다. 만약 목적지를 바꾸고 싶다면 변경할 수도 있게 했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/_2019-05-27__5-c06282f1-f525-4e3e-ab15-e6c4419e5a21.44.25_laqeec.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/_2019-05-27__5-c06282f1-f525-4e3e-ab15-e6c4419e5a21.44.25_laqeec.png)
 
 ## #2.60 Report Location with HOC
 

@@ -2,13 +2,12 @@
 title: 34 우버 클론 코딩 (nomad coders)
 date: '2019-07-02T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.70 ~ 2.74
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -64,7 +63,7 @@ tags:
                               </AcceptRide>
                             )}
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-03__5-4896b007-2218-4010-8ba7-6de66efdb880.24.37_pnwkpb.png)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-03__5-4896b007-2218-4010-8ba7-6de66efdb880.24.37_pnwkpb.png)
 
 운전자에 콘솔을 보면 `subscribeToMore` 객체가 있는 것을 확인할 수 있다. 이제 다시 위 코드를 원복하자.
 
@@ -117,7 +116,7 @@ tags:
 
 자 이제, 기존 ride와 유저의 isRiding을 초기화 하고 새로운 ride를 요청해보자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-03__5-750c8d48-5ef9-46bb-8cfb-52414fe401ff.40.22_bartji.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-03__5-750c8d48-5ef9-46bb-8cfb-52414fe401ff.40.22_bartji.png)
 
 콘솔에 첫번째 인자(prev)와 두번째 인자(result)를 출력하게 했고 결과는 아래와 같다. `prev`는 이전에 받은 값이라면, `result` 는 새로 얻은 값이다.
 
@@ -416,7 +415,7 @@ RideContainer는 내가 임의로 코드를 좀 변경했는데  rideId가 strin
 
 결과는 다음처럼 승객과 운전자 정보 그리고 ride 정보를 나타내주면 끝이다. (승객쪽에는 ride 페이지로 이동 후 이상이 있을 수 있다. 운전자가 ACCEPT 하고 승객쪽에서 새로고침 하면 정상적으로 보인다.)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-04__1-51b685f9-739c-4c03-86da-12d22c34defd.45.54_eu3ycf.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-04__1-51b685f9-739c-4c03-86da-12d22c34defd.45.54_eu3ycf.png)
 
 ## #2.74 Get Ride Query part Two
 
@@ -628,6 +627,6 @@ Ride 페이지 또한 운전자만 사용할 수 있는 버튼이 있다. 운행
 
 앱을 실행하면 왼쪽이 탑승자고 오른쪽이 운전자다. 운전자쪽에만 버튼이 렌더링되게 했다. 운전자에 있는 버튼을 누르면 콘솔에 Ride의 Status가 업데이트 되는 것을 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-04__7-de11e8eb-7999-4e07-84ed-71f78de04eeb.38.52_gunxim.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-04__7-de11e8eb-7999-4e07-84ed-71f78de04eeb.38.52_gunxim.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-04__7-9682d715-9be8-4843-ab05-aac3eb26b051.39.04_d3io4y.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-04__7-9682d715-9be8-4843-ab05-aac3eb26b051.39.04_d3io4y.png)

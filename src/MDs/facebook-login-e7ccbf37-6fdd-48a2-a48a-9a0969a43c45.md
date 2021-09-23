@@ -2,7 +2,7 @@
 title: Facebook Login in React
 date: '2019-07-14T08:56:56.263Z'
 description: React에서 페이스북 로그인 사용하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632299616/tlog/cover/facebook_login_dfkops.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632299616/tlog/cover/facebook_login_dfkops.jpg'
 tags:
   - OAuth
   - React

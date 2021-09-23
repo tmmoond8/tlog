@@ -2,7 +2,7 @@
 title: 6장 프락시
 date: '2019-06-30T08:56:56.243Z'
 description: HTTP 완벽 가이드 6장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -35,7 +35,7 @@ tags:
 
 게이트웨이: 둘 이상의 애플리케이션을 연결하는데 다른 프로토콜을 사용
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-d0b25c8e-aae1-4b5e-b4f6-0fd95ef0c195_mxl8qr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-d0b25c8e-aae1-4b5e-b4f6-0fd95ef0c195_mxl8qr.png)
 
 근데 요새 차이점이 모호한게 프락시도 HTTP, SSL, FTP 등 다른 프로토콜로 연결하는 기능도 포함하기 때문이다.
 
@@ -63,21 +63,21 @@ tags:
 
 네트워크 교환(d) - 프락시에 트래픽을 감시한다고 함
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-35a0948a-f01b-477f-a37b-9ea465715292_vggave.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-35a0948a-f01b-477f-a37b-9ea465715292_vggave.png)
 
 **6.3.2 어떻게 프락시의 연쇄가 계층을 이루는가?**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bbd6ef3a-8ad9-4669-a44b-3c636a5eef3e_nzohvk.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bbd6ef3a-8ad9-4669-a44b-3c636a5eef3e_nzohvk.png)
 
 서버쪽으로 갈 수록 부모 서버가 되고, 자식 프락시는 자신이 수행할 일을 요청할 부모 프락시를 정할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-1f0ac184-04ed-470d-ad9b-a7dc221bd31b_ojxnyu.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-1f0ac184-04ed-470d-ad9b-a7dc221bd31b_ojxnyu.png)
 
 **6.3.3 어떻게 프락시가 트래픽을 처리하는가?**
 
 어떻게 원서버로 요청한 메시지가 프락시한테 갈까? 네 가지 방법이 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-db5385b5-609a-4b55-84e1-2bbba6ab7cb5_ggrhuc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-db5385b5-609a-4b55-84e1-2bbba6ab7cb5_ggrhuc.png)
 
 - 클라이언트를 수정 - 의도적으로 원 서버가 아닌 프락시 서버로 요청이 간다.
 - 네트워크를 수정 - 스위칭, 라우팅 장치에서 처리하는 인터셉트 프락시
@@ -141,7 +141,7 @@ tags:
 
 **6.5.7 프락시 없는 URI 분석**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a06df774-4616-4ae4-b6cc-02da0a1f4fb1_dezcm8.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a06df774-4616-4ae4-b6cc-02da0a1f4fb1_dezcm8.png)
 
 예를들어 google을 브라우저에 입력하면, [http://google:80/](http://google:80/) 이렇게 찾는다. 여기서 실패하면 [http://www.google.com:80](http://www.google.com:80) 으로 찾는다. 이것은 성공한다.
 
@@ -149,7 +149,7 @@ tags:
 
 명시적인 프락시를 사용하면 뭐 확장을 사용하지 않는다. 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-55761389-a1fa-45b8-87f4-90175a8aaa6f_cjitdd.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-55761389-a1fa-45b8-87f4-90175a8aaa6f_cjitdd.png)
 
 **6.5.9 인터셉트 프락시를 이용한 URI 분석**
 
@@ -163,17 +163,17 @@ tags:
 
 프락시 서버는 자신을 통하는 메시지에 Via 헤더값에 자신을 추가 해줘야 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b2c46515-6bc5-4809-b6ed-bebb69797379_fmlzvr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b2c46515-6bc5-4809-b6ed-bebb69797379_fmlzvr.png)
 
 **6.6.2 TRACE 메서드**
 
 클라이언트는 TRACE메소드를 통해 메시지가 원 서버로 가는 사이에 있는 서버들을 추적할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-6ccc637b-eba3-4359-926e-5041bf3e19e9_wixlyl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-6ccc637b-eba3-4359-926e-5041bf3e19e9_wixlyl.png)
 
 프락시 루프에 빠질 수 있으니 Max-Forwards라는 옵션도 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-36882110-0350-4558-959e-acf05f526a7c_ebpyqw.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-36882110-0350-4558-959e-acf05f526a7c_ebpyqw.png)
 
 ### 6.7 프락시 인증
 
@@ -189,7 +189,7 @@ tags:
 
 6.8.2 OPTIONS: 어떤 기능을 지원하는지 알아보기
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-647019c9-64a4-4809-8f6a-0057a627c572_ozdef6.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-647019c9-64a4-4809-8f6a-0057a627c572_ozdef6.png)
 
 **6.8.3 Allow 헤더**
 
@@ -201,4 +201,4 @@ Allow: GET, HEAD, PUT
 
 내가 성공한건 애플인데, [https://www.apple.com/](https://www.apple.com/) 로 넣으면 아래 처럼 나왔다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-07-11__8-cfae201c-f4b5-4823-b4c1-e9fd5d2e0d10.58.40_jtundk.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-07-11__8-cfae201c-f4b5-4823-b4c1-e9fd5d2e0d10.58.40_jtundk.png)

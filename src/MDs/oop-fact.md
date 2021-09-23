@@ -3,7 +3,7 @@ templateKey: blog-post
 title: <책 리뷰> 객체지향의 사실과 오해
 date: '2019-07-31T08:56:56.243Z'
 description: 책 리뷰, 객체지향의 사실과 오해 조영호 지음 | 위키북스 | 2015년 06월 17일 출간
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632294561/tlog/cover/_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%B4_%E1%84%89%E1%85%A1%E1%84%89%E1%85%B5%E1%86%AF%E1%84%80%E1%85%AA_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%A2_fuuz89.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632294561/tlog/cover/_%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%B4_%E1%84%89%E1%85%A1%E1%84%89%E1%85%B5%E1%86%AF%E1%84%80%E1%85%AA_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%A2_fuuz89.png'
 tags:
   - Book
 ---

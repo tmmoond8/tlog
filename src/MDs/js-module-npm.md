@@ -2,7 +2,7 @@
 title: JS 의존성 관리 - 모듈 시스템과 NPM
 date: '2019-10-30T08:56:56.263Z'
 description: 전통적인 JS의 의존성 관리 방식과 한계, CommonJS, AMD 등장. JS의 패키지 관리자인 NPM
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
   - React
@@ -43,7 +43,7 @@ tags:
 
 script 태그로 추가한 순서대로 foo 모듈이 먼저 로드되고, 그 다음에 jquery 로드 된다. foo 모듈에서 jquery를 사용하려고 하면 아직 jquery가 로드가 되어 있지 않기 때문에 에러가 발생한다. 이렇게 선언 순서에도 의존성이 생기기 때문에 큰 시스템에서는 관리가 더욱 어렵게 된다. (js간의 의존성을 html에서 관리하는 것 자체도 문제다.)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1632299087/tlog/js-module-de_raqjum.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632299087/tlog/js-module-de_raqjum.png)
 
 [https://ui.toast.com/fe-guide/ko_DEPENDENCY-MANAGE/](https://ui.toast.com/fe-guide/ko_DEPENDENCY-MANAGE/)
 

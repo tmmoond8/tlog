@@ -2,7 +2,7 @@
 title: ES6 화살표 함수
 date: '2020-04-10T08:56:56.263Z'
 description: 화살표 함수에 대해 깊게 이해하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---
@@ -13,19 +13,19 @@ tags:
 
 화살표 함수는 사람들이 정말 좋아하는 스펙이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/arrow-function-image_zca7zz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/arrow-function-image_zca7zz.png)
 
 [Axel Rauschmayer survey on favorite ES6 features](http://www.2ality.com/2015/07/favorite-es6-features.html)
 
 Which ES6 features do you use?
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/arrow-function-image1_wiqr2s.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/arrow-function-image1_wiqr2s.png)
 
 [Ponyfoo’s survey on the most commonly used ES6 features](https://ponyfoo.com/articles/javascript-developer-survey-results)
 
 Which ES5 features do you use?
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/arrow-function-image2_hge9yn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/arrow-function-image2_hge9yn.png)
 
 ES5에서는 부터는 반복문 보다 배열을 순회하는 것을 훨씬 더 좋아함,.
 

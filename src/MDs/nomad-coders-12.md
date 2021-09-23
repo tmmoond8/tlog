@@ -2,13 +2,12 @@
 title: 12 우버 클론 코딩 (nomad coders)
 date: '2019-04-29T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.64 ~ 1.71
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -202,7 +201,7 @@ graphql-yoga를 실행할 때, subscription에 대한 옵션을 넣어줄 수 �
 
 아래 쿼리를 보내면 console창에 헤더가 찍히는 것을 확인할 수 있다. path로 준 endpoint로 접근해야 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-04-30__9-4a616d9b-6b7b-4eb6-a3fe-1d0f885e92ac.41.42_tbvo1g.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-04-30__9-4a616d9b-6b7b-4eb6-a3fe-1d0f885e92ac.41.42_tbvo1g.png)
 
     subscription {
       DriversSubscription {

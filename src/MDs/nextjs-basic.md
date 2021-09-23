@@ -2,7 +2,7 @@
 title: Next - 기본편
 date: '2020-06-13T08:56:56.243Z'
 description: Next.js 기본 다루기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/nextjs9_y7wygj.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/nextjs9_y7wygj.png'
 tags:
   - NextJS
   - React
@@ -128,13 +128,13 @@ ssr을 지원하는 큰 이유 중 하나는 SEO 때문이다. 간단하게 head
 
 `yarn next build && yarn next start` 명령으로 프로덕트 빌드해서 실행해보자. head에 meta 데이터가 정상적으로 추가된 것을 확인할 수 있고, style 이 styled-jsx 패키지를 통해 들어간 것을 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/_2020-05-03__12.14.09_dp90nh.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/_2020-05-03__12.14.09_dp90nh.png)
 
 그리고 Next 도 서버와 클라이언트 사이 데이터 교환을 하는 객체가 존재하는데, 바로 `__NEXT_DATA__` 다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/_2020-05-03__12.17.06_c4wrye.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/_2020-05-03__12.17.06_c4wrye.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-05-03__12.18.45_jgo1fa.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-05-03__12.18.45_jgo1fa.png)
 
 Next 에서는 webpack의 설정을 직접 수정할 수 있도록 방법을 제공해준다. next.config.js는 next에서 사용하는 다양한 설정을 추가할 수 있는 예약된 파일이다. 만약 존재하지 않으면 기본 설정을 사용하고, 존재하면 설정값을 덮어쓰는 형식이다.
 
@@ -231,7 +231,7 @@ SSR에서는 서버와 클라이언트 사이에 context를 유지하기 위해 
 
 getInitialProps 메서드는 페이지 컴포넌트에 정의할 수 있다. 페이지가 로딩 될 때 해당 페이지에서 정의한 getInitialProps를 호출하고, 그 다음 공통 컴포넌트인 \_app.js의 getInitialProps를 호출한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-05-03__9.59.15_ukvtj0.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-05-03__9.59.15_ukvtj0.png)
 
 props에는 `getInitialProps`에서 넘겨준 값들이 들어있는데, 특히 각 페이지에서 정의한 값은 pageProps 안에 들어가 있다. getInitialProps는 서버 사이드에서 생성한 store를 클라이언트에게 넘겨줄 때 자주 사용된다.
 

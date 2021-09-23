@@ -2,7 +2,7 @@
 title: 18장 웹 호스팅
 date: '2019-12-14T08:56:56.243Z'
 description: HTTP 완벽 가이드 18장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS

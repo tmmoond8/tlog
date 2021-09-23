@@ -2,7 +2,7 @@
 title: 3장 HTTP 메시지
 date: '2019-06-26T08:56:56.243Z'
 description: HTTP 완벽 가이드 3장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -25,19 +25,19 @@ HTTP 메시지는 HTTP 애플리케이션 간에 주고 받은 데이터의 블�
 
 간단하게 서버를 기준으로 들어가는 방향이 인바운드, 서버에서 외부로 나가는 방향을 아웃바운드라 한다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-c2394d3e-37e8-4d80-95fc-19bd02218c4d_xanjqd.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-c2394d3e-37e8-4d80-95fc-19bd02218c4d_xanjqd.png)
 
 **3.1.2 다운스트림으로 흐르는 메시지**
 
 클라언트에서 요청을 보내든, 서버에서 응답을 보내든 목적지의 방향을 다운스트림이라고 한다. 그렇기 때문에 Proxy1 입장에서 Proxy2는 요청을 보낼 때는 다운스트림 방향이지만, 응답을 보낼 때는 Proxy1 입장에서 Proxy2는 업스트림이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0d578059-c4eb-4983-8858-6791d00033c2_p3ul2q.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0d578059-c4eb-4983-8858-6791d00033c2_p3ul2q.png)
 
 ### 3.2 메시지의 각 부분
 
 메시지는 시작줄, 헤더, 본문으로 구성된다. HTTP 메시지에서는 어디서부터 어디가 헤더고 본문인지 명시하지 않지만 줄바꿈으로 구간을 구분한다. 줄 바꿈을 의미하는 특별한 문자열이 있는데 바로 CRLF(Carriage Return Line Feed) 이다. 이 줄바꿈을 의미하는 문자열은 ASCII 13(Carriage Return)과 ASCII 10(Line Feed) 두 문자로 구성되어 있다. 명세에는 CRLF을 줄 바꿈 문자열로 사용하지만, 유연하고 연고한 애플리케이션은 일반적인 개행문자도 줄 바꿈 문자열로 받아들일 수 있어야 한다고 말한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-4f4885bb-ddf4-4bc8-b9f1-3aa01ede47bd_lizuzu.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-4f4885bb-ddf4-4bc8-b9f1-3aa01ede47bd_lizuzu.png)
 
 위 메시지를 해석해보자. 이 메시지는 일반 응답 메시지다.
 
@@ -49,7 +49,7 @@ HTTP 메시지는 HTTP 애플리케이션 간에 주고 받은 데이터의 블�
 
 **3.2.1 메시지 문법**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-48318cf2-9fdc-47a3-941e-32674a9bbb37_fokymb.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-48318cf2-9fdc-47a3-941e-32674a9bbb37_fokymb.png)
 
 요청 메시지의 형식
 
@@ -81,7 +81,7 @@ HTTP 메시지는 HTTP 애플리케이션 간에 주고 받은 데이터의 블�
 
 본문: 임의의 바이너리 블록으로 많은 양의 데이터를 넣을 수 있는 공간. 본문은 아얘 없을 수도 있는데, 이때에도 헤더가 끝났음을 알리는 CRLF문자를 뺴먹지 말아야 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-be5ec7ba-f11d-4646-9d77-742fd3cced9a_mcxzm3.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-be5ec7ba-f11d-4646-9d77-742fd3cced9a_mcxzm3.png)
 
 **3.2.2 시작줄**
 
@@ -183,7 +183,7 @@ GET, HEAD를 안전한 메서드라고 하는데, 서버에 어떤 데이터도 
 
 동작은 이미지를 보면서 설명하겠다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-4d7928bf-96f2-429d-a4a4-80be7fe37dec_irh3kt.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-4d7928bf-96f2-429d-a4a4-80be7fe37dec_irh3kt.png)
 
 클라이언트에서 TRACE 메시지를 보내면 중간에 프록시 같은 애들이 헤더 쪽에 값을 넣어주고 서버쪽에서 루프백 진단을 한 다음에 본문에 내용을 넣어서 클라이언트에게 전달한다. 이때 클라이언트에서 엔터티 바디를 사용하지 않은 점을 기억하자.
 
@@ -191,11 +191,11 @@ GET, HEAD를 안전한 메서드라고 하는데, 서버에 어떤 데이터도 
 
 사용 가능한 메서드를 알려준다고 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-548edbf1-f73b-43a9-a6e9-4473aea3fd1b_efvswh.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-548edbf1-f73b-43a9-a6e9-4473aea3fd1b_efvswh.png)
 
 실제로 google에 날렸을 때 받은 응답이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-22__12-86a07387-90ce-4b84-8b6c-68effa0e98cb.10.04_q3fhzy.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-22__12-86a07387-90ce-4b84-8b6c-68effa0e98cb.10.04_q3fhzy.png)
 
 MDN의 경우는 그냥 GET처럼 동작했다.
 

@@ -2,7 +2,7 @@
 title: React 에서 SSR 설정하기
 date: '2020-04-26T08:56:56.243Z'
 description: SSR 설정을 하면서 원리 이해해보기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/react_qv0z3k.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/react_qv0z3k.png'
 tags:
   - React
   - SSR

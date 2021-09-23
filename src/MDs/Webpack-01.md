@@ -2,7 +2,7 @@
 title: Webpack(1) - 기본편
 date: '2020-02-25T08:56:56.243Z'
 description: Webpack 대한 기본 이해
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/webpack_zceueo.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/webpack_zceueo.png'
 tags:
   - Webpack
   - JavaScript

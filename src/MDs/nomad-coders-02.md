@@ -2,7 +2,7 @@
 title: 2 우버 클론 코딩 (nomad coders)
 date: '2019-04-08T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.8 ~ 1.11
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -341,7 +341,7 @@ postgresql이 연결되어 TRANSACTION을 시작한다. 이런 로그가 나오�
           app.start(appOptions, handleAppStat);  
         }).catch(error => console.log(error))
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-15__12-75e6e7ae-4936-44e7-b984-822858ba1bce.58.47_h1pcfw.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-15__12-75e6e7ae-4936-44e7-b984-822858ba1bce.58.47_h1pcfw.png)
 
 단순히 출력을 하도록 했지만 어쨋든 더 자세한 에러 로그를 얻게 됐다. 이제
 

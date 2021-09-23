@@ -2,7 +2,7 @@
 title: Next.js 9
 date: '2019-08-21T08:56:56.243Z'
 description: 7월에 발표된 Next.js 9에서 어떤점이 변경되었는지를 중심으로
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/nextjs9_y7wygj.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/nextjs9_y7wygj.png'
 tags:
   - NextJS
   - React
@@ -138,7 +138,7 @@ tags:
 
 next.js에서는 기본적으로 express 서버다. 그러므로 정적 파일을 위한 서버나 리액트를 띄우기 위한 서버로 뿐 아니라 온전히 웹 서버의 역할을 할 수 있다. 이미 pages 안쪽에 파일 시스템의 구조에 따라 엔드 포인트가 생기는데, 별도의 엔드포인트를 코드로 추가하면 내 생각에 충돌되거나 복잡한 일이 생길수 있을 것 같다. 그렇기에 pages/api 하위로 api역할을 할 수 있는 요청을 받도록 스펙을 추가 했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-08-20__1-0d64d39c-1c3b-408b-b624-048315308bb0.22.58_nnwm5a.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-08-20__1-0d64d39c-1c3b-408b-b624-048315308bb0.22.58_nnwm5a.png)
 
 - pages/api/foo.tsx
 
@@ -160,7 +160,7 @@ next.js에서는 기본적으로 express 서버다. 그러므로 정적 파일�
 
 아래 처럼 json 형태의 응답을 내려준다. (.feat json viewer awsome)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-08-20__1-15583106-779f-4497-93a4-848ca4d202cb.24.17_etmb4y.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-08-20__1-15583106-779f-4497-93a4-848ca4d202cb.24.17_etmb4y.png)
 
 TypeScript가 built-in 이라지만, 어떻게 쓸지에 대해서는 동일하게 설정하면 된다.
 

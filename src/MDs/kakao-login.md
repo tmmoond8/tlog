@@ -2,7 +2,7 @@
 title: Kakao Login in React
 date: '2019-07-14T08:56:56.263Z'
 description: React에서 카카오 로그인 사용하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632299645/tlog/cover/kakao_login_eecddz.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632299645/tlog/cover/kakao_login_eecddz.png'
 tags:
   - OAuth
   - React

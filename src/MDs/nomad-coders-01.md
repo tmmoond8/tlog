@@ -2,14 +2,13 @@
 title: 1 우버 클론 코딩 (nomad coders)
 date: '2019-04-07T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.1 ~ 1.7
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
   - 'Project Setup'
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -113,7 +112,7 @@ tags:
 
 - @types/node 를 설치했더니 src 하위로 겁나 생성되었다,, 이래도 되나..
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952035/tlog/_2019-04-07__10-137f722f-8edd-406d-9929-cc6d8137c35d.50.13_u0lzms.png)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952035/tlog/_2019-04-07__10-137f722f-8edd-406d-9929-cc6d8137c35d.50.13_u0lzms.png)
 
       → 위 문제 해결 !!  @type/node 모듈을 —dev 옵션으로 설치 하지 않아서 발생한 문제
 
@@ -142,7 +141,7 @@ tags:
 
 그리고 yarn dev 명령어를 하면 아래 처럼 명령어가 잘 동작한 것을 볼 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-07__11-060885d6-52ce-4485-ba88-f693bee162a7.19.35_srz2au.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-07__11-060885d6-52ce-4485-ba88-f693bee162a7.19.35_srz2au.png)
 
 src/index.ts에서 콘솔 내용을 변경하고 저장하면 터미널에 핫로딩되는 것을 확인할 수 있다. 우리가 사용한 스크립트에 nodemon을 통해 노드를 실행했기 때문이다.
 
@@ -166,7 +165,7 @@ yarn dev 명령어를 다시 실행하고 src/something.graphql에서 쿼리를 
 
 이번 비디오에서는 따로 프로젝트를 진행하지 않았고 @typed 그러니까 노드에서 타입이 필요한 이유를 말해주고 있다. 우리가 src/index.ts 에 입력한 console.log에서 log 함수의 인자로 어떤타입이 몇개가 오는지 또 리턴이 무엇인지 확인 할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-07__11-dd7c9f0f-647a-48a5-b37d-5d7cdff64d3d.35.00_hcol42.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-07__11-dd7c9f0f-647a-48a5-b37d-5d7cdff64d3d.35.00_hcol42.png)
 
 ## #1.4 GraphQL Yoga and Express part One
 
@@ -255,7 +254,7 @@ graphql은 기존 express 서버에서 REST API를 사용하는 것처럼 url을
 
 그전에 graphql 문법 강조를 위해 다음의 확장프로그램을 설치하는 것을 추천한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-08__11-aeb57cec-2aae-4d2a-86c6-f8592777e695.08.53_cjkcs4.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-08__11-aeb57cec-2aae-4d2a-86c6-f8592777e695.08.53_cjkcs4.png)
 
 - src/api/hello/sayHello/sayHello.graphql
 
@@ -354,6 +353,6 @@ merge-grapql-schemas는 sayHello, sayBye등 요청에 대해 분리가 되어 �
 
 graphql 서버의 뼈대를 대략적으로 만들었다. [아까 /playground로 api를 연결해두었으니 제대로 작동하는지 보자.](http://localhost:4000/playground)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-09__11-4a03c500-da6e-4960-8fa0-9d95f1952d18.01.18_ytjyj6.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-09__11-4a03c500-da6e-4960-8fa0-9d95f1952d18.01.18_ytjyj6.png)
 
 이렇게 typesciprt로 graphql 이 적용된 express 서버의 기초를 만들었다.

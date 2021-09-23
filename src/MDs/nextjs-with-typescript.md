@@ -2,7 +2,7 @@
 title: Next.js with TypeScript
 date: '2019-07-14T08:56:56.243Z'
 description: Next.js starter (.feat TypeScript)
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/nextjs8_k2cxq7.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/nextjs8_k2cxq7.png'
 tags:
   - NextJS
   - TypeScript

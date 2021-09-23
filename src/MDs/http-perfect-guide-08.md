@@ -2,7 +2,7 @@
 title: 8장 통합점 게이트웨이, 터널, 릴레이
 date: '2019-07-03T08:56:56.243Z'
 description: HTTP 완벽 가이드 8장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -19,7 +19,7 @@ tags:
 
 HTTP는 당시 많이 사용하는 통신 방법이었다. 웹에서도 HTTP외에 다른 포토토콜을 사용하는 애플리케이션을 연결하고 싶어졌다. 이 때 게이트웨이가 타 프로토콜을 HTTP에 연결하는 역할을 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-173d942d-cf69-4c7f-bc45-d81d9123779d_of08uw.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-173d942d-cf69-4c7f-bc45-d81d9123779d_of08uw.png)
 
 (a) 게이트웨이는 FTP URL을 가리키는 HTTP 요청을 받는다. 게이트 웨이는 FTP 커넥션을 맺고 FTP 서버에 적절한 요청을 전송한다. 게이트 웨이는 FTP로 받은 응답을 적절한 HTTP 헤더와 함께 클라이언트로 보낸다.
 
@@ -37,17 +37,17 @@ HTTP/NNTP 는 HTTP로 접근한 클라이언트가 NNTP를 사용하는 서버�
 
 아래 그림 처럼 클라이언트에서 FTP를 처리할 게이트웨이 설정을 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0e4c4c68-c509-4ccb-af87-765d9bc69332_hnvhsx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0e4c4c68-c509-4ccb-af87-765d9bc69332_hnvhsx.png)
 
 일반적인 HTTP 요청은 원서버로 가지만, FTP 요청이 들어있는 HTTP 요청은 HTTP/FTP 게이트웨이에서 처리된 후 바로 클라이언트에게 응답한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-e1fcae48-a6d0-4a1c-ae56-e5d794e4b199_hwj38t.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-e1fcae48-a6d0-4a1c-ae56-e5d794e4b199_hwj38t.png)
 
 **8.3.2 HTTP/*: 서버 측 웹 게이트웨이**
 
 다음은  HTTP/FTP 기준으로 설명한 예시다. 게이트웨이에서 FTP 프로토콜에 대한 요청을 적절히 처리 해주는 것 같다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-c15c324b-9224-4a14-a59d-bcb44c60f6a4_cqw08h.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-c15c324b-9224-4a14-a59d-bcb44c60f6a4_cqw08h.png)
 
 - USER와 PASS 명령을 보내서 서버에 로그인한다.
 - 서버에서 적절한 디렉터리로 변경하기 위해 CWD 명령을 보낸다.
@@ -71,7 +71,7 @@ HTTP/NNTP 는 HTTP로 접근한 클라이언트가 NNTP를 사용하는 서버�
 
 게이트웨이의 일반적인 사용방법이라고 한다. 아래의 예시는 두 클라이언트와 하나의 게이트웨이 애플리케이션 서버가 연결되어 있는데, 이 때 게이트웨이 애플리케이션 서버는 두 클라이언트가 HTTP를 통해 서로 요청하고 응답하는 중개인의 역할을 한다. 요청이 들어오면 게이트웨이의 API를 통해 서버의 내부 프로그램을 돌리고 다시 HTTP로 응답하는 식이다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0e31bddc-5a30-4549-a667-0549d3d613c3_qpmmne.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0e31bddc-5a30-4549-a667-0549d3d613c3_qpmmne.png)
 
 애플리케이션 게이트웨이에서 유명했던 최초의 API는 CGI(Common Gateway Interface)였다.
 
@@ -93,7 +93,7 @@ HTTP 커넥션을 통해서 HTTP가 아닌 트래픽을 전송하는 방법.
 
 **8.5.1 CONNECT로 HTTP 터널 커넥션을 맺음**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-cf8fa921-c508-4cfa-8f2c-00fabba1ae5f_y9h3db.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-cf8fa921-c508-4cfa-8f2c-00fabba1ae5f_y9h3db.png)
 
 CONNECT 요청을 한 뒤, 연결되면 그 때부터 양방향으로 데이터를 주고 받는다. CONNCECT 요청과 응답은 조금 특징이 있다.
 
@@ -115,15 +115,15 @@ CONNECT 요청을 한 뒤, 연결되면 그 때부터 양방향으로 데이터�
 
 이건 잘 이해가 안된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-72a289c2-e832-4b52-be9e-5277ae776bab_ttr1gm.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-72a289c2-e832-4b52-be9e-5277ae776bab_ttr1gm.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0ed00826-c68a-4385-bfc1-0213620c2ddc_t2nzss.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0ed00826-c68a-4385-bfc1-0213620c2ddc_t2nzss.png)
 
 **8.5.4 SSL 터널링 vs HTTP/HTTPS 게이트웨이**
 
 **8.5.5 터널 인증**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-f91d3558-d0ed-40c5-acc5-40b8eff20466_wvp9dw.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-f91d3558-d0ed-40c5-acc5-40b8eff20466_wvp9dw.png)
 
 **8.5.6 터널 보안에 대한 고려사항들**
 
@@ -131,4 +131,4 @@ CONNECT 요청을 한 뒤, 연결되면 그 때부터 양방향으로 데이터�
 
 HTTP 릴레이는 HTTP 명세를 완전히 준수하지 않는 간단한 HTTP프락시다. 커넥션을 맺기 위한 HTTP 통신을 한 다음에는 HTTP 메시지가 아닌 바이트를 맹목적으로 전달한다. 이 때 릴레이 중에는 멍청한 프락시 문제를 겪는 릴레이가 있다. keep-alive 커넥션 헤더를 이해하지 못해서 행에 걸리는 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-95c412ae-4803-4f59-8ce2-4740e5dbbf6e_b7bq2b.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-95c412ae-4803-4f59-8ce2-4740e5dbbf6e_b7bq2b.png)

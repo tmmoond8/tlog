@@ -2,7 +2,7 @@
 title: JS Date, JSON 객체
 date: '2020-06-21T08:56:56.263Z'
 description: Date, JSON 객체의 이모저모
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---

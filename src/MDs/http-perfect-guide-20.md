@@ -2,7 +2,7 @@
 title: 20장 리다이렉션과 부하 균형
 date: '2020-02-21T08:56:56.243Z'
 description: HTTP 완벽 가이드 20장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -83,7 +83,7 @@ Host: 161.58.228.45
 User-Agent: Mozilla/4.51 [en] (X11; U; IRIX 6.2 IP22)
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e40_bh5kap.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e40_bh5kap.png)
 
 이러한 동작 에는 단점이 있다. 두 번의 왕복을 하기 때문에 응답이 지연된다. 또, 리다이렉트 서버가 고장이 나면 사이트가 고장 난다.
 
@@ -93,7 +93,7 @@ User-Agent: Mozilla/4.51 [en] (X11; U; IRIX 6.2 IP22)
 
 **DNS 라운드 로빈**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e41_l3ge9v.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e41_l3ge9v.png)
 
 DNS 라운드 로빈은 가장 흔하면서 또 가장 단순한 리다이렉션 기법이다.
 
@@ -120,13 +120,13 @@ Addresses에 있는 여러 IP 중 어떤 것을 선택해도 결과는 갖다. �
 
 일반적으로, 복잡한 서버 추적 알고리즘을 실행하는 DNS 서버는 콘텐츠 제공자의 통제하에 있는 권한이 있는 서버다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e42_n0n6jq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e42_n0n6jq.png)
 
 **20.4.3 임의 캐스트 어드레싱**
 
 웹 서버는 라우터 통신 프로토콜을 이용해 자신과 인접한 백본 라우터와 대화한다. 백본 라우터가 임의 캐스트 주소를 목적지로 하는 패킷을 받았을 때, 미리 대화를 한 상태기 때문에 가장 가까운 라우터로 패킷을 보내게 된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e43_ya9ii1.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/20-6f2bc9c8b06e43_ya9ii1.png)
 
 **20.4.4 아이피 맥 포워딩**
 
@@ -134,11 +134,11 @@ Addresses에 있는 여러 IP 중 어떤 것을 선택해도 결과는 갖다. �
 
 대표적 레이어-2 장비인 스위치 중 레이어-4 주소를 이해할 수 있는 장비가 있는데, 이 장비는 아이피 주소, TCP 포트번호 MAC 주소를 활용하여 다른 아이피 주소 또는 MAC 주소로 라우팅 할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e44_nziqkc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e44_nziqkc.png)
 
 MAC 포워딩을 지원하는 레이어-4 스위치는 보통 요청을 여러 프락시 캐시로 보낼 수 있고 그들 사이의 부하 균형을 유지할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e45_jjhbhl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e45_jjhbhl.png)
 
 Mac 주소 포워딩은 점 대 점으로만 가능하기 때문에 스위치-서버, 스위치-프락시 간 한 홉 거리에 위치해야한다는 제약이 있다.
 
@@ -146,7 +146,7 @@ Mac 주소 포워딩은 점 대 점으로만 가능하기 때문에 스위치-�
 
 레이어-3 종단간 인터넷 라우팅이 패킷을 올바른 위치에 보내준다. 이러한 종류의 전달은 NAT(Network Address Translation)이라고도 불린다. MAC 포워딩 처럼 한 홉간 거리라는 제약은 없지만, 라우팅 대칭성이라는 문제가 있다. 클라이언트로부터 들어오는 TCP 커넥션을 받아주는 스위치는 그 커넥션을 관리하고 있다. 스위치는 반드시 그 커넥션을 통하여 응답을 돌려줘야 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e46_jt873s.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e46_jt873s.png)
 
 응답의 귀환 경로를 제어할 수 있는 두 가지 방법이 있다.
 
@@ -175,7 +175,7 @@ NECP는 NE와 SE들이 대화할 수 있게 하여 SE가 적합하다고 판단�
 
  PAC 파일을 자바스크립트로 작성된 파일로 간략하게 다음 그림으로 이해할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e47_sohlec.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/20-6f2bc9c8b06e47_sohlec.png)
 
 **20.5.3 웹 프락시 자동발견 프로토콜(Web Proxy Autodiscovery Protocol)**
 

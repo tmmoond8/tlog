@@ -2,11 +2,10 @@
 title: SVG Text
 date: '2019-11-17T08:56:56.243Z'
 description: SVG에서 텍스트 표현
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
-# 
 
 ---
 
@@ -35,7 +34,7 @@ CSS 에서 사용하는 font 관련 속성과 거의 유사한 속성을 사용�
 
 css의 텍스트 정렬 처럼 `dominant-baseline` 속성으로 글자가 baseline을 기준으로 그려질지, middle을 기준으로 정렬될지를 정할 수 있다. (default는 baseline이다.)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.27.39_oy9nvv.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.27.39_oy9nvv.png)
 
 위 그림은 (0, 20) 에서 빨간색 수평선이 시작되고, 같은 좌표에서 baseline으로 그린 텍스트가  Baseline이다. middle, hanging도 각각 같다.
 
@@ -51,7 +50,7 @@ css의 텍스트 정렬 처럼 `dominant-baseline` 속성으로 글자가 baseli
 
 수직 뿐 아니라 수평도 유사하게 이해할 수 있다. text-anchor 속성으로 수평 텍스트 흐름을 적용할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.39.05_x7lsq9.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.39.05_x7lsq9.png)
 
 ```html
 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +75,7 @@ css의 텍스트 정렬 처럼 `dominant-baseline` 속성으로 글자가 baseli
 
 html <span>처럼 텍스트를 분리하여 개별적으로 속성을 적용할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.47.39_qft8pm.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.47.39_qft8pm.png)
 
 ```html
 <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +102,7 @@ html <span>처럼 텍스트를 분리하여 개별적으로 속성을 적용할 
 
 svg에서만 가능한 유일한 표현이라고 생각되는데, path를 정의하고 path에 따라서 텍스트를 넣을 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.50.08_obv5fx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-22__8.50.08_obv5fx.png)
 
 ```html
 <svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">

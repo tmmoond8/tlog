@@ -2,13 +2,12 @@
 title: 35 우버 클론 코딩 (nomad coders)
 date: '2019-07-06T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.75 ~ 2.77
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -236,7 +235,7 @@ tags:
 
     채팅 페이지로 이동하는 링크가 추가 되었다.
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-05__7-2d429ea8-7b31-45f9-85bb-b20249a05135.00.20_s2xvdx.png)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-05__7-2d429ea8-7b31-45f9-85bb-b20249a05135.00.20_s2xvdx.png)
 
     지금은 빈 페이지가 Chat에 보일 텐데 Chat 페이지에 ride에 대한 정보를 보여줘야 한다.
 
@@ -312,6 +311,6 @@ tags:
 
     graphql에서 chatId에 메시지를 몇개 넣자. 운전자랑 승객의 토큰으로 각각 메시지 날리자.
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-06__6-c9467783-4361-44ab-97ec-f19d090be4cc.11.07_nqusq1.png)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-06__6-c9467783-4361-44ab-97ec-f19d090be4cc.11.07_nqusq1.png)
 
     `

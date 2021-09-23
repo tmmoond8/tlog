@@ -2,7 +2,7 @@
 title: 11장 클라이언트 식별과 쿠키
 date: '2019-07-08T08:56:56.243Z'
 description: HTTP 완벽 가이드 11장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -34,7 +34,7 @@ User-Agent는 사용자를 특정할 수 없지만 매우 중요한 헤더다. �
 
 크롬에서 `window.navigator.userAgent` 를 콘솔에 찍어 보면 값들이 나온다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-30__11-fe265070-4a3e-4fc3-a7d3-c1361c183fb5.13.06_qgbdda.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-30__11-fe265070-4a3e-4fc3-a7d3-c1361c183fb5.13.06_qgbdda.png)
 
 Referer 헤더는 사용자의 성향을 추측할 수 있다. 티스토리를 하면 유입경로라고 해서 어디에서 링크를 타고 왔는지 알 수 있다. referer에 롤 사이트에서 오면 방금까지 롤을 하다가 온 것일 수 있다.
 
@@ -51,7 +51,7 @@ Referer 헤더는 사용자의 성향을 추측할 수 있다. 티스토리를 �
 
 HTTP는 WWW-Authenticate, Authorization 헤더를 사용해 사용자를 식별하는 체계를 가지고 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-7203faa4-923b-4312-b73b-23dd0c3f978b_zaojbb.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-7203faa4-923b-4312-b73b-23dd0c3f978b_zaojbb.png)
 
 어쨋든 사용자는 한 번 로그인하면 알아서 요청할 때마다 식별 토큰을 헤더에 담아 보낼수 있다.
 
@@ -84,11 +84,11 @@ OAuth가 없을 때는 내가 이 사이트에는 어떤 아이디로 가입을 
 
 쿠키의 기본적인 생각은 브라우저가 서버 관련 정보를 저장하고, 사용자가 해당 서버에 접근할 때마다 그 정보를 함께 전송하게 하는 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-952601c9-ba42-40e8-912f-83f46ad18c4a_swnire.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-952601c9-ba42-40e8-912f-83f46ad18c4a_swnire.png)
 
 구글 크롬 쿠키
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/_2019-06-30__11-70e54c23-e00a-4ca1-ad6c-deaa1c8232c1.43.23_iyunbg.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/_2019-06-30__11-70e54c23-e00a-4ca1-ad6c-deaa1c8232c1.43.23_iyunbg.png)
 
 구글의 경우 SQLite로 쿠키를 관리한다고 한다.
 
@@ -133,7 +133,7 @@ httpOnly는 책에는 없지만 매우 중요한 값으로 사용자가 쿠키 �
 
 쿠키를 사용하여 사용자 식별을 할 수 있으니 연속적인 트랜잭션이 가능하다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a2b62cb7-dbca-4d89-80c5-47e8be4e011b_s11fli.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a2b62cb7-dbca-4d89-80c5-47e8be4e011b_s11fli.png)
 
 **11.6.9 쿠키와 캐싱**
 

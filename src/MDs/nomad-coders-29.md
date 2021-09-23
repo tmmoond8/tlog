@@ -2,13 +2,12 @@
 title: 29 우버 클론 코딩 (nomad coders)
 date: '2019-06-21T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.54 ~ 2.56
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -235,13 +234,13 @@ HomeScreen도 google maps를 띄우자. 띄우는 방법은 find-address와 동�
 
 [http://localhost:3000/](http://localhost:3000/) 페이지를 열고 크롬 브라우저에서 censors를 사용하여 위치를 변경해보자. 메뉴의 위치를 모르면 스샷을 참고하자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-24__9-5537d549-b4bf-47f3-8987-e3312ed1580a.24.56_twdy3b.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-24__9-5537d549-b4bf-47f3-8987-e3312ed1580a.24.56_twdy3b.png)
 
  
 
 나는 위치를 도쿄로 바꾸어 보았다. 콘솔에서도 도코의 위치를 찍는 것을 확인할 수 있다. watch 가 제대로 동작한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-24__9-fec6bd13-b2e2-48f4-8920-6e5055f6080f.25.22_omb34n.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-24__9-fec6bd13-b2e2-48f4-8920-6e5055f6080f.25.22_omb34n.png)
 
 이번에 할 것은 google maps의 marker를 사용하는 것이다. 원하는 위치에 marker를 생성하면 지도를 확대하거나 이동하더라도 위치를 잡아준다. 이 기능을 활용하면 주변 장소에 대한 정보를 더 정확히 나타내줄 수 있다.
 
@@ -263,7 +262,7 @@ HomeScreen도 google maps를 띄우자. 띄우는 방법은 find-address와 동�
             this.userMarker!.setMap(this.map);
         }
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952592/tlog/_2019-05-24__9-ac72ccdc-6e9a-47fe-a4bd-a729783e3875.37.32_qphjky.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/_2019-05-24__9-ac72ccdc-6e9a-47fe-a4bd-a729783e3875.37.32_qphjky.png)
 
 ## #2.55 HomeScreen Moving *with* the User
 
@@ -499,4 +498,4 @@ HomeScreen도 google maps를 띄우자. 띄우는 방법은 find-address와 동�
 
 나는 테스트할 떄 위치를 도쿄로 잡았고, tokyo tower를 주로 검색했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/_2019-06-10__8-42636f45-1562-4d55-b3b0-3094b3191cd4.15.32_vorj9q.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/_2019-06-10__8-42636f45-1562-4d55-b3b0-3094b3191cd4.15.32_vorj9q.png)

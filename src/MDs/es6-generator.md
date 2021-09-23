@@ -2,7 +2,7 @@
 title: ES6 - Generator
 date: '2020-06-04T08:56:56.263Z'
 description: Generation 함수 사용하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---
@@ -47,7 +47,7 @@ function* createEvenNumberByGenerator() {
 
 Generator 함수는 일반 함수의 Retuern과 다르다. Generator 함수는 리턴으로 Generator 객체를 리턴한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__12.26.46_lgiewb.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__12.26.46_lgiewb.png)
 
 `Generator.prototype.next()`
 

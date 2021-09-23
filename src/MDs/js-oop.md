@@ -2,7 +2,7 @@
 title: JS가 객체지향언어라 할 수 있는 이유
 date: '2020-03-26T08:56:56.263Z'
 description: 대체가능성, 내적동질성
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---

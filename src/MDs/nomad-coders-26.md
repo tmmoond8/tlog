@@ -2,7 +2,7 @@
 title: 26 우버 클론 코딩 (nomad coders)
 date: '2019-06-13T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.44 ~ 2.45
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'

@@ -2,7 +2,7 @@
 title: 7장 캐시
 date: '2019-07-01T08:56:56.243Z'
 description: HTTP 완벽 가이드 7장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -23,7 +23,7 @@ tags:
 
 네트워크 속도는 가장 느린 속도에 맞춰지기 때문에 병목 현상이 있어나는데, 캐시는 네트워크 병목을 줄여준다. 국내에서는 지역 간 거리가 그렇게 멀지 않지만, 천조국의 경우는 다르다. 근처에 캐시 서버가 있다면 응답을 빨리 할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-95449e8f-0771-44d5-8cdc-553243c8d8b3_pnptxi.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-95449e8f-0771-44d5-8cdc-553243c8d8b3_pnptxi.png)
 
 ### 7.3 갑작스런 요청 쇄도
 
@@ -37,7 +37,7 @@ tags:
 
 운영체제에서 배운 캐시 hit랑 같은 개념이다. 클라이언트에 요청한 데이터가 캐시에 있다면 원서버에 가지 않고 내려주고, 요청한 데이터가 없다면 원서버에 가져와서 캐시 서버 자체로 저장도 하고 클라이언트에게 넘긴다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7d68a7aa-ce72-47bf-94d0-cf3cbe42b83e_zh9eza.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7d68a7aa-ce72-47bf-94d0-cf3cbe42b83e_zh9eza.png)
 
 **7.5.1 재검사**
 
@@ -45,7 +45,7 @@ tags:
 
 캐시 서버는 If-Modigied-Since라는 헤더를 통해 값이 변경되었는지 검사한다. 만약 변경된 내용이 있다면 200 OK 코드로 값이 넘어 오고 변경되지  않았다면  304 Not Modified를 준다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-1d835916-4b6d-47dc-8a24-dc7a6b6bb29c_hcwspz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-1d835916-4b6d-47dc-8a24-dc7a6b6bb29c_hcwspz.png)
 
 **7.5.2 적중률**
 
@@ -69,13 +69,13 @@ tags:
 
 프락시 서버 종류 중 하나로 캐시 역할을 하는 서버가 공용 캐시라 할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-73fb35bd-2be0-4093-bf6e-19d6ef90b98e_kxl7zs.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-73fb35bd-2be0-4093-bf6e-19d6ef90b98e_kxl7zs.png)
 
 **7.6.3 프락시 캐시 레벨들**
 
 더 효율적인 캐시를 사용하기 위해서 여러 레벨의 캐시를 사용하는 것이다. 이건 CPU에서 사용하는 캐시 전략과 유사 하다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bbe3169c-1df8-43cd-9589-024252e3dc58_l5poqp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bbe3169c-1df8-43cd-9589-024252e3dc58_l5poqp.png)
 
 **7.6.4 캐시망, 콘텐츠 라우팅, 피어링**
 
@@ -90,13 +90,13 @@ HTTP는 캐시를 위해  ICP(Internet Cache Protocol)이나 HTCP(Hypertext Cach
 
 형제캐시를 하는 것을 피어링이라고 하나보다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0eae0bcc-0606-4ffc-8a59-ea794a191d65_cyl14q.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0eae0bcc-0606-4ffc-8a59-ea794a191d65_cyl14q.png)
 
 ### 7.7 캐시 처리 단계
 
 오늘날 상용 캐시 프락시는 꽤 복잡하게 동작한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-049c93e5-6a33-489a-9bf3-54668b73a38d_ltze45.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-049c93e5-6a33-489a-9bf3-54668b73a38d_ltze45.png)
 
 **7.7.1 단계 1: 요청 받기**
 
@@ -128,7 +128,7 @@ HTTP는 캐시를 위해  ICP(Internet Cache Protocol)이나 HTCP(Hypertext Cach
 
 **7.7.8 캐시 처리 플로 차트**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-c4174069-b46c-410f-8e73-6cea9492eaba_qhwsac.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-c4174069-b46c-410f-8e73-6cea9492eaba_qhwsac.png)
 
 ### 7.8 사본을 신선하게 유지하기
 
@@ -138,7 +138,7 @@ HTTP에는 문서가 만들어진 시간 또는 만료 기간을 헤더에 넣�
 
 만료 시간을 나타내는 것은 두 종류가 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-3442f6f8-2f0e-4942-a9d3-da2ac6d7ca4b_gt1xvi.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-3442f6f8-2f0e-4942-a9d3-da2ac6d7ca4b_gt1xvi.png)
 
 **7.8.2 유효기간과 나이**
 
@@ -158,13 +158,13 @@ Cache-Control: Date를 비교하여 484200초가 지나면 만료 시킨다.
 
 만약 문서가 주어진 날짜 이후로 수정되었다면 요청을 처리하고 그렇지 않으면 캐시에 있는 것을 가져온다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-eedae055-044a-4a38-8ac2-83799ec1cc57_u979bd.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-eedae055-044a-4a38-8ac2-83799ec1cc57_u979bd.png)
 
 **7.8.6 If-None-Match: 엔티티 태그 재검사**
 
 문서에서 발행번호 같이 동작하는 ETag를 비교해서 다를 때만 요청을 처리한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-6c6f5537-7f69-43e0-9936-f79064b6614e_fjx4yp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-6c6f5537-7f69-43e0-9936-f79064b6614e_fjx4yp.png)
 
 **7.8.7 약한 검사기와 강한 검사기**
 
@@ -223,7 +223,7 @@ Cache-Control에 사용할 수 있는 값
 
 HTML meata 태그에 HTTP-EQUIV에 값에 넣으면 캐시 프락시에서 꺼내서 헤더에 넣는다 이런 내용인데, 이걸 지원하는 서버가 별로 없단다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a499dccd-ab17-4ed7-9c6a-6b8a1fce0eee_ol5hwl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a499dccd-ab17-4ed7-9c6a-6b8a1fce0eee_ol5hwl.png)
 
 ### 7.11 자세한 알고리즘 - 생략
 

@@ -2,11 +2,10 @@
 title: SVG Paths
 date: '2019-11-17T08:56:56.243Z'
 description: SVG의 곡선 (path)
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
-# 
 
 [패스](https://developer.mozilla.org/ko/docs/Web/SVG/Tutorial/Paths)
 
@@ -53,7 +52,7 @@ Q라고 불리는 2차 베지어 곡선이며, 하나의 제어점이 시작점�
       <path d="M10 80 Q 95 10 180 80" stroke="black" fill="transparent"/>
     </svg>
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-15__5.41.17_a4rv9d.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-15__5.41.17_a4rv9d.png)
 
 ### C (Cubic)
 
@@ -75,7 +74,7 @@ C라고 불리는 3차 베지어 곡선이며, 제어점이 두 점이다.
     
     </svg>
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled_bxjkrs.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled_bxjkrs.png)
 
 ### T
 
@@ -89,7 +88,7 @@ C라고 불리는 3차 베지어 곡선이며, 제어점이 두 점이다.
 
 아래 예제를 보면 파란색선은 이전에 Q에서 사용한 제어점과 반대 방향으로 자동으로 제어점을 생성하여 곡선을 그린 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_1_yosetu.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_1_yosetu.png)
 
 ### S
 
@@ -99,7 +98,7 @@ C라고 불리는 3차 베지어 곡선이며, 제어점이 두 점이다.
 
 아래 그림을 보면 파랑색 선의 제어점이 대칭하는 형태로 생성된 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_2_o3vwuf.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_2_o3vwuf.png)
 
     <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/>
@@ -111,7 +110,7 @@ A 명령어는 많은 파라미터를 받기 때문에 처음에 이해하는데
 
 `A rx ry x축-회전각 큰-호-플래그 쓸기-방향-플래그 x y`
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_3_zg3erj.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_3_zg3erj.png)
 
     <svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 315
@@ -128,7 +127,7 @@ A 명령어는 많은 파라미터를 받기 때문에 처음에 이해하는데
 
 (10, 315), (110, 215), (162.55, 162.45), (172.55, 152.45), (215.1, 109.9), (315, 10) 그리고 이 점들은 순서대로 아래 그름의 왼쪽 아래 점부터 오른쪽 위를 향한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-15__6.36.43_w6efxs.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-15__6.36.43_w6efxs.png)
 
 이제 타원을 집중해보자. 위 그림에는 두 개의 타원이 존재한다. 그 중 왼쪽 아래의 타원을 보면 직전의 좌표가 (110, 215) 이고 끝 점이 (162.55, 162.45)이다. 이 두 점을 지나고 x축 반지름이 30, y축 반지름이 50인 타원을 그리자. x축-회전각과 큰-호-플래그는 무시하고 쓸기-방향-플래그에 집중해보자. 이 값은 현재 0이지만, 1로 바꾸면 반대 방향으로 라인을 그리게 된다.
 
@@ -151,6 +150,6 @@ A 명령어는 많은 파라미터를 받기 때문에 처음에 이해하는데
                L 275 230 Z" fill="blue"/>
     </svg>
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled_4_d6ioqv.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled_4_d6ioqv.png)
 
 [https://codepen.io/lingtalfi/pen/yaLWJG](https://codepen.io/lingtalfi/pen/yaLWJG)

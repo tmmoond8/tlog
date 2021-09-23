@@ -2,7 +2,7 @@
 title: CSS 4. background
 date: '2020-05-12T08:56:56.243Z'
 description: background 관련 속성 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
 tags:
   - CSS
 ---
@@ -24,7 +24,7 @@ background 에 관련된 속성이 꽤 많은데,
 - backbround-position: 이미지를 이동 시킬 수 있다. 만약 공간이 크고 이미지가 작다면, 공간내에 배치를 할 수 있고, 만약 이미지가 크고 공간이 적다면, 공간안에 보여줄 수 있도록 이동이 가능할 것이다. 후자의 경우 spites 이미지가 그 예다.
 - backbround-clip: background 이미지는 box model에서 content, padding, border 의 공간까지 채울 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/_2020-02-23__7.46.28_lafdoz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/_2020-02-23__7.46.28_lafdoz.png)
 
 ### background-shothand
 

@@ -2,13 +2,12 @@
 title: 10 우버 클론 코딩 (nomad coders)
 date: '2019-04-27T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.56 ~ 1.59
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - TypeORM
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -126,7 +125,7 @@ tags:
 
 이전에 User entity를 작성할 때 유저가 생성되거나 업데이트가 될 때 `@BeforeInsert`, `@BeforeUpdate`트기거를 달아준 것을 기억할 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-23__9-0adaefe3-b685-498d-aaaa-03052cbb8112.47.01_pqgw9f.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-23__9-0adaefe3-b685-498d-aaaa-03052cbb8112.47.01_pqgw9f.png)
 
 아래 코드는 저 트리거를 타지 않는다.
 

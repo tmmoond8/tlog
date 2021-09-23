@@ -2,7 +2,7 @@
 title: ES6 - Rest/Spread 연산자
 date: '2020-05-08T08:56:56.263Z'
 description: 코드를 더 간결하게
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---

@@ -2,7 +2,7 @@
 title: 16장 국제화 
 date: '2019-09-01T08:56:56.243Z'
 description: HTTP 완벽 가이드 16장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -37,13 +37,13 @@ charset의 예로는 us-ascii, ios-8859-1, euc-kr, utf-8 등이 있다. HTTP 메
 
 인코딩은 두 단계에 걸쳐 일어난다. bits → character code → unique charater
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-34dddff9-39a9-45b6-af81-5d956a90ed88_mh3fx2.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-34dddff9-39a9-45b6-af81-5d956a90ed88_mh3fx2.png)
 
 **16.2.3 잘못된 차셋은 잘못된 글자들을 낳는다.**
 
 위 이미지에서 iso-8859-6 문자 체계에서 character code 가 225인 문자가 아래의 문자로 인코딩 되어 표현되는 것을 확인 했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-387cb6ad-d96a-4a33-8ba9-f692ef28d849_x1kr5m.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-387cb6ad-d96a-4a33-8ba9-f692ef28d849_x1kr5m.png)
 
 같은 225 character code가 또 따른 문자 체계에서는 다르게 보일 수 있다.
 
@@ -57,7 +57,7 @@ iso-8859-8
 
 α
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-797817fe-09cc-402b-9a6d-d73fc6ac5ae4_ggicqo.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-797817fe-09cc-402b-9a6d-d73fc6ac5ae4_ggicqo.png)
 
 **16.2.4 표준화된 MIME 차셋 값**
 
@@ -101,21 +101,21 @@ HTTP 메시지에 아래 처럼 MIME 차셋 태그를 헤더에 담아 보낸다
 
 하나의 문자가 용도(수학기호, 구두점 등에 따라 다르게 표현된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-9fc4da8e-351a-4385-ac42-2a4e0f430d5f_zym1t0.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-9fc4da8e-351a-4385-ac42-2a4e0f430d5f_zym1t0.png)
 
 같은 글자가 위치에 따라 다르게 표기되기도 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e37b32ee-75c3-41ef-bf85-a64972f811cb_ftqq3p.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e37b32ee-75c3-41ef-bf85-a64972f811cb_ftqq3p.png)
 
 **16.3.4 글리프(glyphs), 연자(ligatures) 그리고 표현 형태**
 
 f와 i 이 만날 때 i의 ' 이 사라지도록 표현하는데 fi 연자가 존재하면 사라지도록 표현하고 아니면 그냥 표현한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-eb3d9a3b-96da-4608-a1fe-a5f3cbef6687_l9yyzh.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-eb3d9a3b-96da-4608-a1fe-a5f3cbef6687_l9yyzh.png)
 
 **16.3.5 코딩된 문자집합(Coded Character Set)**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-5e7ea2dc-7345-4562-9d3b-a326bf40882e_kcjqtt.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-5e7ea2dc-7345-4562-9d3b-a326bf40882e_kcjqtt.png)
 
 ascii라 불리는 us-ascii, iso-8859 시리즈(iso-8859-1, iso-8859-2...)
 
@@ -137,7 +137,7 @@ UTF-8은 전세계의 문자를 표현하는 가장 대표적인 문자 집합�
 
 **Unicode와 UTF-8**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__5-f0c49959-19fd-4c5f-8bf8-9ec679cce872.46.57_hbbayc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__5-f0c49959-19fd-4c5f-8bf8-9ec679cce872.46.57_hbbayc.png)
 
 U+AC00 → 10101100 00000000  utf-8→ 11101010 10110000 10000000
 
@@ -146,7 +146,7 @@ U+AC00 → 10101100 00000000  utf-8→ 11101010 10110000 10000000
 KS X 1003: 0-127의 ascii 에 \만 원화로 바꾼 것
 KS X 1001: 가 → b0a1, 갓 → b0ab
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__5-a5552e88-0c24-4f61-a586-2b73011245b5.32.25_swdioe.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__5-a5552e88-0c24-4f61-a586-2b73011245b5.32.25_swdioe.png)
 
 갷은 ?? 어떻게 표현하지 ??
 
@@ -154,7 +154,7 @@ KS X 1001: 가 → b0a1, 갓 → b0ab
 
 (0xA4 OxD4) ㅈ ㅣ ㅂ → 집
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__6-330bf741-f105-4e1f-8a16-4a515e8e35d3.00.27_cqgq93.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__6-330bf741-f105-4e1f-8a16-4a515e8e35d3.00.27_cqgq93.png)
 
 [http://i18nl10n.com/korean/euckr.html](http://i18nl10n.com/korean/euckr.html)
 
@@ -184,13 +184,13 @@ KS X 1001: 가 → b0a1, 갓 → b0ab
 
 언어를 나태는 첫 번째 서브태그는 ISO 639 표준을 따르는 것이 일반적이다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__6-61e6e60c-4bd2-4527-9c1c-e70ac0b88344.20.30_oqebaz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__6-61e6e60c-4bd2-4527-9c1c-e70ac0b88344.20.30_oqebaz.png)
 
 16.4.8 두 번째 서브태그: 이름공간
 
 두 번째 서브태그는 ISO 3166에 있는 국가 코드와 지역 표준 집합을 따른다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__6-405bac10-6923-461d-ac74-ab68b432bf27.23.03_ydb1xw.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-31__6-405bac10-6923-461d-ac74-ab68b432bf27.23.03_ydb1xw.png)
 
 16.4.9 나머지 서브태그: 이름공간
 

@@ -2,7 +2,7 @@
 title: 18 우버 클론 코딩 (nomad coders)
 date: '2019-05-23T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.13 ~ 2.17
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -820,13 +820,13 @@ BackArrow에 사용한 svg는 [https://iconmonstr.com/](https://iconmonstr.com/)
 
 핸드폰을 통해 로그인 하는 창이 완성했다. 아직 기능은 만들어지지 않았다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-29__3-48031e4f-f526-4d10-8b2e-d319aabe2c33.01.32_s0deef.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-29__3-48031e4f-f526-4d10-8b2e-d319aabe2c33.01.32_s0deef.png)
 
 [http://localhost:3000/social-login](http://localhost:3000/social-login)
 
 페이스북을 통해 로그인 하는 창이 완성했다. 아직 기능은 만들어지지 않았다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-29__3-ee9b3362-6dfb-43f5-bf19-5759403b708c.01.41_gc4x1s.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-29__3-ee9b3362-6dfb-43f5-bf19-5759403b708c.01.41_gc4x1s.png)
 
 ## #2.15 Inputs and Typescript part One
 

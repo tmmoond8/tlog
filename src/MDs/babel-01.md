@@ -2,12 +2,11 @@
 title: (1)Babel - 기본편
 date: '2019-12-27T08:56:56.243Z'
 description: babel에 대한 기본 이해
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
 tags:
   - Babel
   - JavaScript
 ---
-# 
 
 [Babel | PoiemaWeb](https://poiemaweb.com/es6-babel-webpack-1)
 
@@ -190,7 +189,7 @@ $ npm run babel
 
 아마 아래와 같은 오류가 발생할 텐데.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-18__9.26.05_ugvtna.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-18__9.26.05_ugvtna.png)
 
 위 #private 은 ES 2020에 표준이 되었기 때문에 기본 바벨 옵션에는 포함이 안되어 있다. 이렇게 기본적으로 지원하지 않는 옵션에 대해서는 별도의 플러그인을 포함시키면 된다.
 

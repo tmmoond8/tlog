@@ -2,7 +2,7 @@
 title: SVG Pattern
 date: '2020-05-23T08:56:56.243Z'
 description: SVG의 Pattern
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
@@ -15,7 +15,7 @@ svg에서 정의한 여러 도형을 묶어서 패턴으로 정의하여 사용�
 
 다음의 이미지를 보자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-14__8.01.47_qqkstt.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-10-14__8.01.47_qqkstt.png)
 
 패턴 예
 
@@ -54,4 +54,4 @@ svg에서 정의한 여러 도형을 묶어서 패턴으로 정의하여 사용�
 
 MDN 에서는 <pattern>에 사용하는 속성을 소개하는데, patternUnits, patternContentUnits이 있다. 그런데 이 두 속성은 아래의 처럼 속성을 늘려서 채우냐 패턴을 더 넣어서 채우냐 인데, 크롬에서 제대로 동작하지 않는 것으로 보인다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/svg-pattern_ape9nv.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/svg-pattern_ape9nv.png)

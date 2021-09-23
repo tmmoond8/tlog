@@ -2,11 +2,10 @@
 title: SVG Intro
 date: '2019-09-02T08:56:56.243Z'
 description: MDN SVG를 따라해보았다 - 1
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
-# 
 
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     	<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
@@ -77,7 +76,7 @@ gzip으로 압축된 svg라면
 
 수학의 좌표계와는 조금 차이가 있다. (y축의 부호가 반대)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-368c21ba-a532-4c0a-8d8f-1fd1471e339b_g6po2h.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-368c21ba-a532-4c0a-8d8f-1fd1471e339b_g6po2h.png)
 
 ### 픽셀이란?
 

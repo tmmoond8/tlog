@@ -2,11 +2,10 @@
 title: SVG Gradients
 date: '2020-01-02T08:56:56.243Z'
 description: SVG의 Gradients
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
-# 
 
 [Gradients in SVG](https://developer.mozilla.org/ko/docs/Web/SVG/Tutorial/Gradients)
 
@@ -36,7 +35,7 @@ tags:
 
 그라디언트를 잘 모르겠다면, 온라인 편집기를 통해 이해를 하자. [https://www.colorzilla.com/gradient-editor/](https://www.colorzilla.com/gradient-editor/)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.25.26_nquiqr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.25.26_nquiqr.png)
 
 위의 렌더링 결과
 
@@ -64,11 +63,11 @@ point를 늘려서 에쁜 무지개를 한 번 만들어보자.
 
 7개의 stop 포인트로 무지개를 표현했다. 아래 무지개 그라디언트를 fill과 stroke에 넣었다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.25.36_nwh71s.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.25.36_nwh71s.png)
 
 Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에서 오른쪽순으로 색상이 들어간 것을 알 수 있다. 위에서는 방향성을 별도로 나타내지 않았지만 (x1, x2) → (y1, y2)로 방향성을 나타낸다. 아무런 값을 넣지 않으면 `<linearGradient x1="0" y1="0" x2="1" y2="0">`  로 default로 값을 가진다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2019-10-13__9.41.13_wjuint.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2019-10-13__9.41.13_wjuint.png)
 
 ```jsx
 <svg width="240" height="480" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +125,7 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
   </svg>
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.18.44_oghsmq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.18.44_oghsmq.png)
 
 ## Radial Gradient
 
@@ -148,7 +147,7 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 </svg>
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.48.36_tnfmfn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.48.36_tnfmfn.png)
 
 <defs> 에 <radialGradient> 로 정의를 하고 마찬가지로 id를 가진다. 동일하게 여러개의 <stop> 을 가지고, 안쪽에서 바깥쪽순으로 색상이 적용된다.
 
@@ -158,11 +157,11 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 <radialGradient id="radial_gradients_smal" cx="0.25" cy="0.25" r="0.25">
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.02.45_pn1vjn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.02.45_pn1vjn.png)
 
 원형 그라디언트도 선형 그디언트처럼 방향성을 가진다. focal point를 설정할 수 있다. (fx, fy)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.08.45_dylzll.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.08.45_dylzll.png)
 
 ```jsx
 <svg width="240" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +196,7 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 
 원형 그라디언트는 선형보다 더 다양한 속성을 가진다고 한다. spreadMethod란 속성을 가지는데, 이 또한 크롬이나 파이어폭스 외의 브라우저에서는 잘 표현하지 못하는 것 같다. 일단 이런게 있다 정도로 하고 넘어가는 것이 좋겠다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.22.12_is2tf5.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.22.12_is2tf5.png)
 
 ```jsx
 <svg width="220" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg">

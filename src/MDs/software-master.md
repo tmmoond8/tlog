@@ -3,7 +3,7 @@ templateKey: blog-post
 title: <책 리뷰> 소프트웨어 장인
 date: '2019-07-15T08:56:56.243Z'
 description: 책 리뷰, 소프트웨어 장인 산드로 만쿠소 저 / 권오인 역 | 길벗 | 2015년 09월 25일 출판
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632294562/tlog/cover/_%E1%84%89%E1%85%A9%E1%84%91%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B0%E1%84%8B%E1%85%A5_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB_lpq00g.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632294562/tlog/cover/_%E1%84%89%E1%85%A9%E1%84%91%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B0%E1%84%8B%E1%85%A5_%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB_lpq00g.png'
 tags:
   - Book
 ---

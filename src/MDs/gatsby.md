@@ -2,7 +2,7 @@
 title: Gatsby
 date: '2019-05-08T04:13:29.424Z'
 description: Gatsby라는 프레임워크가 어떤 특징으로 가지고 왜 블로그를 만들때 많이 사용하는지에 대해 알아보자.
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/gatsby_zucriz.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/gatsby_zucriz.jpg'
 tags:
   - Gatsby
 ---

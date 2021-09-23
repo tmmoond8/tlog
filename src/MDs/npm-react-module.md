@@ -2,12 +2,11 @@
 title: NPM에 React 모듈 배포하기
 date: '2019-11-01T08:56:56.263Z'
 description: NPM에 리액트에서 사용할 수 있는 모듈 배포하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632315208/tlog/cover/npm-feature_oxz3dh.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632315208/tlog/cover/npm-feature_oxz3dh.png'
 tags:
   - NPM
   - React
 ---
-# 
 
 최근에 [리액트용 네이버 로그인](https://www.npmjs.com/package/react-naver-login) 컴포넌트 모듈을 NPM에 배포했는데, 이 과정에 겪은 경험을 기록해보았다. 튜토리얼 처럼 작성 하였고, 이 포스팅에 과정을 따라오면 누구나 NPM에 모듈을 배포할 수 있게 될 것이다.
 

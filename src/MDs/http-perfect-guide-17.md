@@ -2,7 +2,7 @@
 title: 17장 내용 협상과 트랜스코딩
 date: '2019-11-11T08:56:56.243Z'
 description: HTTP 완벽 가이드 17장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -26,9 +26,9 @@ tags:
 
 단점: 의도한 콘텐츠를 접근하는 데 최소 두 번의 요청이 필요하다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/_2019-09-07__9.49.02_xs4s3o.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/_2019-09-07__9.49.02_xs4s3o.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2019-09-07__9.49.40_dou6d1.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2019-09-07__9.49.40_dou6d1.png)
 
 ### 17.3 서버 주도 협상
 

@@ -2,12 +2,10 @@
 title: TS - function
 date: '2020-07-01T08:56:56.243Z'
 description: TypeScript 기본 알아가기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/cover/typescript_edpims.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/cover/typescript_edpims.jpg'
 tags:
   - TypeScript
 ---
-
-#
 
 ### 2-1. 타입스크립트는 반환 값을 아주 잘 추론한다.
 
@@ -50,7 +48,7 @@ JavaScript의 this는 선언된 문맥과 호출된 방법에 따라 변한다. 
 
 this로 첫 번째 인자로 선언하면, `fancyDate` 함수는 인자가 0개인 함수이며, `apply`, `call` 과 같은 this를 변경하여 호출하는 함수에서만 올바로 작동하게 된다.
 
-![2%20function%20-%20TS%20b7628fe852a64fa9a4b31cbddaf9ce52/_2020-08-23__10.54.51.png](2%20function%20-%20TS%20b7628fe852a64fa9a4b31cbddaf9ce52/_2020-08-23__10.54.51.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/_2020-08-23__10.54.51_gtmlqq.png)
 
 > eslint 에서 no-invalid-this 옵션을 켜서 this의 위험성을 막자.
 > tsconfig에서 noImplicitThis 옵션을 켜면 this 타입을 명시적으로 설정하도록 강제할 수 있다.

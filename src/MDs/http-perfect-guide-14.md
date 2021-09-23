@@ -2,7 +2,7 @@
 title: 14장 보안
 date: '2019-08-05T08:56:56.243Z'
 description: HTTP 완벽 가이드 14장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -32,7 +32,7 @@ tags:
 
 안전한 웹 통신 프로토콜로 넷스케이프에서 개척하였다. 프로토콜 스킴은 HTTPS다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7ebc05d2-2a33-4127-96b7-49ced8edb009_alizc0.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7ebc05d2-2a33-4127-96b7-49ced8edb009_alizc0.png)
 
 모든 HTTP 요청과 응답 데이터는 보내지기 전에 암호화된다. HTTP와 TCP 사이에 하나의 계층이 추가가 되는데, SSL(Secure Sockets Layer)와 TLS(Transport Layer Security)이고 명확히 TLS는 SSL을 확장 시킨 것이기에 두 가지 모두를 SSL이라 통칭해서 설명하도록 한다.
 
@@ -56,9 +56,9 @@ cryptography(암호법)은 과학이자 기술이다.
 
 암호는 꽤 오랜 역사를 갖고 있다. 특히 전쟁과 같을 때는 매우 핵심적인 역할을 했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e599ce81-fe1d-4161-b1b5-166c90d82f1d_auq6ye.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e599ce81-fe1d-4161-b1b5-166c90d82f1d_auq6ye.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-e7f491ac-8a28-486b-a099-129fb88d23c8_t2neqc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-e7f491ac-8a28-486b-a099-129fb88d23c8_t2neqc.png)
 
 간단히 알파벳을 회전하여 만드는 암호를 율리우스 카이사르가 썼다고 한다.
 
@@ -70,7 +70,7 @@ cryptography(암호법)은 과학이자 기술이다.
 
 만약 암호하는 기계가 적의 손에 들어가면?? 이런 상황을 방지 하기 위해 제대로 해독할 수 있는 숫자로 된 다이얼이 기계에 달려있었다. 이러한 암호 매개변수를 키라고 부른다. 키를 알 수 없다면 디코딩 할 수 없다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-9a78227c-dadd-462f-a5c1-d9bd1bde8ddc_a5hcjp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-9a78227c-dadd-462f-a5c1-d9bd1bde8ddc_a5hcjp.png)
 
 **14.2.5 디지털 암호**
 
@@ -79,7 +79,7 @@ cryptography(암호법)은 과학이자 기술이다.
 - 복잡한 인코딩과 디코딩 알고리즘을 수행할 수 있다.
 - 매우 큰 키를 사용할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-1ed263e1-f144-4c21-a148-4fdd9a81c27d_o6eb10.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-1ed263e1-f144-4c21-a148-4fdd9a81c27d_o6eb10.png)
 
 ### 14.3 대칭키 암호법
 
@@ -101,7 +101,7 @@ cryptography(암호법)은 과학이자 기술이다.
 
  키를 관리하는 일이 대칭키일 때보다 줄어든다. 노드가 N개 있을 때, 나의 개인키 하나와 N-1개의 공개키를 가지면 된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-05903d09-202f-440f-be97-3fc152b9ba92_fbrv8u.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-05903d09-202f-440f-be97-3fc152b9ba92_fbrv8u.png)
 
 **14.4.1 RSA**
 
@@ -121,7 +121,7 @@ cryptography(암호법)은 과학이자 기술이다.
 
 서명은 저자의 개인 키를 사용한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled-fc9f6a00-06b1-4ce2-b207-324461adfcde_hhcyrq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled-fc9f6a00-06b1-4ce2-b207-324461adfcde_hhcyrq.png)
 
 - A는 고정된 길이의 요약(digest)으로 만든다.
 - A는 그 요약에, 사용자의 개인 키를 매개변수로 하는 '서명' 함수를 적용한다. 서명 함수를 디코더 함수를 사용한다.
@@ -136,7 +136,7 @@ CA(Certificate Authority) 에서 발급된 인증서
 
 대상의 이름, 유효 기간, 인증서 발급자, 인증서 발급자의 디지털 서명을 담고 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7b7e6929-5f30-4b27-a5da-11b1efc7f7f8_yjbthl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7b7e6929-5f30-4b27-a5da-11b1efc7f7f8_yjbthl.png)
 
 14.6.2 X.509 v3 인증서
 
@@ -170,7 +170,7 @@ CA(Certificate Authority) 에서 발급된 인증서
 - 서명 기관의 이름
 - 서명 기관의 서명
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-c5e95d9b-095d-4257-b11a-823ecb1f268d_dpbss2.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-c5e95d9b-095d-4257-b11a-823ecb1f268d_dpbss2.png)
 
 특히 서명 기관은 CA로 널리 알려진 인증된 인증기관이기 때문에 브라우저에는 CA에 대한 정보를 알고 있기 때문에 검사할 수 있다. 크롬의 경우 자신이 알고 있는 CA면 바로 연결이 되고, 모른다 싶으면 사용자에게 한 번더 물어본다.
 
@@ -180,7 +180,7 @@ CA(Certificate Authority) 에서 발급된 인증서
 
 **14.7.1 HTTPS 개요**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-4b8b1252-75f2-414d-82e3-f8110e008bd7_gujnfk.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-4b8b1252-75f2-414d-82e3-f8110e008bd7_gujnfk.png)
 
 **14.7.2 HTTPS 스킴**
 
@@ -194,7 +194,7 @@ HTTPS는 기존 HTTP 통신 절차보다 훨씬 복잡한 과정을 거친다.
 
 클라이언트가 HTTPS로 접근을 하면 TCP 커넥션을 맺고 SSL 계층에서 암호 매개변수와 교환 키를 협상한다(핸드셰이크). SSL 초기화가 완료되었고, 클라이언트는 요청 메시지를 SSL을 통해 보낸다. SSL에서는 메시지를 암호화 해서 TCP를 통해 서버로 보낸다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a886285e-e9df-4636-bdbf-caa4e1677834_lple8b.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a886285e-e9df-4636-bdbf-caa4e1677834_lple8b.png)
 
 **14.7.4 SSL 핸드셰이크**
 
@@ -205,13 +205,13 @@ HTTPS는 기존 HTTP 통신 절차보다 훨씬 복잡한 과정을 거친다.
 - 양쪽의 신원을 인증
 - 채널을 암호화하기 위한 임시 세션 키 생성
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-f5d8c80f-af34-466a-8a6e-b81463f00b37_vtmamg.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-f5d8c80f-af34-466a-8a6e-b81463f00b37_vtmamg.png)
 
 **14.7.5 서버 인증서**
 
 오늘날에는 클라이언트 인증서가 아닌 서버 인증서를 통해 안전한 통신을 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-8e099011-a0a5-4ae3-a221-8bdeb320c343_bry0je.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-8e099011-a0a5-4ae3-a221-8bdeb320c343_bry0je.png)
 
 **14.7.6 사이트 인증서 검사**
 

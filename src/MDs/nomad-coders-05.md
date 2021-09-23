@@ -2,13 +2,12 @@
 title: 5 우버 클론 코딩 (nomad coders)
 date: '2019-04-12T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.22 ~ 1.25
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - TypeORM
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -22,7 +21,7 @@ tags:
 
 기는데, 이를 one-to-many 관계로 설명한다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952583/tlog/-841e9ee6-c104-4479-a90f-5a1d40b816ed_sz2nqq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/-841e9ee6-c104-4479-a90f-5a1d40b816ed_sz2nqq.png)
 
 위 그림은 우리가 나타낼 관계를 관계도로 도식화 한 것이다.
 
@@ -167,7 +166,7 @@ ManyToOne과 OneToMany가 헷갈릴까봐, 표시를 해봤다.
 
 Message 클래스 정의에서 "다수의 Message 가 하나의 Chat과 관계를 가진다." 로 이해하면 되고 "그 다수의 메시지는 chat.messages" 이다.로 이해하시면 될 것 같다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-11__10-bd368ede-2d6f-40d6-965d-8d0665553f26.33.58_gdbwtq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-11__10-bd368ede-2d6f-40d6-965d-8d0665553f26.33.58_gdbwtq.png)
 
 Chat 클래스는  Message와 반대로 `@OneToMany`입니다.  위에 설명드린 방식으로 이해해보시면 될 것 같습니다.
 

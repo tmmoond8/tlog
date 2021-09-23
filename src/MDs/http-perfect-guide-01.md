@@ -2,7 +2,7 @@
 title: 1장 HTTP 개관
 date: '2019-06-20T08:56:56.243Z'
 description: HTTP 완벽 가이드 1장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -26,7 +26,7 @@ tags:
 
 HTTP 프로토콜로 의사소통 하는 두 개의 주체를 HTTP 클라이언트, HTTP 서버라고 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631954730/tlog/Untitled-f56f3b42-6e86-40b6-95da-a6f8df5ec620_am7jpn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631954730/tlog/Untitled-f56f3b42-6e86-40b6-95da-a6f8df5ec620_am7jpn.png)
 
 ### 1.3 리소스
 
@@ -43,7 +43,7 @@ text/html    →  {proimary object type }/{specific subtype}
     URI  ㅡㅡ URL
           ㄴㅡ URN
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-20__12-5a9b6c14-60f9-4352-8f1e-2363c6f795f9.23.11_kgplkd.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-20__12-5a9b6c14-60f9-4352-8f1e-2363c6f795f9.23.11_kgplkd.png)
 
 URL 구조
 
@@ -55,7 +55,7 @@ URN(uniform resource name): 이름을 통해 접근.
 
 클라이언트의 요청과 서버의 응답의 쌍을 하나의 트랜잭션이라고 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7d1bcce2-14ed-40ef-94da-f302a30393e3_m8aikg.png)  
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7d1bcce2-14ed-40ef-94da-f302a30393e3_m8aikg.png)  
 
 **1.4.1 메서드**
 
@@ -71,7 +71,7 @@ get, post, put, delete, head
 
 ### 1.5 메시지
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-695830ca-6bbf-4294-820b-5ffc4f3a9bd7_tkirlx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-695830ca-6bbf-4294-820b-5ffc4f3a9bd7_tkirlx.png)
 
 시작줄: 첫 줄로, 요청이라면 무엇을 해야 하는지 응답이라면 무슨 작업을 했는지 나타낸다.
 
@@ -81,9 +81,9 @@ get, post, put, delete, head
 
 **1.5.1 간단한 메시지의 예**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-c7cc5988-5db7-4ce1-9ba1-6b95c01f1a58_apjo7h.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-c7cc5988-5db7-4ce1-9ba1-6b95c01f1a58_apjo7h.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a28ffde8-daa5-4465-8191-80bbf5310a22_js0s68.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a28ffde8-daa5-4465-8191-80bbf5310a22_js0s68.png)
 
 ### 1.6 TCP 커넥션
 
@@ -99,7 +99,7 @@ TCP/IP 에서 보장해주는 서비스
 - 순서에 맞는 전달
 - 조각나지 않는 데이터 스트림
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-03005ca8-1c6f-48cf-8a03-ba14f6543076_zfljxp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-03005ca8-1c6f-48cf-8a03-ba14f6543076_zfljxp.png)
 
 **1.6.2 접속, IP 주소 그리고 포트번호**
 
@@ -153,7 +153,7 @@ HTTP/2.0
 
 다른 애플리케이션과 연결된 특별한 웹 서버. 주로 HTTP 트래픽을 다른 프로토콜로 변환하기 위해 사용된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-1d673421-55e8-40f5-9bfe-a7dbacd49181_tpc6hr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-1d673421-55e8-40f5-9bfe-a7dbacd49181_tpc6hr.png)
 
 터널
 

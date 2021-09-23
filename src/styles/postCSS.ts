@@ -355,8 +355,7 @@ export const postCSS = css`
   }
 
   .post-section p {
-    margin-bottom: 10px;
-    margin-top: 0;
+    padding: 6px 0;
   }
 
   .post-section blockquote {
@@ -521,15 +520,13 @@ export const postCSS = css`
     text-decoration: none;
   }
 
-  .post-section blockquote,
   .post-section dl,
   .post-section ol,
-  .post-section p,
   .post-section pre,
   .post-section table,
   .post-section ul {
     margin-bottom: 16px;
-    margin-top: 0;
+    margin-top: 8px;
   }
 
   .post-section hr {
@@ -541,9 +538,10 @@ export const postCSS = css`
   }
 
   .post-section blockquote {
-    border-left: 0.25em solid #dfe2e5;
+    border-left: 0.25em solid ${colors.red};
     color: ${colors.grey60};
     padding: 0 1em;
+    margin: 24px auto 32px auto;
   }
 
   .post-section blockquote > :first-child {
@@ -576,8 +574,8 @@ export const postCSS = css`
   .post-section h6 {
     font-weight: 600;
     line-height: 1.25;
-    margin-bottom: 16px;
-    margin-top: 24px;
+    margin-top: 36px;
+    margin-bottom: 24px;
   }
 
   .post-section h1 {
@@ -626,7 +624,7 @@ export const postCSS = css`
 
   .post-section li {
     word-wrap: break-all;
-    list-style: square;
+    list-style: disc;
   }
 
   .post-section li > p {
@@ -684,7 +682,7 @@ export const postCSS = css`
     background-color: #fff;
     box-sizing: content-box;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 16px auto 24px auto;
   }
 
   .post-section img[align='right'] {

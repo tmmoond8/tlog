@@ -2,7 +2,7 @@
 title: 21 우버 클론 코딩 (nomad coders)
 date: '2019-05-30T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.22 ~ 2.25
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -131,7 +131,7 @@ VerifyMutation은 먼저 VerifyPhonePresenter 통해 컴포넌트를 렌더링 �
 
 로그인이 완료가 되면 로컬 스토리지에 jwt 로 값이 들어가 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-15__11-42d38a9d-9298-4328-82e8-a105ebb4e091.19.34_h1ldtc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-15__11-42d38a9d-9298-4328-82e8-a105ebb4e091.19.34_h1ldtc.png)
 
 ## #2.27 SocialLogin with Apollo part One
 
@@ -218,7 +218,7 @@ render에 워래 있던 Link 컴포넌트를 넣어줬다.
 
 앱에서 페이스북 버튼을 클릭하면 아래처럼 페북 로그인창이 뜬다. 기능은 정상적으로 동작하지 않는다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-15__1-e70a45c2-4c3f-4e21-b62f-a72d52346baf.07.06_wdsw4t.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-15__1-e70a45c2-4c3f-4e21-b62f-a72d52346baf.07.06_wdsw4t.png)
 
 - src/routes/SocialLogin/SocialLoginContainer.tsx
 
@@ -329,7 +329,7 @@ facebook에서 토큰을 확인해보자.
 
 loginCallback은 facebook 로그인 응답을 콘솔에 찍도록 했다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-15__1-8659387e-ac1e-4d04-b491-61cb4b7d48aa.46.05_zvf6fy.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-15__1-8659387e-ac1e-4d04-b491-61cb4b7d48aa.46.05_zvf6fy.png)
 
 - src/routes/SocialLogin/SocialLoginContainer.tsx
 

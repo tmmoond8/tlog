@@ -2,13 +2,12 @@
 title: 15 우버 클론 코딩 (nomad coders)
 date: '2019-05-03T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.81 ~ 1.87
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -667,7 +666,7 @@ chatId를 얻었다면,, 아래를 요청하면 데이터가 잘 나올 것이�
 
 subscription은 항상 endpoint를 /subscription으로 해야 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-03__10-bf8c4596-2c30-4e76-a309-54c11be5cd8d.52.48_dxol3s.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-03__10-bf8c4596-2c30-4e76-a309-54c11be5cd8d.52.48_dxol3s.png)
 
 ## #1.87 Backend Conclusions
 

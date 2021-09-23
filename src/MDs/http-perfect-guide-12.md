@@ -2,7 +2,7 @@
 title: 12장 기본 인증
 date: '2019-07-10T08:56:56.243Z'
 description: HTTP 완벽 가이드 12장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -18,11 +18,11 @@ tags:
 
 아래는 인증 절차를 나타낸 그림이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-85db37d4-c66a-4ada-9e5f-0fd221cb78ab_o08ls7.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-85db37d4-c66a-4ada-9e5f-0fd221cb78ab_o08ls7.png)
 
 **12.1.2 인증 프로토콜과 헤더**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-ace803f3-1968-40cf-9179-0538a96cbf15_yrh5sr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-ace803f3-1968-40cf-9179-0538a96cbf15_yrh5sr.png)
 
 (a) 인증 없이 요청을 보냄
 
@@ -36,7 +36,7 @@ tags:
 
 위에서 WWW-Autenticate헤더에 realm을 사용 하는 것을 봤다. 예를들어 웹 서버에서 보안 영역을 family, coporation 등으로 여러개를 둘 수 있기 때문에 보안 영역을 지시자에 함께 보낸다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-6b33ef20-1469-4fd5-9b90-60121b24d65e_oa4nrk.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-6b33ef20-1469-4fd5-9b90-60121b24d65e_oa4nrk.png)
 
 ### 12.2 기본 인증
 

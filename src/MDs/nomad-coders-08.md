@@ -2,13 +2,12 @@
 title: 8 우버 클론 코딩 (nomad coders)
 date: '2019-04-22T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.40 ~ 1.48
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - JWT
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -118,7 +117,7 @@ tags:
 
 [https://passwordsgenerator.net/](https://passwordsgenerator.net/) 에 들어가서 아래 처럼 체크 한 후 생성 버튼을 누르면 임의의 값을 생성해준다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-19__2-039a4319-ffce-40c8-bc3b-ecb38d37d384.57.39_mp1an0.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-19__2-039a4319-ffce-40c8-bc3b-ecb38d37d384.57.39_mp1an0.png)
 
 ## #1.42 Authenticating Users with Custom JWT
 
@@ -232,7 +231,7 @@ http://localhost:4000/playground
       }
     }
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-19__3-d7f7bdaf-211e-4289-874d-2df494304085.36.18_qtbvdi.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-19__3-d7f7bdaf-211e-4289-874d-2df494304085.36.18_qtbvdi.png)
 
 이번엔 회원 가입을 하자. 회원 가입을 성공하면 토큰을 함께 준다.
 
@@ -307,13 +306,13 @@ http://localhost:4000/playground
     }
     
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-04-20__12-8c2db49d-9c13-41e2-9e18-e01437fb275b.40.21_qrfchy.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-04-20__12-8c2db49d-9c13-41e2-9e18-e01437fb275b.40.21_qrfchy.png)
 
 토큰 값은 받은 SignIn이나 이런 요청해서 받은 값으로 하자.
 
     {"X-JWT":"토큰값"}
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-20__12-4fba01dc-444b-4d0b-8d97-0eb60b09ba86.42.21_zu8yw8.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-20__12-4fba01dc-444b-4d0b-8d97-0eb60b09ba86.42.21_zu8yw8.png)
 
 ## #1.46 Using Resolver Context for Authentication
 

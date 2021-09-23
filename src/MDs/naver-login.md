@@ -2,7 +2,7 @@
 title: Naver Login in React
 date: '2019-11-29T08:56:56.263Z'
 description: React에서 네이버 로그인 사용하기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/cover/naver-login_m0doid.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/cover/naver-login_m0doid.png'
 tags:
   - OAuth
   - React

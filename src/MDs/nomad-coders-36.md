@@ -2,13 +2,12 @@
 title: 36 우버 클론 코딩 (nomad coders)
 date: '2019-7-08T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.78 ~ 2.80
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -122,7 +121,7 @@ Message 컴포넌트를 작성했고, 이어서 Chat 페이지에 표현하도�
 
 자 이제 페이지를 새로고침하면 아래처럼 운전자, 승객에 따라 다르게 채팅 메시지가 표시된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-06__6-c523f08f-0fa2-4e28-9552-3b5c2c24985f.44.14_bdvpcc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-06__6-c523f08f-0fa2-4e28-9552-3b5c2c24985f.44.14_bdvpcc.png)
 
 이번에는 메시지를 보내는 기능을 구현하자. SendMessage Mutation을 구현하자.
 
@@ -330,7 +329,7 @@ Message 컴포넌트를 작성했고, 이어서 Chat 페이지에 표현하도�
 
 메시지를 이제 보낼 수 있다. 아직 문제가 있다. 메시지를 보내면 바로 뜨지 않고 새로 고침을 해야 볼 수 있다....
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-06__7-59384731-2519-4476-9ed2-497d212486c5.12.24_lxcsyu.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-06__7-59384731-2519-4476-9ed2-497d212486c5.12.24_lxcsyu.png)
 
 ## #2.79 Chat Screen Subscription
 
@@ -413,9 +412,9 @@ Message 컴포넌트를 작성했고, 이어서 Chat 페이지에 표현하도�
         
         ...
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-07__10-4538f787-dbda-4714-be0e-aa036a331383.43.18_dpzusn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-07__10-4538f787-dbda-4714-be0e-aa036a331383.43.18_dpzusn.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-07__10-a591310d-f2ec-48d7-933b-a024f99b52b8.43.57_xgdwsf.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-07__10-a591310d-f2ec-48d7-933b-a024f99b52b8.43.57_xgdwsf.png)
 
 지금은 apollo-yoga의 subscription 버그 때문에 중복되게 뜨지만 어쨋든 위 이미지에서 GetChat → prev를 data → subscriptionData를 나타낸다.  우리는 subscriptionData를 messages 배열에 추가 해줘야 한다.
 

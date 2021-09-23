@@ -2,7 +2,7 @@
 title: 22 우버 클론 코딩 (nomad coders)
 date: '2019-06-01T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.31 ~ 2.35
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -79,7 +79,7 @@ tags:
 
 `sidebar`는 사이드바 안에 그려질 컴포넌트, `open` 은 열릴지 여부, 여기서는 true를 주었다. `styles` 는 스타일을 정의하면 된다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__11-b5c4a7b0-e967-4906-8107-f8b6bd02662b.00.04_dyr6ba.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__11-b5c4a7b0-e967-4906-8107-f8b6bd02662b.00.04_dyr6ba.png)
 
 버튼을 누를때만 메뉴가 열리고 또 여백 누를때 닫도로 기능을 구현하자.
 
@@ -309,7 +309,7 @@ Sidebar에 텍스트만 덩그러니 들어있다. Menu 컴포넌트 컴포넌�
 
 chrome의 extentions 인 Apollo를 사용하면 cache 탭이 있어서 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-07-09__11-17f27b84-42e7-4242-8ebb-1b677ad1561b.11.36_qbyd3k.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-07-09__11-17f27b84-42e7-4242-8ebb-1b677ad1561b.11.36_qbyd3k.png)
 
 - src/sharedQueries.queries.ts  이 파일은 새로 만들어야 한다.
 
@@ -511,13 +511,13 @@ yarn code을 한 번 해주자.
         
         export default MenuPresenter;
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__2-b0144749-1153-4845-976e-531742b2578c.17.53_xpvlg3.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__2-b0144749-1153-4845-976e-531742b2578c.17.53_xpvlg3.png)
 
 데이터를 잘 가져왔다.
 
 하다가 조금 문제가 있던 것이 크롬 도구 apollo에서 캐시된 쿼리 목록에 아무것도 안나오는 것이었다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__2-a711afac-8763-41c1-881d-683e3f5fb0fb.31.07_sscexm.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__2-a711afac-8763-41c1-881d-683e3f5fb0fb.31.07_sscexm.png)
 
 강의에서는 cache에 쿼리가 들어있던데,,난 왜 안돼는지 모르겠다. 일단 network 탭에 보면 중복 쿼리는 보내지 않는 거같은데, 여간 찜찜하다.
 
@@ -668,7 +668,7 @@ refetchQuries는 지우고 update 에 저렇게 작성해서 실행해 해보면
 
 또, cache는 apollo cache에 접근할 수 있는 모듈이 제공한다. 마치 orm 처럼 데이터를 가져올 수 있는 형태다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__3-aa421541-2faa-4555-bb80-23496e615d85.36.12_c5b1aj.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-16__3-aa421541-2faa-4555-bb80-23496e615d85.36.12_c5b1aj.png)
 
 - src/components/Menu/MenuContainer.tsx  코드가 길어졌지만, 어쩃든 캐시를 조작할 수 있다.
 

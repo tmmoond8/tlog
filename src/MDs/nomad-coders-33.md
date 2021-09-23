@@ -2,13 +2,12 @@
 title: 33 우버 클론 코딩 (nomad coders)
 date: '2019-06-28T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.68 ~ 2.69
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -476,7 +475,7 @@ tags:
 
 운전자 쪽에서 새로고침 하면 콘솔에 ride 정보가 보일 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-05-30__7-483b7d56-ce4d-4af4-8cfb-4e8416eb91d0.23.12_pkodau.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-05-30__7-483b7d56-ce4d-4af4-8cfb-4e8416eb91d0.23.12_pkodau.png)
 
 `<GetNearbyRides` 쪽에 쿼리의 결과를 콘솔에 찍도록 했다. 콘솔 코드는 이 코드는 곧 다음 강좌를 마치고 제거할 예정이다.
 
@@ -649,7 +648,7 @@ tags:
 
     이제 운전자 계정으로 보면 아까 요청한 탑승자의 정보를 볼 수 있다.
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952590/tlog/_2019-06-01__6-e6e921c4-0e38-4ae5-bc8c-37574f6af74c.18.29_sdy2p6.png)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/_2019-06-01__6-e6e921c4-0e38-4ae5-bc8c-37574f6af74c.18.29_sdy2p6.png)
 
 이어서 이제 운전자가 Accept 버튼을 누르면  ride의 `REQUESTING` 상태를 `ACCEPT`로 변경하게 해야 한다. 먼저 mutaiton을 작성하고 yarn codegen을 하자.
 

@@ -2,7 +2,7 @@
 title: 20 우버 클론 코딩 (nomad coders)
 date: '2019-05-28T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.22 ~ 2.25
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -217,7 +217,7 @@ tags:
 
 이제 [http://localhost:3000/phone-login](http://localhost:3000/phone-login) 에서 숫자를 입력하면 페이지가 이동한다. 콘솔창에 location 안에 state로 넣어준 값이 있는 것을 볼 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-14__3-eb76b12f-caea-4ba4-8cb8-a6a6c52ca09d.02.17_xa8zdq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-14__3-eb76b12f-caea-4ba4-8cb8-a6a6c52ca09d.02.17_xa8zdq.png)
 
  만약 이 state에 phone이 없다면 페이지 접근을 시키면 안된다. 안전장치를 만들자.
 
@@ -442,7 +442,7 @@ tags:
 
 인증 완료를 할 때는 CompletePhoneVerification Mutation을 사용하는데, chrome의 apollo 확장 프로그램을 설치하면 손쉽게 graphql의 쿼리를 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-14__5-70f0e591-3940-43a5-9d62-550df6f17719.18.31_ky7wr1.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952571/tlog/_2019-05-14__5-70f0e591-3940-43a5-9d62-550df6f17719.18.31_ky7wr1.png)
 
 - src/routes/VerifyPhone/VerifyPhone.queries.ts
 

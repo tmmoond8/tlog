@@ -2,7 +2,7 @@
 title: JWT
 date: '2019-11-24T08:56:56.263Z'
 description: JWT의 동작을 이해해보기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/jwt-cover_tklbey.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/jwt-cover_tklbey.jpg'
 tags:
   - JWT
 ---

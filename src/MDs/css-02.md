@@ -2,11 +2,10 @@
 title: CSS 2. box model
 date: '2020-01-16T08:56:56.243Z'
 description: CSS Box 모델에 대해 알아봅시다.
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
 tags:
   - CSS
 ---
-# 
 
 HTML의 모든 요소는 박스 모델을 사용한다.
 
@@ -37,7 +36,7 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
  그리고 컨텐츠 영역 안에 inline 요소들이 컨텐츠의 영역보다 너 크면 삐져 나올 수 있다. 아래 그림을 보면 상단 박스는 내용물이 컨텐츠 영역 밖으로 삐져나온 것을 확인할 수 있다. 
  overflow: hidden; 을 주면 컨텐츠 영역 외로 넘어간 영역에 대해서 보이지 않게 할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-16__4.32.03_bdm2xl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-16__4.32.03_bdm2xl.png)
 
 ## Border 타원으로 정의하기
 
@@ -69,7 +68,7 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
 </html>
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-16__4.39.16_llissz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-16__4.39.16_llissz.png)
 
 ## collapse margin
 
@@ -109,7 +108,7 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
     </html>
     ```
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/margin-collapse1_fwhh4u.gif)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/margin-collapse1_fwhh4u.gif)
 
 - 부모 자식간 마진 충돌
 
@@ -147,9 +146,9 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
     </html>
     ```
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/margin-collabse2_oeyqkh.gif)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/margin-collabse2_oeyqkh.gif)
 
-    ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/margin-collapse3_nf7dzh.gif)
+    ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/margin-collapse3_nf7dzh.gif)
 
 ## stitched
 
@@ -192,7 +191,7 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
 </html>
 ```
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-16__5.06.23_ovnh0x.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952581/tlog/_2020-02-16__5.06.23_ovnh0x.png)
 
 ## References
 

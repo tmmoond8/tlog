@@ -2,7 +2,7 @@
 title: React 에서 SSR 고급
 date: '2020-05-02T08:56:56.243Z'
 description: 효율적인 SSR 처리방법
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/react_qv0z3k.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/react_qv0z3k.png'
 tags:
   - React
   - SSR

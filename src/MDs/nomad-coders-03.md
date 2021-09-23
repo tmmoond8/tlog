@@ -2,13 +2,12 @@
 title: 3 우버 클론 코딩 (nomad coders)
 date: '2019-04-10T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.12 ~ 1.16
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - TypeORM
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -188,7 +187,7 @@ tags:
 
 그리고 이제 yarn dev를 하면 typeorm이 실제 postgresql에 데이터 베이스를 모델을 만드는 것을 볼 수 있다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-09__12-0b80e59a-6dbd-48b1-a719-7008109ed908.31.21_ivicb6.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-09__12-0b80e59a-6dbd-48b1-a719-7008109ed908.31.21_ivicb6.png)
 
 우리가 src/ormConfig.ts 에서 `synchronize: true` 로 해두었기 때문에 /src/entities/User.ts 에서 작성한 것 처럼 entity를 변경하면 자동으로 동기화 된다.
 

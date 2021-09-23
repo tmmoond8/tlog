@@ -2,7 +2,7 @@
 title: Gatsby - SEO sitemap, rss, analytics 적용
 date: '2019-12-18T04:13:29.424Z'
 description: Gatsby로 만든 블로그에서 어떻게 SEO 를 설정할까?
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/gatsby_zucriz.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/gatsby_zucriz.jpg'
 tags:
   - Gatsby
 ---

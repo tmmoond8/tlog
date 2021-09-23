@@ -2,7 +2,7 @@
 title: 10장 HTTP 2.0
 date: '2019-07-07T08:56:56.243Z'
 description: HTTP 완벽 가이드 10장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -32,7 +32,7 @@ Content-Length 헤더의 이름은 ':content-length' 가, status는 ':status' �
 
  [스펙 문서](https://httpwg.org/specs/rfc7540.html#FramingLayer)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-5e600c5b-723e-41ae-ac20-8092c5790fb6_szqbeh.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/Untitled-5e600c5b-723e-41ae-ac20-8092c5790fb6_szqbeh.png)
 
 Length: 페이로드의 길이를 나타내는 24비트 정수로, 프레임 헤더는 포함 되지 않음
 

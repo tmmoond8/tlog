@@ -2,7 +2,7 @@
 title: ES6 - Promise
 date: '2020-04-23T08:56:56.263Z'
 description: 콜백 지옥을 벗어나자
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---
@@ -78,7 +78,7 @@ var promise = new Promise((resolve, reject) => {
 
 Promise는 상태를 갖는 객체다. Promise 객체를 생성하면 기본적으로 `pending` 상태가 된다. 그리고 Promise 내부에서 `resolve`를 호출하면 `fulfilled` 상태가 되고, `reject`를 호출하면 `rejected` 상태가 된다. `settled`는 `resolve` 나 `reject`를 호출하면 `fulfilled`, `rejected` 두 상태가 된 것을 가르킨다. `[[PromiseStatus]]` 에는 `settled`는 없느 것 같다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-01-26__8.28.28_dszuiq.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-01-26__8.28.28_dszuiq.png)
 
 - _pending_: initial state, neither fulfilled nor rejected.
 - _fulfilled_: meaning that the operation completed successfully.
@@ -90,7 +90,7 @@ Promise는 상태를 갖는 객체다. Promise 객체를 생성하면 기본적�
 
 ---
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/es6-promise_bsikab.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/es6-promise_bsikab.png)
 
 Promise로 구현된 비동기 함수는 Promise 객체를 리턴 한다. Promise 안의 비동기 처리 결과를 후속 처리 메서드(`then`, `catch`)를 사용하여 처리한다.
 

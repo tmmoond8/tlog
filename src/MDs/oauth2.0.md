@@ -2,12 +2,11 @@
 title: OAuth 2.0
 date: '2020-01-22T08:56:56.263Z'
 description: OAuth 2 개념
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632315303/tlog/cover/oauth-2.0_xw9olm.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632315303/tlog/cover/oauth-2.0_xw9olm.png'
 tags:
   - OAuth
   - React
 ---
-# 
 
 [](https://www.notion.so/asdsadsad-77005307bf1d401e8bfb817b9b0ef725)
 
@@ -15,7 +14,7 @@ tags:
 
 [NAVER D2](https://d2.naver.com/helloworld/24942)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-09-29__5.49.55_bg8gaf.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-09-29__5.49.55_bg8gaf.png)
 
 출처 : NAVER D2
 
@@ -35,7 +34,7 @@ Authentication(인증)과 Authorization(허가)는 구분되는 개념이다. OA
 - Request Token : 배그가 카카오에게 접근 권한을 확인 받으려 할 때 사용하는 값으로 인증이 완료되면 Access Token으로 교환된다.
 - Access Token : 인증 후 배그가 카카오로 Access Token을 보내면 카카오가 사용자 정보를 내려준다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/oauth-2.0-image-1_vr9g93.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/oauth-2.0-image-1_vr9g93.png)
 
 ### Step 0 배그에서 먼저 카카오계정으로 로그인 하기 위해 등록해야 한다.
 
@@ -43,7 +42,7 @@ Authentication(인증)과 Authorization(허가)는 구분되는 개념이다. OA
 
 ### Step A, B, C 배그를 하기 위해 킴은 카카오계정으로 로그인을 눌렀다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952590/tlog/oauth-2.0-image-2_jlfgkc.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/oauth-2.0-image-2_jlfgkc.png)
 
 - 파라미터
 
@@ -77,9 +76,9 @@ Authentication(인증)과 Authorization(허가)는 구분되는 개념이다. OA
 
 ### Step D, E, F, G 사용자는 카카오로 로그인한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/oauth-2.0-image-3_prnoea.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/oauth-2.0-image-3_prnoea.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-09-29__7.30.34_xwokut.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-09-29__7.30.34_xwokut.png)
 
 사용자가 로그인을 하면 배그에 정보 제공을 할 지 여부를 체크 한다. (이미 동의 했다면 생략한다.)
 

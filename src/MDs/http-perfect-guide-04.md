@@ -2,7 +2,7 @@
 title: 4장 HTTP 커넥션 관리
 date: '2019-06-28T08:56:56.243Z'
 description: HTTP 완벽 가이드 4장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -19,7 +19,7 @@ tags:
 
 HTTP 통신은 네트워크 장비에서 사용하는 전송 프로토콜인 TCP/IP를 통해 이루어진다. TCP/IP 위에서 전송되기 때문에 메시지의 무결성, 순서 등을 보장할 수 있는데, 이러한 특징을 신뢰성 있는 연결이라 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-ad9c50c8-e6d6-4e3a-ad75-9d027204684c_yfjc6w.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-ad9c50c8-e6d6-4e3a-ad75-9d027204684c_yfjc6w.png)
 
 **4.1.1 신뢰할 수 있는 데이터 전송 통로인 TCP**
 
@@ -29,7 +29,7 @@ HTTP 커넥션은 몇가지 사용 규칙이 추가된 TCP 커넥션이다. HTTP
 
 TCP는 IP 패킷(또는 IP 데이터그램)이라고 불리는 데이터 조각으로 전송된다. TCP와 관계된 프로토콜 스택을 보면 아래와 같다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e70b9b38-476b-494c-bdb4-8b03e70e78b1_xokqzy.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e70b9b38-476b-494c-bdb4-8b03e70e78b1_xokqzy.png)
 
 TCP는 세그먼트라는 단위로 데이터 스트림을 잘게 나누고, 세그먼트를 IP 패킷으로 감싸서 전달한다. 이 과정은 웹프로그머가 잘 알지 못해도 알아서 잘 해주기 떄문에 신경 쓸 필요가 없다.
 
@@ -37,7 +37,7 @@ TCP는 세그먼트라는 단위로 데이터 스트림을 잘게 나누고, 세
 
 아래 사진을 보면 우리가 3장에서 배운 HTTP 메시지가 TCP 데이터 스트림 청크로 들어가 있다. 그 청크를 TCP 세그먼트가 감싸고, TCP 세그먼트를 IP 패킷으로 감싸서 전달이 되는 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-d0c8fd6f-3a68-404e-b7ac-d50fd9790ec6_h1esxo.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-d0c8fd6f-3a68-404e-b7ac-d50fd9790ec6_h1esxo.png)
 
 **4.1.3 TCP 커넥션 유지하기**
 
@@ -47,7 +47,7 @@ TCP는 세그먼트라는 단위로 데이터 스트림을 잘게 나누고, 세
 
 위 값이 모두 같은 커넥션은 없다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-5e956fd1-f8be-42d8-9094-bf02f3b77b27_h1uwg3.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-5e956fd1-f8be-42d8-9094-bf02f3b77b27_h1uwg3.png)
 
 위 내가 구글로 탭을 하나 띄워 놓고 또 다른 탭으로 구글에 접속하면 나의 IP주소는 같겠지만 다른 포트 번호로 요청 한다. 심지어, 성능 향상을 위해서 구글에 접속 했을 때 다중 커넥션을 만들어서 여러 데이터를 동시에 받게 되는데, 이때 여러 포트로 커넥션을 만들게 된다.
 
@@ -63,7 +63,7 @@ TCP API는, 기본적인 네트워크 프로토콜의 핸드셰이킹, 그리고
 
 HTTP 서버와 클라이언트간 통신 과정은 몇번 했으니 아래 그림만 참조
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e8a43434-de05-42ae-a7e6-d0e0f1c70767_a3ubjf.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-e8a43434-de05-42ae-a7e6-d0e0f1c70767_a3ubjf.png)
 
 ### 4.2 TCP의 성능에 대한 고려
 
@@ -73,7 +73,7 @@ HTTP 통신은 TCP 성능에 절대적으로 의존한다. 그렇기 때문에 T
 
 통신에서 TCP 커넥션을 설정하고, 요쳥을 전송하고, 처리 하여 응답을 주고 클라이언트가 응답을 받는 과정 중에 처리는 매우 비중이 낮다. 대부분을 차지하는 것이 네트워크 지연이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-ec8523c4-036c-4eb6-ad7c-40911b0dd5b5_h62ast.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952600/tlog/Untitled-ec8523c4-036c-4eb6-ad7c-40911b0dd5b5_h62ast.png)
 
 1. 클라이언트는 도메인 네임을 통해 IP를 알아내야 한다. 접근한 기록이 없다면 DNS를 거쳐야 한다.
 2. 서버에 TCP 커넥션 요청을 보낸다.
@@ -94,7 +94,7 @@ HTTP 통신은 TCP 성능에 절대적으로 의존한다. 그렇기 때문에 T
 
 HTTP 프로그래머는 커넥션의 핸드셰이크를 보지 못한다. 커넥션을 생성하는 것은 사실 굉장한 비용이라고 할 수 있다. 왜냐면 총 세 번의 네트워크 비용이 발생하기 때문이다. 이렇게 어렵게 매번 커넥션을 만들지 않고 재활용 하자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-aa9ae9c8-fa94-4403-be3b-b2f984418214_dbk28v.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-aa9ae9c8-fa94-4403-be3b-b2f984418214_dbk28v.png)
 
 **4.2.4 확인응답 지연**
 
@@ -122,7 +122,7 @@ HTTP 프로그래머는 커넥션의 핸드셰이크를 보지 못한다. 커넥
 
 아래 Conntection 과 Meter 는 커넥셔 커넥션 헤더 값이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-100cfe76-f1c6-4c83-8afe-ca44ca1d252b_rupb12.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-100cfe76-f1c6-4c83-8afe-ca44ca1d252b_rupb12.png)
 
 일단 모든 커넥션 헤더 값은 현재 커넥션에만 해당하고 다음 커넥션에는 전달하면 안된다. 그런데 이 커넥션에 대해 잘못 처리하는 서버가 있을 수 있고, 또 서버와 클라이언트 사이에 놓인 프락시 서버, 캐시 서버 같은 중개 서버에서 적절히 처리를 하지 못하기도 한다.
 
@@ -142,7 +142,7 @@ HTTP 프로그래머는 커넥션의 핸드셰이크를 보지 못한다. 커넥
 
 동시에 여러 커넥션을 사용하여 병렬 처리
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled-fae0a47b-29b2-42f7-a643-687b4ae8003f_rrr7xy.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled-fae0a47b-29b2-42f7-a643-687b4ae8003f_rrr7xy.png)
 
 **4.4.1 병렬 커넥션은 페이지를 더 빠르게 내려 받는다.** - 메모리를 많이 소모 한다.
 
@@ -174,7 +174,7 @@ Keep-Alive 는 deprecated 됐다. HTTP/1.1 명세에는 빠졌다.
 
 클라이언트에서 Connect: Keep-Alive를 보내고 서버가 똑같이 보내면 커넥션의 재활용하게 된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b0208315-3fcb-42f2-b5e1-f063e8d13a77_vhfqge.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b0208315-3fcb-42f2-b5e1-f063e8d13a77_vhfqge.png)
 
 **4.5.4 Keep-Alive 옵션**
 
@@ -197,19 +197,19 @@ Keep-Alive: max=5, timeout=120
 
 멍청한 프락시는 Keep-Alive값을 헤더에 잘 전달할 것이다. 그런데 문제는 멍청한 프락시는 서버가 커넥션을 끊기를 기다린다는 것이다. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-c1ddebff-946e-4d53-a41f-286df0d279de_rgl5mg.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-c1ddebff-946e-4d53-a41f-286df0d279de_rgl5mg.png)
 
 **4.5.7 Proxy-Connection 살펴보기**
 
 멍청한 프락시 때문에 등장한 녀석으로 동작을 간단히 살펴보면 아래 이미지와 같다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bcc986d1-9088-436d-8da0-45bef187d815_xn2lcx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bcc986d1-9088-436d-8da0-45bef187d815_xn2lcx.png)
 
 멍청한 프락시는 Proxy-Connection 값을 그대로 전달해서 지속 커넥션을 사용하지 않지만, 똑똑한 프락시는 Proxy-Connection을 Connection으로 변경하여 지속 커넥션을 사용하도록 변경한다.
 
 근데 문제는 서버와 클라이언트 사이에 하나라도 멍청한 프락시가 있을때 발생한다. 하나라도 멍청한 프락시가 있다면 지속 커넥션을 제대로 쓰지 못한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-2cb9ede6-0478-4152-91f5-837759841dde_vsnuy8.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/Untitled-2cb9ede6-0478-4152-91f5-837759841dde_vsnuy8.png)
 
 **4.5.8 HTTP/1.1의 지속 커넥션**
 

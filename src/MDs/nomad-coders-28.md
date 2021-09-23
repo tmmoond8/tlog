@@ -2,7 +2,7 @@
 title: 28 우버 클론 코딩 (nomad coders)
 date: '2019-06-19T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.51 ~ 2.53
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -93,7 +93,7 @@ handleDragEnd에서 lat, lng, address 모두 갱신해주는데, address의 값�
 
 [http://localhost:3000/find-address](http://localhost:3000/find-address) 에서 검색에 Lotte world tower 를 입력 후 지도 아무곳을 클릭하자(blur하기 위해) 그러면 위치 정보가 아래처럼 보인다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-23__1-40db6b95-b553-4810-bccc-2353f483cab9.08.40_pbygqr.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-23__1-40db6b95-b553-4810-bccc-2353f483cab9.08.40_pbygqr.png)
 
 ## #2.52 Geocoding part Two
 
@@ -156,7 +156,7 @@ handleDragEnd에서 lat, lng, address 모두 갱신해주는데, address의 값�
 
 ## #2.53 Refactoring AddPlace
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-23__2-870e84dd-4a7d-46ad-b0d5-a505361e239e.35.23_vroqfm.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-23__2-870e84dd-4a7d-46ad-b0d5-a505361e239e.35.23_vroqfm.png)
 
 장소를 추가할 때, 지도를 통해서 장소를 선택하여 추가하도록 구현을 해야 한다. 그래야 장소 데이터를 사용할 수 있기 때문이다.
 
@@ -535,6 +535,6 @@ handleDragEnd에서 lat, lng, address 모두 갱신해주는데, address의 값�
 
 이제 [http://localhost:3000/add-place](http://localhost:3000/add-place) 로 가자. 아까 넣었던 state가 지금 화면에 표시 되는 것을 확인할 수 있다. (state는 새로고침에도 유지가 된다.)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-07-09__4-96ad4ba9-d7c5-458b-9966-6fd477c4e272.32.48_gjfmep.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-07-09__4-96ad4ba9-d7c5-458b-9966-6fd477c4e272.32.48_gjfmep.png)
 
 임의로 add place에서 name, address를 입력 한다고 해도 입력이 완전히 되지 않고, pick place from map을 통해서만 장소가 추가되도록 작업 했다.

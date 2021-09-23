@@ -2,13 +2,12 @@
 title: 31 우버 클론 코딩 (nomad coders)
 date: '2019-06-24T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.61 ~ 2.65
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - GraphQL
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -207,7 +206,7 @@ tags:
 
 여기서 테스트는 운전자와 사용자 두개의 클라이언트가 필요하다. 크롬 시크릿창 하나를 띄워서 다른 아이디로 로긴한 후 운전자로 바꾼 다음에 사용자에서 새로고침 해보자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-05-28__1-c44d43a1-7a4d-4948-8511-3f0f62af0c4b.47.15_yerh7m.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-05-28__1-c44d43a1-7a4d-4948-8511-3f0f62af0c4b.47.15_yerh7m.png)
 
 하나를 운전자로 바꾸고 사용자에서 새고로침 해보자. 빈 배열이 들어오면 정상적으로 처리가 된 것이다.
 
@@ -276,7 +275,7 @@ tags:
         };
         ...
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952592/tlog/_2019-05-28__2-0f97e231-d27e-42f3-8f47-4facc8813cc1.28.33_jgqzm2.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/_2019-05-28__2-0f97e231-d27e-42f3-8f47-4facc8813cc1.28.33_jgqzm2.png)
 
 화살표 같은 것으로 드라이버를 표시했다.
 
@@ -303,7 +302,7 @@ tags:
 
 이렇게 하고 운전자의 위치를 조금씩 변경해보자. 
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-12__4-dbd78edc-825f-4652-a0a1-2f1b5a236eea.52.49_qdarkj.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-12__4-dbd78edc-825f-4652-a0a1-2f1b5a236eea.52.49_qdarkj.png)
 
 사실 우리가 원하는 것 운전자의 이동에 따라 마커가 이동하는 것인데 지금은 새로 생성하고 있다. 다음 강의에서 마커를 이동하는 것을 진행할 예정이다. 아까 Marker를 만들 때 ID를 지정해준것이 있는데, 이렇게 컨트롤 하기 위함이다.
 

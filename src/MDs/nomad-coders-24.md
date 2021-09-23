@@ -2,7 +2,7 @@
 title: 24 우버 클론 코딩 (nomad coders)
 date: '2019-06-07T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.39 ~ 2.40
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -197,15 +197,15 @@ EditAccountPresenter에서 위 컴포넌트를 불러서 이미지를 넣자.
 
 setting - upload
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-17__6-06b9f71a-9908-49c9-ba29-65403a66b861.54.55_ojyzfn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-17__6-06b9f71a-9908-49c9-ba29-65403a66b861.54.55_ojyzfn.png)
 
 대시 보드에서 Environment variable를 펼치고 API Base URL 을 펼치면 보인다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-17__6-a6b5dd50-4191-4a10-9eb5-e736df4fa69e.53.48_cntgux.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-17__6-a6b5dd50-4191-4a10-9eb5-e736df4fa69e.53.48_cntgux.png)
 
 아까 업로드 완료 후 response를 출력하도록 했다. 다음 처럼 값이 나오고, data 안에는 업로드 완료된 이미지의 주소가 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-17__7-cd6ccb11-4110-4f35-a68b-4dc0e54b5ab9.14.04_cuyhoz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-17__7-cd6ccb11-4110-4f35-a68b-4dc0e54b5ab9.14.04_cuyhoz.png)
 
 ## #2.40 Uploading Profile Photo to Cloudinary part Two
 

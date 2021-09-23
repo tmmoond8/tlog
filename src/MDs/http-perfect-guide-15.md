@@ -2,7 +2,7 @@
 title: 15장 엔터티와 인코딩
 date: '2019-08-12T08:56:56.243Z'
 description: HTTP 완벽 가이드 15장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -32,7 +32,7 @@ HTTP는 메시지가 올바르게 수송되고, 식별 되고, 추출 되고, �
 
 ### 15.1 메시지는 컨테이너, 엔터티는 화물
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-ca1ed3d9-0819-41bf-ab56-cf0314157118_x33c8d.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-ca1ed3d9-0819-41bf-ab56-cf0314157118_x33c8d.png)
 
 메시지의 헤더에는 엔터티에 대한 많은 정보가 있다.
 
@@ -148,7 +148,7 @@ boundary를 사용하여 각 파트를 구별할 수 있다.
 
 원본의 길이를 포함한 애용을 gzip으로 압축한다. 그리고 압축한 크기와 Content-encoding: gzip 헤더를 포함하여 전송한다. 수신자는 gzip으로 압축하고 원본의 길이를 얻어낸다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-65312921-0238-4ce1-b63f-6828f1054049_isvyob.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-65312921-0238-4ce1-b63f-6828f1054049_isvyob.png)
 
 **15.5.2 콘텐츠 인코딩 유형**
 
@@ -168,7 +168,7 @@ gzip은 완전 선호하는 것이고, identity는 soso이고 나머지는 싫�
 
 text에 대해서 gzip은 꽤 효율적이다. 그런데 JPEG 같은 이미지는 gzip으로 잘 압축되지 않는다. 전송 인코딩은 포맷과는 독립적이지만 메시지 데이터가 네트워크를 통해 전소되는 방법을 바꾸기 위해 사용한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-069591f7-d0fa-41c1-8ac0-b363d78c3fbb_a7skui.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-069591f7-d0fa-41c1-8ac0-b363d78c3fbb_a7skui.png)
 
 **15.6.1 안전한 전송**
 
@@ -186,7 +186,7 @@ TE : 어떤 전송 인코딩을 사용할 수 있는지 서버에게 알린다.
 
 메시지를 여러 청크로 쪼갠다. 이렇게 하면 크기를 알 필요가 없어진다. Content-Length를 따로 알려주지 않고 일정 크기의 청크를 계속 보내고 다 보내면 크기가 0인 청크를 보낸다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952590/tlog/Untitled-1a66f7aa-a936-4342-8661-3dee423175ec_oldmit.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/Untitled-1a66f7aa-a936-4342-8661-3dee423175ec_oldmit.png)
 
 마지막 청크 다음에는 트레일러와 올 수 있는데, 클라이언트의 TE 헤더에 트레일러를 받을 수 있으면 트레일러에 필요한 헤더를 포함시킬 수 있다.(Transfer-Encoding, Trailer, Content-Length 제외
 
@@ -202,7 +202,7 @@ TE : 어떤 전송 인코딩을 사용할 수 있는지 서버에게 알린다.
 
 지금의 서버응답과 내일의 서버응답이 다를 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b595fb82-7191-4e0d-8f37-63f8fef8f867_ptvuws.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b595fb82-7191-4e0d-8f37-63f8fef8f867_ptvuws.png)
 
 ### 15.8 검사기와 신선도
 

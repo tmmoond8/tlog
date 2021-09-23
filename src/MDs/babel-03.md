@@ -2,12 +2,11 @@
 title: (3)Babel - 설정편
 date: '2020-01-19T08:56:56.243Z'
 description: 설정하는 다양한 방법
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/babel_dqlw51.jpg'
 tags:
   - Babel
   - JavaScript
 ---
-# 
 
 하나의 프로젝트에도 여러 바벨 설정이 존재할 수 있다. 예를 들면 하나의 프로젝트에 react 프론트와 node 서버를 두는 경우를 둘 수 있다. 또는, 빌드 환경에 따라서도 다른 설정을 둘 수 있다. 
 

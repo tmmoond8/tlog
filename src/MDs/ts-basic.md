@@ -2,7 +2,7 @@
 title: TS - Basic
 date: '2020-06-16T08:56:56.243Z'
 description: TypeScript 기본 알아가기
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/cover/typescript_edpims.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/cover/typescript_edpims.jpg'
 tags:
   - TypeScript
 ---

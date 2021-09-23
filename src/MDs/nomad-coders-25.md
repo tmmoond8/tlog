@@ -2,7 +2,7 @@
 title: 25 우버 클론 코딩 (nomad coders)
 date: '2019-06-10T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.41 ~ 2.43
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -325,7 +325,7 @@ yarn codegen 으로 쿼리를 생성하고
               <StyledLink to ="/places">Go to Places</StyledLink>
         ...
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-10__6-8fae4330-940c-4659-99e5-4d44d07457a9.04.37_nq4m5y.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-10__6-8fae4330-940c-4659-99e5-4d44d07457a9.04.37_nq4m5y.png)
 
 이제 하드 코딩이 아닌 입력한 장소가 보일 것이다.
 

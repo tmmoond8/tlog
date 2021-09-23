@@ -2,7 +2,7 @@
 title: SVG Fills and Strokes
 date: '2019-12-11T08:56:56.243Z'
 description: SVG의 선과 채움
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952585/tlog/cover/svg_cg9i2d.png'
 tags:
   - SVG
 ---
@@ -56,7 +56,7 @@ stroke에 대해서는 끝처리에 대해 세가지 옵션이 있다. default�
 
 라인에 대한 대시 속성이다. 이걸 사용한다면 다양한 형태의 대시를 만들 수 있다. 속성 이름에서 알 수 있듯이 배열처럼 여러 값을 가지고 반복해서 그리게 된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-23__9.55.34_pbt16m.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-23__9.55.34_pbt16m.png)
 
     <svg width="200" height="150" xmlns="http://www.w3.org/2000/svg" version="1.1">
       <path d="M 10 75 Q 50 10 100 75 T 190 75" stroke="black"
@@ -69,7 +69,7 @@ stroke에 대해서는 끝처리에 대해 세가지 옵션이 있다. default�
 
 svg도 일반 태그 처럼 속성을 정의하고 사용할 수 있다. 보통의 css랑 동일 하지는 않지만, 유사한 형태를 제공한다. `<defs>`  에 속성을 정의하고 셀렉터를 통해 속성을 넣을 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952591/tlog/pathsvghover_vrhjt0.gif)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952591/tlog/pathsvghover_vrhjt0.gif)
 
     <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>

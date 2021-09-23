@@ -2,13 +2,12 @@
 title: 7 우버 클론 코딩 (nomad coders)
 date: '2019-04-17T08:56:56.243Z'
 description: 우버 코딩 강의 로그 1.34 ~ 1.38
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
   - Twilio
 ---
-# 
 
 이 포스트는 nomad coders의 우버 클론 코딩 시리즈를 듣고 정리한 글 입니다.
 
@@ -22,11 +21,11 @@ tags:
 
 [https://www.twilio.com/console/sms/settings/geo-permissions](https://www.twilio.com/console/sms/settings/geo-permissions) 여기서 모든 체크를 해줘야 한다. 체크를 안 한 국가로는 SMS가 안 갈 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-15__10-822931a5-36bf-46d2-a359-9991bd748e7e.28.40_xt7hfv.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952568/tlog/_2019-04-15__10-822931a5-36bf-46d2-a359-9991bd748e7e.28.40_xt7hfv.png)
 
 대쉬보드에서 토큰을 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1632304278/tlog/_2019-04-15__10.29.18_lashj0.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632304278/tlog/_2019-04-15__10.29.18_lashj0.png)
 
 ## #1.35 StartPhoneVerification Resolver part One
 
@@ -392,7 +391,7 @@ twilio를 통해 폰인증을 구현할 것인데, 앞서 twilio 인증 정보�
 
 올바로 메시지를 보내는 것을 확인하자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-16__1-7716e11a-8186-449f-92c8-a2f39c84def0.05.44_lo3c8a.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952569/tlog/_2019-04-16__1-7716e11a-8186-449f-92c8-a2f39c84def0.05.44_lo3c8a.png)
 
 [README.md](http://readme.md) 에서 Start Phone Number Verification 항목을 완료했다.
 

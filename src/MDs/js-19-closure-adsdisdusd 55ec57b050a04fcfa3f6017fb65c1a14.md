@@ -2,7 +2,7 @@
 title: JS 19. 클로져
 date: '2020-03-11T08:56:56.263Z'
 description: JavaScript에서 클로저란?
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---
@@ -35,13 +35,13 @@ outerFunc(); // 10
 
 - outerFunc의 스코프 체인
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-12-28__8.37.43_d0cdr2.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-12-28__8.37.43_d0cdr2.png)
 
 outerFunc의 입장에서는 당연하게도 x에 대한 접근이 가능하다. 그리고 스코프 체인에 의해 Global 스코프인 kokoa에 대해서도 접근이 가능하게 된다.
 
 - innerFunc의 스코프 체인
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-12-28__8.39.15_yqi8ju.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2019-12-28__8.39.15_yqi8ju.png)
 
 innerFunc의 입장에서 살펴 보자. 기본적으로 스코프 체인에는 outerFunc의 스코프체인에 자신의 활성객체를 추가한 리스트를 갖게 되어 outerFunc이 접근할 수 있는 범위를 커버할 수 있다.
 

@@ -2,7 +2,7 @@
 title: 27 우버 클론 코딩 (nomad coders)
 date: '2019-06-17T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.46 ~ 2.50
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -32,13 +32,13 @@ google maps API를 사용해서 장소에 대한 데이터를 가져오는 것�
 
 Maps JavaScript API 의 세부정보를 누르자. 사용자 인증 정보 탭을 누르면 인증정보를 추가 할 수 있게 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-21__3-4a52f3b5-3c04-47eb-bb66-a259b7814c8b.28.38_xpanwj.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-21__3-4a52f3b5-3c04-47eb-bb66-a259b7814c8b.28.38_xpanwj.png)
 
 하는 김에 Geocoding API도 사용하도록 하자. 나중에 위도와 경도로 인근 장소에 대한 정보를 얻어올 수 있다.
 
 인증 정보는 API KEY로 하자.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-21__3-0b13b4a7-bcf9-4f44-ad49-edf2e815bfb4.29.28_zx5g7n.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-21__3-0b13b4a7-bcf9-4f44-ad49-edf2e815bfb4.29.28_zx5g7n.png)
 
 API KEY를 복사 해놓자. API는 신청은 완료 했다.
 
@@ -396,7 +396,7 @@ google map은 조작을 할 수 있고 조작된 페이지에 대한 여러 정�
 
 [http://localhost:3000/find-address](http://localhost:3000/find-address) 에서 지도를 드래그로 이동 시키자. 그러면 이동한 곳의 위도, 경도가 콘솔에 찍힌다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-07-09__3-cac613ee-ea2c-41f9-8332-637f58df2a62.53.44_r7tn26.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-07-09__3-cac613ee-ea2c-41f9-8332-637f58df2a62.53.44_r7tn26.png)
 
 ## #2.49 Reverse Geocoding part One
 
@@ -645,6 +645,6 @@ AddressBar 라는 컴포넌트를 만들자
 
 이렇게 하고 지도를 드래그 하면 지도 정보가 뜬다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-21__7-4319ff3b-aed5-40ce-aba2-9cad7e78a68d.49.47_emzvck.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952572/tlog/_2019-05-21__7-4319ff3b-aed5-40ce-aba2-9cad7e78a68d.49.47_emzvck.png)
 
 나는 몇번 안썼는데 하루 치 API 다 썼다고..

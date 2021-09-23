@@ -12,7 +12,7 @@ import markdownToHtml from '../../libs/markdownToHtml';
 import { getDateGoodLook } from '../../libs/string';
 import localStorage from '../../libs/localStorage';
 import { useRecentViewed } from '../../libs/state';
-import { desktop } from '../../styles';
+import { desktop, mobile } from '../../styles';
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -59,7 +59,7 @@ export default function Post({ post, morePosts, preview }) {
                       ))}
                     </Tags>
                   )}
-                  <Content.Text fontSize={18}>
+                  <Content.Text fontSize={18} color={colors.grey60}>
                     {getDateGoodLook(post.date)}
                   </Content.Text>
                 </ContentHead>
@@ -113,12 +113,20 @@ export async function getStaticPaths() {
 
 const Cover = styled.div`
   margin: 32px 0;
-  width: 100vw;
-  margin-left: -24px;
+  width: 100%;
+  ${mobile(css`
+    width: 100vw;
+    margin-left: -24px;
+  `)}
   ${desktop(css`
-    width: 100%;
     margin: 42px 0;
   `)}
+
+  img {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+  }
 `;
 
 const Main = styled.main`

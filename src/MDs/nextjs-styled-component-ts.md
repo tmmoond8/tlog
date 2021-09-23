@@ -2,14 +2,13 @@
 title: Next.js SSR Styled-component (.feat TS)
 date: '2019-08-26T13:33:01.092Z'
 description: Styled-Components로 컴포넌트를 작성해보자.
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/nextjs9_y7wygj.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/nextjs9_y7wygj.png'
 tags:
   - NextJS
   - React
   - SSR
   - 'Styled Components'
 ---
-# 
 
 [Next.js + Styled Components The Really Simple Guide ▲ + 💅](https://dev.to/aprietof/nextjs--styled-components-the-really-simple-guide----101c)
 
@@ -339,7 +338,7 @@ styled-component를 사용다보면 문자열 안에 스타일이 들어가기 �
 
 또 두번째는 props에 대한 자동 완성이 안되었던 점이다. (블로그 포스팅을 작성하는 시점에는 잘 되었다.)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-20__4-1eefe2da-249a-45e7-aa93-609ed3cd7ea3.15.28_rb4mlp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-08-20__4-1eefe2da-249a-45e7-aa93-609ed3cd7ea3.15.28_rb4mlp.png)
 
 이전에 설정한 프로젝트에서는 자동 완성 기능이 있었는데, 현재 환경에서는 작동하지 않는다.
 

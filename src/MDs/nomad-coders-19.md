@@ -2,7 +2,7 @@
 title: 19 우버 클론 코딩 (nomad coders)
 date: '2019-05-27T08:56:56.243Z'
 description: 우버 코딩 강의 로그 2.18 ~ 2.21
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632302785/tlog/cover/nuber_clone_nllng2.jpg'
 tags:
   - 'Uber Clone Coding'
   - 'Nomad Coder'
@@ -23,7 +23,7 @@ chome extension 중에 apollo가 설치되어 있지 않다면, 설치하자.
 
 [http://localhost:3000/](http://localhost:3000/) 에 들어가서 Apollo 탭에 들어가면 사용할 수 있는 Query나 Mutation이 보인다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-07__1-17e413b4-71ea-4f8b-8ff7-2b25738166ec.57.17_bc7cvz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-07__1-17e413b4-71ea-4f8b-8ff7-2b25738166ec.57.17_bc7cvz.png)
 
 클라이언트단에서 연결된 graphql endpoint의 쿼리를 볼수 있다.
 
@@ -434,7 +434,7 @@ yarn codegen 을 실행하면 빈 파일에 StartPhoneVerification Mutation에 �
 
     [http://localhost:3000/phone-login](http://localhost:3000/phone-login) 에서 아무런 숫자를 넣고 실행시키면 응답을 콘솔로 찍을 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-10__6-87bfdfb5-adac-4699-8df1-b5b173faf182.50.11_oxbmtx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952570/tlog/_2019-05-10__6-87bfdfb5-adac-4699-8df1-b5b173faf182.50.11_oxbmtx.png)
 
 잘 나온다.
 

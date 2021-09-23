@@ -2,7 +2,7 @@
 title: JS 비동기 처리
 date: '2020-03-14T08:56:56.263Z'
 description: JavaScript에서 비동기 처리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:
   - JavaScript
 ---

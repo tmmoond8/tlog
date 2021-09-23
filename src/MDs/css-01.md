@@ -2,18 +2,17 @@
 title: CSS 1. Selector
 date: '2019-12-22T08:56:56.243Z'
 description: CSS Selector를 공부해봅시다.
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/cover/css-cover_eiiwob.jpg'
 tags:
   - CSS
 ---
-# 
 
 
 [CSS3 Selector | PoiemaWeb](https://poiemaweb.com/css3-selector)
 
 [https://poiemaweb.com/css3-selector](https://poiemaweb.com/css3-selector)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/css-selector_zn363z.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/css-selector_zn363z.png)
 
 ## 선택자 우선순위
 
@@ -25,7 +24,7 @@ tags:
 
 아래는 2016년도 브라질 리우 올림픽에서의 메달 순위이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__2.41.27_vxrjmg.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__2.41.27_vxrjmg.png)
 
 우리나라는 금:9, 은:3, 동:9 로 합계 21개를 얻어 8등을 했다. 그리고 그 다음 이탈리아가 금:8, 은:12, 동:8 합계 28개로 9등을 했다.
  여기서 보면 합계가 이탈리아가 많고,  금은 하나 적지만 은메달의 경우 9개가 더 많다. 그럼에도 가장 우선적으로 따지는 것이 금이고, 동일한 수 일 때 은을 따진다. 만약 금도 은도 개수가 같다면 동메달을 따지게 된다.
@@ -393,7 +392,7 @@ a:visited 와 같은 가상 클래스 선택자는 class 하나 있는 것처럼
     </body>
     </html>
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.13.16_zjwxwl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.13.16_zjwxwl.png)
 
 구조 가상 클래스 셀렉터
 
@@ -497,25 +496,25 @@ a:visited 와 같은 가상 클래스 선택자는 class 하나 있는 것처럼
     </body>
     </html>
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.27.12_ombxky.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.27.12_ombxky.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__3.57.43_cdxqxx.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__3.57.43_cdxqxx.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.01.12_jevnra.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.01.12_jevnra.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.02.30_e1x3yw.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.02.30_e1x3yw.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.20.54_sidbkt.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.20.54_sidbkt.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.22.19_z5qu8k.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.22.19_z5qu8k.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.24.25_ysbfeg.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.24.25_ysbfeg.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.25.07_gw8jv3.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.25.07_gw8jv3.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/v-class_fp19g1.gif)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/v-class_fp19g1.gif)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.22.17_rtkpkh.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.22.17_rtkpkh.png)
 
 ### References
 

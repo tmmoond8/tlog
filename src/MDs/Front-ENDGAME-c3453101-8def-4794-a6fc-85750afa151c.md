@@ -2,7 +2,7 @@
 title: Front ENDGAME 후기
 date: '2019-07-22T08:56:56.243Z'
 description: 서재원, JBEE,벨로퍼트님의 세션을 포함
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952601/tlog/_2019-06-22__1-c89b44bd-6f6a-43c5-a0b9-33fb69719058.54.25_y78miv.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/_2019-06-22__1-c89b44bd-6f6a-43c5-a0b9-33fb69719058.54.25_y78miv.png'
 tags:
   - Seminar
 ---

@@ -2,7 +2,7 @@
 title: 9장 웹 로봇
 date: '2019-07-05T08:56:56.243Z'
 description: HTTP 완벽 가이드 9장 정리
-image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632186958/tlog/http-perfect-guide_am6yzc.png'
 tags:
   - HTTP
   - CS
@@ -21,7 +21,7 @@ tags:
 
 **9.1.1 어디에서 시작하는가: '루트 집합'**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-06436312-7456-4303-8d7f-9bb0a186518e_ccghfp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-06436312-7456-4303-8d7f-9bb0a186518e_ccghfp.png)
 
 위 이미지에서 A, G, L, S만 있다면 모든 페이지를 다 찾아볼 수 있다. 일반적으로 [google.com](http://google.com) 같은 검색 엔진이 루트의 좋은 예다.
 
@@ -33,7 +33,7 @@ HTML은 여러 링크로 연결되어 있을 수 있다. HTML에는 상대 URL�
 
 웹 크롤링을 할 때 순환에 빠질 위험이 있다. 자기 참조나 순환 참조가 얼마든지 가능하기 때문이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7c085d20-f054-48da-aedd-89e4638c8e22_umtk21.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952593/tlog/Untitled-7c085d20-f054-48da-aedd-89e4638c8e22_umtk21.png)
 
 **9.1.4 루프와 중복**
 
@@ -81,13 +81,13 @@ HTML은 여러 링크로 연결되어 있을 수 있다. HTML에는 상대 URL�
 
 **9.1.8 파일 시스템 링크 순환**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-11658264-21c1-405c-8331-5177fb56ab3b_ucqmuo.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-11658264-21c1-405c-8331-5177fb56ab3b_ucqmuo.png)
 
 파일 시스템의 심볼릭 링크가 끝 없는 디렉터리 계층을 만들 수 있는데, 이게 위험이 된다고 한다.(??? 이해가 잘 안된다.)
 
 **9.1.9 동적 가상 웹 공간**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bcc56e52-c285-4c63-bbaf-ea19b281ff66_ihgfri.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-bcc56e52-c285-4c63-bbaf-ea19b281ff66_ihgfri.png)
 
 동적인 웹 공간에서 크롤러는 의미없는 동작을 할 수 있다. 예를들어 달력이라고 생각 했을 때, 페이지를 누르면 다음 페이지를 누르면 링크로 이동이 될텐데, 달력은 끝없는 페이지로 연결될 수 있다. 일반 사용자는 모든 페이지를 이동하지 않고 닫겠지만, 크롤러는 조금 멍청하게도 계속된 링크 페이지로 이동할 수 있다.
 
@@ -131,7 +131,7 @@ HTML은 여러 링크로 연결되어 있을 수 있다. HTML에는 상대 URL�
 
 가상 호스팅을 사용하는 서버에게 정확히 요청을 보내려면 Host 헤더를 요청 메시지에 포함시켜야 한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b16636df-63c6-4795-ad76-71b4fe530130_j6yb9s.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952598/tlog/Untitled-b16636df-63c6-4795-ad76-71b4fe530130_j6yb9s.png)
 
 **9.2.3 조건부 요청**
 
@@ -155,7 +155,7 @@ HTML은 여러 링크로 연결되어 있을 수 있다. HTML에는 상대 URL�
 
 robots.txt 파일을 사용한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0ba2c3a4-a161-4d57-b743-adb211fdc502_n8m7kp.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled-0ba2c3a4-a161-4d57-b743-adb211fdc502_n8m7kp.png)
 
 **9.4.1 로봇 차단 표준**
 
@@ -229,17 +229,17 @@ revisit-after - 며칠 뒤에 데이터가 변경될 것이니 몇 일 뒤 다�
 
 **9.6.2 현대적인 검색엔진의 아키텍쳐**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-8903fa8a-c3b7-477c-8c6d-cee067dd7f1c_ceum1l.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-8903fa8a-c3b7-477c-8c6d-cee067dd7f1c_ceum1l.png)
 
 'full-text indexes'라고 하는 복잡한 로컬 데이터베이스에 크롤링하는 데이터를 쌓는다. 그러나 웹 사이트는 오늘도 내일도 변하기 때문에 기껏해야 특정 순간의 스냅샷에 불과하다.
 
 **9.6.3 full-text indexes**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-310dd87d-49ff-4ed5-b180-8c05577e85b8_cqwv3b.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952595/tlog/Untitled-310dd87d-49ff-4ed5-b180-8c05577e85b8_cqwv3b.png)
 
 **9.6.4 질의 보내기**
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a0e7f4c0-e5cf-40d2-b3f7-cbbac75e21b4_bb3pq7.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/Untitled-a0e7f4c0-e5cf-40d2-b3f7-cbbac75e21b4_bb3pq7.png)
 
 검색 엔진에서 검색하면 검색 엔진 데이터베이스에서 찾아서 문서를 주겠지 아니면 직접 주소를 링크할 수도 있고.
 
