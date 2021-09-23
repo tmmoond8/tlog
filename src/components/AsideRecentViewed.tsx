@@ -19,22 +19,27 @@ export default function AsideRecentViewed() {
   recentViewed.sort((a, b) => (a.date < b.date ? 1 : -1));
 
   return (
-    <RecentViewed>
-      <Aside.Group title="RECENT VIEWD">
-        {recentViewed.map((post) => (
-          <Aside.Menu
-            key={post.slug}
-            title={post.title}
-            handleClick={() => router.push(`/posts/${post.slug}`)}
-            iconUrl={getIcon(post.tags[0])}
-          />
-        ))}
-      </Aside.Group>
-    </RecentViewed>
+    <>
+      {recentViewed.length > 0 && (
+        <RecentViewed>
+          <Aside.Group title="RECENT VIEWD">
+            {recentViewed.map((post) => (
+              <Aside.Menu
+                key={post.slug}
+                title={post.title}
+                handleClick={() => router.push(`/posts/${post.slug}`)}
+                iconUrl={getIcon(post.tags[0])}
+              />
+            ))}
+          </Aside.Group>
+        </RecentViewed>
+      )}
+    </>
   );
 }
 
 const RecentViewed = styled.div`
+  min-height: 108px;
   max-height: 108px;
   overflow: hidden;
   .AsideGroup {
