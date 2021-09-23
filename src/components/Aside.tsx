@@ -45,10 +45,10 @@ export default function Aside({ allPosts }: AsideProps) {
           iconUrl="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631854824/noticon/q4gbwdq0xkik6xiybdmp.png"
         />
       </AsideUI.Group>
+      <Content.Spacing size={20} />
       <AsideTags allPosts={allPosts} />
       <Content.Spacing size={20} />
       <BottomMenus>
-        {/* <Content.Spacing size={20} /> */}
         <GithubMenu
           title="Github"
           handleClick={() =>

@@ -8,7 +8,6 @@ interface AsideTagProps {
 }
 
 export default function AsideTag({ allPosts }: AsideTagProps) {
-  console.log('tagcons', tagcons.Apollo);
   const tags = allPosts.reduce((accum: Record<string, any>, post) => {
     if (post.tags) {
       post.tags.forEach((tag: string) => {
@@ -47,11 +46,10 @@ const Tags = styled.div`
     flex-direction: column;
     height: 100%;
     margin: 0;
-    padding-top: 20px;
   }
 
   ul {
-    height: 100%;
+    height: calc(100% - 24px);
     overflow: auto;
   }
 `;
