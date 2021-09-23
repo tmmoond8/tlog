@@ -39,3 +39,6 @@ export const getDateGoodLook = (lastModifiedDate: string) => {
     return '';
   }, '');
 };
+
+export const toSafeUrlStr = (url: string) =>
+  url.replaceAll(' ', '_').toLocaleLowerCase();

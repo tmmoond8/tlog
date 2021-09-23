@@ -1,13 +1,16 @@
 import { Aside } from 'notion-ui';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import type { Post } from '../../types';
 import * as tagcons from './tagcons';
+import { toSafeUrlStr } from '../../libs/string';
 
 interface AsideTagProps {
   allPosts: Post[];
 }
 
-export default function AsideTag({ allPosts }: AsideTagProps) {
+export default function AsideTag({ allPosts = [] }: AsideTagProps) {
+  const router = useRouter();
   const tags = allPosts.reduce((accum: Record<string, any>, post) => {
     if (post.tags) {
       post.tags.forEach((tag: string) => {
@@ -29,7 +32,7 @@ export default function AsideTag({ allPosts }: AsideTagProps) {
         {tagKeys.map((tag) => (
           <Aside.Menu
             title={tag}
-            handleClick={() => console.log('aa')}
+            handleClick={() => router.push(`/tags/${toSafeUrlStr(tag)}`)}
             iconUrl={getIcon(tag)}
           />
         ))}
