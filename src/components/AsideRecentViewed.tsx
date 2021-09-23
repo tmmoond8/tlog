@@ -17,11 +17,12 @@ export default function AsideRecentViewed() {
   }, []);
 
   recentViewed.sort((a, b) => (a.date < b.date ? 1 : -1));
+  const height = Math.min(24 + recentViewed.length * 28, 108);
 
   return (
     <>
       {recentViewed.length > 0 && (
-        <RecentViewed>
+        <RecentViewed height={height}>
           <Aside.Group title="RECENT VIEWD">
             {recentViewed.map((post) => (
               <Aside.Menu
@@ -38,9 +39,9 @@ export default function AsideRecentViewed() {
   );
 }
 
-const RecentViewed = styled.div`
-  min-height: 108px;
-  max-height: 108px;
+const RecentViewed = styled.div<{ height: number }>`
+  min-height: ${(p) => `${p.height}px`};
+  max-height: ${(p) => `${p.height}px`};
   overflow: hidden;
   .AsideGroup {
     display: flex;
