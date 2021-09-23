@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Head from 'next/head';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Content, colors } from 'notion-ui';
+import TlogHead from '../../components/TlogHead';
 import AuthorCard from '../../components/AuthorCard';
 import Image from '../../components/Image';
 import { getPostBySlug, getAllPosts } from '../../libs/api';
@@ -13,8 +13,13 @@ import { getDateGoodLook } from '../../libs/string';
 import localStorage from '../../libs/localStorage';
 import { useRecentViewed } from '../../libs/state';
 import { desktop, mobile } from '../../styles';
+import type { Post } from '../../types';
 
-export default function Post({ post, morePosts, preview }) {
+interface PostProps {
+  post: Post;
+}
+
+export default function Posts({ post }: PostProps) {
   const router = useRouter();
   const [_, setViews] = useRecentViewed();
 
@@ -43,10 +48,10 @@ export default function Post({ post, morePosts, preview }) {
         ) : (
           <>
             <section className="mb-32">
-              <Head>
-                <title>{post.title} | tlog</title>
-                <meta property="og:image" content={post.image} />
-              </Head>
+              {
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                <TlogHead {...post} />
+              }
               <Main>
                 <Content.Text as="H1" marginTop={18}>
                   {post.title}

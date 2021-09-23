@@ -5,6 +5,7 @@ import * as NotionUI from 'notion-ui';
 import { throttle } from 'throttle-debounce';
 import GlobalStyles from '../styles/globalStyles';
 import Aside from '../components/Aside';
+import TlogHead from '../components/TlogHead';
 import DesktopHead from '../components/DesktopHead';
 import sessionStorage from '../libs/sessionStorage';
 
@@ -40,6 +41,7 @@ class TlogApp extends App<{ Component: React.FC }> {
     return (
       <>
         <GlobalStyles />
+        <TlogHead />
         <NotionUI.Layout.App
           aside={<Aside allPosts={pageProps.allPosts} />}
           leftMenus={<DesktopHead.Left />}
