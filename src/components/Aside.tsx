@@ -14,6 +14,7 @@ import { desktop } from '../styles';
 import type { Post } from '../types';
 import Icon from '../components/Icon';
 import AsideTags from './AsideTags';
+import AsideRecentViewed from './AsideRecentViewed';
 
 interface AsideProps {
   allPosts: Post[];
@@ -29,22 +30,8 @@ export default function Aside({ allPosts }: AsideProps) {
 
   return (
     <Column>
-      <AsideUI.Group title="RECENT VIEWD">
-        <AsideUI.Menu
-          key="abc"
-          title="aaa"
-          handleClick={() => console.log('aa')}
-          iconUrl="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631854824/noticon/q4gbwdq0xkik6xiybdmp.png"
-        />
-      </AsideUI.Group>
-      <AsideUI.Group title="RECENT UPDATED">
-        <AsideUI.Menu
-          key="abc"
-          title="aaa"
-          handleClick={() => console.log('aa')}
-          iconUrl="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631854824/noticon/q4gbwdq0xkik6xiybdmp.png"
-        />
-      </AsideUI.Group>
+      <Content.Spacing size={20} />
+      <AsideRecentViewed />
       <Content.Spacing size={20} />
       <AsideTags allPosts={allPosts} />
       <Content.Spacing size={20} />

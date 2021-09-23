@@ -2,11 +2,7 @@ import { getAllPosts } from '../libs/api';
 import Gallery from '../components/Gallery';
 
 const Index = ({ allPosts }) => {
-  return (
-    <div>
-      <Gallery allPosts={allPosts} />
-    </div>
-  );
+  return <Gallery allPosts={allPosts} />;
 };
 
 export default Index;

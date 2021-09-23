@@ -25,7 +25,7 @@ export default function AsideTag({ allPosts }: AsideTagProps) {
 
   return (
     <Tags>
-      <Aside.Group title="RECENT UPDATED">
+      <Aside.Group title="TAGS">
         {tagKeys.map((tag) => (
           <Aside.Menu
             title={tag}

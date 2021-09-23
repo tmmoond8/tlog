@@ -1,3 +1,4 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
@@ -9,13 +10,30 @@ import Image from '../../components/Image';
 import { getPostBySlug, getAllPosts } from '../../libs/api';
 import markdownToHtml from '../../libs/markdownToHtml';
 import { getDateGoodLook } from '../../libs/string';
+import localStorage from '../../libs/localStorage';
+import { useRecentViewed } from '../../libs/state';
 import { desktop } from '../../styles';
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
+  const [_, setViews] = useRecentViewed();
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  React.useEffect(() => {
+    const addRecentPost = () => {
+      const currentPost = { ...post, date: new Date().toISOString() };
+      const recentViewed = localStorage.addViewHistory(currentPost);
+      setViews(recentViewed);
+    };
+    const timer = setTimeout(addRecentPost, 100);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div>
       <div>
@@ -63,11 +81,13 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params }) {
+  const allPosts = getAllPosts();
   const post = getPostBySlug(params.slug);
   const content = await markdownToHtml(post.content);
 
   return {
     props: {
+      allPosts,
       post: {
         ...post,
         content,
