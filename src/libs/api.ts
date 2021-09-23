@@ -9,7 +9,7 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug) {
+export function getPostBySlug(slug): Post {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -30,8 +30,10 @@ export function getPostBySlug(slug) {
     title: '',
     date: '',
     slug: '',
+    description: '',
     content: '',
     image: '',
+    tags: [],
   };
 
   // Ensure only the minimal needed data is exposed
@@ -51,7 +53,7 @@ export function getPostBySlug(slug) {
   return items;
 }
 
-export function getAllPosts() {
+export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))

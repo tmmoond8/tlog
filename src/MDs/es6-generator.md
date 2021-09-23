@@ -1,6 +1,6 @@
 ---
 title: ES6 - Generator
-date: '2020-06-4T08:56:56.263Z'
+date: '2020-06-04T08:56:56.263Z'
 description: Generation 함수 사용하기
 image: 'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632298243/tlog/cover/_____JS_1_jbq8ea.png'
 tags:

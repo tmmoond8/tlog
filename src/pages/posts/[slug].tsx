@@ -50,7 +50,6 @@ export default function Post({ post, morePosts, preview }) {
                 </Cover>
                 <div
                   className="post-section"
-                  // eslint-disable-next-line react/no-danger
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
                 <AuthorCard />
