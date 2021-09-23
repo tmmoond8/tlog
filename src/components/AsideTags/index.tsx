@@ -15,6 +15,7 @@ export default function AsideTag({ allPosts = [] }: AsideTagProps) {
     if (post.tags) {
       post.tags.forEach((tag: string) => {
         if (!Array.isArray(accum[tag])) {
+          // eslint-disable-next-line no-param-reassign
           accum[tag] = [];
         }
         accum[tag].push(post);
@@ -59,7 +60,7 @@ const Tags = styled.div`
 
 function getIcon(tag: string) {
   return (
-    tagcons[tag.replaceAll(' ', '_')] ??
+    tagcons[tag.replace(/\s/g, '_')] ??
     'https://res.cloudinary.com/dgggcrkxq/image/upload/v1558852693/apollo_qczq3j.png'
   );
 }

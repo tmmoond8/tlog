@@ -15,6 +15,7 @@ export async function getStaticProps({ params }) {
       post.tags.forEach((_tag: string) => {
         const tag = toSafeUrlStr(_tag);
         if (!Array.isArray(accum[tag])) {
+          // eslint-disable-next-line no-param-reassign
           accum[tag] = [];
         }
         accum[tag].push(post);
@@ -35,6 +36,7 @@ export async function getStaticPaths() {
     if (post.tags) {
       post.tags.forEach((tag: string) => {
         if (!Array.isArray(accum[tag])) {
+          // eslint-disable-next-line no-param-reassign
           accum[tag] = [];
         }
         accum[tag].push(post);

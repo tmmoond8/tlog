@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export { Apollo } from './apollo';
 export { Babel } from './babel';
 export { Book } from './book';

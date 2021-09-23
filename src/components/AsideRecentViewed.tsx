@@ -52,7 +52,7 @@ const RecentViewed = styled.div`
 
 function getIcon(tag: string) {
   return (
-    tagcons[tag.replaceAll(' ', '_')] ??
+    tagcons[tag.replace(/\s/g, '_')] ??
     'https://res.cloudinary.com/dgggcrkxq/image/upload/v1558852693/apollo_qczq3j.png'
   );
 }

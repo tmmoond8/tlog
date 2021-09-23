@@ -53,6 +53,7 @@ class TlogApp extends App<{ Component: React.FC }> {
           {this.state.isLoading ? (
             <NotionUI.Loader.ParentFull />
           ) : (
+            // eslint-disable-next-line react/jsx-props-no-spreading
             <Component {...pageProps} />
           )}
         </NotionUI.Layout.App>
