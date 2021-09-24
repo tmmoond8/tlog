@@ -48,10 +48,6 @@ export default function Posts({ post }: PostProps) {
         ) : (
           <>
             <section className="mb-32">
-              {
-                // eslint-disable-next-line react/jsx-props-no-spreading
-                <TlogHead {...post} />
-              }
               <Main>
                 <Content.Text as="H1" marginTop={18}>
                   {post.title}

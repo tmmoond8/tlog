@@ -41,7 +41,10 @@ class TlogApp extends App<{ Component: React.FC }> {
     return (
       <>
         <GlobalStyles />
-        <TlogHead />
+        {
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          pageProps.post ? <TlogHead {...pageProps.post} /> : <TlogHead />
+        }
         <NotionUI.Layout.App
           aside={<Aside allPosts={pageProps.allPosts} />}
           leftMenus={<DesktopHead.Left />}

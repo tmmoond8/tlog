@@ -19,7 +19,7 @@ export default function TlogHead({
   let metaDescription = description || "Tamm's dev log";
   const metaImage =
     image ||
-    'https://res.cloudinary.com/dgggcrkxq/image/upload/v1632315208/tlog/cover/npm-feature_oxz3dh.png';
+    'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632454834/tlog/Tlog_uwiiop.png';
   let metaFavicon = tagcons.Logo;
   if (tags && tags.length > 0) {
     metaFavicon = getIcon(tags[0].replace(/\s/gi, '_'));
