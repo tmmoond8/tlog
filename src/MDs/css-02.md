@@ -9,7 +9,7 @@ tags:
 
 HTML의 모든 요소는 박스 모델을 사용한다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/box-model_cwmuxn.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/box-model_cwmuxn.png)
 
 ## Box Model의 요소
 

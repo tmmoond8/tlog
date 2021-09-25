@@ -165,16 +165,16 @@ module.exports = {
 
 URL 접두어로 내 사이트를 등록하고 HTML meta 태그를 추가하라고 나온다. 이 내용을 내 react-helmet으로 추가 해줘야 한다. 진작에 THelmet으로 별도 컴포넌트 만들어서 관리하도록 해서 이런 추가 태그도 넣기가 쉬웠다. 먼저 프로젝트에서 적용한 후 Netlify 에 배포 한 다음에 확인을 눌러야 진행이 된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/aa_ipkoce.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/aa_ipkoce.png)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952590/tlog/bb_erhwrl.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/bb_erhwrl.png)
 
 google search console 메뉴를 보면 
 
 Sitemaps 라는 탭을 들어가서 내 sitemap.xml을 등록한다. 아래 화면을 보면 상태가 성공으로 되어 있지만, 처음 올리면 '확인되지 않음?' 이런 값으로 나온다. 이때는 URL 검사 탭에서 URL 검사를 해주면 된다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-05__4.39.37_lahuhj.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952573/tlog/_2019-06-05__4.39.37_lahuhj.png)
 
 URL 검사에 내 sitemap.xml 의 주소를 넣어준다. 그리고 색인 생성 요청을 누른다. 색인이 생성되면 Sitemap의 상태가 성공으로 바뀔 것이다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-05__4.39.22_abzlbz.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-05__4.39.22_abzlbz.png)

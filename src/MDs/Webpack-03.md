@@ -144,7 +144,7 @@ $ yarn webpack
 
 왜?? 실행할 때마다 충복으로 추가가 되는 것 일까??
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/_2020-03-27__9.30.36_vhxda3.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/_2020-03-27__9.30.36_vhxda3.png)
 
 ## DefinePlugin
 

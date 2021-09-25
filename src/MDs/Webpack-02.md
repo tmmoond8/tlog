@@ -135,7 +135,7 @@ $ yarn webpack
 
 이 상태에서 웹팩을 실행하면, 문법에러가 발생한다. 그 이유는 css 파일은 js와 문법이 다르기 때문이다. (webpack은 기본적으로 js파일로 읽어들임)
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__5.55.12_dt1gx1.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__5.55.12_dt1gx1.png)
 
 - webpack.config.js
 
@@ -161,7 +161,7 @@ css 파일에 대해서 css-loader가 처리하도록 변경하자.
 
 다시 웹팩을 실행해서 브라우저에서 확인하면 아래처럼 styles 객체가 생성된 것을 볼 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__6.00.09_jiuxmv.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__6.00.09_jiuxmv.png)
 
 그러나 스타일을 적용하려면 style-loader를 추가 해줘야 한다.
 
@@ -196,7 +196,7 @@ css 처리하는 부분에 style-loader를 추가한 것을 확인할 수 있다
 
 다시 웹팩을 실행하면 브라우저에는 스타일이 적용되고 head 태그 안쪽에 style이 적용된 것을 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__6.06.42_d2dgft.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__6.06.42_d2dgft.png)
 
 위의 형태는 style 내용들이 head 안쪽에 스타일로 전역적으로 들어갔지만, css-module을 사용하면 지역화 할 수 있다. 이밖에도 css-loader는 import(), url() 등을 처리하는 역할도 수행한다.
 
@@ -224,7 +224,7 @@ css 처리하는 부분에 style-loader를 추가한 것을 확인할 수 있다
 
 - src/assets/sample.png
 
-  ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952587/tlog/noticon_bfd9mf.png)
+  ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/noticon_bfd9mf.png)
 
 이제 js 파일에서 임포트 해보자. 물론 loader를 추가하기 전이기 때문에 에러를 뱉을 것이다.
 
@@ -301,10 +301,10 @@ css 처리하는 부분에 style-loader를 추가한 것을 확인할 수 있다
 
 그 중 하나가 url-loader를 사용하는 것이다. 파일을 각각 다운로드 받기 보다는 이미지를 string(base64 encoding)으로 처리해서
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952589/tlog/_2020-03-27__8.23.08_g7xbs7.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952589/tlog/_2020-03-27__8.23.08_g7xbs7.png)
 
 dist/bundle.js 파일안에 보면 base64로 인코딩된 이미지의 스트링이 들어가 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__8.32.40_etawk4.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__8.32.40_etawk4.png)
 
 url-loader에서 제한한 크기 이상의 이미지에 대해서 fallback을 지정할 수 있다. 만약 별도로 지정하지 않는다면, file-loader가 처리 한다.

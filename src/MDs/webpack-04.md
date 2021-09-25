@@ -46,7 +46,7 @@ $ yarn add -D webpack webpack-cli
 
 tree shaking은 webpack 4에서 기본 동작이기 때문에 사용하지 않은 func2는 번들 파일에 포함이 되지 않는다. 웹팩을 실행하면 func2는 누락되어 있고 func1만 있는 것을 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__10.57.51_xzclb7.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__10.57.51_xzclb7.png)
 
 ### Tree shaking이 안되는 경우
 

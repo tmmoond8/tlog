@@ -291,7 +291,7 @@ yarn start 로 서버 사이드 렌더링 실행해보자.
 
 /dist/index.html 에서 <script src="/dist/main{hash}.js"></script> 를 임시로 제거하고 노드 서버를 실행해도 렌더링이 잘 되는 것을 확인할 수 있다.
 
-![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-04-20__1.00.49_qquv0g.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-04-20__1.00.49_qquv0g.png)
 
 이때 버튼을 누르면 반응을 하지 않는다. 서버 사이드에서는 돔을 그리긴 하지만 이벤트를 붙이지 않기 때문이다. (책에는 ReactDom.render 가 아닌 ReactDom.hydrate 로 그리면 이벤트를 붙여준다고 되어 있지만, 잘 되지 않았다.)
 
@@ -561,7 +561,7 @@ $ yarn add styled-components
 
 - src/kangaroo-c.png
 
-  ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/kangaroo-c_i0yhww.png)
+  ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/kangaroo-c_i0yhww.png)
 
 - src/App.js
 
