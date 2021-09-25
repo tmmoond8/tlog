@@ -61,7 +61,7 @@ HTTP 메시지에 리다이렉트 할 URL을 넘겨주는 방식으로 동작한
 
 - 클라이언트
 
-```
+```text
 GET /hammers.html HTTP/1.0
 Host: www.joes-hardware.com
 User-Agent: Mozilla/4.51 [en] (X11; U; IRIX 6.2 IP22)
@@ -69,7 +69,7 @@ User-Agent: Mozilla/4.51 [en] (X11; U; IRIX 6.2 IP22)
 
 - 서버
 
-```
+```text
 HTTP/1.0 302 Redirect
 Server: Stronghold/2.4.2 Apache/1.3.6
 Location: http://161.58.228.45/hammers.html
@@ -77,7 +77,7 @@ Location: http://161.58.228.45/hammers.html
 
 - 클라이언트
 
-```
+```text
 GET /hammers.html HTTP/1.0
 Host: 161.58.228.45
 User-Agent: Mozilla/4.51 [en] (X11; U; IRIX 6.2 IP22)
@@ -99,7 +99,7 @@ DNS 라운드 로빈은 가장 흔하면서 또 가장 단순한 리다이렉션
 
 다음은 [www.cnn.com](http://www.cnn.com) 에 할당된 IP주소 목록이다.
 
-```
+```text
 % nslookup www.cnn.com
 Name:    cnn.com
 Addresses:  207.25.71.5, 207.25.71.6, 207.25.71.7, 207.25.71.8

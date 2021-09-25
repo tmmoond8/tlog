@@ -96,14 +96,13 @@ HTTP 커넥션을 통해서 HTTP가 아닌 트래픽을 전송하는 방법.
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952599/tlog/Untitled-cf8fa921-c508-4cfa-8f2c-00fabba1ae5f_y9h3db.png)
 
 CONNECT 요청을 한 뒤, 연결되면 그 때부터 양방향으로 데이터를 주고 받는다. CONNCECT 요청과 응답은 조금 특징이 있다.
+```text
+CONNECT tlog.tammolo.com:443 HTTP/1.1
+User-agent: Mozilla/6.0
 
-    CONNECT tlog.tammolo.com:443 HTTP/1.1
-    User-agent: Mozilla/6.0
-    
-    
-    
-    HTTP/1.1 200 COnnection Established
-    Proxy-agent: Netspace-Proxy/1.1
+HTTP/1.1 200 Connection Established
+Proxy-agent: Netspace-Proxy/1.1
+```
 
 요청에는 CONNECT란 메서드를, 응답에는 Content-Type 헤더를 포함할 필요가 없다.
 

@@ -36,29 +36,29 @@ HTTP는 메시지가 올바르게 수송되고, 식별 되고, 추출 되고, �
 
 메시지의 헤더에는 엔터티에 대한 많은 정보가 있다.
 
-Content-Type : 엔터티에 의해 전달된 객체의 종류
+`Content-Type` : 엔터티에 의해 전달된 객체의 종류
 
-Content-Length : 전달되는 메시지의 길이나 크기
+`Content-Length` : 전달되는 메시지의 길이나 크기
 
-Content-Language : 전달되는 객체와 가장 잘 대응되는 자연어
+`Content-Language` : 전달되는 객체와 가장 잘 대응되는 자연어
 
-Content-Encoding : 객체 데이터에 대해 행해진 변형
+`Content-Encoding` : 객체 데이터에 대해 행해진 변형
 
-Content-Location : 요청 시점을 기준으로, 객체의 또 다른 위치
+`Content-Location` : 요청 시점을 기준으로, 객체의 또 다른 위치
 
-Content-Range : 만약 이 엔터티가 부분 엔터티라면, 이 헤더는 이 엔터티가 전체에서 어느 부분에 해당하는지 정의한다.
+`Content-Range` : 만약 이 엔터티가 부분 엔터티라면, 이 헤더는 이 엔터티가 전체에서 어느 부분에 해당하는지 정의한다.
 
-Content-MD5 : 엔터티 본문의 콘텐츠에 대한 체크 섬
+`Content-MD5` : 엔터티 본문의 콘텐츠에 대한 체크 섬
 
-Last-Modified : 서버에서 이 콘텐츠가 생성 혹은 수정된 날
+`Last-Modified` : 서버에서 이 콘텐츠가 생성 혹은 수정된 날
 
-Expires : 이 텐터티 데이터가 더 이상 최신이 아닌 것으로 간주되기 시작하는 날짜와 시각
+`Expires` : 이 텐터티 데이터가 더 이상 최신이 아닌 것으로 간주되기 시작하는 날짜와 시각
 
-Allow : 이 리소스에 대해 어떤 요청 메소드를 허용하는지
+`Allow` : 이 리소스에 대해 어떤 요청 메소드를 허용하는지
 
-ETag :  엄밀하게는 헤더 엔터티가 아니지만, 인스턴스에 대한 검사기로 사용된다.
+`ETag` :  엄밀하게는 헤더 엔터티가 아니지만, 인스턴스에 대한 검사기로 사용된다.
 
-Cache-Control : 어떻게 이 문서가 캐시 될 수 있는지에 대한 지시자. 엄밀하게는 헤더 엔터티가 아님
+`Cache-Control` : 어떻게 이 문서가 캐시 될 수 있는지에 대한 지시자. 엄밀하게는 헤더 엔터티가 아님
 
 **15.1.1 엔터티 본문**
 
@@ -120,21 +120,22 @@ Content-Type: text/html; charset-iso-8859-4
 **15.4.3 멀티파트 폼 제출**
 
 boundary를 사용하여 각 파트를 구별할 수 있다.
+```text
+POST /foo HTTP/1.1
+Content-Length: 68137
+Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
 
-    POST /foo HTTP/1.1
-    Content-Length: 68137
-    Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
-    
-    -----------------------------974767299852498929531610575
-    Content-Disposition: form-data; name="description" 
-    
-    some text
-    -----------------------------974767299852498929531610575
-    Content-Disposition: form-data; name="myFile"; filename="foo.txt" 
-    Content-Type: text/plain 
-    
-    (content of the uploaded file foo.txt)
-    -----------------------------974767299852498929531610575--
+-----------------------------974767299852498929531610575
+Content-Disposition: form-data; name="description" 
+
+some text
+-----------------------------974767299852498929531610575
+Content-Disposition: form-data; name="myFile"; filename="foo.txt" 
+Content-Type: text/plain 
+
+(content of the uploaded file foo.txt)
+-----------------------------974767299852498929531610575--
+```
 
 **15.4.4 멀티파트 범위 응답**
 
@@ -176,9 +177,9 @@ text에 대해서 gzip은 꽤 효율적이다. 그런데 JPEG 같은 이미지�
 
 **15.6.2 Transfer-Encoding 헤더**
 
-Transfer-Encoding : 어떤 인코딩을 적용했는지 수신자에게 알린다.
+`Transfer-Encoding` : 어떤 인코딩을 적용했는지 수신자에게 알린다.
 
-TE : 어떤 전송 인코딩을 사용할 수 있는지 서버에게 알린다.
+`TE` : 어떤 전송 인코딩을 사용할 수 있는지 서버에게 알린다.
 
 여기에도 선호를 나타내는 Q 값을 쓸 수 있다. 명세에는 0.0값은 금지
 
@@ -221,12 +222,13 @@ If-Modified-Since 헤더등을 사용,
 ### 15.9  범위 요청
 
 브라우저에서 어떤 데이터를 다운로드 받을 때 받을 양을 표현하거나 끊긴 부분을 이어 받을 때 사용할 수 있을 것이다.
-
-    GET /bigfile.html HTTP/1.1
-    Host: www.joes-hardware.com
-    Range: bytes=4000-
-    User-Agent: Mozilla/4.61 [en] (WinNT; I)
-    ...
+```text
+GET /bigfile.html HTTP/1.1
+Host: www.joes-hardware.com
+Range: bytes=4000-
+User-Agent: Mozilla/4.61 [en] (WinNT; I)
+...
+```
 
 ### 15.10 델타 인코딩
 

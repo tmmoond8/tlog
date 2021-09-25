@@ -12,9 +12,10 @@ tags:
 `<path>` 엘리먼트는 SVG 기본 도형 중 가장 강력하면서도 다른 엘리먼트보다 복잡하다. 패스는 여러 개의 직선과 곡선을 합쳐서 복잡한 도형을 그릴 수 있게 해준다. 그러나 복잡한 패스를 XML  편집기에서 고치는 것은 권장할 만한 것은 아니다.
 
  패스는 d 속성 하나로 정의되는데, d 속성은 여러 개의 명령어와 그 파라미터들로 이루어진다. 예를들어 "M 10 10"은 Move To (10, 10)으로 해석된다. 또, 이동 관련해서는 "M 10 10"과 "m 10 10"은 다르게 동작하는데, 대문자는 M은 절대적 좌표를 참조하며, 소문자 m은 상대적 좌표를 참조한다. (모든 명령어가 두 가지가 존재한다.🖕)
-
-    <path d="M10 10 H 90 V 90 H 10 L 10 10" fill="none" stroke="blue" stroke-width="5" />
-    <path d="M10 10 h 80 v 80 h -80 Z" fill="transparent" stroke="black"/>
+```html
+<path d="M10 10 H 90 V 90 H 10 L 10 10" fill="none" stroke="blue" stroke-width="5" />
+<path d="M10 10 h 80 v 80 h -80 Z" fill="transparent" stroke="black"/>
+```
 
 ## 선 명령어
 
@@ -47,10 +48,11 @@ tags:
 Q라고 불리는 2차 베지어 곡선이며, 하나의 제어점이 시작점과 끝점의 방향을 결정한다.
 
 `Q x1 y1, x y (q dx1 dy1, dx dy)`
-
-    <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 80 Q 95 10 180 80" stroke="black" fill="transparent"/>
-    </svg>
+```html
+<svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 80 Q 95 10 180 80" stroke="black" fill="transparent"/>
+</svg>
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952577/tlog/_2019-09-15__5.41.17_a4rv9d.png)
 
@@ -59,20 +61,19 @@ Q라고 불리는 2차 베지어 곡선이며, 하나의 제어점이 시작점�
 C라고 불리는 3차 베지어 곡선이며, 제어점이 두 점이다. 
 
 `C x1 y1, x2 y2, x y (c dx1 dy1, dx2 dy2, dx dy)`
-
-    svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
-    
-      <path d="M10 10 C 20 20, 40 20, 50 10" stroke="black" fill="transparent"/>
-      <path d="M70 10 C 70 20, 120 20, 120 10" stroke="black" fill="transparent"/>
-      <path d="M130 10 C 120 20, 180 20, 170 10" stroke="black" fill="transparent"/>
-      <path d="M10 60 C 20 80, 40 80, 50 60" stroke="black" fill="transparent"/>
-      <path d="M70 60 C 70 80, 110 80, 110 60" stroke="black" fill="transparent"/>
-      <path d="M130 60 C 120 80, 180 80, 170 60" stroke="black" fill="transparent"/>
-      <path d="M10 110 C 20 140, 40 140, 50 110" stroke="black" fill="transparent"/>
-      <path d="M70 110 C 70 140, 110 140, 110 110" stroke="black" fill="transparent"/>
-      <path d="M130 110 C 120 140, 180 140, 170 110" stroke="black" fill="transparent"/>
-    
-    </svg>
+```html
+<svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 10 C 20 20, 40 20, 50 10" stroke="black" fill="transparent"/>
+  <path d="M70 10 C 70 20, 120 20, 120 10" stroke="black" fill="transparent"/>
+  <path d="M130 10 C 120 20, 180 20, 170 10" stroke="black" fill="transparent"/>
+  <path d="M10 60 C 20 80, 40 80, 50 60" stroke="black" fill="transparent"/>
+  <path d="M70 60 C 70 80, 110 80, 110 60" stroke="black" fill="transparent"/>
+  <path d="M130 60 C 120 80, 180 80, 170 60" stroke="black" fill="transparent"/>
+  <path d="M10 110 C 20 140, 40 140, 50 110" stroke="black" fill="transparent"/>
+  <path d="M70 110 C 70 140, 110 140, 110 110" stroke="black" fill="transparent"/>
+  <path d="M130 110 C 120 140, 180 140, 170 110" stroke="black" fill="transparent"/>
+</svg>
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/Untitled_bxjkrs.png)
 
@@ -81,10 +82,11 @@ C라고 불리는 3차 베지어 곡선이며, 제어점이 두 점이다.
 2차 베이지 곡선 Q를 연결하는 단축 명령어로 T라고 부른다. 이 축약 명령어는 이전에 사용한 제어점으로부터 새로운 제어점을 자동으로 만들어 낸다.
 
 `T x y (t dx dy)`
-
-    <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 80 Q 95 10 180 80 T 350 80" stroke="black" fill="transparent"/>
-    </svg>
+```html
+<svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 80 Q 95 10 180 80 T 350 80" stroke="black" fill="transparent"/>
+</svg>
+```
 
 아래 예제를 보면 파란색선은 이전에 Q에서 사용한 제어점과 반대 방향으로 자동으로 제어점을 생성하여 곡선을 그린 것이다.
 
@@ -99,10 +101,11 @@ C라고 불리는 3차 베지어 곡선이며, 제어점이 두 점이다.
 아래 그림을 보면 파랑색 선의 제어점이 대칭하는 형태로 생성된 것이다.
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_2_o3vwuf.png)
-
-    <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/>
-    </svg>
+```html
+<svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/>
+</svg>
+```
 
 ### A (Arc)
 
@@ -111,15 +114,16 @@ A 명령어는 많은 파라미터를 받기 때문에 처음에 이해하는데
 `A rx ry x축-회전각 큰-호-플래그 쓸기-방향-플래그 x y`
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952587/tlog/Untitled_3_zg3erj.png)
-
-    <svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 315
-               L 110 215
-               A 30 50 0 0 1 162.55 162.45
-               L 172.55 152.45
-               A 30 50 -45 0 1 215.1 109.9
-               L 315 10" stroke="black" fill="green" stroke-width="2" fill-opacity="0.5"/>
-    </svg>
+```html
+<svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 315
+          L 110 215
+          A 30 50 0 0 1 162.55 162.45
+          L 172.55 152.45
+          A 30 50 -45 0 1 215.1 109.9
+          L 315 10" stroke="black" fill="green" stroke-width="2" fill-opacity="0.5"/>
+</svg>
+```
 
 차근차근 이해해보자. 아래 그림처럼 사선으로 선을 그리는 형태다. 
 
@@ -134,21 +138,22 @@ A 명령어는 많은 파라미터를 받기 때문에 처음에 이해하는데
  오른쪽 타원도 왼쪽 타원과 크기가 같지만, x-축 회전각을 -45를 주어서 회전한 형태인 것을 확인할 수 있다.
 
 이번에는 큰-호-플래그와 쓸기-방향을 좀 더 살펴보자. 같은 모양의 호를 정의 하고 큰-호-플래그와 쓸기-방향-플래그에 따라 다르게 그려지는 것을 확인할 수 있다.
-
-    <svg width="325" height="325" xmlns="http://www.w3.org/2000/svg">
-      <path d="M80 80
-               A 45 45, 0, 0, 0, 125 125
-               L 125 80 Z" fill="green"/>
-      <path d="M230 80
-               A 45 45, 0, 1, 0, 275 125
-               L 275 80 Z" fill="red"/>
-      <path d="M80 230
-               A 45 45, 0, 0, 1, 125 275
-               L 125 230 Z" fill="purple"/>
-      <path d="M230 230
-               A 45 45, 0, 1, 1, 275 275
-               L 275 230 Z" fill="blue"/>
-    </svg>
+```html
+<svg width="325" height="325" xmlns="http://www.w3.org/2000/svg">
+  <path d="M80 80
+            A 45 45, 0, 0, 0, 125 125
+            L 125 80 Z" fill="green"/>
+  <path d="M230 80
+            A 45 45, 0, 1, 0, 275 125
+            L 275 80 Z" fill="red"/>
+  <path d="M80 230
+            A 45 45, 0, 0, 1, 125 275
+            L 125 230 Z" fill="purple"/>
+  <path d="M230 230
+            A 45 45, 0, 1, 1, 275 275
+            L 275 230 Z" fill="blue"/>
+</svg>
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952588/tlog/Untitled_4_d6ioqv.png)
 

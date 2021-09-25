@@ -17,7 +17,7 @@ tags:
 
 ---
 
-```jsx
+```html
 <svg width="120" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gradients">
@@ -41,7 +41,7 @@ tags:
 
 point를 늘려서 에쁜 무지개를 한 번 만들어보자.
 
-```jsx
+```html
 <svg width="240" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gradients_rainbow">
@@ -69,60 +69,60 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2019-10-13__9.41.13_wjuint.png)
 
-```jsx
+```html
 <svg width="240" height="480" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="gradients_0010" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_1000" x1="1" y1="0" x2="0" y2="0">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_0001" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_0100" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_1100" x1="1" y1="1" x2="0" y2="0">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_0110" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_1001" x1="1" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-      <linearGradient id="gradients_0011" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="50%" stop-color="black" stop-opacity="0" />
-        <stop offset="100%" stop-color="blue" />
-      </linearGradient>
-    </defs>
+  <defs>
+    <linearGradient id="gradients_0010" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_1000" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_0001" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_0100" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_1100" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_0110" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_1001" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+    <linearGradient id="gradients_0011" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="50%" stop-color="black" stop-opacity="0" />
+      <stop offset="100%" stop-color="blue" />
+    </linearGradient>
+  </defs>
 
-    <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0010)" />
-    <rect x="120" y="10" rx="15" ry="15" width="100" height="100" fill="url(#gradients_1000)" />
-    <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0001)" />
-    <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0100)" />
-    <rect x="10" y="240" rx="15" ry="15" width="100" height="100" fill="url(#gradients_1100)" />
-    <rect x="120" y="240" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0110)" />
-    <rect x="10" y="360" rx="15" ry="15" width="100" height="100" fill="url(#gradients_1001)" />
-    <rect x="120" y="360" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0011)" />
-  </svg>
+  <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0010)" />
+  <rect x="120" y="10" rx="15" ry="15" width="100" height="100" fill="url(#gradients_1000)" />
+  <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0001)" />
+  <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0100)" />
+  <rect x="10" y="240" rx="15" ry="15" width="100" height="100" fill="url(#gradients_1100)" />
+  <rect x="120" y="240" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0110)" />
+  <rect x="10" y="360" rx="15" ry="15" width="100" height="100" fill="url(#gradients_1001)" />
+  <rect x="120" y="360" rx="15" ry="15" width="100" height="100" fill="url(#gradients_0011)" />
+</svg>
 ```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__9.18.44_oghsmq.png)
@@ -133,7 +133,7 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 
 원형 그라디언트는 선형과 유사하다.
 
-```jsx
+```html
 <svg width="120" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="radial_gradients">
@@ -153,7 +153,7 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 
 원형 그라디언트의 크기를 다양하게 적용할 수 있다. 
 
-```jsx
+```html
 <radialGradient id="radial_gradients_smal" cx="0.25" cy="0.25" r="0.25">
 ```
 
@@ -163,33 +163,33 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.08.45_dylzll.png)
 
-```jsx
+```html
 <svg width="240" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="radial_gradients_1" cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-      <radialGradient id="radial_gradients_2" cx="0.5" cy="0.5" r="0.5" fx="0.75" fy="0.25">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-      <radialGradient id="radial_gradients_3" cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.75">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-      <radialGradient id="radial_gradients_4" cx="0.5" cy="0.5" r="0.5" fx="0.75" fy="0.75">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-    </defs>
+  <defs>
+    <radialGradient id="radial_gradients_1" cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+    <radialGradient id="radial_gradients_2" cx="0.5" cy="0.5" r="0.5" fx="0.75" fy="0.25">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+    <radialGradient id="radial_gradients_3" cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.75">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+    <radialGradient id="radial_gradients_4" cx="0.5" cy="0.5" r="0.5" fx="0.75" fy="0.75">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+  </defs>
 
-    <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_1)" />
-    <rect x="120" y="10" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_2)" />
-    <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_3)" />
-    <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_4)" />
+  <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_1)" />
+  <rect x="120" y="10" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_2)" />
+  <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_3)" />
+  <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#radial_gradients_4)" />
 
-  </svg>
+</svg>
 ```
 
 2019년 10월 현재에도 아이패드에서는 focal point 속성을 주면 제대로 그리지 못한다. 또 밑에서 다룰 speadMethod 또한 렌더링을 하지 못한다.
@@ -198,30 +198,30 @@ Linear gradients는 방향성을 가진다. 빨주노초파남보는 왼쪽에�
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952578/tlog/_2019-10-13__11.22.12_is2tf5.png)
 
-```jsx
+```html
 <svg width="220" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="gradient_pad" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="pad">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-      <radialGradient id="gradient_repeat" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="repeat">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-      <radialGradient id="gradient_reflect" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
-        <stop offset="0%" stop-color="red" />
-        <stop offset="100%" stop-color="blue" />
-      </radialGradient>
-    </defs>
+  <defs>
+    <radialGradient id="gradient_pad" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="pad">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+    <radialGradient id="gradient_repeat" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="repeat">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+    <radialGradient id="gradient_reflect" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="blue" />
+    </radialGradient>
+  </defs>
 
-    <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#gradient_pad)" />
-    <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradient_repeat)" />
-    <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradient_reflect)" />
+  <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#gradient_pad)" />
+  <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradient_repeat)" />
+  <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#gradient_reflect)" />
 
-    <text x="15" y="30" fill="white" font-family="sans-serif" font-size="12pt">Pad</text>
-    <text x="15" y="140" fill="white" font-family="sans-serif" font-size="12pt">Repeat</text>
-    <text x="125" y="140" fill="white" font-family="sans-serif" font-size="12pt">Reflect</text>
+  <text x="15" y="30" fill="white" font-family="sans-serif" font-size="12pt">Pad</text>
+  <text x="15" y="140" fill="white" font-family="sans-serif" font-size="12pt">Repeat</text>
+  <text x="125" y="140" fill="white" font-family="sans-serif" font-size="12pt">Reflect</text>
 
-  </svg>
+</svg>
 ```

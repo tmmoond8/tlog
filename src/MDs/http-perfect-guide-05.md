@@ -100,27 +100,29 @@ nginx, apache, 마소꺼, 구글꺼가 있다. 최근에는 nginx를 가장 많�
 웹 서버 파일 시스템의 특별한 폴더를 웹 콘텐츠를 위해 설정한다.
 
 아파치 웹 서버를 기준으로 설명하면
-
-    DocumentRoot /usr/local/httpd/files
+```text
+DocumentRoot /usr/local/httpd/files
+```
 
 [http://tamm.com/../](http://tamm.com/../) 처럼 허용하는 디렉토리의 부모에 접근하는 것도 물론 막아야 한다.
 
 docroot를 사용하면 가상 호스팅 방식으로 하나의 웹서버에서 여러 루트를 사용할 수 있게 한다.
+```xml
+<VirtualHost www.joes-hardware.com> 
+  ServerName www.joes-hardware.com 
+  DocumentRoot /docs/joe 
+  TransferLog /logs/joe.access_log 
+  ErrorLog /logs/joe.error_log 
+</VirtualHost> 
 
-    <VirtualHost www.joes-hardware.com> 
-    	 ServerName www.joes-hardware.com 
-    	 DocumentRoot /docs/joe 
-    	 TransferLog /logs/joe.access_log 
-    	 ErrorLog /logs/joe.error_log 
-     </VirtualHost> 
-     
-     <VirtualHost www.marys-antiques.com> 
-    	 ServerName www.marys-antiques.com 
-    	 DocumentRoot /docs/mary 
-    	 TransferLog /logs/mary.access_log 
-    	 ErrorLog /logs/mary.error_log 
-     </VirtualHost> 
-     ...
+<VirtualHost www.marys-antiques.com> 
+  ServerName www.marys-antiques.com 
+  DocumentRoot /docs/mary 
+  TransferLog /logs/mary.access_log 
+  ErrorLog /logs/mary.error_log 
+</VirtualHost> 
+...
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952594/tlog/Untitled-68be840e-cfa3-4ccf-8d7d-a123e2ee7885_jsmxr2.png)
 

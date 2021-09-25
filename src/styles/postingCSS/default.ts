@@ -686,16 +686,11 @@ export const postCSS = css`
   }
 
   .post-section code {
-    background-color: rgba(27, 31, 35, 0.05);
-    border-radius: 3px;
-    font-size: 85%;
-    margin: 0;
-    padding: 0.2em 0.4em;
-  }
-
-  .post-section p > code {
     position: relative;
     top: -2px;
+    border-radius: 3px;
+    margin: 0;
+    font-size: 85%;
     background-color: ${colors.grey08};
     color: ${colors.red};
     padding: 0.16em 0.4em 0.3em 0.4em;

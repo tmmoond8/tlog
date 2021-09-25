@@ -77,8 +77,9 @@ OAuth가 없을 때는 내가 이 사이트에는 어떤 아이디로 가입을 
 **11.6.2 쿠키는 어떻게 동작하는가**
 
 서버는 사용자를 식별하기 위해 접근하는 사용자에게 쿠키를 보낸다. 마치 명찰 같다.
-
-    Cookie: name: "Tamm": "phone="1233-231323"
+```text
+Cookie: name: Tamm; phone=1233-231323
+```
 
 **11.6.3 쿠키 상자: 클라이언트측 상태**
 
@@ -115,15 +116,16 @@ path 는 말그대로 작성한 path에만 적용한다.
 secure는 Optional한 속성으로 HTTP가 SSL 보안 연결을 사용할 때만 쿠키를 전송한다.
 
 httpOnly는 책에는 없지만 매우 중요한 값으로 사용자가 쿠키 값을 변경할 수 없도록 한다.
-
-    Set-Cookie: name=value [; expires=date] [; path=path] [; domain=domain] [; secure]
-    Cookie: name1=value1 [; name2=value2] ...
+```text
+Set-Cookie: name=value [; expires=date] [; path=path] [; domain=domain] [; secure]
+Cookie: name1=value1 [; name2=value2] ...
+```
 
 아래 처럼 expires 나 max-age를 넣지않으면 세션 쿠키로 작동해서 브라우저 창이 닫히면 사라진다.
-
-    Set-Cookie: sessionid=38afes7a8; HttpOnly; Path=/
-
-    Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly
+```text
+Set-Cookie: sessionid=38afes7a8; HttpOnly; Path=/
+Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly
+```
 
 **11.6.7 Version 1**
 

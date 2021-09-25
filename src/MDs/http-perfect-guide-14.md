@@ -242,9 +242,10 @@ pass
 SSL은 바이너리 프로토콜이라 했다. 프락시는 암호화된 메시지를 받고 어리둥절할 것이다. 프락시는 메시지의 헤더에서 메시지가 어디로 전송되어야 하는지 알아야 하는데 암호화된 메시지는 읽어낼수가 없다.이 때 HTTPS SSL 터널링 프로토콜을 사용한다.
 
 HTTP는 CONNECT라는 확장 메서드를 사용하여 어디로 갈지 명시 한다
-
-    CONNECT home.netscape.com:443 HTTP/1.0
-    User-agent: Mozilla/1.1N
+```text
+CONNECT home.netscape.com:443 HTTP/1.0
+User-agent: Mozilla/1.1N
+```
 
 프락시는 이 CONNECT 메서드를 받으면 직접 대상으로 연결시켜주는 터널을 만들어 준다.
 

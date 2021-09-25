@@ -39,9 +39,10 @@ HTTP 프로토콜로 의사소통 하는 두 개의 주체를 HTTP 클라이언�
 text/html    →  {proimary object type }/{specific subtype}
 
 **1.3.2 URI(uniform resource identifier)**
-
-    URI  ㅡㅡ URL
-          ㄴㅡ URN
+```text
+URI  ㅡㅡ URL
+      ㄴㅡ URN
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952575/tlog/_2019-06-20__12-5a9b6c14-60f9-4352-8f1e-2363c6f795f9.23.11_kgplkd.png)
 

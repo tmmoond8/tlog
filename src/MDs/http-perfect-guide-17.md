@@ -40,11 +40,12 @@ tags:
 **17.3.1 내용 협상 헤더**
 
 **17.3.2 내용 협상 헤더의 폼질값**
-
-    Accept: [ text/html, application/json, image/* ... ]
-    Accept-Language: fr-CH, fr;q=0.9, en;q=0.8 de;q=0.7, *;q=0.5
-    Accept-Charset: utf-8, iso-8859-1;q=0.5, *;q=0.1
-    Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
+```text
+Accept: [ text/html, application/json, image/* ... ]
+Accept-Language: fr-CH, fr;q=0.9, en;q=0.8 de;q=0.7, *;q=0.5
+Accept-Charset: utf-8, iso-8859-1;q=0.5, *;q=0.1
+Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
+```
 
 **17.3.3 그 외의 헤더들에 의해 결정**
 
@@ -53,16 +54,17 @@ User-Agent를 보고 오래된 시스템이면 별도의 처리가 필요할 수
 **17.3.4 아파치의 내용 협상**
 
 아래의 type-map 파일을 통해 적절한 문서를 내려준다.
+```text
+URI: test.html
 
-    URI: test.html
-    
-    URI: test.en.html
-    Content-Type: text/html
-    Content-Language: en
-    
-    URI: test.ko.html
-    Content-Type: text/html; charset=utf-8
-    Content-Language: ko, en
+URI: test.en.html
+Content-Type: text/html
+Content-Language: en
+
+URI: test.ko.html
+Content-Type: text/html; charset=utf-8
+Content-Language: ko, en
+```
 
 **17.3.5 서버 측 확장**
 
@@ -71,8 +73,9 @@ User-Agent를 보고 오래된 시스템이면 별도의 처리가 필요할 수
 서버 주도 협상을 좀 더 확장해보면, 서버측에서 내용 협상 헤더를 통해 특정 배리언트를 응답으로 내려주었을 것이다. 그런데 캐시 서버 입장에서는 특정 URL에 응답만 가억할 것이다. 이 때 다른 내용 협상 헤더를 가지고 같은 URL로 요청을 하면 캐시 서버는 엉뚱한 언어의 응답을 내려줄 수 있다.
 
  HTTP/1.1 명세에 투명 협상에 대한 메카니즘을 정의하지 않았지만, 캐시에 관한 Vary 헤더를 정의했다. 서버에서 User-Agent와 Accept-Language를 참조하여 응답을 내려줬다면, 응답에 다음처럼 Vary 헤더에 추가하는 것이다.
-
-    Vary: User-Agent, Accept-Language
+```text
+Vary: User-Agent, Accept-Language
+```
 
 그러면 다음에 같은 URL로 요청이 왔을 때 User-Agent와 Aceept-Laguage가 일치할 때만 캐시된 응답을 내려주게 된다.
 

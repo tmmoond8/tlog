@@ -21,17 +21,19 @@ tags:
 ### 16.1 국제적인 콘텐츠를 다루기
 
 HTTP에서 엔터티 분몬이란 그저 비트들로 가득 찬 상자에 불과 하다. 국제 콘텐츠를 지원하기 위해 서버는 클라이언트에게 각 문서의 문자와 언어를  Content-Type charset과 Content-Language 헤더를 통해 알려준다. 서버는 국제화를 위해 다양한 언어의 문서를 준비할 수 있다. 클라이언트는 요청을 보낼 때 어떤 언어의 문서를 원하는지 다음의 방식으로 알릴 수 있다.
-
-    Accept-Language: fr, en;q=0.8
-    Accept-Charset: iso-8859-1, utf-8
+```text
+Accept-Language: fr, en;q=0.8
+Accept-Charset: iso-8859-1, utf-8
+```
 
 ### 16.2 문자 집합과 HTTP
 
 **16.2.1 차셋(Charset)은 글자를 비트로 변환하는 인코딩이다.**
 
 charset의 예로는 us-ascii, ios-8859-1, euc-kr, utf-8 등이 있다. HTTP 메시지에서는 아래의 예처럼 헤더에 문서의 차셋을 표현한다.
-
-    Content-Type: text/html; charset=iso-8859-6
+```text
+Content-Type: text/html; charset=iso-8859-6
+```
 
 **16.2.2 문자 집합과 인코딩은 어떻게 동작하는가**
 
@@ -47,15 +49,15 @@ charset의 예로는 us-ascii, ios-8859-1, euc-kr, utf-8 등이 있다. HTTP 메
 
 같은 225 character code가 또 따른 문자 체계에서는 다르게 보일 수 있다.
 
-iso-8859-1
+`iso-8859-1`
 
-iso-8859-7
+`iso-8859-7`
 
-iso-8859-8
+`iso-8859-8`
 
-á
+`á`
 
-α
+`α`
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/Untitled-797817fe-09cc-402b-9a6d-d73fc6ac5ae4_ggicqo.png)
 
@@ -66,24 +68,27 @@ iso-8859-8
 **16.2.6 Content-Type charset 헤더와 META 태그**
 
 HTTP 메시지에 아래 처럼 MIME 차셋 태그를 헤더에 담아 보낸다.
-
-    Content-Type: text/html; charset=iso-8859-6
+```text
+Content-Type: text/html; charset=iso-8859-6
+```
 
 만약 문자 집합이 명시적으로 나열되지 않았다면, 수신자는 문서의 콘텐츠를 통해 문자 집합을 추측하려 시도한다. HTML 문서에는 문자 집합을 나타내는 `<META HTTP_EQUIV="Content-TYpe">` 태그가 있다.
-
-    ...
-    <HEAD>
-    	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
-    </HEAD>
-    <BODY>
-    ...
+```html
+...
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
+</HEAD>
+<BODY>
+...
+```
 
 **16.2.6 Accept-Charset 헤더**
 
 클라이언트는 자신이 처리할 수 있는 선호하는 방법을 요청한다. 다만, 서버가 모든 인코딩 방식을 지원하지 않기 때문에 요청한 방식을 고려해서 응답을 내려준다.
-
-    Accept-Language: fr, en;q=0.8
-    Accept-Charset: iso-8859-1, utf-8
+```text
+Accept-Language: fr, en;q=0.8
+Accept-Charset: iso-8859-1, utf-8
+```
 
 ### 16.3 다중언어 문자 인코딩에 대한 지침
 
