@@ -18,83 +18,87 @@ tags:
 이전에 운전자가 버튼을 눌러서 상태를 업데이트 하도록 했다. 이 상태 업데이트를 운전자, 승객 모두 subscription하도록 해보자.
 
 - src/routes/Ride/Ride.queries.ts      `RIDE_SUBSCRIPTION` 을 정의하고 yarn codegen을 하자.
+  ```tsx
+  ...
 
-        ...
-        export const RIDE_SUBSCRIPTION = gql`
-          subscription rideUpdate {
-            RideStatusSubscription {
-              id
-              status
-              pickUpAddress
-              dropOffAddress
-              price
-              distance
-              duration
-              driver {
-                id
-                fullName
-                profilePhoto
-              }
-              passenger {
-                id
-                fullName
-                profilePhoto
-              }
-              chatId
-            }
-          }
-        `;
+  export const RIDE_SUBSCRIPTION = gql`
+    subscription rideUpdate {
+      RideStatusSubscription {
+        id
+        status
+        pickUpAddress
+        dropOffAddress
+        price
+        distance
+        duration
+        driver {
+          id
+          fullName
+          profilePhoto
+        }
+        passenger {
+          id
+          fullName
+          profilePhoto
+        }
+        chatId
+      }
+    }
+  `;
+  ```
 
 - src/routes/Ride/RideContainer.tsx     RideQuery
+  ```tsx
+  import { SubscribeToMoreOptions } from 'apollo-client';
+  import React from 'react';
+  import { Mutation, Query } from 'react-apollo';
+  import { RouteComponentProps } from 'react-router-dom';
+  import { USER_PROFILE } from '../../sharedQueries.queries';
+  import { 
+    getRide, 
+    getRideVariables, 
+    updateRide,
+    updateRideVariables,
+    userProfile 
+  } from '../../types/api';
+  import { GET_RIDE, RIDE_SUBSCRIPTION, UPDATE_RIDE_STATUS } from './Ride.queries';
+  import RidePresenter from './RidePresenter';
+  
+  ...
 
-        import { SubscribeToMoreOptions } from 'apollo-client';
-        import React from 'react';
-        import { Mutation, Query } from 'react-apollo';
-        import { RouteComponentProps } from 'react-router-dom';
-        import { USER_PROFILE } from '../../sharedQueries.queries';
-        import { 
-          getRide, 
-          getRideVariables, 
-          updateRide,
-          updateRideVariables,
-          userProfile 
-        } from '../../types/api';
-        import { GET_RIDE, RIDE_SUBSCRIPTION, UPDATE_RIDE_STATUS } from './Ride.queries';
-        import RidePresenter from './RidePresenter';
-        
-        ...
-            return (
-              <ProfileQuery query={USER_PROFILE}>
-                {({ data: userData }) => (
-                  <RideQuery query={GET_RIDE} variables={{ rideId: parseInt(rideId, 10) }}>
-                    {({ data: rideData, loading, subscribeToMore }) => {
-                      const subscribeOptions: SubscribeToMoreOptions = {
-                        document: RIDE_SUBSCRIPTION
-                      }
-                      subscribeToMore(subscribeOptions);
-                      return (
-                        <RideUpdate 
-                          mutation={UPDATE_RIDE_STATUS}
-                          refetchQueries={[{ query: GET_RIDE , variables: { rideId: parseInt(rideId, 10) }}]}
-                        >
-                          {updateRideMutation => (
-                            <RidePresenter 
-                              rideData={rideData}
-                              userData={userData}
-                              updateRideMutation={updateRideMutation}
-                            />
-                          )}
-                        </RideUpdate>
-                      )
-                    }}
-                  </RideQuery>
-                )}
-              </ProfileQuery>
-            )
-          }
-        }
-        
-        export default RideContainer;
+      return (
+        <ProfileQuery query={USER_PROFILE}>
+          {({ data: userData }) => (
+            <RideQuery query={GET_RIDE} variables={{ rideId: parseInt(rideId, 10) }}>
+              {({ data: rideData, loading, subscribeToMore }) => {
+                const subscribeOptions: SubscribeToMoreOptions = {
+                  document: RIDE_SUBSCRIPTION
+                }
+                subscribeToMore(subscribeOptions);
+                return (
+                  <RideUpdate 
+                    mutation={UPDATE_RIDE_STATUS}
+                    refetchQueries={[{ query: GET_RIDE , variables: { rideId: parseInt(rideId, 10) }}]}
+                  >
+                    {updateRideMutation => (
+                      <RidePresenter 
+                        rideData={rideData}
+                        userData={userData}
+                        updateRideMutation={updateRideMutation}
+                      />
+                    )}
+                  </RideUpdate>
+                )
+              }}
+            </RideQuery>
+          )}
+        </ProfileQuery>
+      )
+    }
+  }
+  
+  export default RideContainer;
+  ```
 
 이번에는 Ride를 db에서 삭제 후 user.isRiding, user.isTaken false로 바꾼 후 Ride 요청부터 운전자의ACCEPTED 이후의 단계까지 계속 진행해보자. 깔끔하게 동작한다.
 
@@ -109,46 +113,48 @@ tags:
 이 강의를 진행하는데,  니콜라스랑 조금 다른게 있었다. 왠지 모르겠지만, Subscription의 updateQuery가 운전자 일때는 호출되지 않았다. 그래서 RideUpdate쪽에 onCompleted에 넣었다. 
 
 - src/routes/Ride/RideContainer.tsx
+  ```tsx
+  ...
 
-        ...
-                  <RideQuery query={GET_RIDE} variables={{ rideId: parseInt(rideId, 10) }}>
-                    {({ data: rideData, loading, subscribeToMore }) => {
-                      const subscribeOptions: SubscribeToMoreOptions = {
-                        document: RIDE_SUBSCRIPTION,
-                        updateQuery: (prev, { subscriptionData }) => {
-                          if (!subscriptionData.data) {
-                            return prev;
-                          }
-                          const {
-                            data: {
-                              RideStatusSubscription: { status }
-                            }
-                          } = subscriptionData;
-                          if (status === "FINISHED") {
-                            window.location.href = "/";
-                          }
-                        }
-                      }
-                      subscribeToMore(subscribeOptions);
-                      return (
-                        <RideUpdate 
-                          mutation={UPDATE_RIDE_STATUS}
-                          refetchQueries={[{ query: GET_RIDE , variables: { rideId: parseInt(rideId, 10) }}]}
-                          onCompleted={() => this.hanleRideUpdate(rideData)}
-                        >
-        ...
-        
-          public hanleRideUpdate(rideData) {
-            const { 
-              GetRide
-            } = rideData;
-            if (GetRide && GetRide.ride.status === "ONROUTE") {
+    <RideQuery query={GET_RIDE} variables={{ rideId: parseInt(rideId, 10) }}>
+      {({ data: rideData, loading, subscribeToMore }) => {
+        const subscribeOptions: SubscribeToMoreOptions = {
+          document: RIDE_SUBSCRIPTION,
+          updateQuery: (prev, { subscriptionData }) => {
+            if (!subscriptionData.data) {
+              return prev;
+            }
+            const {
+              data: {
+                RideStatusSubscription: { status }
+              }
+            } = subscriptionData;
+            if (status === "FINISHED") {
               window.location.href = "/";
             }
           }
         }
-        
-        export default RideContainer;
+        subscribeToMore(subscribeOptions);
+        return (
+          <RideUpdate 
+            mutation={UPDATE_RIDE_STATUS}
+            refetchQueries={[{ query: GET_RIDE , variables: { rideId: parseInt(rideId, 10) }}]}
+            onCompleted={() => this.hanleRideUpdate(rideData)}
+          >
+  ...
+  
+    public hanleRideUpdate(rideData) {
+      const { 
+        GetRide
+      } = rideData;
+      if (GetRide && GetRide.ride.status === "ONROUTE") {
+        window.location.href = "/";
+      }
+    }
+  }
+  
+  export default RideContainer;
+  ```
 
     이렇게 하면 자동적으로 운전자와 승객쪽 모두 FINISH가 되면 Home으로 이동한다.
 
@@ -157,81 +163,90 @@ tags:
 마지막 기능이 채팅하는 기능을 구현할 차례다. 먼저 Chat 페이지를 간단히 만들고, Ride 페이지에서 Chat 페이지로 이동할 수 있는 버튼을 추가 하자. routes에 Chat 디렉토리를 생성하자.
 
 - src/routes/Chat/ChatContainer.tsx       별 다른건 없지만 chatId가 없을 때 Home으로 이동하는 코드가 있다.
-
-        import React from 'react';
-        import { RouteComponentProps } from 'react-router-dom';
-        import ChatPresenter from './ChatPresenter';
-        
-        interface IProps extends RouteComponentProps<any> {}
-        
-        class ChatContainer extends React.Component<IProps> {
-          constructor(props: IProps) {
-            super(props);
-            if (!props.match.params.chatId) {
-              props.history.push("/");
-            }
-          }
-          public render() {
-            return <ChatPresenter />;
-          }
-        }
-        
-        export default ChatContainer;
+  ```tsx
+  import React from 'react';
+  import { RouteComponentProps } from 'react-router-dom';
+  import ChatPresenter from './ChatPresenter';
+  
+  interface IProps extends RouteComponentProps<any> {}
+  
+  class ChatContainer extends React.Component<IProps> {
+    constructor(props: IProps) {
+      super(props);
+      if (!props.match.params.chatId) {
+        props.history.push("/");
+      }
+    }
+    public render() {
+      return <ChatPresenter />;
+    }
+  }
+  
+  export default ChatContainer;
+  ```
 
 - src/routes/Chat/ChatPresenter.tsx
-
-        import Header from 'components/Header';
-        import React from 'react';
-        import styled from '../../typed-components';
-        
-        const Container = styled.div``;
-        
-        const ChatPresenter: React.SFC = () => (
-          <Container>
-            <Header title="Chat"/>
-          </Container>
-        );
-        
-        export default ChatPresenter;
+  ```tsx
+  import Header from 'components/Header';
+  import React from 'react';
+  import styled from '../../typed-components';
+  
+  const Container = styled.div``;
+  
+  const ChatPresenter: React.SFC = () => (
+    <Container>
+      <Header title="Chat"/>
+    </Container>
+  );
+  
+  export default ChatPresenter;
+  ```
 
 - src/routes/Chat/index.ts
-
-        export { default } from './ChatContainer';
+  ```tsx
+  export { default } from './ChatContainer';
+  ```
 
 - src/routes/Ride/RidePresenter.tsx      Button 안에 버튼을 추가 했다.
+  ```tsx
+  ...
 
-        ...
-        import { MutationFn } from "react-apollo";
-        import { Link } from 'react-router-dom';
-        import styled from '../../typed-components';
-        
-        ...
-                  <Buttons>
-                    {renderStatusButton({ user, ride, updateRideMutation })}
-                    {ride.status !== "REQUESTING" && (
-                      <Link to={`/chat/${ride.chatId}`}>
-                        <ExtendedButton value="Chat" onClick={null} />
-                      </Link>
-                    )}
-                  </Buttons>
-        ...
+  import { MutationFn } from "react-apollo";
+  import { Link } from 'react-router-dom';
+  import styled from '../../typed-components';
+  
+  ...
+
+    <Buttons>
+      {renderStatusButton({ user, ride, updateRideMutation })}
+      {ride.status !== "REQUESTING" && (
+        <Link to={`/chat/${ride.chatId}`}>
+          <ExtendedButton value="Chat" onClick={null} />
+        </Link>
+      )}
+    </Buttons>
+
+  ...
+  ```
 
 그리고 페이징 라우팅에 Chat 페이지를 추가하자.
 
 - src/components/App/AppPresenter.tsx
+  ```tsx
+  ...
 
-        ...
-        import AddPlaces from "routes/AddPlace";
-        import Chat from 'routes/Chat';
-        import EditAccount from "routes/EditAccount";
-        
-        ...
-        
-            <Route path={"/ride/:rideId"} exact={true} component={Ride}/>
-            <Route path={"/chat/:chatId"} exact={true} component={Chat}/>
-            <Route path={"/edit-accoun"} exact={true} component={EditAccount}/>
-          
-        ...
+  import AddPlaces from "routes/AddPlace";
+  import Chat from 'routes/Chat';
+  import EditAccount from "routes/EditAccount";
+  
+  ...
+  
+    <Route path={"/ride/:rideId"} exact={true} component={Ride}/>
+    <Route path={"/chat/:chatId"} exact={true} component={Chat}/>
+    <Route path={"/edit-accoun"} exact={true} component={EditAccount}/>
+    
+  ...
+  ```
 
     채팅 페이지로 이동하는 링크가 추가 되었다.
 
@@ -242,75 +257,75 @@ tags:
     먼저 쿼리를 만들고 쿼리를 호출하여 정보를 얻도록 하자.
 
     - src/routes/Chat/Chat.queries.ts     쿼리를 작성한 후 yarn codegen을 잊지 말자
-
-            import { gql } from 'apollo-boost';
-            
-            export const GET_CHAT = gql`
-              query getChat($chatId: Int!) {
-                GetChat(chatId: $chatId) {
-                  ok
-                  error
-                  chat {
-                    passengerId
-                    driverId
-                    messages {
-                      id
-                      text
-                      userId
-                    }
-                  }
-                }
-              }
-            `;
-
-    - src/routes/Chat/ChatContainer.tsx
-
-            import React from 'react';
-            import { Query } from 'react-apollo';
-            import { RouteComponentProps } from 'react-router-dom';
-            import { USER_PROFILE } from '../../sharedQueries.queries';
-            import { getChat, getChatVariables, userProfile } from '../../types/api';
-            import { GET_CHAT } from './Chat.queries';
-            import ChatPresenter from './ChatPresenter';
-            
-            interface IProps extends RouteComponentProps<any> {}
-            
-            class ProfileQuery extends Query<userProfile> {}
-            class ChatQuery extends Query<getChat, getChatVariables> {}
-            
-            class ChatContainer extends React.Component<IProps> {
-              constructor(props: IProps) {
-                super(props);
-                if (!props.match.params.chatId) {
-                  props.history.push("/");
-                }
-              }
-              public render() {
-                const {
-                  match: {
-                    params: { chatId } 
-                  }
-                } = this.props;
-                return (
-                  <ProfileQuery query={USER_PROFILE}>
-                    {({ data: userData }) => (
-                      <ChatQuery query={GET_CHAT} variables={{ chatId: parseInt(chatId, 10) }}>
-                        {({ data: chatData, loading }) => ( console.log(chatData),
-                          <ChatPresenter />
-                        )}
-                      </ChatQuery>
-                    )}
-                  </ProfileQuery>
-                )
+      ```tsx
+      import { gql } from 'apollo-boost';
+      
+      export const GET_CHAT = gql`
+        query getChat($chatId: Int!) {
+          GetChat(chatId: $chatId) {
+            ok
+            error
+            chat {
+              passengerId
+              driverId
+              messages {
+                id
+                text
+                userId
               }
             }
-            
-            export default ChatContainer;
+          }
+        }
+      `;
+      ```
+
+    - src/routes/Chat/ChatContainer.tsx
+      ```tsx
+      import React from 'react';
+      import { Query } from 'react-apollo';
+      import { RouteComponentProps } from 'react-router-dom';
+      import { USER_PROFILE } from '../../sharedQueries.queries';
+      import { getChat, getChatVariables, userProfile } from '../../types/api';
+      import { GET_CHAT } from './Chat.queries';
+      import ChatPresenter from './ChatPresenter';
+      
+      interface IProps extends RouteComponentProps<any> {}
+      
+      class ProfileQuery extends Query<userProfile> {}
+      class ChatQuery extends Query<getChat, getChatVariables> {}
+      
+      class ChatContainer extends React.Component<IProps> {
+        constructor(props: IProps) {
+          super(props);
+          if (!props.match.params.chatId) {
+            props.history.push("/");
+          }
+        }
+        public render() {
+          const {
+            match: {
+              params: { chatId } 
+            }
+          } = this.props;
+          return (
+            <ProfileQuery query={USER_PROFILE}>
+              {({ data: userData }) => (
+                <ChatQuery query={GET_CHAT} variables={{ chatId: parseInt(chatId, 10) }}>
+                  {({ data: chatData, loading }) => ( console.log(chatData),
+                    <ChatPresenter />
+                  )}
+                </ChatQuery>
+              )}
+            </ProfileQuery>
+          )
+        }
+      }
+      
+      export default ChatContainer;
+      ```
 
     Chat 페이지로 이동하면 간단하게 Chat 데이터를 쿼리로 날려서 콘솔로 찍히도록만 했다.
 
     graphql에서 chatId에 메시지를 몇개 넣자. 운전자랑 승객의 토큰으로 각각 메시지 날리자.
 
     ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952574/tlog/_2019-06-06__6-c9467783-4361-44ab-97ec-f19d090be4cc.11.07_nqusq1.png)
-
-    `
