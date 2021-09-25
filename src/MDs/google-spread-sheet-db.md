@@ -32,83 +32,85 @@ tags:
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952576/tlog/_2019-08-05__10.00.56_t4yfp7.png)
 
  새로운 데이터를 넣는 방법도 있지만, 이번에는 데이터를 가져오는 예제만 한다.
+```javascript
+var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
-    var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
+// If you don't want to expose either GET or POST methods you can comment out the appropriate function
+function doGet(e) {
+  var lock = LockService.getPublicLock();
+  lock.waitLock(30000);
+  
+  var rawData;
+  try {
+    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
+    var sheetName = e.parameter["sheetName"];;
+    var sheetInitial = doc.getSheetByName(sheetName);
+    var headers = sheetInitial.getRange(1, 1, 1, sheetInitial.getLastColumn()).getValues()[0];
+    var rawData = sheetInitial.getRange(2, 1, sheetInitial.getLastRow(), sheetInitial.getLastColumn()).getValues()
     
-    // If you don't want to expose either GET or POST methods you can comment out the appropriate function
-    function doGet(e) {
-      var lock = LockService.getPublicLock();
-      lock.waitLock(30000);
-      
-      var rawData;
-      try {
-        var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
-        var sheetName = e.parameter["sheetName"];;
-        var sheetInitial = doc.getSheetByName(sheetName);
-        var headers = sheetInitial.getRange(1, 1, 1, sheetInitial.getLastColumn()).getValues()[0];
-        var rawData = sheetInitial.getRange(2, 1, sheetInitial.getLastRow(), sheetInitial.getLastColumn()).getValues()
-        
-      } catch (error) {
-        return ContentService
-          .createTextOutput(JSON.stringify({"ok": false, "error": error}))
-          .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({"ok": false, "error": error}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  var data = [];
+  var headerLength = headers.length;
+  var rowLength = rawData.length;
+    
+  if (rawData) {
+    for (var r=0; r < rowLength; r++) {
+      if (rawData[r][0] === "") {
+        continue;
       }
-      var data = [];
-      var headerLength = headers.length;
-      var rowLength = rawData.length;
-        
-      if (rawData) {
-        for (var r=0; r < rowLength; r++) {
-          if (rawData[r][0] === "") {
-            continue;
-          }
-          var row = {};
-          for (var i=0; i< headerLength; i++) {
-            row[headers[i]] = rawData[r][i];
-          }
-          data.push(row)
-        }
+      var row = {};
+      for (var i=0; i< headerLength; i++) {
+        row[headers[i]] = rawData[r][i];
       }
-      
-      return ContentService
-        .createTextOutput(JSON.stringify({"ok": true, "data": data}))
-        .setMimeType(ContentService.MimeType.JSON);
+      data.push(row)
     }
-    
-    function doPost(e){
-      //    do nothing
-    }
-    
-    
-    function setup() {
-      var doc = SpreadsheetApp.getActiveSpreadsheet();
-      SCRIPT_PROP.setProperty("key", doc.getId());
-    }
+  }
+  
+  return ContentService
+    .createTextOutput(JSON.stringify({"ok": true, "data": data}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function doPost(e){
+  //    do nothing
+}
+
+
+function setup() {
+  var doc = SpreadsheetApp.getActiveSpreadsheet();
+  SCRIPT_PROP.setProperty("key", doc.getId());
+}
+```
 
 doGet 함수는 get 요청에 대한 응답을 하게 된다. doGet은 URL 쿼리에서 sheetName을 꺼내서 해당 시트를 찾고 시트의 데이터를 json 형태 응답하는 함수다
 
 응답 예시
-
+```json
+{
+  "ok": true,
+  "data": [
     {
-      "ok": true,
-      "data": [
-        {
-          "index": 0,
-          "Timestamp": "2019-08-04T05:43:49.224Z",
-          "quiz": "ㅇㅈ",
-          "answer": "인정",
-          "level": 1
-        },
-        {
-          "index": 1,
-          "Timestamp": "2019-08-04T05:43:49.224Z",
-          "quiz": "ㄱㅇㄷ",
-          "answer": "개이득",
-          "level": 1
-        },
-        ...
-    	]
-    }
+      "index": 0,
+      "Timestamp": "2019-08-04T05:43:49.224Z",
+      "quiz": "ㅇㅈ",
+      "answer": "인정",
+      "level": 1
+    },
+    {
+      "index": 1,
+      "Timestamp": "2019-08-04T05:43:49.224Z",
+      "quiz": "ㄱㅇㄷ",
+      "answer": "개이득",
+      "level": 1
+    },
+    ...
+  ]
+}
+```
 
 ### 스크립트 셋업
 

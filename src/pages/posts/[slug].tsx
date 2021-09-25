@@ -134,6 +134,9 @@ const Main = styled.main`
   max-width: 900px;
   padding: 0 24px;
   margin: 0 auto 96px auto;
+  ${mobile(css`
+    padding: 0 16px;
+  `)}
 `;
 
 const ContentHead = styled.div`

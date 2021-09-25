@@ -7,7 +7,6 @@ image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632294562/tl
 tags:
   - Book
 ---
-#
 
 책의 내용을 요약한 내용보다는 독후감 식으로 나의 생각 더 기록하기 위해 작성했다.
 

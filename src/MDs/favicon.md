@@ -6,7 +6,6 @@ image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632299731/tl
 tags:
   - HTML
 ---
-#
 
 웹페이지는 favicon을 대표 이미지로 갖도록 한다. 이번에 favicon을 만들려고 zeroCho님의 블로그를 확인하였다. 하나의 파일이지만, 맥에서 확인해보면 여러 이미지로 구성되어 있는 것을 확인할 수 있다.
 
@@ -26,5 +25,6 @@ https://en.wikipedia.org/wiki/ICO_(file_format)
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952592/tlog/_2019-07-07__4-c94d6fe2-bd11-4bfe-9a7b-bf967d60a2e9.49.06_khb6hg.png)
 
 html head 부분에 shortcut icon으로 값을 넣어주면 된다.
-
-    <link rel="shortcut icon" href="/_ne...91.ico">
+```html
+<link rel="shortcut icon" href="/favicon.ico">
+```

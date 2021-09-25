@@ -259,8 +259,8 @@ export const postCSS = css`
   }
 
   .post-section a {
-    color: #0366d6;
-    text-decoration: none;
+    color: ${colors.grey60};
+    text-decoration: underline;
   }
 
   .post-section a:hover {
@@ -269,15 +269,6 @@ export const postCSS = css`
 
   .post-section strong {
     font-weight: 600;
-  }
-
-  .post-section hr {
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #dfe2e5;
-    height: 0;
-    margin: 15px 0;
-    overflow: hidden;
   }
 
   .post-section hr:before {
@@ -530,17 +521,18 @@ export const postCSS = css`
   }
 
   .post-section hr {
-    background-color: #e1e4e8;
+    background-color: ${colors.grey08};
     border: 0;
-    height: 0.25em;
-    margin: 24px 0;
+    height: 1px;
+    margin: 4px 0 12px 0;
     padding: 0;
   }
 
   .post-section blockquote {
     border-left: 0.25em solid ${colors.red};
+    background-color: ${colors.grey08};
     color: ${colors.grey60};
-    padding: 0 1em;
+    padding: 0.5em 1em;
     margin: 24px auto 32px auto;
   }
 
@@ -574,18 +566,11 @@ export const postCSS = css`
   .post-section h6 {
     font-weight: 600;
     line-height: 1.25;
-    margin-top: 36px;
-    margin-bottom: 24px;
+    padding: 8px 0;
   }
 
   .post-section h1 {
     font-size: 2em;
-  }
-
-  .post-section h1,
-  .post-section h2 {
-    border-bottom: 1px solid #eaecef;
-    padding-bottom: 0.3em;
   }
 
   .post-section h2 {
@@ -611,7 +596,7 @@ export const postCSS = css`
 
   .post-section ol,
   .post-section ul {
-    padding-left: 2em;
+    padding-left: 1em;
   }
 
   .post-section ol ol,
@@ -624,11 +609,18 @@ export const postCSS = css`
 
   .post-section li {
     word-wrap: break-all;
+  }
+
+  .post-section ul > li {
     list-style: disc;
   }
 
-  .post-section li > p {
-    margin-top: 16px;
+  .post-section ol > li {
+    list-style: number;
+  }
+
+  .post-section ol > li > ol > li {
+    list-style: lower-alpha;
   }
 
   .post-section li + li {
@@ -912,10 +904,6 @@ export const postCSS = css`
     vertical-align: middle;
   }
 
-  .post-section hr {
-    border-bottom-color: #eee;
-  }
-
   .post-section .pl-0 {
     padding-left: 0 !important;
   }
@@ -967,4 +955,30 @@ export const postCSS = css`
   .post-section .pl-12 {
     padding-left: 128px !important;
   }
+
+  ${headingMargin('h1', { marginTop: 48, marginBottom: 32 })}
+  ${headingMargin('h2', { marginTop: 40, marginBottom: 28 })}
+  ${headingMargin('h3', { marginTop: 32, marginBottom: 24 })}
 `;
+
+function headingMargin(
+  heading: string,
+  { marginTop, marginBottom }: { marginTop: number; marginBottom: number }
+) {
+  const prefix = '.post-section';
+  return `
+  ${prefix} p + ${heading}, 
+  ${prefix} ul + ${heading},
+  ${prefix} ol + ${heading},
+  ${prefix} pre + ${heading} {
+    margin-top: ${marginTop}px;
+  }
+
+  ${prefix} ${heading} + p,
+  ${prefix} ${heading} + ol,
+  ${prefix} ${heading} + ul,
+  ${prefix} ${heading} + pre {
+    margin-bottom: ${marginBottom}px;
+  }
+  `;
+}

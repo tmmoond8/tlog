@@ -7,8 +7,6 @@ image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632294561/tl
 tags:
   - Book
 ---
-#
-
 
 대부분의 사람들이 객체지향이라는 설명을 들을 때 이런 설명을 듣게 된다.
 

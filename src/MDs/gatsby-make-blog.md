@@ -28,7 +28,7 @@ gatsby + netlify CMS를 사용해서 포스트 쓰고 배포도 쉽게 할 수 �
 
 이렇게 저장하면 내 github에 myapp 레포지토리가 생성된다. 내 github로 가서 확인하자. 생성된 레포지토리를 로컬에 클론하자.
 
-```
+```bash
 $ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
 $ cd [REPO_NAME]
 $ yarn
@@ -37,7 +37,7 @@ $ npm run start
 
 CMS 테스트를 위해 빌드도 하자.
 
-```
+```bash
 $ npm run build
 $ npm run serve
 ```

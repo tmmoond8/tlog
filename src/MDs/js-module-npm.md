@@ -8,7 +8,6 @@ tags:
   - React
   - NPM
 ---
-#
 
 더욱 복잡한 시스템을 개발 하기 위해서는 하나의 파일에 모든 로직을 포함하지 않고 모듈 단위로 파일을 분리 한다. 분리한 모듈을 필요한 곳에 임포트 하면 의존성이 생기게 되고 하나의 시스템으로 합치면 프로그램이 된다.
 
@@ -26,13 +25,15 @@ tags:
 
 ### 필요성 (전통적인 방식 문제점)
 
-    <html>
-    	<head>
-    	<body>
-    	...
-    		<script src="./foo.js"></script>
-    		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    	...
+```html
+<html>
+  <head>
+  <body>
+  ...
+    <script src="./foo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  ...
+```
 
   전역 scope
 
@@ -63,15 +64,17 @@ ES6에서 표준 모듈 시스템이 된  `ES6 Module`,
 
 **CommonJS**
 
-    var $ = require('jquery');
-    var _ = require('lodash');
-    
-    function privateFn() {};
-    function publicFn() {};
-    
-    module.exports = {
-      publicFn: publicFn
-    };
+```javascript
+var $ = require('jquery');
+var _ = require('lodash');
+
+function privateFn() {};
+function publicFn() {};
+
+module.exports = {
+  publicFn: publicFn
+};
+```
 
  CommonJS는 동기 방식으로 `module.exports` 객체로 모듈의 API를 정의하고 `require` 함수로 의존성 모듈을 가져온다.
 
@@ -79,28 +82,32 @@ ES6에서 표준 모듈 시스템이 된  `ES6 Module`,
 
 **AMD (Asynchronous Module Definition)**
 
-    define(['jquery', 'lodash'], function($, _) {
-      function privateFn() {};
-      function publicFn() {};
-    
-      return {
-        publicFn: publicFn
-      };
-    });
+```javascript
+define(['jquery', 'lodash'], function($, _) {
+  function privateFn() {};
+  function publicFn() {};
+
+  return {
+    publicFn: publicFn
+  };
+});
+```
 
 AMD는 비동기 방식으로, `define` 함수를 사용하여 모듈의 API와 의존성 관계를 정의한다. 문법 자체가 CommonJS에 비해 직관적이지 않지만, 브라우저에서 바로 사용 가능하고 동적 로딩을 지원한다. AMD를 지원하는 대표적인 라이브러리로는 [RequireJS](https://requirejs.org/)가 있다.
 
 **ES6 Module**
 
-    // lib.js
-    export function sayHello() {
-      console.log('Hello');
-    }
-    
-    // index.js
-    import { sayHello } from './lib';
-    
-    sayHello(); // Hello
+```javascript
+// lib.js
+export function sayHello() {
+  console.log('Hello');
+}
+
+// index.js
+import { sayHello } from './lib';
+
+sayHello(); // Hello
+```
 
 ES6에서 정의한 표준 모듈 시스템으로 `export` , `import` 를 사용한다.
 
@@ -108,29 +115,33 @@ ES6에서 정의한 표준 모듈 시스템으로 `export` , `import` 를 사용
 
 브라우저에서 모듈을 사용하려고 하면 다음 처럼 type 속성을 추가 하면 된다. 또, 모듈을 나타내기 위해 .js 대신 .mjs 확장자를 사용하도록 권고 한다.
 
-    <script type="module" src="jquery.mjs"/>
+```html
+<script type="module" src="jquery.mjs"></script>
+```
 
 **UMD (Universal Module Definition)**
 
-    (function (root, factory) {
-      if (typeof define === 'function' && define.amd) {
-        // AMD
-        define(['jquery', 'lodash'], factory);
-      } else if (typeof exports === 'object') {
-        // Node, CommonJS-like
-        module.exports = factory(require('jquery'), require('lodash'));
-      } else {
-        // Browser globals (root is window)
-        root.myModule = factory(root.jQuery, root._);
-      }
-    }(this, function ($, _) {
-      function privateFn() {};
-      function publicFn() {};
-    
-      return {
-        publicFn: publicFn
-      }
-    }));
+```javascript
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(['jquery', 'lodash'], factory);
+  } else if (typeof exports === 'object') {
+    // Node, CommonJS-like
+    module.exports = factory(require('jquery'), require('lodash'));
+  } else {
+    // Browser globals (root is window)
+    root.myModule = factory(root.jQuery, root._);
+  }
+}(this, function ($, _) {
+  function privateFn() {};
+  function publicFn() {};
+
+  return {
+    publicFn: publicFn
+  }
+}));
+```
 
 조건문을 사용하여 AMD 또는 CommonJS를 지원하는지 여부를 확인하여 모듈 시스템을 선택적으로 사용할 수 있다. [Rollup](https://www.npmjs.com/package/rollup) 같은 모듈을 사용하면 되기 때문에, 손수 UMD를 작성하는 일은 거의 없다.
 
@@ -142,17 +153,19 @@ npm은 자바스크립트 패키지(모듈) 저장소다. 누구나 npm에 자�
 
 패키지는 package.json이라는 설정 파일로 관리가 되는데, 패키지 이름, 라이센스 정보, 의존성 등 각종 메타 정보를 포함한다.
 
- npm은 npm-cli를 제공하여 손쉽게 커맨드 라인 명령어로 패키지를 관리할 수 있다.
+npm은 npm-cli를 제공하여 손쉽게 커맨드 라인 명령어로 패키지를 관리할 수 있다.
 
-    npm init : package.json을 생성한다.
-    npm install : package.json에 명시된 의존성 패키지들을 모두 설치한다.
-    npm install [패키지명] : 해당 패키지를 설치 후 package.json의 dependencies에 추가한다.
-    npm install [패키지명] -g : 해당 패키지를 전역으로 설치한다.
-    npm install [패키지명] --save-dev : 해당 패키지를 설치 후 package.json의 devDependencies에 의존성을 추가한다.
-    npm update : package.json의 dependencies와 devDependencies 패키지들을 모두 업데이트 후 package.json에 버전 정보를 갱신한다.
-    npm update [패키지명] : 해당 패키지를 업데이트 후 package.json에 버전 정보를 갱신한다.
-    npm update [패키지명] --no-save : 해당 패키지를 업데이트만 하고 package.json에 버전 정보를 갱신하지 않는다.
-    npm prune : package.json에 명시되지 않은 패키지를 모두 제거한다.
+```text
+npm init : package.json을 생성한다.
+npm install : package.json에 명시된 의존성 패키지들을 모두 설치한다.
+npm install [패키지명] : 해당 패키지를 설치 후 package.json의 dependencies에 추가한다.
+npm install [패키지명] -g : 해당 패키지를 전역으로 설치한다.
+npm install [패키지명] --save-dev : 해당 패키지를 설치 후 package.json의 devDependencies에 의존성을 추가한다.
+npm update : package.json의 dependencies와 devDependencies 패키지들을 모두 업데이트 후 package.json에 버전 정보를 갱신한다.
+npm update [패키지명] : 해당 패키지를 업데이트 후 package.json에 버전 정보를 갱신한다.
+npm update [패키지명] --no-save : 해당 패키지를 업데이트만 하고 package.json에 버전 정보를 갱신하지 않는다.
+npm prune : package.json에 명시되지 않은 패키지를 모두 제거한다.
+```
 
 > 모듈과 패키지의 차이??
 모듈은 reuiqre('module') 처럼 가져올 수 있는 파일 또는 디렉토리다. 모듈은 node_modules 하위에 위치하며 packages.json 파일을 포함한 모듈을 패키지라 부른다.
@@ -160,57 +173,58 @@ npm은 자바스크립트 패키지(모듈) 저장소다. 누구나 npm에 자�
 ### Package.json
 
 - package.json
-
-        {
-          "name": "react-naver-login",
-          "version": "0.1.2-alpha3",
-          "description": "A Naver Login Component for React",
-          "main": "dist/index.js",
-          "module": "dist/index.es.js",
-          "jsnext:main": "dist/index.es.js",
-          "keywords": [
-            "react",
-            "reactjs",
-            "react-component",
-            "naver-login",
-            "naver-oAuth2",
-            "naver-oAuth",
-            "네이버"
-          ],
-          "files": [
-            "dist"
-          ],
-          "author": "Teamin Moon, Peoplefund company <taemin@peoplefund.co.kr>",
-          "license": "MIT",
-          "bugs": {
-            "url": "https://github.cqom/peoplefund-tech/react-naver-login/issues"
-          },
-          "repository": {
-            "type": "git",
-            "url": "git+https://github.com/peoplefund-tech/react-naver-login.git"
-          },
-          "homepage": "https://github.com/peoplefund-tech/react-naver-login",
-          "scripts": {
-            "build": "rollup -c"
-          },
-          "devDependencies": {
-            "@types/react": "^16.9.9",
-            "@types/react-dom": "^16.9.2",
-            "react-scripts-ts": "^4.0.8",
-            "react": "^16.10.2",
-            "react-dom": "^16.10.2",
-            "rollup": "^1.25.1",
-            "rollup-plugin-commonjs": "^10.1.0",
-            "rollup-plugin-node-resolve": "^5.2.0",
-            "rollup-plugin-peer-deps-external": "^2.2.0",
-            "rollup-plugin-typescript2": "^0.24.3",
-            "typescript": "^3.6.4"
-          },
-          "peerDependencies": {
-            "react": ">=15.0.0",
-            "react-dom": ">=15.0.0"
-          }
-        }
+  ```json
+  {
+    "name": "react-naver-login",
+    "version": "0.1.2-alpha3",
+    "description": "A Naver Login Component for React",
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "jsnext:main": "dist/index.es.js",
+    "keywords": [
+      "react",
+      "reactjs",
+      "react-component",
+      "naver-login",
+      "naver-oAuth2",
+      "naver-oAuth",
+      "네이버"
+    ],
+    "files": [
+      "dist"
+    ],
+    "author": "Teamin Moon, Peoplefund company <taemin@peoplefund.co.kr>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.cqom/peoplefund-tech/react-naver-login/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/peoplefund-tech/react-naver-login.git"
+    },
+    "homepage": "https://github.com/peoplefund-tech/react-naver-login",
+    "scripts": {
+      "build": "rollup -c"
+    },
+    "devDependencies": {
+      "@types/react": "^16.9.9",
+      "@types/react-dom": "^16.9.2",
+      "react-scripts-ts": "^4.0.8",
+      "react": "^16.10.2",
+      "react-dom": "^16.10.2",
+      "rollup": "^1.25.1",
+      "rollup-plugin-commonjs": "^10.1.0",
+      "rollup-plugin-node-resolve": "^5.2.0",
+      "rollup-plugin-peer-deps-external": "^2.2.0",
+      "rollup-plugin-typescript2": "^0.24.3",
+      "typescript": "^3.6.4"
+    },
+    "peerDependencies": {
+      "react": ">=15.0.0",
+      "react-dom": ">=15.0.0"
+    }
+  }
+  ```
 
 > 혹시 package.json에서 사용하는 속성들에 대해 더 알고 싶다면 [감성 프로그래밍 블로그](https://programmingsummaries.tistory.com/385)를 참고하자.
 

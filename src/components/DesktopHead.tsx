@@ -1,18 +1,21 @@
 import styled from '@emotion/styled';
 import { Content } from 'notion-ui';
+import Link from 'next/link';
 import Icon from '../components/Icon';
 
 function Left() {
   return (
-    <Flex>
-      <Logo icon="logo" size="20px" />
-      <Content.Text>Tlog</Content.Text>
-    </Flex>
+    <Link href="/">
+      <Flex>
+        <Logo icon="logo" size="20px" />
+        <Content.Text>Tlog</Content.Text>
+      </Flex>
+    </Link>
   );
 }
 
 function Right() {
-  return <>{/* Search */}</>;
+  return <></>;
 }
 
 export default {
@@ -22,6 +25,7 @@ export default {
 
 const Flex = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 
 const Logo = styled(Icon)`
