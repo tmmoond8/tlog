@@ -4,7 +4,6 @@ import ErrorPage from 'next/error';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Content, colors } from 'notion-ui';
-import TlogHead from '../../components/TlogHead';
 import AuthorCard from '../../components/AuthorCard';
 import Image from '../../components/Image';
 import { getPostBySlug, getAllPosts } from '../../libs/api';
@@ -60,9 +59,9 @@ export default function Posts({ post }: PostProps) {
                       ))}
                     </Tags>
                   )}
-                  <Content.Text fontSize={18} color={colors.grey60}>
+                  <CreatedDate fontSize={18} color={colors.grey60}>
                     {getDateGoodLook(post.date)}
-                  </Content.Text>
+                  </CreatedDate>
                 </ContentHead>
                 <Cover>
                   <Image src={post.image} width={1024} height={500} />
@@ -156,6 +155,10 @@ const Tags = styled.ol`
     padding: 8px 6px 6px 6px;
     color: ${colors.red};
     border-radius: 3px;
-    margin-right: 8px;
+    margin: 4px 8px 4px 0;
   }
+`;
+
+const CreatedDate = styled(Content.Text)`
+  min-width: 132px;
 `;

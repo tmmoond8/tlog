@@ -87,7 +87,7 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 
 useStaticQuery는 gatsby 2.0v부터 나왔다는데,, 사용법이 쿨하다.
 
-```jsxx
+```jsx
 const data = useStaticQuery(
     graphql`
       query {
