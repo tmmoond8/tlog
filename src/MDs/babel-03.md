@@ -28,19 +28,19 @@ $ yarn add @babel/cli @babel/core @babel/plugin-transform-arrow-functions @babel
 
 - common/.babelrc
 
-    ```json
-    {
-      "presets": [ "@babel/preset-react"],
-      "plugins": [
-        [
-          "@babel/plugin-transform-template-literals",
-          {
-            "loose": true
-          }
-        ]
+  ```json
+  {
+    "presets": [ "@babel/preset-react"],
+    "plugins": [
+      [
+        "@babel/plugin-transform-template-literals",
+        {
+          "loose": true
+        }
       ]
-    }
-    ```
+    ]
+  }
+  ```
 
 위에서 설정한 내용을 확장한다. `@babel/plugin-transform-template-literals` 설정이 확장 되어서 `"loose": true` 가 무시 된다. 
 
@@ -48,23 +48,23 @@ $ yarn add @babel/cli @babel/core @babel/plugin-transform-arrow-functions @babel
 
 - src/example-extends/.babelrc
 
-    ```json
-    {
-      "extends": "../../common/.babelrc",
-      "plugins": [
-        "@babel/plugin-transform-arrow-functions",
-        "@babel/plugin-transform-template-literals"
-      ]
-    }
-    ```
+  ```json
+  {
+    "extends": "../../common/.babelrc",
+    "plugins": [
+      "@babel/plugin-transform-arrow-functions",
+      "@babel/plugin-transform-template-literals"
+    ]
+  }
+  ```
 
 - src/example-extends/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 `common/.babelrc` 에서 설정된 `@babel/preset-react preset`이 있어야  jsx를 정상적으로 읽을 수 있다.
 
@@ -84,28 +84,28 @@ development 환경과 production 환경 별로 다르게 설정이 되야할 때
 
 - src/example-env/.babelrc
 
-    ```json
-    {
-      "presets": ["@babel/preset-react"],
-      "plugins": [
-        "@babel/plugin-transform-template-literals",
-        "@babel/plugin-transform-arrow-functions"
-      ],
-      "env": {
-        "production": {
-          "presets": ["minify"]
-        }
+  ```json
+  {
+    "presets": ["@babel/preset-react"],
+    "plugins": [
+      "@babel/plugin-transform-template-literals",
+      "@babel/plugin-transform-arrow-functions"
+    ],
+    "env": {
+      "production": {
+        "presets": ["minify"]
       }
     }
-    ```
+  }
+  ```
 
 - src/example-env/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 `.babelrc` 파일에 env 옵션을 설정한 것을 볼 수 있다.
 
@@ -124,27 +124,27 @@ src 디렉토리 밑에 example-overrides 디렉토리를 생성하고 위에서
 
 - src/example-overrides/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 - src/example-overrides/services/code1.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 - src/example-overrides/services/code2.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 .babelrc 파일에 코드를 작성하자. 아래 처럼 작성하면 `src/example-overrides/services/code1.js`만 화살표 함수가 변환된다.
 
@@ -187,76 +187,76 @@ $ yarn add @babel/core @babel/cli @babel/plugin-transform-arrow-functions @babel
 
 - babel.config.js
 
-    ```jsx
-    const presets = ['@babel/preset-react'];
-    const plugins = [
-      [
-        '@babel/plugin-transform-template-literals',
-        {
-          loose: true,
-        },
-      ],
-    ];
+  ```jsx
+  const presets = ['@babel/preset-react'];
+  const plugins = [
+    [
+      '@babel/plugin-transform-template-literals',
+      {
+        loose: true,
+      },
+    ],
+  ];
 
-    module.exports = { presets, plugins };
-    ```
+  module.exports = { presets, plugins };
+  ```
 
 - src/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 - src/service1/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 - src/service1/.babelrc
 
-    ```json
-    {
+  ```json
+  {
+    "plugins": [
+      "@babel/plugin-transform-arrow-functions",
+      "@babel/plugin-transform-template-literals"
+    ]
+  }
+  ```
+
+- src/service2/code.js
+
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
+
+- src/service2/package.json
+
+  책에서는 package.json의 설정도 같이 합쳐진다고 되어 있지만, 실제 해보니 안되었었다.... 뭐가 문제일까
+
+  ```json
+  {
+    "babel": {
+      "presets": [
+        "minify"
+      ],
       "plugins": [
         "@babel/plugin-transform-arrow-functions",
         "@babel/plugin-transform-template-literals"
       ]
-    }
-    ```
-
-- src/service2/code.js
-
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
-
-- src/service2/package.json
-
-    책에서는 package.json의 설정도 같이 합쳐진다고 되어 있지만, 실제 해보니 안되었었다.... 뭐가 문제일까
-
-    ```json
-    {
-      "babel": {
-        "presets": [
-          "minify"
-        ],
-        "plugins": [
-          "@babel/plugin-transform-arrow-functions",
-          "@babel/plugin-transform-template-literals"
-        ]
-      },
-      "name": "service2",
-      "version": "1.0.0",
-      "main": "index.js",
-      "license": "MIT"
-    }
-    ```
+    },
+    "name": "service2",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+  ```
 
 위처럼 작성을 한 후 바벨을 실행해보자.
 
@@ -268,35 +268,35 @@ $ yarn babel src -d dist
 
 - dist/code.js
 
-    `babel.config.js` 파일의 설정만 적용되었다.
+  `babel.config.js` 파일의 설정만 적용되었다.
 
-    ```bash
-    const element = React.createElement("div", null, "babel test");
-    const text = "element type is " + element.type;
+  ```js
+  const element = React.createElement("div", null, "babel test");
+  const text = "element type is " + element.type;
 
-    const add = (a, b) => a + b;
-    ```
+  const add = (a, b) => a + b;
+  ```
 
 - dist/service1/code.js
 
-    `babel.config.js`와 `service1/.babelrc` 파일의 설정이 적용되었다.
+  `babel.config.js`와 `service1/.babelrc` 파일의 설정이 적용되었다.
 
-    ```bash
-    const element = React.createElement("div", null, "babel test");
-    const text = "element type is ".concat(element.type);
+  ```js
+  const element = React.createElement("div", null, "babel test");
+  const text = "element type is ".concat(element.type);
 
-    const add = function (a, b) {
-      return a + b;
-    };
-    ```
+  const add = function (a, b) {
+    return a + b;
+  };
+  ```
 
 - dist/service2/code.js
 
-    `babel.config.js`의 설정만 적용되었다.
+  `babel.config.js`의 설정만 적용되었다.
 
-    ```bash
-    const element = React.createElement("div", null, "babel test");
-    const text = "element type is " + element.type;
+  ```js
+  const element = React.createElement("div", null, "babel test");
+  const text = "element type is " + element.type;
 
-    const add = (a, b) => a + b;
-    ```
+  const add = (a, b) => a + b;
+  ```

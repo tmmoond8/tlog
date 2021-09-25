@@ -8,8 +8,6 @@ tags:
   - JavaScript
 ---
 
-#
-
 Webpack 최적화 방법 소개
 
 ## Tree Shaking
@@ -48,7 +46,7 @@ $ yarn add -D webpack webpack-cli
 
 tree shaking은 webpack 4에서 기본 동작이기 때문에 사용하지 않은 func2는 번들 파일에 포함이 되지 않는다. 웹팩을 실행하면 func2는 누락되어 있고 func1만 있는 것을 확인할 수 있다.
 
-![Webpack(4)%20-%20%E1%84%80%E1%85%A9%E1%84%80%E1%85%B3%E1%86%B8%E1%84%91%E1%85%A7%E1%86%AB%206cfc8a9b12444705ba54230c0736ec00/_2020-03-27__10.57.51.png](<Webpack(4)%20-%20%E1%84%80%E1%85%A9%E1%84%80%E1%85%B3%E1%86%B8%E1%84%91%E1%85%A7%E1%86%AB%206cfc8a9b12444705ba54230c0736ec00/_2020-03-27__10.57.51.png>)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-03-27__10.57.51_xzclb7.png)
 
 ### Tree shaking이 안되는 경우
 
@@ -67,11 +65,11 @@ tree shaking은 webpack 4에서 기본 동작이기 때문에 사용하지 않�
 ```jsx
 const arr = []
 export func1() {
-	console.log('func1', arr.length);
+  console.log('func1', arr.length);
 }
 export func2() {
-	arr.push(10);
-	console.log('func2');
+  arr.push(10);
+  console.log('func2');
 }
 func2();
 ```
@@ -240,24 +238,24 @@ webpack에서 code split은 원래 동적 임포트 하는 경우에만 기본�
 
 ```jsx
 optimizatiton: {
-	splitChunks: {
-		chunks: 'async',
-		minSize: 30000,
-		minChunks: 1,
-		...
-		cacheGroups: {
-			default: {
-				minChunks: 2,
-				priority: -20,
-				reuseExistingChunk: true,
-			},
-			vendors: {
-				test: /[\\/]node_modules[\\/]/,
-				priority: -10,
-				...
-			}
-		}
-	}
+  splitChunks: {
+    chunks: 'async',
+    minSize: 30000,
+    minChunks: 1,
+    ...
+    cacheGroups: {
+      default: {
+        minChunks: 2,
+        priority: -20,
+        reuseExistingChunk: true,
+      },
+      vendors: {
+        test: /[\\/]node_modules[\\/]/,
+        priority: -10,
+        ...
+      }
+    }
+  }
 }
 ```
 
@@ -306,7 +304,7 @@ src/index3.js 에서 두 개의 동적 임포트를 했고, 두 개의 모듈은
 
 - dist/index.html
 
-  ```jsx
+  ```html
   <!DOCTYPE html>
   <html lang="en">
   <head>

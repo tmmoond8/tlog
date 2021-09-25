@@ -68,453 +68,514 @@ a:visited 와 같은 가상 클래스 선택자는 class 하나 있는 것처럼
     #parent .c-m {}
     #parent > .c-m {}
 
+
+## 상속되는 경우에서 우선순위
+
+---
+css에는 직접적으로 스타일을 적용하는 것 외에 부모로 부터 상속되는 속성들이 있다. [(참고: css3-inheritance-cascading | poiemaweb)](https://poiemaweb.com/css3-inheritance-cascading) 대표적으로 color를 부모로 부터 상속되는데, 만약 조상 중에 컬러가 파랑색이라고 한다면 자손들은 기본적으로 속성이 파랑색으로 상속 받는다. 이때, 컬러를 별도로 적용했다면 별도 적용한 색상을 사용한다.
+
+다음 예제를 보자.
+```html
+<style>
+  #test_id .test_in2 {
+    color: #f00; // 빨강
+  }
+
+  .test_in3 {
+    color: #00f; // 파랑
+  }
+</style>
+
+<div class="test_start" id="test_id">
+  <div class="test_in1">
+    <div class="test_in2">
+      <div class="test_in3">
+        <div class="test_end">가나다라</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 ## basic select
 
 ---
 
 ### select by tag
-
-    ...
-      <style>
-        h1 { color: red; }
-        p  { color: blue; }
-      </style>
-    ...
-    <body>
-      <h1>Hello World!</h1>
-      <p>This paragraph is styled with CSS.</p>
-    </body>
-    ...
+```html
+...
+  <style>
+    h1 { color: red; }
+    p  { color: blue; }
+  </style>
+...
+<body>
+  <h1>Hello World!</h1>
+  <p>This paragraph is styled with CSS.</p>
+</body>
+...
+```
 
 ### select by id
-
-    ...
-      <style>
-        #p1 { color: red; }
-      </style>
-    ...
-    <body>
-      <h1>Heading</h1>
-      <div class="container">
-        <p id="p1">paragraph 1</p>
-        <p id="p2">paragraph 2</p>
-      </div>
-      <p>paragraph 3</p>
-    </body>
-    ..
+```html
+...
+  <style>
+    #p1 { color: red; }
+  </style>
+...
+<body>
+  <h1>Heading</h1>
+  <div class="container">
+    <p id="p1">paragraph 1</p>
+    <p id="p2">paragraph 2</p>
+  </div>
+  <p>paragraph 3</p>
+</body>
+..
+```
 
 ### select by class name
-
-    ...
-      <style>
-        .container { color: red; }
-      </style>
-    ...
-    <body>
-      <h1>Heading</h1>
-      <div class="container">
-        <p id="p1">paragraph 1</p>
-        <p id="p2">paragraph 2</p>
-      </div>
-      <p>paragraph 3</p>
-    </body>
-    ...
+```html
+...
+  <style>
+    .container { color: red; }
+  </style>
+...
+<body>
+  <h1>Heading</h1>
+  <div class="container">
+    <p id="p1">paragraph 1</p>
+    <p id="p2">paragraph 2</p>
+  </div>
+  <p>paragraph 3</p>
+</body>
+...
+```
 
 ### select by attribute
+```html
+...
+  <style>
+    input[type="password"] {
+      color: red;
+    }
+    input[name] {
+      background: black;
+    }
+  </style>
+...
+<body>
+  <input name="pw" type="password" />
+  <input name="id" type="text" />
+  <input name="age" type="number" />
+</body>
+...
+```
 
-    ...
-      <style>
-        input[type="password"] {
-    			color: red;
-    		}
-    		input[name] {
-    			background: black;
-    		}
-      </style>
-    ...
-    <body>
-      <input name="pw" type="password" />
-      <input name="id" type="text" />
-      <input name="age" type="number" />
-    </body>
-    ...
+```html
+...
+  <style>
+    /* h1 요소 중에 title 어트리뷰트 값에 "first"를 단어로 포함하는 요소 */
+    h1[title~="first"] { color: red; }
+  </style>
+...
+<body>
+  <h1 title="heading first">Heading first</h1>
+  <h1 title="hello first">Heading-first</h1>
+  <h1 title="abc-first">Heading second</h1>
+  <h1 title="heading second">Heading third</h1>
+</body>
+...
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__3.57.43_cdxqxx.png)
 
-    ...
-      <style>
-        /* h1 요소 중에 title 어트리뷰트 값에 "first"를 단어로 포함하는 요소 */
-        h1[title~="first"] { color: red; }
-      </style>
-    ...
-    <body>
-      <h1 title="heading first">Heading first</h1>
-      <h1 title="hello first">Heading-first</h1>
-      <h1 title="abc-first">Heading second</h1>
-      <h1 title="heading second">Heading third</h1>
-    </body>
-    ...
+```html
+...
+  <style>
+    /* p 요소 중에 lang 어트리뷰트 값이 "en"과 일치하거나 "en-"로 시작하는 요소 */
+    p[lang|="en"] { color: red; }
+  </style>
+...
+<body>
+  <p lang="en">Hello!</p>
+  <p lang="en-us">Hi!</p>
+  <p lang="en-gb">Ello!</p>
+  <p lang="us">Hi!</p>
+  <p lang="no">Hei!</p>
+</body>
+...
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.01.12_jevnra.png)
 
-    ...
-      <style>
-        /* p 요소 중에 lang 어트리뷰트 값이 "en"과 일치하거나 "en-"로 시작하는 요소 */
-        p[lang|="en"] { color: red; }
-      </style>
-    ...
-    <body>
-      <p lang="en">Hello!</p>
-      <p lang="en-us">Hi!</p>
-      <p lang="en-gb">Ello!</p>
-      <p lang="us">Hi!</p>
-      <p lang="no">Hei!</p>
-    </body>
-    ...
+```html
+...
+  <style>
+    /* a 요소 중에 href 어트리뷰트 값이 "https://"로 시작하는 요소 */
+    a[href^="https://"] { color: red; }
+  </style>
+...
+<body>
+  <a href="https://www.test.com">https://www.test.com</a><br>
+  <a href="http://www.test.com">http://www.test.com</a>
+</body>
+...
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.02.30_e1x3yw.png)
 
-    ...
-      <style>
-        /* a 요소 중에 href 어트리뷰트 값이 "https://"로 시작하는 요소 */
-        a[href^="https://"] { color: red; }
-      </style>
-    ...
-    <body>
-      <a href="https://www.test.com">https://www.test.com</a><br>
-      <a href="http://www.test.com">http://www.test.com</a>
-    </body>
-    ...
+```html
+...
+  <style>
+    /* a 요소 중에 href 어트리뷰트 값이 ".png"로 끝나는 요소 */
+    a[href$=".png"] { margin-top: 10px; }
+  </style>
+...
+<body>
+  <img src="a.png"/>
+  <img src="b.jpeg"/>
+</body>
+...
+```
 
-    ...
-      <style>
-        /* a 요소 중에 href 어트리뷰트 값이 ".png"로 끝나는 요소 */
-        a[href$=".png"] { margin-top: 10px; }
-      </style>
-    ...
-    <body>
-      <img src="a.png"/>
-      <img src="b.jpeg"/>
-    </body>
-    ...
-
-    ...
-      <style>
-        /* div 요소 중에서 class 어트리뷰트 값에 "test"를 포함하는 요소 */
-        div[class*="test"] { color: red; }
-      </style>
-    ...
-    <body>
-      <div class="first_test">The first div element.</div>
-      <div class="second">The second div element.</div>
-      <div class="test">The third div element.</div>
-      <p class="test">This is some text in a paragraph.</p>
-    </body>
-    ...
+```html
+...
+  <style>
+    /* div 요소 중에서 class 어트리뷰트 값에 "test"를 포함하는 요소 */
+    div[class*="test"] { color: red; }
+  </style>
+...
+<body>
+  <div class="first_test">The first div element.</div>
+  <div class="second">The second div element.</div>
+  <div class="test">The third div element.</div>
+  <p class="test">This is some text in a paragraph.</p>
+</body>
+...
+```
 
 자손 셀렉터
-
-    ...
-      <style>
-        div p { color: red; }
-      </style>
-    </head>
-    <body>
-      <h1>Heading</h1>
-    	<p>ppppp</p>
-      <div>
-        <p>paragraph 1</p>
-        <p>paragraph 2</p>
-        <span>span start <p>paragraph 3</p> span end</span>
-      </div>
-      <p>paragraph 4</p>
-    </body>
-    </html>
+```html
+...
+  <style>
+    div p { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Heading</h1>
+  <p>ppppp</p>
+  <div>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <span>span start <p>paragraph 3</p> span end</span>
+  </div>
+  <p>paragraph 4</p>
+</body>
+</html>
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.20.54_sidbkt.png)
 
 자식 셀렉터
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        div > p { color: red; }
-      </style>
-    </head>
-    <body>
-      <h1>Heading</h1>
-    	<p>ppppp</p>
-      <div>
-        <p>paragraph 1</p>
-        <p>paragraph 2</p>
-        <span>span start <p>paragraph 3</p> span end</span>
-      </div>
-      <p>paragraph 4</p>
-    </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    div > p { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Heading</h1>
+  <p>ppppp</p>
+  <div>
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <span>span start <p>paragraph 3</p> span end</span>
+  </div>
+  <p>paragraph 4</p>
+</body>
+</html>
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.22.19_z5qu8k.png)
 
 인접 형제 셀렉터
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* p 요소의 형제 요소 중에 p 요소 바로 뒤에 위치하는 ul 요소를 선택한다. */
+    p + ul { color: red; }
+  </style>
+</head>
+<body>
+  <div>A div element.</div>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        /* p 요소의 형제 요소 중에 p 요소 바로 뒤에 위치하는 ul 요소를 선택한다. */
-        p + ul { color: red; }
-      </style>
-    </head>
-    <body>
-      <div>A div element.</div>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    
-      <p>The first paragraph.</p>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    
-      <h2>Another list</h2>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    </body>
-    </html>
+  <p>The first paragraph.</p>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+  <h2>Another list</h2>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+</body>
+</html>
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.24.25_ysbfeg.png)
 
 형제 셀렉터
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* p 요소의 형제 요소 중에 p 요소 뒤에 위치하는 ul 요소를 모두 선택한다.*/
+    p ~ ul { color: red; }
+  </style>
+</head>
+<body>
+  <div>A div element.</div>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        /* p 요소의 형제 요소 중에 p 요소 뒤에 위치하는 ul 요소를 모두 선택한다.*/
-        p ~ ul { color: red; }
-      </style>
-    </head>
-    <body>
-      <div>A div element.</div>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    
-      <p>The first paragraph.</p>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    
-      <h2>Another list</h2>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    </body>
-    </html>
+  <p>The first paragraph.</p>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+  <h2>Another list</h2>
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+</body>
+</html>
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.25.07_gw8jv3.png)
 
 가상 클래스 셀렉터
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        /* a 요소가 hover 상태일 때 */
-        a:hover { color: red; }
-        /* input 요소가 focus 상태일 때 */
-        input:focus { background-color: yellow; }
-      </style>
-    </head>
-    <body>
-      <a href="#">Hover me</a><br><br>
-      <input type="text" placeholder="focus me">
-    </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* a 요소가 hover 상태일 때 */
+    a:hover { color: red; }
+    /* input 요소가 focus 상태일 때 */
+    input:focus { background-color: yellow; }
+  </style>
+</head>
+<body>
+  <a href="#">Hover me</a><br><br>
+  <input type="text" placeholder="focus me">
+</body>
+</html>
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/v-class_fp19g1.gif)
 
 가상 클래스 - 링크
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        a:link {
-          color: grey;
-        }
-        a:visited {
-          color: greenyellow;
-        }
-      </style>
-    </head>
-    <body>
-      <a href="https://abc.com">https://abc.com</a>
-      <a href="https://bcd.com">https://bcd.com</a>
-    </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    a:link {
+      color: grey;
+    }
+    a:visited {
+      color: greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://abc.com">https://abc.com</a>
+  <a href="https://bcd.com">https://bcd.com</a>
+</body>
+</html>
+```
 
 가상 클래스 - input
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    input:disabled {
+      border: 1px pink solid;
+    }
+    /* input 요소가 사용 가능한 상태일 때,
+        input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
+    input:enabled + span {
+      color: blue;
+    }
+    /* input 요소가 사용 불가능한 상태일 때,
+        input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
+    input:disabled + span {
+      color: gray;
+      text-decoration: line-through;
+    }
+    /* input 요소가 체크 상태일 때,
+        input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
+    input:checked + span {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" >
+  <input type="text" disabled>
+  <input type="radio" checked="checked" value="male" name="gender"> <span>Male</span><br>
+  <input type="radio" value="female" name="gender"> <span>Female</span><br>
+  <input type="radio" value="neuter" name="gender" disabled> <span>Neuter</span><hr>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        input:disabled {
-          border: 1px pink solid;
-        }
-        /* input 요소가 사용 가능한 상태일 때,
-           input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
-        input:enabled + span {
-          color: blue;
-        }
-        /* input 요소가 사용 불가능한 상태일 때,
-           input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
-        input:disabled + span {
-          color: gray;
-          text-decoration: line-through;
-        }
-        /* input 요소가 체크 상태일 때,
-           input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
-        input:checked + span {
-          color: red;
-        }
-      </style>
-    </head>
-    <body>
-      <input type="text" >
-      <input type="text" disabled>
-      <input type="radio" checked="checked" value="male" name="gender"> <span>Male</span><br>
-      <input type="radio" value="female" name="gender"> <span>Female</span><br>
-      <input type="radio" value="neuter" name="gender" disabled> <span>Neuter</span><hr>
-    
-      <input type="checkbox" checked="checked" value="bicycle"> <span>I have a bicycle</span><br>
-      <input type="checkbox" value="car"> <span>I have a car</span><br>
-      <input type="checkbox" value="motorcycle" disabled> <span>I have a motorcycle</span>
-    </body>
-    </html>
+  <input type="checkbox" checked="checked" value="bicycle"> <span>I have a bicycle</span><br>
+  <input type="checkbox" value="car"> <span>I have a car</span><br>
+  <input type="checkbox" value="motorcycle" disabled> <span>I have a motorcycle</span>
+</body>
+</html>
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.13.16_zjwxwl.png)
 
 구조 가상 클래스 셀렉터
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div:first-child {
+      color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    AAAAA
+    <div>aaaa</div>
+    <div>bbbb</div>
+    <div>cccc</div>
+    <div>dddd</div>
+  </div>
+  <div>
+    BBBBB
+    <div>aaaa</div>
+    <div>bbbb</div>
+    <div>cccc</div>
+    <div>dddd</div>
+  </div>
+</body>
+</html>
+```
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <style>
-        div:first-child {
-          color: aqua;
-        }
-      </style>
-    </head>
-    <body>
-      <div>
-        AAAAA
-        <div>aaaa</div>
-        <div>bbbb</div>
-        <div>cccc</div>
-        <div>dddd</div>
-      </div>
-      <div>
-        BBBBB
-        <div>aaaa</div>
-        <div>bbbb</div>
-        <div>cccc</div>
-        <div>dddd</div>
-      </div>
-    </body>
-    </html>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* ol 요소의 자식 요소인 li 요소 중에서 짝수번째 요소만을 선택 */
+    ol > li:nth-child(2n + 2)   { color: orange; }
+    /* ol 요소의 자식 요소인 li 요소 중에서 홀수번째 요소만을 선택 */
+    ol > li:nth-child(2n+1) { color: green; }
+    /* 1, 3, 5, 7, 9, 11 ... */
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        /* ol 요소의 자식 요소인 li 요소 중에서 짝수번째 요소만을 선택 */
-        ol > li:nth-child(2n + 2)   { color: orange; }
-        /* ol 요소의 자식 요소인 li 요소 중에서 홀수번째 요소만을 선택 */
-        ol > li:nth-child(2n+1) { color: green; }
-        /* 1, 3, 5, 7, 9, 11 ... */
-    
-        /* ol 요소의 자식 요소인 li 요소 중에서 4번째 요소 요소만을 선택 */
-        ol > li:nth-child(4)    { background: brown; }
-    
-        /* ul 요소의 모든 자식 요소 중에서 뒤에서부터 시작하여 홀수번째 요소만을 선택 */
-        ul > :nth-last-child(2n+1) { color: red; }
-        /* ul 요소의 모든 자식 요소 중에서 뒤에서부터 시작하여 짝수번째 요소만을 선택 */
-        ul > :nth-last-child(2n)   { color: blue; }
-      </style>
-    </head>
-    <body>
-      <ol>
-        <li>Espresso</li>
-        <li>Americano</li>
-        <li>Caffe Latte</li>
-        <li>Caffe Mocha</li>
-        <li>Caramel Latte</li>
-        <li>Cappuccino</li>
-      </ol>
-    
-      <ul>
-        <li>Espresso</li>
-        <li>Americano</li>
-        <li>Caffe Latte</li>
-        <li>Caffe Mocha</li>
-        <li>Caramel Latte</li>
-        <li>Cappuccino</li>
-      </ul>
-    </body>
-    </html>
+    /* ol 요소의 자식 요소인 li 요소 중에서 4번째 요소 요소만을 선택 */
+    ol > li:nth-child(4)    { background: brown; }
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        input[type="text"]:valid {
-          background-color: greenyellow;
-        }
-    
-        input[type="text"]:invalid {
-          background-color: red;
-        }
-      </style>
-    </head>
-    <body>
-      <label>입력값이 반드시 필요
-        <input type="text" required>
-      </label>
-      <br>
-      <label>특수문자를 포함하지 않는 4자리 문자 또는 숫자
-        <input type="text" value="ab1!"
-          pattern="[a-zA-Z0-9]{4}" required>
-      </label>
-      <br>
-      <label>핸드폰 번호 형식
-        <input type="text" value="010-1111-2222"
-          pattern="^\d{3}-\d{3,4}-\d{4}$" required>
-      </label>
-    </body>
-    </html>
+    /* ul 요소의 모든 자식 요소 중에서 뒤에서부터 시작하여 홀수번째 요소만을 선택 */
+    ul > :nth-last-child(2n+1) { color: red; }
+    /* ul 요소의 모든 자식 요소 중에서 뒤에서부터 시작하여 짝수번째 요소만을 선택 */
+    ul > :nth-last-child(2n)   { color: blue; }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>Espresso</li>
+    <li>Americano</li>
+    <li>Caffe Latte</li>
+    <li>Caffe Mocha</li>
+    <li>Caramel Latte</li>
+    <li>Cappuccino</li>
+  </ol>
+
+  <ul>
+    <li>Espresso</li>
+    <li>Americano</li>
+    <li>Caffe Latte</li>
+    <li>Caffe Mocha</li>
+    <li>Caramel Latte</li>
+    <li>Cappuccino</li>
+  </ul>
+</body>
+</html>
+```
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.22.17_rtkpkh.png)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    input[type="text"]:valid {
+      background-color: greenyellow;
+    }
+
+    input[type="text"]:invalid {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <label>입력값이 반드시 필요
+    <input type="text" required>
+  </label>
+  <br>
+  <label>특수문자를 포함하지 않는 4자리 문자 또는 숫자
+    <input type="text" value="ab1!"
+      pattern="[a-zA-Z0-9]{4}" required>
+  </label>
+  <br>
+  <label>핸드폰 번호 형식
+    <input type="text" value="010-1111-2222"
+      pattern="^\d{3}-\d{3,4}-\d{4}$" required>
+  </label>
+</body>
+</html>
+```
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.27.12_ombxky.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__3.57.43_cdxqxx.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.01.12_jevnra.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-02-15__4.02.30_e1x3yw.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.20.54_sidbkt.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.22.19_z5qu8k.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.24.25_ysbfeg.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-15__4.25.07_gw8jv3.png)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952601/tlog/v-class_fp19g1.gif)
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952580/tlog/_2020-02-16__1.22.17_rtkpkh.png)
+
+
+
+
+
+
 
 ### References
 

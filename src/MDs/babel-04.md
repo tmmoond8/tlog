@@ -85,38 +85,36 @@ $ yarn add @babel/core @babel/cli @babel/preset-env
 ```
 
 - src/code.js
+  ```jsx
+  import '@babel/polyfill';
 
-    ```jsx
-    import '@babel/polyfill';
+  const p = Promise.resolve(10);
+  const objc = {
+    a: 10,
+    b: 20,
+    c: 30,
+  };
 
-    const p = Promise.resolve(10);
-    const objc = {
-      a: 10,
-      b: 20,
-      c: 30,
-    };
-
-    const arr = Object.values(obj);
-    const exist = arr.includes(20);
-    ```
+  const arr = Object.values(obj);
+  const exist = arr.includes(20);
+  ```
 
 - babel.config.js
-
-    ```jsx
-    const presets = [
-      [
-        '@babel/preset-env',
-        {
-          targets: {
-            chrome: '40',
-          },
-          useBuiltIns: 'entry',
+  ```js
+  const presets = [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          chrome: '40',
         },
-      ],
-    ];
+        useBuiltIns: 'entry',
+      },
+    ],
+  ];
 
-    module.exports = { presets };
-    ```
+  module.exports = { presets };
+  ```
 
 targets 속성에는 browserslist라는 패키지의 문법을 사용했다. 위 설정은 크롬 브라우저 40 버전이상을 지원하도록 설정했고, `useBuiltIns: 'entry'`는 사용하는 폴리필만 추가가 된다.
 

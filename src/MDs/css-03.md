@@ -7,7 +7,6 @@ tags:
   - CSS
 ---
 
-#
 
 [CSS3 Display | PoiemaWeb](https://poiemaweb.com/css3-display)
 
@@ -38,8 +37,8 @@ block 에 대한 이해를 하기 위해서는
 - inline 레벨 사이 정의하지 않은 4px 여백이 기본적으로 생긴다.
 - inline 요소가 하나라도 생성되면 가상의 라인 박스 공간이 생긴다.
 - inline 요소 안에 block 요소가 있다면, 그 즉시 새로운 block 공간이 부모의 영역을 벗어나 생겨버린다.
-- <span><div></div></span>
-- <span>a</span>
+- `<span><div></div></span>`
+- `<span>a</span>`
 - inline 레벨 요소 예
 
   span, a, strong, img, br, input, select, textarea, button

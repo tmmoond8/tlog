@@ -8,8 +8,6 @@ tags:
   - JavaScript
 ---
 
-#
-
 [Webpack | PoiemaWeb](https://poiemaweb.com/es6-babel-webpack-2)
 
 Webpack은 자바스크립트 파일을 번들링하는 모듈 번들러이다. 여기서 모듈은 각종의 리소스 파일을(js, png, css 등) 말하고, 번들은 웹팩 실행후 나오는 결과 파일이다. 하나의 번들 파일은 여러 모듈로 만들어진다.
@@ -124,7 +122,7 @@ webpack 명령어를 스크립트에 추가하자.
 
 - package.json
 
-  ```jsx
+  ```json
   {
   	...
     "scripts": {

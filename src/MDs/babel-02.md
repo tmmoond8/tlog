@@ -8,7 +8,6 @@ tags:
   - JavaScript
 ---
 
-
 > 바벨이란?
 바벨은 입력과 출력이 모두 자바스크립트 코드인 컴파일러다. 초기의 바벨은 ES6 코드를 ES5 코드로 변환해 주는 일만 했지만, 현재는 리액트의 JSX 문법, 타입스크립트, 코드 압축, Proposal 까지 처리해준다.
 
@@ -36,11 +35,11 @@ $ yarn add --dev @babel/cli @babel/core @babel/plugin-transform-arrow-functions 
 
 - src/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 자 이제 @babel/cli를 실행해보자.
 
@@ -73,15 +72,15 @@ const add = function (a, b) {
 
 - babel.config.js
 
-    ```jsx
-    const presets = ['@babel/preset-react']; 
-    const plugins = [
-      '@babel/plugin-transform-template-literals', 
-      '@babel/plugin-transform-arrow-functions',
-    ]
+  ```jsx
+  const presets = ['@babel/preset-react']; 
+  const plugins = [
+    '@babel/plugin-transform-template-literals', 
+    '@babel/plugin-transform-arrow-functions',
+  ]
 
-    module.exports = { presets, plugins };
-    ```
+  module.exports = { presets, plugins };
+  ```
 
 우리는 이제 간결한 명령어로 똑같은 일을 할 수 있다.
 
@@ -104,21 +103,21 @@ $ yarn add --dev webpack webpack-cli babel-loader
 
 - webpack.config.js
 
-    ```jsx
-    const path = require('path');
+  ```jsx
+  const path = require('path');
 
-    module.exports = {
-      entry: './src/code.js',
-      output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'code.bundle.js',
-      },
-      module: {
-        rules: [{ test: /\.js$/, use: 'babel-loader' }],
-      },
-      optimization: { minimizer: [] },
-    };
-    ```
+  module.exports = {
+    entry: './src/code.js',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'code.bundle.js',
+    },
+    module: {
+      rules: [{ test: /\.js$/, use: 'babel-loader' }],
+    },
+    optimization: { minimizer: [] },
+  };
+  ```
 
 위처럼 작성하고 webpack을 실행 시키자.
 
@@ -136,26 +135,26 @@ $ yarn webpack
 
 - src/runBabel.js
 
-    ```jsx
-    const babel = require('@babel/core');
-    const fs = require('fs');
+  ```jsx
+  const babel = require('@babel/core');
+  const fs = require('fs');
 
-    const filename = './src/code.js';
-    const source = fs.readFileSync(filename, 'utf8');
-    const presets = ['@babel/preset-react'];
-    const plugins = [
-      '@babel/plugin-transform-template-literals',
-      '@babel/plugin-transform-arrow-functions',
-    ];
+  const filename = './src/code.js';
+  const source = fs.readFileSync(filename, 'utf8');
+  const presets = ['@babel/preset-react'];
+  const plugins = [
+    '@babel/plugin-transform-template-literals',
+    '@babel/plugin-transform-arrow-functions',
+  ];
 
-    const { code } = babel.transformSync(source, {
-      filename,
-      presets,
-      plugins,
-      configFile: false,
-    });
-    console.log(code);
-    ```
+  const { code } = babel.transformSync(source, {
+    filename,
+    presets,
+    plugins,
+    configFile: false,
+  });
+  console.log(code);
+  ```
 
 ```bash
 $ node src/runBabel.js

@@ -9,7 +9,7 @@ tags:
 
 HTML의 모든 요소는 박스 모델을 사용한다.
 
-![2%20box%20model%20f63045a95ec24f779e99b3cb1897e6b0/box-model.png](2%20box%20model%20f63045a95ec24f779e99b3cb1897e6b0/Untitled.png)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952584/tlog/box-model_cwmuxn.png)
 
 ## Box Model의 요소
 
@@ -44,7 +44,7 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
 
 그 동안 border 속성은 이미지를 원으로 자를 때 보통 사용 했었는데, 오늘 다시 보니까 타원으로 속성을 정의할 수 있나보다.
 
-```css
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,73 +78,73 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
 
 - 형제 요소들 간의 충돌
 
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <style>
-        div {
-          width: 100px;
-          height: 100px;
-          margin: 100px;
-        }
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 100px;
+      }
 
-        div:nth-child(1) {
-          margin: 50px;
-          background-color: violet;
-        }
-        div:nth-child(2) {
-          background-color: purple;
-        }
-      </style>
-    </head>
-    <body>
-      <div>A</div>
-      <div>B</div>
-    </body>
-    </html>
-    ```
+      div:nth-child(1) {
+        margin: 50px;
+        background-color: violet;
+      }
+      div:nth-child(2) {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div>A</div>
+    <div>B</div>
+  </body>
+  </html>
+  ```
 
     ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952597/tlog/margin-collapse1_fwhh4u.gif)
 
 - 부모 자식간 마진 충돌
 
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <style>
-        div {
-          /* display: inline-block; */
-          width: 100px;
-          height: 100px;
-          margin: 100px;
-          background-color: violet;
-          margin: 100px;
-        }
-        
-        div > div {
-          margin: 25px;
-          width: 50px;
-          height: 50px;
-          background-color: purple;
-        }
-      </style>
-    </head>
-    <body>
-      <div>
-        <div>B</div>
-      </div>
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div {
+        /* display: inline-block; */
+        width: 100px;
+        height: 100px;
+        margin: 100px;
+        background-color: violet;
+        margin: 100px;
+      }
       
-    </body>
-    </html>
-    ```
+      div > div {
+        margin: 25px;
+        width: 50px;
+        height: 50px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>B</div>
+    </div>
+    
+  </body>
+  </html>
+  ```
 
     ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952596/tlog/margin-collabse2_oeyqkh.gif)
 
@@ -184,8 +184,7 @@ width, height 프로퍼티는 요소의 너비와 높이를 지정하기 위해 
 </style>
 
 <body style="width:500px">
-  <div class="stitched"
-  ">stitched</div>
+  <div class="stitched">stitched</div>
 </body>
 
 </html>

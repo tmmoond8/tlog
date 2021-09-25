@@ -693,6 +693,14 @@ export const postCSS = css`
     padding: 0.2em 0.4em;
   }
 
+  .post-section p > code {
+    position: relative;
+    top: -2px;
+    background-color: ${colors.grey08};
+    color: ${colors.red};
+    padding: 0.16em 0.4em 0.3em 0.4em;
+  }
+
   .post-section pre {
     word-wrap: normal;
   }

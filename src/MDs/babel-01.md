@@ -37,11 +37,11 @@ $ yarn add --dev @babel/cli @babel/core @babel/plugin-transform-arrow-functions 
 
 - src/code.js
 
-    ```jsx
-    const element = <div>babel test</div>;
-    const text = `element type is ${element.type}`;
-    const add = (a, b) => a + b;
-    ```
+  ```jsx
+  const element = <div>babel test</div>;
+  const text = `element type is ${element.type}`;
+  const add = (a, b) => a + b;
+  ```
 
 자 이제 @babel/cli를 실행해보자.
 
@@ -89,27 +89,27 @@ const add = function (a, b) {
 
 - package.json
 
-    ```json
-    ...
-    "browserslist": [
-      "defaults",
-      "not IE 11",
-      "not IE_Mob 11",
-      "maintained node versions",
-    ]
-    ...
-    ```
+  ```json
+  ...
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions",
+  ]
+  ...
+  ```
 
 - .browserslistrc
 
-    ```json
-    # Browsers that we support
+  ```text
+  # Browsers that we support
 
-    defaults
-    not IE 11
-    not IE_Mob 11
-    maintained node versions
-    ```
+  defaults
+  not IE 11
+  not IE_Mob 11
+  maintained node versions
+  ```
 
 @babel/preset-env 로 바벨 기본 설정을 해보자.
 
@@ -128,16 +128,16 @@ $ npm install --save-dev @babel/preset-env
 
 - package.json
 
-    ```json
-    {
-    	...
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "babel": "babel src/js -w -d dist/js"
-      },
-      ...
-    }
-    ```
+  ```json
+  {
+    ...
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "babel": "babel src/js -w -d dist/js"
+    },
+    ...
+  }
+  ```
 
 **-w : watch 옵션**
 
@@ -145,43 +145,43 @@ $ npm install --save-dev @babel/preset-env
 
 - src/js/lib.js
 
-    ```jsx
-    export const pi = Math.PI;
+  ```jsx
+  export const pi = Math.PI;
 
-    export function power(x, y) {
-      // ES7: 지수 연산자
-      return x ** y;
+  export function power(x, y) {
+    // ES7: 지수 연산자
+    return x ** y;
+  }
+
+  // ES6 클래스
+  export class Foo {
+    // stage 3: 클래스 필드 정의 제안
+    #private = 10;
+
+    foo() {
+      // stage 4: 객체 Rest/Spread 프로퍼티
+      const { a, b, ...x } = { ...{ a: 1, b: 2 }, c: 3, d: 4 };
+      return { a, b, x };
     }
 
-    // ES6 클래스
-    export class Foo {
-      // stage 3: 클래스 필드 정의 제안
-      #private = 10;
-
-      foo() {
-        // stage 4: 객체 Rest/Spread 프로퍼티
-        const { a, b, ...x } = { ...{ a: 1, b: 2 }, c: 3, d: 4 };
-        return { a, b, x };
-      }
-
-      bar() {
-        return this.#private;
-      }
+    bar() {
+      return this.#private;
     }
-    ```
+  }
+  ```
 
 - src/js/main.js
 
-    ```jsx
-    import { pi, power, Foo } from './lib';
+  ```jsx
+  import { pi, power, Foo } from './lib';
 
-    console.log(pi);
-    console.log(power(pi, pi));
+  console.log(pi);
+  console.log(power(pi, pi));
 
-    const f = new Foo();
-    console.log(f.foo());
-    console.log(f.bar());
-    ```
+  const f = new Foo();
+  console.log(f.foo());
+  console.log(f.bar());
+  ```
 
 ```bash
 $ npm run babel
@@ -199,9 +199,9 @@ $npm install --save-dev @babel/plugin-proposal-class-properties
 
 - .babelrc
 
-    ```json
-    {
-      "presets": ["@babel/preset-env"],
-      "plugins": ["@babel/plugin-proposal-class-properties"]
-    }
-    ```
+  ```json
+  {
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
+  }
+  ```

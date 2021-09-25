@@ -7,7 +7,6 @@ tags:
   - CSS
 ---
 
-#
 
 [CSS3 Background | PoiemaWeb](https://poiemaweb.com/css3-background)
 

@@ -26,36 +26,34 @@ $ yarn add eslint-config-airbnb-typescript   \
 ```
 
 - .eslintrc.js
-
-    ```jsx
-    module.exports = {
-      parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint'],
-      rules: {
-        quotes: [2, 'single', { avoidEscape: true }],
+  ```jsx
+  module.exports = {
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
+    rules: {
+      quotes: [2, 'single', { avoidEscape: true }],
+    },
+    extends: [
+      'airbnb-typescript',
+      'airbnb/hooks',
+      'plugin:@typescript-eslint/eslint-recommended',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:@typescript-eslint/recommended-requiring-type-checking'
+    ],
+    parserOptions: {
+      ecmaVersion: 6,
+      sourceType: 'module',
+      ecmaFeatures: {
+        modules: true,
       },
-      extends: [
-        'airbnb-typescript',
-        'airbnb/hooks',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking'
-      ],
-      parserOptions: {
-        ecmaVersion: 6,
-        sourceType: 'module',
-        ecmaFeatures: {
-          modules: true,
-        },
-        extraFileExtensions: ['ts', 'tsx'],
-      },
-    };
-    ```
+      extraFileExtensions: ['ts', 'tsx'],
+    },
+  };
+  ```
 
     나는 쌍따옴표보다 따옴표를 선호하기에 rules에 quotes 룰을 추가했다.
 
 - .eslintrc.js
-
     ```jsx
     module.exports = {
       printWidth: 80, // 줄 바꿈 길이
