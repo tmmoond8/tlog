@@ -8,8 +8,6 @@ tags:
   - SSR
 ---
 
-#
-
 ## 기본 리액트 프로젝트
 
 ---
@@ -20,15 +18,15 @@ tags:
 $ mkdir ssr-sample && cd ssr-sample
 $ yarn init -y
 $ yarn add react react-dom
-$ yarn add -D @babel/core @babel/plugin-proposal-class-properties \
-							@babel/preset-env @babel/preset-react
-$ yarn add -D webpack webpack-cli babel-loader \
-							clean-webpack-plugin html-webpack-plugin
+$ yarn add -D @babel/core @babel/plugin-proposal-class-properties \  
+              @babel/preset-env @babel/preset-react
+$ yarn add -D webpack webpack-cli babel-loader \  
+              clean-webpack-plugin html-webpack-plugin
 ```
 
 - src/pages/Home.js
 
-  ```bash
+  ```jsx
   import React from 'react';
 
   export default function Home() {
@@ -42,7 +40,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
 
 - src/pages/About
 
-  ```bash
+  ```jsx
   import React from 'react';
 
   export default function About() {
@@ -56,7 +54,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
 
 - App.js
 
-  ```bash
+  ```jsx
   import React from 'react';
   import Home from './src/pages/Home';
   import About from './src/pages/About';
@@ -100,7 +98,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
 
 - index.js
 
-  ```bash
+  ```jsx
   import React from 'react';
   import ReactDom from 'react-dom';
   import App from './App';
@@ -110,7 +108,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
 
 - webpack.config.js
 
-  ```bash
+  ```jsx
   const path = require('path');
   const { CleanWebpackPlugin } = require('clean-webpack-plugin');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -141,7 +139,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
 
 - babel.config.js
 
-  ```bash
+  ```js
   const presets = ['@babel/preset-react', '@babel/preset-env'];
   const plugins = ['@babel/plugin-proposal-class-properties'];
   module.exports = { presets, plugins };
@@ -149,7 +147,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
 
 - template/index.html
 
-  ```bash
+  ```html
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -162,7 +160,7 @@ $ yarn add -D webpack webpack-cli babel-loader \
   ```
 
 ```bash
-yarn webpack
+$ yarn webpack
 ```
 
 dist 디렉토리에 index.html과 빌드된 리액트 프로젝트 main{hash}.js 파일이 생성된다.
@@ -181,7 +179,7 @@ $ yarn add -D @babel/cli @babel/plugin-transform-modules-common.js
 
 - src/server.js
 
-  ```bash
+  ```js
   import express from 'express';
   import fs from 'fs';
   import path from 'path';
@@ -208,7 +206,7 @@ $ yarn add -D @babel/cli @babel/plugin-transform-modules-common.js
 
 - .babelrc.common.js
 
-  ```bash
+  ```js
   const presets = ['@babel/preset-react'];
   const plugins = ['@babel/plugin-proposal-class-properties'];
   module.exports = { presets, plugins };
@@ -216,7 +214,7 @@ $ yarn add -D @babel/cli @babel/plugin-transform-modules-common.js
 
 - .babelrc.client.js
 
-  ```bash
+  ```js
   const config = require('./.babelrc.common.js');
   config.presets.push('@babel/preset-env');
   module.exports = config;
@@ -224,7 +222,7 @@ $ yarn add -D @babel/cli @babel/plugin-transform-modules-common.js
 
 - .babelrc.server.js
 
-  ```bash
+  ```js
   const config = require('./.babelrc.common.js');
   config.plugins.push('@babel/plugin-transform-modules-commonjs');
   module.exports = config;
@@ -234,7 +232,7 @@ webpack 설정에 방금 생성한 파일을 바라보도록 수정하자.
 
 - webpack.config.js
 
-  ```bash
+  ```js
   const path = require('path');
   const { CleanWebpackPlugin } = require('clean-webpack-plugin');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -277,7 +275,7 @@ yarn webpack 으로 클라이언트를 빌드하고, 서버 사이드는 바벨�
 
   ```json
   ...
-  	"scripts": {
+    "scripts": {
       "build-server": "babel src --out-dir dist-server --config-file ./.babelrc.server.js",
       "build": "yarn webpack && yarn build-server",
       "start": "node dist-server/server.js"
@@ -293,7 +291,7 @@ yarn start 로 서버 사이드 렌더링 실행해보자.
 
 /dist/index.html 에서 <script src="/dist/main{hash}.js"></script> 를 임시로 제거하고 노드 서버를 실행해도 렌더링이 잘 되는 것을 확인할 수 있다.
 
-![SSR%200fc6b1275c4b43c2a4f325ade383c3cc/_2020-04-20__1.00.49.png](SSR%200fc6b1275c4b43c2a4f325ade383c3cc/_2020-04-20__1.00.49.png)
+![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952582/tlog/_2020-04-20__1.00.49_qquv0g.png)
 
 이때 버튼을 누르면 반응을 하지 않는다. 서버 사이드에서는 돔을 그리긴 하지만 이벤트를 붙이지 않기 때문이다. (책에는 ReactDom.render 가 아닌 ReactDom.hydrate 로 그리면 이벤트를 붙여준다고 되어 있지만, 잘 되지 않았다.)
 
@@ -443,7 +441,7 @@ $ yarn add styled-components
 
 - template/index.html
 
-  ```jsx
+  ```html
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -563,7 +561,7 @@ $ yarn add styled-components
 
 - src/kangaroo-c.png
 
-  ![SSR%200fc6b1275c4b43c2a4f325ade383c3cc/kangaroo-c.png](SSR%200fc6b1275c4b43c2a4f325ade383c3cc/kangaroo-c.png)
+  ![](https://res.cloudinary.com/dgggcrkxq/image/upload/v1631952586/tlog/kangaroo-c_i0yhww.png)
 
 - src/App.js
 
@@ -600,7 +598,7 @@ $ yarn add webpack-node-externals file-loader
 
   ```json
   ...
-  scripts": {
+  "scripts": {
     "build": "yarn webpack",
     "start": "node dist-server/server.bundle.js"
   },

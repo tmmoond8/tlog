@@ -8,7 +8,6 @@ tags:
   - React
   - SSR
 ---
-#
 
 Nextjs의 튜토리얼을 따라해보았습니다. 리액트를 사용하고SSR을 제공하고 추후에 라도 제공해야 한다면 nextjs프레임워크를 고려하면 좋을 것 같습니다. 동형 렌더링을 제공하려면 아마 많은 삽질을 하게 될 것인데 nextjs는 이런 삽질을 피할 수 있습니다.
 
@@ -33,37 +32,42 @@ next.js의 공식 문서에서 거론하는 특징이다.
 
 next.js 간단히 시작해보자.
 
-    mkdir hello-next
-    cd hello-next
-    npm init -y
-    npm install --save react react-dom next
-    mkdir pages
+```bash
+$ mkdir hello-next
+$ cd hello-next
+$ npm init -y
+$ npm install --save react react-dom next
+$ mkdir pages
+```
 
 - package.json 에 스크립트를 조금 수정해보자.
-
-        {
-          "scripts": {
-            "dev": "next",
-            "build": "next build",
-            "start": "next start"
-          }
-        }
+  ```json
+  {
+    "scripts": {
+      "dev": "next",
+      "build": "next build",
+      "start": "next start"
+    }
+  }
+  ```
 
 npm 으로 실행 시키면 기본 앱이 실행된다.
-
-    npm run dev
+```bash
+$ npm run dev
+```
 
 아래는 컴포넌트 하나인데, 특이 점이라면 React를 임포트 시키지 않은거??
 
 - pages/index.js
-
-        const Index = () => (
-          <div>
-            <p>Hello Next.js</p>
-          </div>
-        )
-        
-        export default Index
+  ```jsx
+  const Index = () => (
+    <div>
+      <p>Hello Next.js</p>
+    </div>
+  )
+  
+  export default Index
+  ```
 
 ## **[Navigate Between Pages](https://nextjs.org/learn/basics/navigate-between-pages)**
 
@@ -72,45 +76,49 @@ nextjs가 편한게 라우팅을 알아서 해준다는 거다.
 위에서 커맨드라인으로 pages 디렉토리를 만들었는데, pages는 특별한 역할을 수행한다. pages 등록된 파일 이름으로 자동으로 endpoint를 만들기 때문이다. (이건 gatsby랑 비슷한것 같다.)
 
 - pages/about.js
-
-        export default function About() {
-          return (
-            <div>
-              <p>This is the about page</p>
-            </div>
-          )
-        }
+  ```jsx
+  export default function About() {
+    return (
+      <div>
+        <p>This is the about page</p>
+      </div>
+    )
+  }
+  ```
 
     [http://localhost:3000/about](http://localhost:3000/about) 에 접속 해보면 페이지가 뜬다.
 
 next.js 튜토리얼을 다운받아서 하나하나 특징을 이해보자.
-
-    git clone https://github.com/zeit/next-learn-demo.git
-    cd next-learn-demo
-    cd 1-navigate-between-pages
+```bash
+$ git clone https://github.com/zeit/next-learn-demo.git
+$ cd next-learn-demo
+$ cd 1-navigate-between-pages
+```
 
 next-learn-demo 디렉토리에 들어가면 step 1 부터 step 8까지 진열되어 있다.
-
-    npm install
-    npm run dev
+```bash
+$ npm install
+$ npm run dev
+```
 
 다른 페이지로 이동할 때는 next/link 모듈의 Link를 사용한다.
 
 - pages/index.js
-
-        // This is the Link API
-        import Link from 'next/link'
-        
-        const Index = () => (
-          <div>
-            <Link href="/about">
-              <a>About Page</a>
-            </Link>
-            <p>Hello Next.js</p>
-          </div>
-        )
-        
-        export default Index
+  ```jsx
+  // This is the Link API
+  import Link from 'next/link'
+  
+  const Index = () => (
+    <div>
+      <Link href="/about">
+        <a>About Page</a>
+      </Link>
+      <p>Hello Next.js</p>
+    </div>
+  )
+  
+  export default Index
+  ```
 
 [http://localhost:3000/](http://localhost:3000/) 에 접근하면 링크할 수 있는 페이지가 생긴 것을 알 수 있다. `react`에서는 `location.history` 를 이용해서 하는 일을 `next/link`가 알아서 해준다.
 
@@ -125,91 +133,97 @@ Link 컴포넌트는 Hider Order Component라고 해서 특별한 기능을 수�
 웹앱을 만들거나 일반 웹페이지를 만들 때도, 여러 페이지를 만들 공통으로 가지는 레이아웃이 있다.(header, footer, aside 등)
 
 이런 레이아웃을 공통으로 잘 처리하기 위해서 컴포넌트로 레이아웃을 구성하는 두 방법에 대해 소개한다.
-
-    cd ../2-using-shared-components
-    npm install
-    npm run dev
+```bash
+$ cd ../2-using-shared-components
+$ npm install
+$ npm run dev
+```
 
 - components/Header.js
-
-        import Link from 'next/link'
-        
-        const linkStyle = {
-          marginRight: 15
-        }
-        
-        const Header = () => (
-          <div>
-            <Link href="/">
-              <a style={linkStyle}>Home</a>
-            </Link>
-            <Link href="/about">
-              <a style={linkStyle}>About</a>
-            </Link>
-          </div>
-        )
-        
-        export default Header
+  ```jsx
+  import Link from 'next/link'
+  
+  const linkStyle = {
+    marginRight: 15
+  }
+  
+  const Header = () => (
+    <div>
+      <Link href="/">
+        <a style={linkStyle}>Home</a>
+      </Link>
+      <Link href="/about">
+        <a style={linkStyle}>About</a>
+      </Link>
+    </div>
+  )
+  
+  export default Header
+  ```
 
 components 라는 디렉토리를 만들고 Header 컴포넌트를 만들자. 그리고 index.js에서 이 컴포넌트를 그리도록 하자.
 
 - pages/index.js
-
-        import Header from '../components/Header'
-        
-        export default function Index() {
-          return (
-            <div>
-              <Header />
-              <p>Hello Next.js</p>
-            </div>
-          )
-        }
+  ```jsx
+  import Header from '../components/Header'
+  
+  export default function Index() {
+    return (
+      <div>
+        <Header />
+        <p>Hello Next.js</p>
+      </div>
+    )
+  }
+  ```
 
 > components라는 디렉토리를 만들어서 컴포넌트를 정의했지만, components라는 디렉토리는 특별하지 않다. 다른 이름으로 바꾸어도 무방하다. 다만, pages 디렉토리만 routing을 위해서 존재하는 특별한 디렉토리다.
 
 - components/MyLayout.js 헤더를 포함하는 전체 레이아웃 컴포넌트를 정의한다.
-
-        import Header from './Header'
-        
-        const layoutStyle = {
-          margin: 20,
-          padding: 20,
-          border: '1px solid #DDD'
-        }
-        
-        const Layout = props => (
-          <div style={layoutStyle}>
-            <Header />
-            {props.children}
-          </div>
-        )
-        
-        export default Layout
+  ```jsx
+  import Header from './Header'
+  
+  const layoutStyle = {
+    margin: 20,
+    padding: 20,
+    border: '1px solid #DDD'
+  }
+  
+  const Layout = props => (
+    <div style={layoutStyle}>
+      <Header />
+      {props.children}
+    </div>
+  )
+  
+  export default Layout
+  ```
 
 - pages/index.js
-
-        import Layout from '../components/MyLayout.js'
-        
-        export default function Index() {
-          return (
-            <Layout>
-              <p>Hello Next.js</p>
-            </Layout>
-          )
-        }
+  ```jsx
+  import Layout from '../components/MyLayout.js'
+  
+  export default function Index() {
+    return (
+      <Layout>
+        <p>Hello Next.js</p>
+      </Layout>
+    )
+  }
+  ```
 
 - pages/about.js
-
-        import Layout from '../components/MyLayout.js'
-        
-        export default function About() {
-          return (
-            <Layout>
-              <p>This is the about page</p>
-            </Layout>
-          )
-        }
+  ```jsx
+  import Layout from '../components/MyLayout.js'
+  
+  export default function About() {
+    return (
+      <Layout>
+        <p>This is the about page</p>
+      </Layout>
+    )
+  }
+  ```
 
 이런 방법은 next.js의 특징은 아니고 react.js의 특징이므로 자세히 다루지는 않는다. [https://nextjs.org/learn/basics/using-shared-components/rendering-children-components](https://nextjs.org/learn/basics/using-shared-components/rendering-children-components) 가면 유사한 형태 두 개 를 더 소개한다. 궁금하면 참고하면 될 것 같다.
 
@@ -218,57 +232,60 @@ components 라는 디렉토리를 만들고 Header 컴포넌트를 만들자. �
 페이지에는 query 를 받아서 처리하는 경우가 있다. 이럴 경우는 어떻게 할까? 예를 들면 아래 같이 title을 입력 받아서 페이지 내용에 포함하고 싶을 경우 말이다.
 
 [http://localhost](http://localhost:3000/about)?title=abc
-
-    cd ../3-create-dynamic-pages
-    npm install
-    npm run dev
+```bash
+$ cd ../3-create-dynamic-pages
+$ npm install
+$ npm run dev
+```
 
 ?title=abc 같은 쿼리는 어떻게 처리 할까? 이런 url 처리를 위한 모듈이 있다. next/router 모듈의 withRouter를 사용해서 페이지 컴포넌트를 감싸면 props에 router 라는 프로퍼티가 추가가 된다.
 
 - pages/post.js
-
-        import { withRouter } from 'next/router'
-        import Layout from '../components/MyLayout.js'
-        
-        const Content = withRouter(props => (
-          <div>
-            <h1>{props.router.query.title}</h1>
-            <p>This is the blog post content.</p>
-          </div>
-        ))
-        
-        const Page = props => (
-          <Layout>
-            <Content />
-          </Layout>
-        )
-        
-        export default Page
+  ```jsx
+  import { withRouter } from 'next/router'
+  import Layout from '../components/MyLayout.js'
+  
+  const Content = withRouter(props => (
+    <div>
+      <h1>{props.router.query.title}</h1>
+      <p>This is the blog post content.</p>
+    </div>
+  ))
+  
+  const Page = props => (
+    <Layout>
+      <Content />
+    </Layout>
+  )
+  
+  export default Page
+  ```
 
 - pages/index.js
-
-        import Layout from '../components/MyLayout.js'
-        import Link from 'next/link'
-        
-        const PostLink = props => (
-          <li>
-            <Link href={`/post?title=${props.title}`}>
-              <a>{props.title}</a>
-            </Link>
-          </li>
-        )
-        export default function Blog() {
-          return (
-            <Layout>
-              <h1>My Blog</h1>
-              <ul>
-                <PostLink title="Hello Next.js" />
-                <PostLink title="Learn Next.js is awesome" />
-                <PostLink title="Deploy apps with Zeit" />
-              </ul>
-            </Layout>
-          )
-        }
+  ```jsx
+  import Layout from '../components/MyLayout.js'
+  import Link from 'next/link'
+  
+  const PostLink = props => (
+    <li>
+      <Link href={`/post?title=${props.title}`}>
+        <a>{props.title}</a>
+      </Link>
+    </li>
+  )
+  export default function Blog() {
+    return (
+      <Layout>
+        <h1>My Blog</h1>
+        <ul>
+          <PostLink title="Hello Next.js" />
+          <PostLink title="Learn Next.js is awesome" />
+          <PostLink title="Deploy apps with Zeit" />
+        </ul>
+      </Layout>
+    )
+  }
+  ```
 
 이렇게 하고 페이지링크가 잘 되는지 확인해보자.
 
@@ -277,36 +294,38 @@ components 라는 디렉토리를 만들고 Header 컴포넌트를 만들자. �
 위에서 포스팅 페이지를 보면 주소가 [http://localhost:3000/post?title=Learn Next.js%2is%2awesome](http://localhost:3000/post?title=Learn%20Next.js%20is%20awesome) 처럼 되어 있는 것을 확인할 수 있다.
 
 next.js 개발자들은 이게 좀 지저분해 보였나 보다.
-
-    cd ../4-clean-urls
-    npm install
-    npm run dev
+```bash
+$ cd ../4-clean-urls
+$ npm install
+$ npm run dev
+```
 
 - pages/index.js
-
-        import Layout from '../components/MyLayout.js'
-        import Link from 'next/link'
-        
-        const PostLink = props => (
-          <li>
-            <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
-              <a>{props.title}</a>
-            </Link>
-          </li>
-        )
-        
-        export default function Blog() {
-          return (
-            <Layout>
-              <h1>My Blog</h1>
-              <ul>
-                <PostLink id="hello-nextjs" title="Hello Next.js" />
-                <PostLink id="learn-nextjs" title="Learn Next.js is awesome" />
-                <PostLink id="deploy-nextjs" title="Deploy apps with Zeit" />
-              </ul>
-            </Layout>
-          )
-        }
+  ```jsx
+  import Layout from '../components/MyLayout.js'
+  import Link from 'next/link'
+  
+  const PostLink = props => (
+    <li>
+      <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
+        <a>{props.title}</a>
+      </Link>
+    </li>
+  )
+  
+  export default function Blog() {
+    return (
+      <Layout>
+        <h1>My Blog</h1>
+        <ul>
+          <PostLink id="hello-nextjs" title="Hello Next.js" />
+          <PostLink id="learn-nextjs" title="Learn Next.js is awesome" />
+          <PostLink id="deploy-nextjs" title="Deploy apps with Zeit" />
+        </ul>
+      </Layout>
+    )
+  }
+  ```
 
 Link 컴포넌트에 as라는 프로퍼틀을 넣어주었다. 서버를 띄우고 [http://localhost:3000](http://localhost:3000) 에 접근해보자.
 
@@ -333,108 +352,115 @@ Link 컴포넌트에 as라는 프로퍼틀을 넣어주었다. 서버를 띄우�
  이 Cleanj Url은 클릭을 했을 때 Link 컴폰넌트에서 임의로 교체를 해준 것이기 때문이다. 서버에서 교체한 주소로 접근했을 때는 찾을 수 없는 것이 당연하다. 
 
  이번에는 node 서버에서도 Clean URL을 통해 접근을 가능하게 하도록 하겠다.
-
-    cd ../5-clean-urls-ssr
-    npm install
-    npm run dev
+  ```bash
+  $ cd ../5-clean-urls-ssr
+  $ npm install
+  $ npm run dev
+  ```
 
 일단 express를 설치하고,,
-
-    npm install --save express
+```
+$ npm install --save express
+```
 
 - server.js
-
-        const express = require('express')
-        const next = require('next')
-        
-        const dev = process.env.NODE_ENV !== 'production'
-        const app = next({ dev })
-        const handle = app.getRequestHandler()
-        
-        app
-          .prepare()
-          .then(() => {
-            const server = express()
-        
-            server.get('/p/:id', (req, res) => {
-              const actualPage = '/post'
-              const queryParams = { title: req.params.id }
-              app.render(req, res, actualPage, queryParams)
-            })
-        
-            server.get('*', (req, res) => {
-              return handle(req, res)
-            })
-        
-            server.listen(3000, err => {
-              if (err) throw err
-              console.log('> Ready on http://localhost:3000')
-            })
-          })
-          .catch(ex => {
-            console.error(ex.stack)
-            process.exit(1)
-          })
+  ```jsx
+  const express = require('express')
+  const next = require('next')
+  
+  const dev = process.env.NODE_ENV !== 'production'
+  const app = next({ dev })
+  const handle = app.getRequestHandler()
+  
+  app
+    .prepare()
+    .then(() => {
+      const server = express()
+  
+      server.get('/p/:id', (req, res) => {
+        const actualPage = '/post'
+        const queryParams = { title: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+      })
+  
+      server.get('*', (req, res) => {
+        return handle(req, res)
+      })
+  
+      server.listen(3000, err => {
+        if (err) throw err
+        console.log('> Ready on http://localhost:3000')
+      })
+    })
+    .catch(ex => {
+      console.error(ex.stack)
+      process.exit(1)
+    })
+    ```
 
 - package.json
-
-        {
-          "scripts": {
-            "dev": "node server.js",
-            "build": "next build",
-            "start": "NODE_ENV=production node server.js"
-          }
-        }
+  ```json
+  {
+    "scripts": {
+      "dev": "node server.js",
+      "build": "next build",
+      "start": "NODE_ENV=production node server.js"
+    }
+  }
+  ```
 
 npm run dev로 실행을 한다. 코드를 설명하자면, express에서 라우팅을 할 때 `/p/:id` 패턴으로 들어올 경우에 대해서 우리가 필요한 페이지로 매칭해서 그리도록 추가를 해주었고, 일반경로("*")에 대해서는 그냥 그리도록 했다. 이정도 만으로도 Clean URL로 접근이 가능하도록 했다.
 
 ## [Fetching Data for Pages](https://nextjs.org/learn/basics/fetching-data-for-pages)
 
 많은 경우에 페이지를 그릴 때 API 서버나 다른 데이터 API를 호출하여 받은 데이터를 가지고 페이지를 그린다. next.js 에서는 server side or clients side에서 렌더링을 할 때 같은 방식으로 컴포넌트에 데이터를 prop을 통해 넘겨주도록 하는 방식을 제공한다.
-
-    cd ../6-fetching-data
-    npm install
-    npm run dev
+```
+$ cd ../6-fetching-data
+$ npm install
+$ npm run dev
+```
 
 이 데모 앱에서는TVMaze API라는 TV 쇼에 관련된 API를 사용하여 데이터를 가져온다.
 
 동형 렌더링(isomorphic rendering)을 위해 모듈을 다운 받는다.
-
-    npm install --save isomorphic-unfetch
+```bash
+$ npm install --save isomorphic-unfetch
+```
 
 - pages/index.js
-
-        import Layout from '../components/MyLayout.js'
-        import Link from 'next/link'
-        import fetch from 'isomorphic-unfetch'
-        
-        const Index = (props) => (
-          <Layout>
-            <h1>Batman TV Shows</h1>
-            <ul>
-              {props.shows.map(show => (
-                <li key={show.id}>
-                  <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-                    <a>{show.name}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Layout>
-        )
-        
-        Index.getInitialProps = async function() {
-          const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
-          const data = await res.json()
-        
-          console.log(`Show data fetched. Count: ${data.length}`)
-        
-          return {
-            shows: data.map(entry => entry.show)
-          }
-        }
-        
-        export default Index
+  ```jsx
+  import Layout from '../components/MyLayout.js'
+  import Link from 'next/link'
+  import fetch from 'isomorphic-unfetch'
+  
+  const Index = (props) => (
+    <Layout>
+      <h1>Batman TV Shows</h1>
+      <ul>
+        {props.shows.map(show => (
+          <li key={show.id}>
+            <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+              <a>{show.name}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  )
+  
+  Index.getInitialProps = async function() {
+    const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
+    const data = await res.json()
+  
+    console.log(`Show data fetched. Count: ${data.length}`)
+  
+    return {
+      shows: data.map(entry => entry.show)
+    }
+  }
+  
+  export default Index
+  ```
 
 Index 라는 컴포넌트가 props로 전달 된 프로퍼티 중 shows라는 데이터를 사용해서 렌더링하도록 되어 있다.
 
