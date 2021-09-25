@@ -38,28 +38,30 @@ tags:
 이러한 관계를 어떻게 코드로 나타내는지 살펴보면서 진행해보자.
 
 - src/api/Chat/shared/Chat.graphql 파일을 생성해서 내용을 채우자.
-
-        type Chat {
-          id: Int!
-          messages: [Message]! #graphql에서 리스트 표현
-          participants: [User]! #graphql에서 리스트 표현
-          createAt: String!
-          updateAt: String
-        }
+  ```ts
+  type Chat {
+    id: Int!
+    messages: [Message]! #graphql에서 리스트 표현
+    participants: [User]! #graphql에서 리스트 표현
+    createAt: String!
+    updateAt: String
+  }
+  ```
 
     Chat는 messages에 다수의 메시지를 가질 수 있고, participants에 다수의 유저를 가질 수 있다.
 
 - src/api/Chat/shared/Message.graphql 파일을 생성해서 내용을  채우자.
-
-        type Message {
-          id: Int!
-          text: String!
-          chat: Chat!
-          user: User!
-          userId: Int!
-          createAt: String!
-          updateAt: String
-        }
+  ```ts
+  type Message {
+    id: Int!
+    text: String!
+    chat: Chat!
+    user: User!
+    userId: Int!
+    createAt: String!
+    updateAt: String
+  }
+  ```
 
     메시지는 하나의 채팅방과 하나의 유저에 관계가 있다.
 
@@ -70,97 +72,101 @@ tags:
 일단 entity 틀을 먼저 생성해서 서로를 참조 할 수 있도록 하자.
 
 - src/entities/Chat.ts
-
-        import {
-          BaseEntity,
-          CreateDateColumn,
-        	Entity,
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-         } from 'typeorm'
-        
-        @Entity()
-        class Chat extends BaseEntity {
-          @PrimaryGeneratedColumn() id: number;
-        
-        
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        }
-        
-         export default Chat;
+  ```ts
+  import {
+    BaseEntity,
+    CreateDateColumn,
+    Entity,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm'
+  
+  @Entity()
+  class Chat extends BaseEntity {
+    @PrimaryGeneratedColumn() id: number;
+  
+  
+    @CreateDateColumn() createAt: string;
+    @UpdateDateColumn() updateAt: string;
+  }
+  
+  export default Chat;
+  ```
 
 - src/entities/Message.ts
-
-        import {
-          BaseEntity,
-          CreateDateColumn,
-        	Entity,
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-         } from 'typeorm'
-        
-        @Entity()
-        class Message extends BaseEntity {
-          @PrimaryGeneratedColumn() id: number;
-          
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        }
-        
-         export default Message;
+  ```ts
+  import {
+    BaseEntity,
+    CreateDateColumn,
+    Entity,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm'
+  
+  @Entity()
+  class Message extends BaseEntity {
+    @PrimaryGeneratedColumn() id: number;
+    
+    @CreateDateColumn() createAt: string;
+    @UpdateDateColumn() updateAt: string;
+  }
+  
+  export default Message;
+  ```
 
 이번에는 Chat 와 Message 사이에 관계를 나타내줄 것이다. (일시적으로 참조의 오류가 발생할 수 있다.)
 
 - src/entities/Chat.ts
-
-        import {
-          BaseEntity,
-          CreateDateColumn,
-        	Entity,
-          OneToMany, //추가
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-         } from 'typeorm'
-        import Message from './Message'; //임포트
-        
-        @Entity()
-        class Chat extends BaseEntity {
-          @PrimaryGeneratedColumn() id: number;
-        
-          @OneToMany(type => Message, message => message.chat)
-          messages: Message[]
-        
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        }
-        
-         export default Chat;
+  ```ts
+  import {
+    BaseEntity,
+    CreateDateColumn,
+    Entity,
+    OneToMany, //추가
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm'
+  import Message from './Message'; //임포트
+  
+  @Entity()
+  class Chat extends BaseEntity {
+    @PrimaryGeneratedColumn() id: number;
+  
+    @OneToMany(type => Message, message => message.chat)
+    messages: Message[]
+  
+    @CreateDateColumn() createAt: string;
+    @UpdateDateColumn() updateAt: string;
+  }
+  
+  export default Chat;
+  ```
 
 - src/entities/Message.ts
-
-        import {
-          BaseEntity,
-          CreateDateColumn,
-        	Entity,
-        	ManyToOne, //추가
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-         } from 'typeorm'
-        import Chat from './Chat'; //임포트
-        
-        @Entity()
-        class Message extends BaseEntity {
-          @PrimaryGeneratedColumn() id: number;
-        
-          @ManyToOne(type => Chat, chat => chat.messages)
-          chat: Chat;
-          
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        }
-        
-         export default Message;
+  ```ts
+  import {
+    BaseEntity,
+    CreateDateColumn,
+    Entity,
+    ManyToOne, //추가
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm'
+  import Chat from './Chat'; //임포트
+  
+  @Entity()
+  class Message extends BaseEntity {
+    @PrimaryGeneratedColumn() id: number;
+  
+    @ManyToOne(type => Chat, chat => chat.messages)
+    chat: Chat;
+    
+    @CreateDateColumn() createAt: string;
+    @UpdateDateColumn() updateAt: string;
+  }
+  
+  export default Message;
+  ```
 
 ManyToOne과 OneToMany가 헷갈릴까봐, 표시를 해봤다.
 
@@ -175,230 +181,236 @@ Chat 클래스는  Message와 반대로 `@OneToMany`입니다.  위에 설명드
 위에서 entity의 몇가지 속성에 대해서는 추가하지 않았습니다. 위에서 했던 내용으로 스스로 해보시면 좋을 것 같다.
 
 - src/api/User/shared/User.graphql 파일에 Chat와 Message 관련 속성을 추가합니다. 관계를 나타내려면 서로의 속성을 가지고 있어야 한다.
-
-        type User {
-        	...
-          chat: Chat
-          messages: [Message]
-          isDriving: Boolean!
-          ...
-        }
-        ...
+  ```ts
+  type User {
+    ...
+    chat: Chat
+    messages: [Message]
+    isDriving: Boolean!
+    ...
+  }
+  ...
+  ```
 
 - src/entities/User.ts 에는 Chat와 Message를 관계를 나타내기 위해 추가해줘야 한다.
-
-        ...
-        	Entity,
-          ManyToOne,
-          OneToMany, 
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-        } from 'typeorm';
-        import Chat from './Chat';
-        import Message from './Message';
-        
-        ...
-        @Column({ type: "text"})
-        profilePhoto: string;
-        
-        @ManyToOne(type => Chat, chat => chat.participants)
-        chat: Chat;
-        
-        @OneToMany(type => Message, message => message.user)
-        messages: Message[];
-        
-        @Column({ type: "boolean", default: false})
-        isDriving: Boolean!
-        ...
+  ```ts
+  ...
+    Entity,
+    ManyToOne,
+    OneToMany, 
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm';
+  import Chat from './Chat';
+  import Message from './Message';
+  
+  ...
+  @Column({ type: "text"})
+  profilePhoto: string;
+  
+  @ManyToOne(type => Chat, chat => chat.participants)
+  chat: Chat;
+  
+  @OneToMany(type => Message, message => message.user)
+  messages: Message[];
+  
+  @Column({ type: "boolean", default: false})
+  isDriving: Boolean!
+  ...
+  ```
 
 - src/entities/Message.ts 에는 text, Chat, User 가 빠졌다.
-
-        import {
-          BaseEntity,
-          Column,
-          CreateDateColumn,
-        	Entity,
-        	ManyToOne, //추가
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-         } from 'typeorm'
-        import Chat from './Chat'; //임포트
-        import User from './User';
-        
-        @Entity()
-        class Message extends BaseEntity {
-          @PrimaryGeneratedColumn() id: number;
-          
-          @Column({type: "text"})
-          text: string
-        
-          @ManyToOne(type => Chat, chat => chat.messages)
-          chat: Chat;
-        
-          @ManyToOne(type => User, user => user.messages)
-          user: User;
-        
-          @Column({nullable: true })
-          userId: number;
-          
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        }
-        
-         export default Message;
+  ```ts
+  import {
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity,
+    ManyToOne, //추가
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm'
+  import Chat from './Chat'; //임포트
+  import User from './User';
+  
+  @Entity()
+  class Message extends BaseEntity {
+    @PrimaryGeneratedColumn() id: number;
+    
+    @Column({type: "text"})
+    text: string
+  
+    @ManyToOne(type => Chat, chat => chat.messages)
+    chat: Chat;
+  
+    @ManyToOne(type => User, user => user.messages)
+    user: User;
+  
+    @Column({nullable: true })
+    userId: number;
+    
+    @CreateDateColumn() createAt: string;
+    @UpdateDateColumn() updateAt: string;
+  }
+  
+  export default Message;
+  ```
 
 - src/entities/Chat.ts 에는 User 속성이 빠졌다. 추가
-
-        ...
-        import Message from './Message'; 
-        import User from './User';
-        
-        @Entity()
-        class Chat extends BaseEntity {
-        	...
-        
-          @OneToMany(type => User, user => user.chat)
-          participants: User[]
-        
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        }
-        
-         export default Chat;
+  ```ts
+  ...
+  import Message from './Message'; 
+  import User from './User';
+  
+  @Entity()
+  class Chat extends BaseEntity {
+    ...
+  
+    @OneToMany(type => User, user => user.chat)
+    participants: User[]
+  
+    @CreateDateColumn() createAt: string;
+    @UpdateDateColumn() updateAt: string;
+  }
+  
+  export default Chat;
+  ```
 
 ## #1.24 Model Relationships like a Boss
 
 이번에는 Verification과 User의 관계, Ride와 User의 관계를 셋팅한다.
 
 - src/api/Verification/shared/Verification.graphql 에 user를 간단히 추가하자.
-
-        type Verification {
-          ...
-          used: Boolean!
-          user: User!
-          createAt: String!
-          updateAt: String
+  ```ts
+  type Verification {
+    ...
+    used: Boolean!
+    user: User!
+    createAt: String!
+    updateAt: String
+  ```
         
-
 - src/api/User/shared/User.graphql 에는 verifications과 ridesAsPassenger, ridesAsDriver 둘다 추가한다.
-
-        type User {
-          ..
-          chat: Chat
-          messages: [Message]
-          verifications: [Verification]
-          ridesAsPassenger: [Ride]
-          ridesAsDriver: [Ride]
-          isDriving: Boolean!
-          ...
-        }
-        ...
+  ```ts
+  type User {
+    ..
+    chat: Chat
+    messages: [Message]
+    verifications: [Verification]
+    ridesAsPassenger: [Ride]
+    ridesAsDriver: [Ride]
+    isDriving: Boolean!
+    ...
+  }
+  ...
+  ```
 
 - src/api/Ride/shared/Ride.graphql 에는 driver와 passenger를 추가 한다.
-
-        type Ride {
-          ...
-          price: Float!
-          driver: User
-          passenger: User
-          distance: String!
-          ...
-        }
+  ```ts
+  type Ride {
+    ...
+    price: Float!
+    driver: User
+    passenger: User
+    distance: String!
+    ...
+  }
+  ```
 
 1.23 절에서 한 것 처럼 graphql 타입을 통해 entity에 관계를 나타내는 연습을 해보는 것을 권한다.
 
 - src/entities/Verification.ts 임포트 순서를 살짝 손봤다.
+  ```ts
+  import { verificationTarget } from 'src/types/types';
+  import {
+    BaseEntity,
+    BeforeInsert,
+    Column,
+    CreateDateColumn,
+    Entity,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+  } from 'typeorm'
+  import User from './User';
+  ...
 
-        import { verificationTarget } from 'src/types/types';
-        import {
-          BaseEntity,
-          BeforeInsert,
-          Column,
-          CreateDateColumn,
-        	Entity,
-          ManyToOne,
-          PrimaryGeneratedColumn,
-          UpdateDateColumn,
-         } from 'typeorm'
-        import User from './User';
-        
-        	...
-        
-          @ManyToOne(type => User, user => user.verifications)
-          user: User;
-        
-          @CreateDateColumn() createAt: string;
-          @UpdateDateColumn() updateAt: string;
-        
-        	...
+  @ManyToOne(type => User, user => user.verifications)
+  user: User;
+
+  @CreateDateColumn() createAt: string;
+  @UpdateDateColumn() updateAt: string;
+  ...
+  ```
 
 - src/entities/User.ts Verification과 Ride 관계를 추가한다.
+  ```ts
+  ...
+  import Message from './Message';
+  import Ride from './Ride';
+  import Verification from './Verification';
+  ...
 
-        ...
-        import Message from './Message';
-        import Ride from './Ride';
-        import Verification from './Verification';
-        
-        	...
-        
-          @OneToMany(type => Message, message => message.user)
-          messages: Message[];
-        
-          @OneToMany(type => Verification, verification => verification.user)
-          verifications: Verification[];
-        
-          @OneToMany(type => Ride, ride => ride.passenger)
-          ridesAsPassenger: Ride[];
-        
-          @OneToMany(type => Ride, ride => ride.driver)
-          ridesAsDriver: Ride[];
-        
-          @Column({ type: "boolean", default: false})
-          isDriving: boolean;
-        
-          ...
+  @OneToMany(type => Message, message => message.user)
+  messages: Message[];
+
+  @OneToMany(type => Verification, verification => verification.user)
+  verifications: Verification[];
+
+  @OneToMany(type => Ride, ride => ride.passenger)
+  ridesAsPassenger: Ride[];
+
+  @OneToMany(type => Ride, ride => ride.driver)
+  ridesAsDriver: Ride[];
+
+  @Column({ type: "boolean", default: false})
+  isDriving: boolean;
+  ...
+  ```
 
 - src/entities/Ride.ts User와의 관계를 추가한다. User는 driver와 Passenger다
-
-        import {
-          ...
-        	Entity,
-          ManyToOne,
-          PrimaryGeneratedColumn,
-          ...
-        
-        import User from './User';
-        
-          ...
-        
-          @Column({type: "text"})
-          duration: string;
-        
-          @ManyToOne(type => User, user => user.ridesAsPassenger)
-          passenger: User;
-        
-          @ManyToOne(type => User, user => user.ridesAsDriver)
-          driver: User;
-        
-          @CreateDateColumn() createAt: string;
-          ...
+  ```ts
+  import {
+    ...
+    Entity,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+    ...
+  
+  import User from './User';
+  
+    ...
+  
+    @Column({type: "text"})
+    duration: string;
+  
+    @ManyToOne(type => User, user => user.ridesAsPassenger)
+    passenger: User;
+  
+    @ManyToOne(type => User, user => user.ridesAsDriver)
+    driver: User;
+  
+    @CreateDateColumn() createAt: string;
+    ...
+  ```
 
 ## #1.25 Resolver Types
 
 이번에는 응답 graphql의 Resolver Types를 만들 것이다. 
 
 - src/types/resolvers.d.ts 을 새로 만들어서 기본적인 resolver 타입을 정의하자.
-
-        export type Resolver = (parent: any, args: any, context: any, info: any) => any;
-        
-        export interface Resolvers {
-          [key: string]: {
-            [key: string]: Resolver;
-          }
-        }
-        
-        // const resolvers: Resolvers = {
-        //   Query: {
-        //     sayHello: () => ""
-        //   }
-        // }
+  ```ts
+  export type Resolver = (parent: any, args: any, context: any, info: any) => any;
+  
+  export interface Resolvers {
+    [key: string]: {
+      [key: string]: Resolver;
+    }
+  }
+  
+  // const resolvers: Resolvers = {
+  //   Query: {
+  //     sayHello: () => ""
+  //   }
+  // }
+  ```
