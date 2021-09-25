@@ -7,8 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
-
 ## 이터레이션 프로토콜
 
 ---
@@ -203,7 +201,7 @@ Promise.race(iterableOverPromises).then(···);
 
   In principle, nothing prevents an iterator from reusing the same iteration result object several times – I’d expect most things to work well. However, there will be problems if a client caches iteration results:
 
-  ```jsx
+  ```js
   const iterationResults = [];
   const iterator = iterable[Symbol.iterator]();
   let iterationResult;
@@ -226,8 +224,6 @@ Promise.race(iterableOverPromises).then(···);
   If you want to get an impression of what such a library could look like, take a look at the standard Python module `[itertools](https://docs.python.org/3/library/itertools.html)`.
 
 ### References
-
----
 
 ---
 

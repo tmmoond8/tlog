@@ -122,7 +122,7 @@ $ yarn add react react-dom
 
 - src/index1.js
 
-  ```bash
+  ```js
   import { Component } from 'react';
   import { fill } from 'lodash';
   import { add } from './util';
@@ -133,7 +133,7 @@ $ yarn add react react-dom
 
 - src/index2.js
 
-  ```bash
+  ```js
   import { Component } from 'react';
   import { fill } from 'lodash';
   import { add } from './util';

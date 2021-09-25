@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [Ajax | PoiemaWeb](https://poiemaweb.com/js-ajax)
 

@@ -8,6 +8,7 @@ tags:
   - SSR
 ---
 
+
 정적인 페이지를 서버에서 정적 페이지로 내려주면 빠르게 보여줄 수 있어서 좋다. 그런데 매번 서버에서 렌더링할 필요가 있을까? 매번 하는 것은 자원의 낭비이므로 빌드 타임에 한 번 렌더링하도록 설정해보자.
 
 대부분의 페이지는 정적인 페이지로만 이루어져 있지 않고 서버로 부터 데이터를 가져와서 일부분을 재 렌더링 하도록 되어 있다. 그렇다면 서버로 부터 데이터를 받는 부분을 제외한 곳을 미리 렌더링 할 것이다.
@@ -16,7 +17,7 @@ tags:
 
 - src/App.js
 
-  ```bash
+  ```jsx
   ...
   import Icon from './kangaroo-c.png';
 
@@ -69,7 +70,7 @@ tags:
 
 - src/pages/Home.js
 
-  ```bash
+  ```jsx
   import React from 'react';
 
   export default function Home({ username}) {
@@ -124,7 +125,7 @@ tags:
 
 - src/prerender.js
 
-  ```bash
+  ```jsx
   import fs from 'fs';
   import path from 'path';
   import { renderPage, prerenderPages } from './common';

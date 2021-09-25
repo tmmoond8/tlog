@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [Closure | PoiemaWeb](https://poiemaweb.com/js-closure)
 

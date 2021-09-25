@@ -7,8 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
-
 [Generator | PoiemaWeb](https://poiemaweb.com/es6-generator)
 
 Generator는 Iterator 객체를 생성하는 함수다. 또한 Generator는 비동기 처리에 유용하게 사용할 수 도 있다. 먼저 Iteration 프로토콜을 간략히 살펴보자.
@@ -17,7 +15,7 @@ Generator는 Iterator 객체를 생성하는 함수다. 또한 Generator는 비�
 
 ---
 
-```jsx
+```ts
 interface Iterable {
     [Symbol.iterator]() : Iterator;
 }
@@ -55,7 +53,7 @@ Generator 함수는 일반 함수의 Retuern과 다르다. Generator 함수는 �
 
 `Generator.prototype.throw()`
 
-```jsx
+```ts
 interface Generator {
   next(value?: any): IteratorResult;
   throw(value?: any): IteratorResult;

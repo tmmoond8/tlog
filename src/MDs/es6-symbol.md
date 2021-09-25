@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 ## Symbol이란?
 
@@ -17,15 +16,15 @@ ES6에서 새롭게 추가된 7번째 타입. 변경 불가능한 원시 타입�
 
 원시 타입
 
-- Boolean
-- null
-- undefined
-- Number
-- String
+- `Boolean`
+- `null`
+- `undefined`
+- `Number`
+- `String`
 
 객체 타입
 
-- Object
+- `Object`
 
 심볼의 주요 사용처는 이름 충돌이 없는 객체의 프로퍼티 키를 만드는데 사용한다. 그 동안 객체의 프로퍼티 키는 문자열만 가능했지만, 이번에 추가된 Symbol도 그 역할을 할 수 있게 됐다.
 

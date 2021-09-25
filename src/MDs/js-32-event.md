@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [Event | PoiemaWeb](https://poiemaweb.com/js-event)
 

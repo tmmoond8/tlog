@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 JavaScript의 this는 Java나 C++ 같은 언어와 달리 호출 방식에 의해 결정되고 4 가지로 볼 수 있음.
 

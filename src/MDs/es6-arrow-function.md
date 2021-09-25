@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [Arrow function | PoiemaWeb](https://poiemaweb.com/es6-arrow-function)
 

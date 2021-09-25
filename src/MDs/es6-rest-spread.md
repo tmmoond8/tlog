@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [Extended Parameter Handling | PoiemaWeb](https://poiemaweb.com/es6-extended-parameter-handling)
 

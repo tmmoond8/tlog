@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [javascript info: Date](https://ko.javascript.info/date)
 

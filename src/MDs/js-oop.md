@@ -7,7 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
 
 [https://www.youtube.com/watch?v=bgP_1l7aJnc&feature=youtu.be](https://www.youtube.com/watch?v=bgP_1l7aJnc&feature=youtu.be)
 

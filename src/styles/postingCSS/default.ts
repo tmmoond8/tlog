@@ -694,6 +694,7 @@ export const postCSS = css`
     background-color: ${colors.grey08};
     color: ${colors.red};
     padding: 0.16em 0.4em 0.3em 0.4em;
+    margin-right: 2px;
   }
 
   .post-section pre {

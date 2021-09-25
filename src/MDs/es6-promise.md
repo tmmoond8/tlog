@@ -7,8 +7,6 @@ tags:
   - JavaScript
 ---
 
-#
-
 ## 등장 배경
 
 ---
@@ -80,9 +78,9 @@ Promise는 상태를 갖는 객체다. Promise 객체를 생성하면 기본적�
 
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952579/tlog/_2020-01-26__8.28.28_dszuiq.png)
 
-- _pending_: initial state, neither fulfilled nor rejected.
-- _fulfilled_: meaning that the operation completed successfully.
-- _rejected_: meaning that the operation failed.
+- `_pending_`: initial state, neither fulfilled nor rejected.
+- `_fulfilled_`: meaning that the operation completed successfully.
+- `_rejected_`: meaning that the operation failed.
 
 - settled: meaning that the operation fulfilled or rejected.
 
