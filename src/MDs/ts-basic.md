@@ -22,11 +22,11 @@ let b = 2; // number
 
 ### 3. 타입의 계층
 
-![TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/ts-basic.png](TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/ts-basic.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952590/tlog/ts-basic_dvdjiy.png)
 
 ### 4. Any 보단 unkown을 사용하자.
 
-![TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/_2020-06-20__4.36.04.png](TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/_2020-06-20__4.36.04.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/_2020-06-20__4.36.04_jt5tqd.png)
 
 any 였다면 올바른 타입 에러를 올바로 보여주지 못 한다.
 
@@ -39,13 +39,13 @@ const a = true;
 const b: 123 = 123;
 ```
 
-![TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/_2020-06-20__4.42.09.png](TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/_2020-06-20__4.42.09.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/_2020-06-20__4.42.09_zu4bxd.png)
 
 ### 6. 구조 기반 타입화 (덕 타이핑)
 
 자바스크립트 언어가 구조 기반 타입을 갖도록 설계되었기 때문에, 타입스크립트도 이름 기반 타입 스타일보다 주고 기반 타입 스타일을 선호한다. 구조 기반 타입화에서는 객체의 이름에 상관 없이 객체가 어떤 프로퍼티를 갖고 있는지를 따진다.
 
-![TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/_2020-06-20__5.29.47.png](TS%20Basic%20ce220b00c71c4307ac6f68112c9a18a6/_2020-06-20__5.29.47.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952583/tlog/_2020-06-20__5.29.47_c33jqq.png)
 
 ### 7. 인덱스 시그니처를 사용할 수 있다.
 
