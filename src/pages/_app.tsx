@@ -9,6 +9,12 @@ import TlogHead from '../components/TlogHead';
 import DesktopHead from '../components/DesktopHead';
 import sessionStorage from '../libs/sessionStorage';
 
+declare global {
+  interface Window {
+    ga: (action: string, data: string) => void;
+  }
+}
+
 class TlogApp extends App<{ Component: React.FC }> {
   state = {
     isLoading: false,
@@ -16,7 +22,13 @@ class TlogApp extends App<{ Component: React.FC }> {
 
   public componentDidMount() {
     restoreScroll();
+    const sendPageView = () => {
+      if (typeof window !== 'undefined' && typeof window.ga === 'function') {
+        window.ga('send', window.location.pathname);
+      }
+    };
     addScroll();
+    sendPageView();
     Router.events.on('routeChangeStart', () => {
       this.setState({
         ...this.state,
@@ -24,6 +36,7 @@ class TlogApp extends App<{ Component: React.FC }> {
       });
     });
     Router.events.on('routeChangeComplete', () => {
+      sendPageView();
       this.setState({
         ...this.state,
         isLoading: false,

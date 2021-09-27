@@ -4,7 +4,24 @@ export default class TlogDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-141390268-1"
+          />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-141390268-1');
+              ga('send', 'pageview');
+          `,
+            }}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
