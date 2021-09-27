@@ -1,0 +1,6 @@
+User-agent: Googlebot
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tlog.tammolo.com/sitemap.xml

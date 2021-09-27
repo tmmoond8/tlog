@@ -4,7 +4,6 @@ node_modules
 .cache/
 .next/
 # Build directory
-public/
 out/
 static/admin/*.bundle.*
 .DS_Store
