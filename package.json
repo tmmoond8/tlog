@@ -8,7 +8,8 @@
   "private": false,
   "scripts": {
     "dev": "next",
-    "build": "next build && next export && node scripts/generateSitemap.js",
+    "build": "next build && next export",
+    "post:build": "node scripts/generateSitemap.js",
     "start": "next start"
   },
   "dependencies": {

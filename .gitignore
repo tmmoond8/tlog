@@ -4,6 +4,7 @@ node_modules
 .cache/
 .next/
 # Build directory
+public/sitemap.xml
 out/
 static/admin/*.bundle.*
 .DS_Store
