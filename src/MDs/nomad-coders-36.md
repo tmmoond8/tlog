@@ -493,7 +493,7 @@ Message 컴포넌트를 작성했고, 이어서 Chat 페이지에 표현하도�
               MessageSubscription
             ]
           }
-        }
+        }`
       })
       return updatedData;
     }
