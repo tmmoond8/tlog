@@ -55,6 +55,10 @@ const Tags = styled.div`
   ul {
     height: calc(100% - 24px);
     overflow: auto;
+
+    li img {
+      border-radius: 50%;
+    }
   }
 `;
 
