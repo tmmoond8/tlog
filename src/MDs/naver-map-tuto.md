@@ -2,7 +2,7 @@
 title: 네이버 맵 api 간단 사용기
 date: '2021-09-29T08:56:56.263Z'
 description: React에서 네이버 맵 api 사용하기
-image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952584/tlog/cover/naver-login_m0doid.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632917798/tlog/cover/_Naver_Map_API_vionmm.png'
 tags:
   - React
 ---
@@ -19,13 +19,13 @@ tags:
 - 선택된 위치는 지도상에 표시
 - 출발지와 도착지를 입력하면 두 위치를 이동하는 경로를 표현
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632845378/tlog/up7apsgnys5khxe1e0zg.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632918021/tlog/pyainin1kwimhyjcadtd.png)
 
 네이버 지도 api 는 [네이버 클라우드 플랫폼](https://www.ncloud.com/product/applicationService/maps) 서비스를 이용하면 된다. 지도 api는 네이버 외에도 카카오맵, 구글 맵 API를 쓸 수 있지만, 한국의 장소에 대해서는 네이버가 가장 데이터가 많다고 판단했다.
 
 아래 사용 요금을 보면 네이버 지도를 그리는 것은 모든 비용이 무료다. 네이버 지도는 길찾기 서비스(Directions)만 유료로 비용을 받는데, 이 마져도 월에 상당량을 무료로 사용할 수 있다.
 
-![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632845378/tlog/rksfww1i00xzqwaqbpty.png)
+![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632918022/tlog/tazq6bod2xyzcelgkzye.png)
 
 지도를 적용하는 것은 꽤나 간단한데, 리액트의 경우 비공식이지만 모듈을 제공하고 있어서 더욱 손쉽게 사용 가능 하며 나는 이 모듈을 사용하는 것 을 추천한다.
 
