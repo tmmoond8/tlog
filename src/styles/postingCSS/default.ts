@@ -671,7 +671,7 @@ export const postCSS = css`
 
   .post-section img {
     display: block;
-    background-color: #fff;
+    background-color: transparent;
     box-sizing: content-box;
     max-width: 100%;
     margin: 16px auto 24px auto;
