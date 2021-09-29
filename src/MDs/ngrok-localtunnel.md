@@ -39,13 +39,13 @@ ngrok을 회원 가입을 해야 사용할 수 있다. 우선 가입을 하자.�
 
 - 방법 2. npm을 통한 설치 (이 방법 추천)
     
-    ```
+    ```rb
     $ npm i -g ngrok
     ```
     
 - 방법 3 brew를 통한 설치
     
-    ```
+    ```rb
     $ brew cask install ngrok
     ```
     
@@ -56,7 +56,7 @@ ngrok 명령어를 통해서 사용할 수 있다.
 
 만약 로컬에 [http://localhost:3000](http://localhost:3000/) 으로 서버가 떠있다면 아래처럼 명령어를 실행하면 된다.
 
-```
+```rb
 $ ngrok http 3000
 ```
 
@@ -66,11 +66,11 @@ $ ngrok http 3000
 
 help 명령어를 통해 다양한 옵션을 사용할 수 있다. 물론 대부분의 옵션은 무료플랜에서는 제공되지는 않는다.
 
-```
+```rb
 $ ngrok —help
 ```
 
-```
+```text
 NAME:
    ngrok - tunnel local ports to public URLs and inspect traffic
 
@@ -120,16 +120,14 @@ COMMANDS:
 
 Localtennel 설치
 
-```
+```rb
 $ npm install -g localtunnel
-
 ```
 
 Localtennel 사용하기
 
-```
-lt --port 3000
-
+```rb
+$ lt --port 3000
 ```
 
 실행하면 굉장히 심플하게 랜덤으로 생성된 주소만 내려준다.
@@ -142,7 +140,7 @@ lt --port 3000
 
 localtennel의 장점이라면 서브도메인을 임의로 설정할 수 있다는 것이다.
 
-```
+```rb
 $ lt --port 3000 --subdomain kyle
 ```
 
@@ -152,11 +150,11 @@ $ lt --port 3000 --subdomain kyle
 
 localtunnel에서 사용할 수 있는 옵션
 
-```
+```rb
 $ lt --help
 ```
 
-```
+```text
 Usage: lt --port [num] <options>
 
 Options:

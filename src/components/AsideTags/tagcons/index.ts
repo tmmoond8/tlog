@@ -32,3 +32,4 @@ export { Uber_Clone_Coding } from './uber-clone-coding';
 export { Webpack } from './webpack';
 export { Log } from './log';
 export { Logo } from './logo';
+export { Tip } from './tip';
