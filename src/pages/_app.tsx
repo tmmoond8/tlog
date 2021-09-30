@@ -16,9 +16,11 @@ declare global {
 }
 
 const scroll = throttle(300, function (e) {
-  const { scrollTop } = e.target;
+  const { scrollTop, scrollHeight } = e.target;
   const path = window.location.pathname;
-  sessionStorage.setScroll(path, scrollTop);
+  if (scrollHeight > 1200) {
+    sessionStorage.setScroll(path, scrollTop);
+  }
 });
 
 class TlogApp extends App<{ Component: React.FC }> {
