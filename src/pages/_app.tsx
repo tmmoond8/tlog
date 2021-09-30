@@ -15,6 +15,12 @@ declare global {
   }
 }
 
+const scroll = throttle(300, function (e) {
+  const { scrollTop } = e.target;
+  const path = window.location.pathname;
+  sessionStorage.setScroll(path, scrollTop);
+});
+
 class TlogApp extends App<{ Component: React.FC }> {
   state = {
     isLoading: false,
@@ -47,6 +53,15 @@ class TlogApp extends App<{ Component: React.FC }> {
   public componentDidUpdate() {
     restoreScroll();
     addScroll();
+  }
+
+  public componentWillUnmount() {
+    const desktopEl = document.querySelector('.DesktopLayout > header + div');
+    const mobileEl = document.querySelector('.MobileLayout > header + div');
+    const contentEl = desktopEl ?? mobileEl;
+    if (contentEl) {
+      contentEl.removeEventListener('scroll', scroll);
+    }
   }
 
   public render() {
@@ -85,7 +100,6 @@ export default TlogApp;
 function restoreScroll() {
   const path = window.location.pathname;
   const scrollHeight = sessionStorage.getScroll(path);
-  sessionStorage.setScroll(path, 0);
   const desktopEl = document.querySelector('.DesktopLayout > header + div');
   const mobileEl = document.querySelector('.MobileLayout > header + div');
   const contentEl = desktopEl ?? mobileEl;
@@ -100,14 +114,7 @@ function addScroll() {
     const mobileEl = document.querySelector('.MobileLayout > header + div');
     const contentEl = desktopEl ?? mobileEl;
     if (contentEl) {
-      contentEl.addEventListener(
-        'scroll',
-        throttle(300, function (e) {
-          const { scrollTop } = e.target;
-          const path = window.location.pathname;
-          sessionStorage.setScroll(path, scrollTop);
-        })
-      );
+      contentEl.addEventListener('scroll', scroll);
     }
   }, 100);
 }

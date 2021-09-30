@@ -4,6 +4,7 @@ import { Content, colors } from 'notion-ui';
 import Link from 'next/link';
 import Image from '../components/Image';
 import { getDateGoodLook } from '../libs/string';
+import sessionStorage from '../libs/sessionStorage';
 import { desktop } from '../styles';
 
 export default function Gallery({ allPosts }) {
@@ -11,7 +12,15 @@ export default function Gallery({ allPosts }) {
     <Grid>
       {allPosts.map(({ image, slug, title, description, tags, date }) => (
         <Link key={slug} href={`/posts/${slug}`}>
-          <PostCard>
+          <PostCard
+            onClick={() => {
+              const path = window.location.pathname;
+              const scrollHeight = sessionStorage.getScroll(path);
+              setTimeout(() => {
+                sessionStorage.setScroll(path, scrollHeight);
+              }, 500);
+            }}
+          >
             <CoverImage src={image} width={500} height={260} />
             <PostBody>
               <Content.Text as="H3" fontSize={20}>
