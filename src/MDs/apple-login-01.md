@@ -8,7 +8,6 @@ tags:
   - React
 ---
 
-Created: October 7, 2021 11:14 PM
 
 > 보통 소셜 로그인을 구현하면 Google, Facebook을 최우선으로 하고 국내 한정 Naver, Kakao 로그인을 보통 구현한다. 그런데 애플 로그인은 앱스토어에 등록하는 서비스에게 요구되기 때문에, ios앱을 서비스하면 필수적으로 구현을 해줘야 한다. (예외: 소셜 로그인이 없다면 구현 안해도 된다.)
  이번에 앱스토어 등록을 준비하면서, 애플로그인 구현한 경험을 작성해보았다. 이 포스팅은 상,하 편으로 나누었고, (상) 편은 키 발급을 다루고, (하) 편은 실제 구현한 코드를 보려고 한다.
@@ -18,9 +17,12 @@ Created: October 7, 2021 11:14 PM
 
 [Apple Developer Documentation](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js)
 
+
 만약 `애플 개발자 계정`이 없다면 만들어줘야 한다.
 
 [Sign in with your Apple ID](https://developer.apple.com/account/)
+
+이 가이드는 [Configure Sign in with Apple for the web](https://help.apple.com/developer-account/#/dev1c0e25352)을 기본으로 한다.
 
 ### 1. APP ID 생성
 
