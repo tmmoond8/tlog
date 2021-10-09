@@ -1,7 +1,7 @@
 ---
 title: TS - function
 date: '2020-07-01T08:56:56.243Z'
-description: TypeScript 기본 알아가기
+description: TypeScript 에서 함수의 타입을 지정하는 방법들
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/cover/typescript_edpims.jpg'
 tags:
   - TypeScript
