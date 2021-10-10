@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useRecentViewed } from '../libs/state';
 import localStorage from '../libs/localStorage';
-import * as tagcons from './AsideTags/tagcons';
+import { getIcon } from './AsideTags';
 
 export default function AsideRecentViewed() {
   const [recentViewed, setRecentViewed] = useRecentViewed();
@@ -59,10 +59,3 @@ const RecentViewed = styled.div<{ height: number }>`
     }
   }
 `;
-
-function getIcon(tag: string) {
-  return (
-    tagcons[tag.replace(/\s/g, '_')] ??
-    'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1558852693/apollo_qczq3j.png'
-  );
-}

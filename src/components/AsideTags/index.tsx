@@ -62,7 +62,7 @@ const Tags = styled.div`
   }
 `;
 
-function getIcon(tag: string) {
+export function getIcon(tag: string) {
   return (
     tagcons[tag.replace(/\s/g, '_')] ??
     'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1558852693/apollo_qczq3j.png'

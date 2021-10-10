@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import * as tagcons from './AsideTags/tagcons';
+import { getIcon } from './AsideTags';
 
 interface TlogHeadProps {
   title?: string;
@@ -49,12 +50,5 @@ export default function TlogHead({
       <link rel="canonical" href="http://tlog.tammolo.com" />
       <link rel="shortcut icon" href={metaFavicon} />
     </Head>
-  );
-}
-
-function getIcon(tag: string) {
-  return (
-    tagcons[tag.replace(/\s/g, '_')] ??
-    'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1558852693/apollo_qczq3j.png'
   );
 }

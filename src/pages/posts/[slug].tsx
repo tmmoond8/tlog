@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import { Content, colors } from 'notion-ui';
 import AuthorCard from '../../components/AuthorCard';
 import Image from '../../components/Image';
+import Icon from '../../components/Icon';
 import { getPostBySlug, getAllPosts } from '../../libs/api';
 import markdownToHtml from '../../libs/markdownToHtml';
 import { getDateGoodLook } from '../../libs/string';
@@ -13,6 +14,7 @@ import localStorage from '../../libs/localStorage';
 import { useRecentViewed } from '../../libs/state';
 import { desktop, mobile } from '../../styles';
 import type { Post } from '../../types';
+import { getIcon } from '../../components/AsideTags';
 
 interface PostProps {
   post: Post;
@@ -48,9 +50,9 @@ export default function Posts({ post }: PostProps) {
           <>
             <section className="mb-32">
               <Main>
-                <Content.Text as="H1" marginTop={18}>
-                  {post.title}
-                </Content.Text>
+                <Title as="H1">
+                  <TagIcon src={getIcon(post.tags[0])} /> {post.title}
+                </Title>
                 <ContentHead>
                   {post.tags && (
                     <Tags>
@@ -161,4 +163,16 @@ const Tags = styled.ol`
 
 const CreatedDate = styled(Content.Text)`
   min-width: 132px;
+`;
+
+const TagIcon = styled.img`
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  margin-right: 16px;
+`;
+
+const Title = styled(Content.Text)`
+  margin-top: 18px;
+  align-items: flex-start;
 `;
