@@ -13,7 +13,7 @@ tags:
 - 404 에러수정
 - 환경 변수 사용하기
 - 도메인 변경 및 개인 도메인 연결
-> 
+
 
 ## 404 에러 발생
 
@@ -85,7 +85,7 @@ tags:
 
 터미널에서 도메인의 IP 주소를 찾아보자.
 
-```bash
+```rb
 $ nslookup condescending-carson-cd6699.netlify.app
 ```
 

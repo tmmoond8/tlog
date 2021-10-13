@@ -23,7 +23,7 @@ tags:
 
 CRA를 이용하여 타입스크립트를 사용하는 리액트 앱을 생성한다.
 
-```bash
+```rb
 $ yarn create react-app my-app --template typescript
 $ yarn start # 개발 환경으로 실행
 $ yarn build # build 디렉토리에 빌드하du 정적 페이지 생성
