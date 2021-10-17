@@ -11,7 +11,6 @@ tags:
 
 > 보통 소셜 로그인을 구현하면 Google, Facebook을 최우선으로 하고 국내 한정 Naver, Kakao 로그인을 보통 구현한다. 그런데 애플 로그인은 앱스토어에 등록하는 서비스에게 요구되기 때문에, ios앱을 서비스하면 필수적으로 구현을 해줘야 한다. (예외: 소셜 로그인이 없다면 구현 안해도 된다.)
  이번에 앱스토어 등록을 준비하면서, 애플로그인 구현한 경험을 작성해보았다. 이 포스팅은 상,하 편으로 나누었고, (상) 편은 키 발급을 다루고, (하) 편은 실제 구현한 코드를 보려고 한다.
-> 
 
 애플 로그인에 대한 문서는 간결하게 잘 작성되어 있지만, 충분히 친절하지는 않다. 단순하게 애플로그인을 구현하기 위한 핵심적인 내용 위주로 보자
 
@@ -114,3 +113,9 @@ Services IDs 버튼을 클릭
 ![](https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1633702949/tlog/xdim6irtsimf4wxuba7e.png)
 
 애플 로그인을 구현하기 전에 필요한 키를 발급 받았다. (하) 편에서 Node + React로 실제 구현한 예시를 따라가 보자.
+
+### Reference
+
+---
+
+[[Apple] 애플 로그인 설정하기 (Sign In with Apple)](https://spiralmoon.tistory.com/entry/Apple-%EC%95%A0%ED%94%8C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-Sign-In-with-Apple)

@@ -42,7 +42,8 @@ export function getPostBySlug(slug): Post {
       items[field] = realSlug;
     }
     if (field === 'content') {
-      items[field] = content;
+      // eslint-disable-next-line no-control-regex
+      items[field] = content.replace(/	/g, '  ');
     }
 
     if (typeof data[field] !== 'undefined') {

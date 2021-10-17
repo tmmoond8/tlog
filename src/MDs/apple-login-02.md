@@ -1,5 +1,5 @@
 ---
-title: Apple Login (하) - Node + React 구현
+title: Apple Login for Web (하) - Node + React 구현
 date: '2021-10-17T08:56:56.263Z'
 description: 리액트 + Node 서버에서 애플 로그인 
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1633702737/tlog/cover/apple-og_mrjifu.jpg'
@@ -10,7 +10,6 @@ tags:
 
 > 리액트 서비스에서 애플로그인을 구현하면서 겪었던 경험을 기록한 내용입니다. 소셜 로그인에 대해서 대해서는 설명하지 않으며, 만약 개념이 필요하면 [OAuth 에 대한 포스팅](https://tlog.tammolo.com/posts/oauth2.0)을 먼저 학습해보는 것을 권장합니다.
 소셜 로그인은 일반적인 플로우대로 구현하면 되지만, 애플 로그인에서 조금 달랐던 2개의 지점을 얘기해보겠습니다.
-> 
 
 이 가이드는 [애플 로그인을 위한 키 발급](https://tlog.tammolo.com/posts/apple-login-01)이 선행되었다는 전제로 작성한 글 입니다.
 
@@ -179,8 +178,6 @@ public appleAuthorize = async (
 
 [GitHub - hmmhmmhm/how-to-using-sign-with-apple-js:  Apple Login Example](https://github.com/hmmhmmhm/how-to-using-sign-with-apple-js)
 
-[[Apple] 애플 로그인 설정하기 (Sign In with Apple)](https://spiralmoon.tistory.com/entry/Apple-%EC%95%A0%ED%94%8C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-Sign-In-with-Apple)
-
-[[2] 스프링 프로젝트에 애플 로그인 API 연동하기](https://whitepaek.tistory.com/61)
+[스프링 프로젝트에 애플 로그인 API 연동하기](https://whitepaek.tistory.com/61)
 
 [[php]애플 아이디로 로그인 refresh token 구하기?](https://darkstart.tistory.com/116)
