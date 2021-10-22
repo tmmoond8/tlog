@@ -1,10 +1,19 @@
 import { css } from '@emotion/react';
+import { colors } from 'notion-ui';
 
 export default css`
   pre code.hljs {
     display: block;
     overflow-x: auto;
     padding: 1em;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+      background-color: ${colors.scrollBar};
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${colors.scrollBar};
+    }
   }
 
   code.hljs {
