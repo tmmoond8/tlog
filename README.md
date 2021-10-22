@@ -7,6 +7,8 @@
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=tlog-2h7jdsbwa-tmmoond8)
 
+[Notion-UI](https://github.com/tmmoond8/notion-ui) 를 적용하여 notion의 유려한 디자인을 적용한 서비스로 개편했습니다.
+
 ![](https://user-images.githubusercontent.com/11402468/138289042-0b669714-a8e8-42e5-923c-7d0988669ac0.png)
 
 ## Project Stack
