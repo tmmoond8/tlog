@@ -16,7 +16,7 @@ export default function TlogHead({
   tags,
   image,
 }: TlogHeadProps) {
-  const metaTitle = title || 'Tlog';
+  const metaTitle = title ? `${title} - Tlog` : 'Tlog';
   let metaDescription = description || "Tamm's dev log";
   const metaImage =
     image ||
