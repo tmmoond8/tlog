@@ -17,7 +17,9 @@ export default class TlogDocument extends Document {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'UA-141390268-1');
-              ga('send', 'pageview');
+              if (window.ga) {
+                window.ga('send', 'pageview');
+              }
           `,
             }}
           />
