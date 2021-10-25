@@ -6,7 +6,6 @@ import styled from '@emotion/styled';
 import { Content, colors } from 'notion-ui';
 import AuthorCard from '../../components/AuthorCard';
 import Image from '../../components/Image';
-import Icon from '../../components/Icon';
 import { getPostBySlug, getAllPosts } from '../../libs/api';
 import markdownToHtml from '../../libs/markdownToHtml';
 import { getDateGoodLook } from '../../libs/string';
@@ -14,7 +13,7 @@ import localStorage from '../../libs/localStorage';
 import { useRecentViewed } from '../../libs/state';
 import { desktop, mobile } from '../../styles';
 import type { Post } from '../../types';
-import { getIcon } from '../../components/AsideTags';
+import Tag, { getIcon } from '../../components/Tag';
 
 interface PostProps {
   post: Post;
@@ -42,42 +41,39 @@ export default function Posts({ post }: PostProps) {
 
   return (
     <div>
-      <div>
-        <header />
-        {router.isFallback ? (
-          <p>Loading…</p>
-        ) : (
-          <>
-            <section className="mb-32">
-              <Main>
-                <Title as="H1">
-                  <TagIcon src={getIcon(post.tags[0])} /> {post.title}
-                </Title>
-                <ContentHead>
-                  {post.tags && (
-                    <Tags>
-                      {post.tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
-                      ))}
-                    </Tags>
-                  )}
-                  <CreatedDate fontSize={18} color={colors.grey60}>
-                    {getDateGoodLook(post.date)}
-                  </CreatedDate>
-                </ContentHead>
-                <Cover>
-                  <Image src={post.image} width={1024} height={500} />
-                </Cover>
-                <div
-                  className="post-section"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                />
-                <AuthorCard />
-              </Main>
-            </section>
-          </>
-        )}
-      </div>
+      {router.isFallback ? (
+        <p>Loading…</p>
+      ) : (
+        <>
+          <section className="mb-32">
+            <Main>
+              <Title as="H1">
+                <Tag tag={post.tags[0]} /> {post.title}
+              </Title>
+              <ContentHead>
+                {post.tags && (
+                  <Tags>
+                    {post.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </Tags>
+                )}
+                <CreatedDate fontSize={18} color={colors.grey60}>
+                  {getDateGoodLook(post.date)}
+                </CreatedDate>
+              </ContentHead>
+              <Cover>
+                <Image src={post.image} width={1024} height={500} />
+              </Cover>
+              <div
+                className="post-section"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+              <AuthorCard />
+            </Main>
+          </section>
+        </>
+      )}
     </div>
   );
 }

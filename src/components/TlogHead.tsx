@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import * as tagcons from './AsideTags/tagcons';
-import { getIcon } from './AsideTags';
+import * as tagcons from './Tag/tagcons';
+import { getIcon } from './Tag';
 
 interface TlogHeadProps {
   title?: string;

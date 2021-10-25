@@ -13,7 +13,7 @@ import styled from '@emotion/styled';
 import { desktop } from '../styles';
 import type { Post } from '../types';
 import Icon from '../components/Icon';
-import AsideTags from './AsideTags';
+import { AsideTags } from './Tag';
 import AsideRecentViewed from './AsideRecentViewed';
 
 interface AsideProps {

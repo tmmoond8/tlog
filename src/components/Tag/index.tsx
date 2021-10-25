@@ -5,11 +5,15 @@ import type { Post } from '../../types';
 import * as tagcons from './tagcons';
 import { toSafeUrlStr } from '../../libs/string';
 
-interface AsideTagProps {
+export default function Tag({ tag }: { tag?: string }) {
+  return <>{tag && <StyledTag src={getIcon(tag)} />}</>;
+}
+
+interface AsideTagsProps {
   allPosts: Post[];
 }
 
-export default function AsideTag({ allPosts = [] }: AsideTagProps) {
+export function AsideTags({ allPosts = [] }: AsideTagsProps) {
   const router = useRouter();
   const tags = allPosts.reduce((accum: Record<string, any>, post) => {
     if (post.tags) {
@@ -28,7 +32,7 @@ export default function AsideTag({ allPosts = [] }: AsideTagProps) {
   );
 
   return (
-    <Tags>
+    <StyledAsideTags>
       <Aside.Group title="TAGS">
         {tagKeys.map((tag) => (
           <Aside.Menu
@@ -38,11 +42,11 @@ export default function AsideTag({ allPosts = [] }: AsideTagProps) {
           />
         ))}
       </Aside.Group>
-    </Tags>
+    </StyledAsideTags>
   );
 }
 
-const Tags = styled.div`
+const StyledAsideTags = styled.div`
   flex: 1;
   overflow: hidden;
   .AsideGroup {
@@ -60,6 +64,13 @@ const Tags = styled.div`
       border-radius: 50%;
     }
   }
+`;
+
+const StyledTag = styled.img`
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 50%;
+  margin-right: 0.3em;
 `;
 
 export function getIcon(tag: string) {

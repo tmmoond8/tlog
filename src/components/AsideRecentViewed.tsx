@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useRecentViewed } from '../libs/state';
 import localStorage from '../libs/localStorage';
-import { getIcon } from './AsideTags';
+import { getIcon } from './Tag';
 
 export default function AsideRecentViewed() {
   const [recentViewed, setRecentViewed] = useRecentViewed();
