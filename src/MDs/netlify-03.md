@@ -5,7 +5,7 @@ description: Netlify의 functions를 개발하는 환경과 배포를 해보자.
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1633768694/tlog/cover/Netlify_th2gkd.png'
 tags:
   - Infra
-  - Reacts
+  - React
 ---
 
 
