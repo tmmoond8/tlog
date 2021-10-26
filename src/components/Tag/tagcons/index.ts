@@ -34,3 +34,4 @@ export { Log } from './log';
 export { Logo } from './logo';
 export { Tip } from './tip';
 export { Infra } from './infra';
+export { Ionic } from './ionic';
