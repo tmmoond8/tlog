@@ -1,5 +1,5 @@
 ---
-title: 4. Type & Interface
+title: Type & Interface
 date: '2020-08-08T08:56:56.243Z'
 description: TypeScript 에서 타입을 정의하는데 사용하는 Type과 Interface
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1631952586/tlog/cover/typescript_edpims.jpg'
