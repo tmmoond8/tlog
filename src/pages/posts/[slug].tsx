@@ -13,7 +13,7 @@ import localStorage from '../../libs/localStorage';
 import { useRecentViewed } from '../../libs/state';
 import { desktop, mobile } from '../../styles';
 import type { Post } from '../../types';
-import Tag, { getIcon } from '../../components/Tag';
+import Tag from '../../components/Tag';
 
 interface PostProps {
   post: Post;
@@ -159,13 +159,6 @@ const Tags = styled.ol`
 
 const CreatedDate = styled(Content.Text)`
   min-width: 132px;
-`;
-
-const TagIcon = styled.img`
-  height: 54px;
-  width: 54px;
-  border-radius: 50%;
-  margin-right: 16px;
 `;
 
 const Title = styled(Content.Text)`

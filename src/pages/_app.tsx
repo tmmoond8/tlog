@@ -15,7 +15,7 @@ declare global {
   }
 }
 
-const scroll = throttle(300, function (e) {
+const scroll = throttle(300, (e) => {
   const { scrollTop, scrollHeight } = e.target;
   const path = window.location.pathname;
   if (scrollHeight > 1200) {
