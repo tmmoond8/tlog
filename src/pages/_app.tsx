@@ -1,6 +1,7 @@
+import React from 'react';
+import styled from '@emotion/styled';
 import Router from 'next/router';
 import App from 'next/app';
-import React from 'react';
 import * as NotionUI from 'notion-ui';
 import { throttle } from 'throttle-debounce';
 import GlobalStyles from '../styles/globalStyles';
@@ -79,11 +80,7 @@ class TlogApp extends App<{ Component: React.FC }> {
           aside={<Aside allPosts={pageProps.allPosts} />}
           leftMenus={<DesktopHead.Left />}
           rightMenus={<DesktopHead.Right />}
-          center={
-            <NotionUI.Content.Text>
-              {pageProps.post?.title ?? ''}
-            </NotionUI.Content.Text>
-          }
+          center={<HeadTitle>{pageProps.post?.title ?? ''}</HeadTitle>}
         >
           {this.state.isLoading ? (
             <NotionUI.Loader.ParentFull />
@@ -98,6 +95,16 @@ class TlogApp extends App<{ Component: React.FC }> {
 }
 
 export default TlogApp;
+
+const HeadTitle = styled(NotionUI.Content.Text)`
+  display: block;
+  width: 60vw;
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+`;
 
 function restoreScroll() {
   const path = window.location.pathname;

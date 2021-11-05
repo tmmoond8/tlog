@@ -164,4 +164,12 @@ const CreatedDate = styled(Content.Text)`
 const Title = styled(Content.Text)`
   margin-top: 18px;
   align-items: flex-start;
+
+  ${mobile(css`
+    font-size: 28px;
+  `)}
+
+  @media (max-width: 425px) {
+    font-size: 22px;
+  }
 `;
