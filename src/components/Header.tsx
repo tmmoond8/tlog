@@ -15,7 +15,13 @@ function Left() {
   );
 }
 
-function Right({ title, description }: { title: string; description: string }) {
+function Right({
+  title,
+  description,
+}: {
+  title?: string;
+  description?: string;
+}) {
   const modal = NotionUI.Modal.useModal();
   const windowNavigator = globalThis?.navigator as any;
   const handleClick = () => {
@@ -41,18 +47,22 @@ function Right({ title, description }: { title: string; description: string }) {
               <img src={orImageMeta.content} alt={title} />
               <section>
                 <NotionUI.Content.Text as="H3" color={NotionUI.colors.grey60}>
-                  {title}
+                  {title || "Tamm's dev log - Tlog"}
                 </NotionUI.Content.Text>
                 <NotionUI.Content.Text
                   marginTop={8}
                   color={NotionUI.colors.grey40}
                 >
-                  {description}
+                  {description ||
+                    '자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 많은 개발자 입니다.'}
                 </NotionUI.Content.Text>
               </section>
               <CopyButton
                 buttonSize="Big"
-                onClick={() => copy(globalThis?.location.href)}
+                onClick={() => {
+                  copy(globalThis?.location.href);
+                  modal.close();
+                }}
               >
                 <div>
                   <NotionUI.Icon icon="link" /> 포스팅 복사
@@ -111,7 +121,9 @@ const ShareContent = styled.div`
 `;
 
 const CopyButton = styled(NotionUI.Button)`
-  margin-bottom: 16px;
+  && {
+    margin-bottom: 16px;
+  }
 
   div {
     display: flex;
