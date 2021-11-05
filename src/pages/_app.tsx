@@ -7,7 +7,7 @@ import { throttle } from 'throttle-debounce';
 import GlobalStyles from '../styles/globalStyles';
 import Aside from '../components/Aside';
 import TlogHead from '../components/TlogHead';
-import DesktopHead from '../components/DesktopHead';
+import Header from '../components/Header';
 import sessionStorage from '../libs/sessionStorage';
 
 declare global {
@@ -78,8 +78,13 @@ class TlogApp extends App<{ Component: React.FC }> {
         }
         <NotionUI.Layout.App
           aside={<Aside allPosts={pageProps.allPosts} />}
-          leftMenus={<DesktopHead.Left />}
-          rightMenus={<DesktopHead.Right />}
+          leftMenus={<Header.Left />}
+          rightMenus={
+            <Header.Right
+              title={pageProps.post?.title ?? ''}
+              description={pageProps.post?.description ?? ''}
+            />
+          }
           center={<HeadTitle>{pageProps.post?.title ?? ''}</HeadTitle>}
         >
           {this.state.isLoading ? (
