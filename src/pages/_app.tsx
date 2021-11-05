@@ -76,7 +76,7 @@ class TlogApp extends App<{ Component: React.FC }> {
           // eslint-disable-next-line react/jsx-props-no-spreading
           pageProps.post ? <TlogHead {...pageProps.post} /> : <TlogHead />
         }
-        <NotionUI.Layout.App
+        <AppLayout
           aside={<Aside allPosts={pageProps.allPosts} />}
           leftMenus={<Header.Left />}
           rightMenus={
@@ -93,7 +93,7 @@ class TlogApp extends App<{ Component: React.FC }> {
             // eslint-disable-next-line react/jsx-props-no-spreading
             <Component {...pageProps} />
           )}
-        </NotionUI.Layout.App>
+        </AppLayout>
       </>
     );
   }
@@ -101,14 +101,27 @@ class TlogApp extends App<{ Component: React.FC }> {
 
 export default TlogApp;
 
+const AppLayout = styled(NotionUI.Layout.App)`
+  header {
+    nav {
+      flex: unset;
+    }
+  }
+  header > div {
+    flex: 1;
+    overflow: hidden;
+  }
+`;
+
 const HeadTitle = styled(NotionUI.Content.Text)`
-  display: block;
-  width: 60vw;
-  padding: 0 8px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: center;
+  && {
+    display: block;
+    padding: 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
 `;
 
 function restoreScroll() {
