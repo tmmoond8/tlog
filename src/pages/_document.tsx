@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 export default class TlogDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="ko">
         <Head>
           <script
             async
