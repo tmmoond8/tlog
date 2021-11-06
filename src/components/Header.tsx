@@ -66,7 +66,7 @@ function Right({
               }}
             >
               <div>
-                <NotionUI.Icon icon="link" /> 포스팅 복사
+                <NotionUI.Icon icon="link" /> 포스팅 주소 복사
               </div>
             </CopyButton>
           </ShareContent>
