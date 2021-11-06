@@ -57,18 +57,18 @@ function Right({
                     '자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 많은 개발자 입니다.'}
                 </NotionUI.Content.Text>
               </section>
-              <CopyButton
-                buttonSize="Big"
-                onClick={() => {
-                  copy(globalThis?.location.href);
-                  modal.close();
-                }}
-              >
-                <div>
-                  <NotionUI.Icon icon="link" /> 포스팅 복사
-                </div>
-              </CopyButton>
             </article>
+            <CopyButton
+              buttonSize="Big"
+              onClick={() => {
+                copy(globalThis?.location.href);
+                modal.close();
+              }}
+            >
+              <div>
+                <NotionUI.Icon icon="link" /> 포스팅 복사
+              </div>
+            </CopyButton>
           </ShareContent>
         ),
       });
@@ -102,18 +102,23 @@ const Logo = styled(Icon)`
 `;
 
 const ShareContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
+
   article {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    margin: 16px 16px 0 16px;
+    border: 1px solid ${NotionUI.colors.grey32};
+    border-radius: 4px;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: auto;
+      min-height: 210px;
     }
     section {
-      flex: 1;
       padding: 16px;
       line-height: 1.5;
     }
