@@ -47,7 +47,11 @@ export default function Posts({ post }: PostProps) {
         <>
           <section className="mb-32">
             <Main>
-              <Title as="H1">
+              <Title
+                as="H1"
+                marginTop={18}
+                isLongText={post.title.length >= 16}
+              >
                 <Tag tag={post.tags[0]} /> {post.title}
               </Title>
               <ContentHead>
@@ -161,15 +165,20 @@ const CreatedDate = styled(Content.Text)`
   min-width: 132px;
 `;
 
-const Title = styled(Content.Text)`
-  margin-top: 18px;
-  align-items: flex-start;
+const Title = styled(Content.Text)<{ isLongText: boolean }>`
+  && {
+    align-items: flex-start;
 
-  ${mobile(css`
-    font-size: 28px;
-  `)}
+    ${mobile(css`
+      font-size: 28px;
+    `)}
 
-  @media (max-width: 425px) {
-    font-size: 22px;
+    ${(p) =>
+      p.isLongText &&
+      css`
+        @media (max-width: 425px) {
+          font-size: 22px;
+        }
+      `}
   }
 `;
