@@ -3,7 +3,7 @@
 > blog by tamm  
 
 
-프론트엔드 기술을 주로 다루는 블로그 입니다.  [🔗 Tlog](https://noticon.tammolo.com)  
+프론트엔드 기술을 주로 다루는 블로그 입니다.  [🔗 Tlog](https://tlog.tammolo.com/)  
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=tlog-2h7jdsbwa-tmmoond8)
 
