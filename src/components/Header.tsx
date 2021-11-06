@@ -108,10 +108,10 @@ const ShareContent = styled.div`
   height: 100%;
 
   article {
-    margin: 16px 16px 0 16px;
+    margin: 22px 16px 0 16px;
     border: 1px solid ${NotionUI.colors.grey32};
     border-radius: 4px;
-    overflow: hidden;
+    overflow: auto;
 
     img {
       width: 100%;
@@ -127,7 +127,7 @@ const ShareContent = styled.div`
 
 const CopyButton = styled(NotionUI.Button)`
   && {
-    margin-bottom: 16px;
+    margin: 16px 0;
   }
 
   div {
