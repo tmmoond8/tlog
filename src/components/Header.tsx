@@ -28,8 +28,10 @@ function Right({
     if (windowNavigator.share) {
       windowNavigator
         .share({
-          title: `${title} - Tlog`,
-          text: description,
+          title: title ? `${title} - Tlog` : 'Tlog',
+          text:
+            description ||
+            '자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 많은 개발자 입니다.',
           url: globalThis?.location.href,
         })
         .then(() => console.log('Successful share'))
@@ -43,7 +45,17 @@ function Right({
         title: '포스팅 공유',
         contents: (
           <ShareContent>
-            <article>
+            <article
+              onClick={() => {
+                copy(
+                  `${description || "Tamm's dev log - Tlog."} ${
+                    globalThis?.location.href
+                  }`
+                );
+                modal.close();
+              }}
+              aria-hidden
+            >
               <img src={orImageMeta.content} alt={title} />
               <section>
                 <NotionUI.Content.Text as="H3" color={NotionUI.colors.grey60}>
@@ -112,6 +124,11 @@ const ShareContent = styled.div`
     border: 1px solid ${NotionUI.colors.grey32};
     border-radius: 4px;
     overflow: auto;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid ${NotionUI.colors.grey};
+    }
 
     img {
       width: 100%;
