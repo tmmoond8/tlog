@@ -70,11 +70,11 @@ const BottomMenus = styled.div`
 
 const GithubMenu = styled(AsideUI.Menu)`
   flex-basis: 45px;
-  svg {
-    width: 18px;
-    ${desktop(css`
-      width: 18px;
-    `)}
+  p {
+    padding: 0;
+  }
+  && svg {
+    width: 16px;
   }
 `;
 
@@ -85,6 +85,9 @@ const ThemeMenu = styled.div`
   height: 45px;
   padding: 2px 14px;
   cursor: pointer;
+  p {
+    padding: 0;
+  }
   &:hover {
     background-color: ${colors.grey08};
   }
@@ -93,5 +96,8 @@ const ThemeMenu = styled.div`
   }
   span {
     padding: 0 0 0 8px;
+  }
+  && svg {
+    width: 16px;
   }
 `;
