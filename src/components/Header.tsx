@@ -29,9 +29,6 @@ function Right({
       windowNavigator
         .share({
           title: title ? `${title} - Tlog` : 'Tlog',
-          text:
-            description ||
-            '자바스크립트 웹 개발 환경을 좋아하고 사람들에게 재미를 주는 것에 관심이 많은 개발자 입니다.',
           url: globalThis?.location.href,
         })
         .then(() => console.log('Successful share'))
