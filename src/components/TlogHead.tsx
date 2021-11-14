@@ -32,7 +32,6 @@ export default function TlogHead({
     <Head>
       <meta charSet="utf-8" />
       <title>{metaTitle}</title>
-      <link rel="canonical" href="https://tlog.tammolo.com" />
       <meta name="description" content={metaDescription} />
       <meta name="og:title" content={metaTitle} />
       <meta name="og:description" content={metaDescription} />
@@ -52,7 +51,6 @@ export default function TlogHead({
       />
       <link rel="apple-touch-icon" href={metaFavicon} />
       <link rel="apple-touch-icon" sizes="64x64" href={metaFavicon} />
-      <link rel="canonical" href="https://tlog.tammolo.com" />
       <link rel="shortcut icon" href={metaFavicon} />
     </Head>
   );
