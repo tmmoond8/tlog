@@ -33,12 +33,12 @@ export default function TlogHead({
       <meta charSet="utf-8" />
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
-      <meta name="og:title" content={metaTitle} />
-      <meta name="og:description" content={metaDescription} />
-      <meta name="og:type" content="website" />
-      <meta name="og:image" content={metaImage} />
+      <meta property="og:title" content={metaTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={metaImage} />
       <meta
-        name="og:url"
+        property="og:url"
         content={`https://tlog.tammolo.com${slug ? `/posts/${slug}` : ''}`}
       />
       <meta name="twitter:card" content="summary" />
