@@ -8,6 +8,7 @@ interface TlogHeadProps {
   description?: string;
   tags?: string[];
   image?: string;
+  slug?: string;
 }
 
 export default function TlogHead({
@@ -15,6 +16,7 @@ export default function TlogHead({
   description,
   tags,
   image,
+  slug,
 }: TlogHeadProps) {
   const metaTitle = title ? `${title} - Tlog` : 'Tlog';
   let metaDescription = description || "Tamm's dev log";
@@ -36,7 +38,10 @@ export default function TlogHead({
       <meta name="og:description" content={metaDescription} />
       <meta name="og:type" content="website" />
       <meta name="og:image" content={metaImage} />
-      <meta name="og:url" content="https://tlog.tammolo.com" />
+      <meta
+        name="og:url"
+        content={`https://tlog.tammolo.com${slug ? `/posts/${slug}` : ''}`}
+      />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content="Tamm" />
       <meta name="twitter:title" content={metaTitle} />
