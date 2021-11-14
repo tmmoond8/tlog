@@ -22,7 +22,7 @@ $ yarn add gatsby-plugin-sitemap gatsby-plugin-feed gatsby-plugin-google-anaytic
 ```js
 siteMetadata: {
     ...
-    siteUrl: `http://tlog.tammolo.com`
+    siteUrl: `https://tlog.tammolo.com`
   },
   plugins: [
     ...
