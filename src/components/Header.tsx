@@ -34,9 +34,8 @@ function Right({
         .then(() => console.log('Successful share'))
         .catch((error: unknown) => console.log('Error sharing', error));
     } else {
-      // copy(window.location.href);
       const orImageMeta = globalThis?.document.head.querySelector(
-        'meta[name="og:image"]'
+        'meta[property="og:image"]'
       ) as HTMLMetaElement;
       modal.open({
         title: '포스팅 공유',
