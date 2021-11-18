@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import type { Post } from '../../types';
 import * as tagcons from './tagcons';
+import Squircle from '../Squircle';
 import { toSafeUrlStr } from '../../libs/string';
 
 export default function Tag({ tag }: { tag?: string }) {
@@ -38,7 +39,7 @@ export function AsideTags({ allPosts = [] }: AsideTagsProps) {
           <Aside.Menu
             title={tag}
             handleClick={() => router.push(`/tags/${toSafeUrlStr(tag)}`)}
-            iconUrl={getIcon(tag)}
+            icon={<Squircle src={getIcon(tag)} />}
           />
         ))}
       </Aside.Group>

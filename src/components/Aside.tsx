@@ -8,9 +8,7 @@ import {
   colors,
   Icon as NoticonIcon,
 } from 'notion-ui';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { desktop } from '../styles';
 import type { Post } from '../types';
 import Icon from '../components/Icon';
 import { AsideTags } from './Tag';

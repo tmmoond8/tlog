@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import { Content, colors } from 'notion-ui';
 import AuthorCard from '../../components/AuthorCard';
 import Image from '../../components/Image';
+import Squircle from '../../components/Squircle';
 import { getPostBySlug, getAllPosts } from '../../libs/api';
 import markdownToHtml from '../../libs/markdownToHtml';
 import { getDateGoodLook } from '../../libs/string';
@@ -13,7 +14,7 @@ import localStorage from '../../libs/localStorage';
 import { useRecentViewed } from '../../libs/state';
 import { desktop, mobile } from '../../styles';
 import type { Post } from '../../types';
-import Tag from '../../components/Tag';
+import { getIcon } from '../../components/Tag';
 
 interface PostProps {
   post: Post;
@@ -52,7 +53,7 @@ export default function Posts({ post }: PostProps) {
                 marginTop={18}
                 isLongText={post.title.length >= 16}
               >
-                <Tag tag={post.tags[0]} /> {post.title}
+                <TitleTag src={getIcon(post.tags[0])} /> {post.title}
               </Title>
               <ContentHead>
                 {post.tags && (
@@ -180,5 +181,12 @@ const Title = styled(Content.Text)<{ isLongText: boolean }>`
           font-size: 22px;
         }
       `}
+  }
+`;
+
+const TitleTag = styled(Squircle)`
+  margin-right: 12px;
+  svg {
+    width: 1.3em;
   }
 `;

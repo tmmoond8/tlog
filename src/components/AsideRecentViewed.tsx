@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useRecentViewed } from '../libs/state';
 import localStorage from '../libs/localStorage';
+import Squircle from './Squircle';
 import { getIcon } from './Tag';
 
 export default function AsideRecentViewed() {
@@ -29,7 +30,7 @@ export default function AsideRecentViewed() {
                 key={post.slug}
                 title={post.title}
                 handleClick={() => router.push(`/posts/${post.slug}`)}
-                iconUrl={getIcon(post.tags[0])}
+                icon={<Squircle src={getIcon(post.tags[0])} />}
               />
             ))}
           </Aside.Group>
@@ -53,9 +54,5 @@ const RecentViewed = styled.div<{ height: number }>`
   ul {
     height: calc(100% - 24px);
     overflow: auto;
-
-    li img {
-      border-radius: 50%;
-    }
   }
 `;
