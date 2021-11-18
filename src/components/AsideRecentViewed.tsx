@@ -30,7 +30,7 @@ export default function AsideRecentViewed() {
                 key={post.slug}
                 title={post.title}
                 handleClick={() => router.push(`/posts/${post.slug}`)}
-                icon={<Squircle src={getIcon(post.tags[0])} />}
+                icon={<Squircle src={getIcon(post.tags[0])} size={26} />}
               />
             ))}
           </Aside.Group>

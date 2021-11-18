@@ -39,7 +39,7 @@ export function AsideTags({ allPosts = [] }: AsideTagsProps) {
           <Aside.Menu
             title={tag}
             handleClick={() => router.push(`/tags/${toSafeUrlStr(tag)}`)}
-            icon={<Squircle src={getIcon(tag)} />}
+            icon={<Squircle src={getIcon(tag)} size={26} />}
           />
         ))}
       </Aside.Group>
