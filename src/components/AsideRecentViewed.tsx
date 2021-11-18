@@ -1,9 +1,11 @@
 import React from 'react';
 import { Aside } from 'notion-ui';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
 import { useRecentViewed } from '../libs/state';
 import localStorage from '../libs/localStorage';
+import { mobile } from '../styles';
 import Squircle from './Squircle';
 import { getIcon } from './Tag';
 
@@ -30,7 +32,7 @@ export default function AsideRecentViewed() {
                 key={post.slug}
                 title={post.title}
                 handleClick={() => router.push(`/posts/${post.slug}`)}
-                icon={<Squircle src={getIcon(post.tags[0])} size={26} />}
+                icon={<TagCon src={getIcon(post.tags[0])} size="20px" />}
               />
             ))}
           </Aside.Group>
@@ -54,5 +56,16 @@ const RecentViewed = styled.div<{ height: number }>`
   ul {
     height: calc(100% - 24px);
     overflow: auto;
+  }
+`;
+
+const TagCon = styled(Squircle)`
+  && {
+    ${mobile(css`
+      height: 26px;
+      svg {
+        width: 26px;
+      }
+    `)}
   }
 `;

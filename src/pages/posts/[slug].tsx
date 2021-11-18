@@ -53,7 +53,8 @@ export default function Posts({ post }: PostProps) {
                 marginTop={18}
                 isLongText={post.title.length >= 16}
               >
-                <TitleTag src={getIcon(post.tags[0])} /> {post.title}
+                <TitleTag src={getIcon(post.tags[0])} size="1.3em" />{' '}
+                {post.title}
               </Title>
               <ContentHead>
                 {post.tags && (
@@ -186,7 +187,4 @@ const Title = styled(Content.Text)<{ isLongText: boolean }>`
 
 const TitleTag = styled(Squircle)`
   margin-right: 12px;
-  svg {
-    width: 1.3em;
-  }
 `;

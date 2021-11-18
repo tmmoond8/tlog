@@ -6,14 +6,14 @@ import styled from '@emotion/styled';
 interface SquircleProps {
   className?: string;
   src: string;
-  size?: number;
+  size?: string;
   onClick?: (e: React.MouseEvent) => void;
 }
 
 export default function Squircle({
   className,
   src,
-  size = 32,
+  size = '1em',
   onClick,
 }: SquircleProps) {
   const handleClick = React.useCallback(
@@ -55,10 +55,11 @@ export default function Squircle({
   );
 }
 
-const Wrapper = styled.div<{ width: number; clickable: boolean }>`
-  height: ${(p) => p.width}px;
-  svg {
-    width: ${(p) => p.width}px;
+const Wrapper = styled.div<{ width: string; clickable: boolean }>`
+  display: flex;
+  height: ${(p) => p.width};
+  && svg {
+    width: ${(p) => p.width};
     height: auto;
   }
   ${(p) =>

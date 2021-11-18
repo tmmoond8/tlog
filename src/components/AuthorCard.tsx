@@ -9,7 +9,7 @@ const AuthorCard = () => {
     <Wrapper>
       <Card>
         <Squircle
-          size={82}
+          size="82px"
           src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1632223629/tlog/profile_tmam_iz4bar.png"
         />
         <Info>

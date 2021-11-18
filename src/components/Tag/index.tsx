@@ -1,14 +1,12 @@
 import { Aside } from 'notion-ui';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import { mobile } from '../../styles';
 import type { Post } from '../../types';
 import * as tagcons from './tagcons';
 import Squircle from '../Squircle';
 import { toSafeUrlStr } from '../../libs/string';
-
-export default function Tag({ tag }: { tag?: string }) {
-  return <>{tag && <StyledTag src={getIcon(tag)} />}</>;
-}
 
 interface AsideTagsProps {
   allPosts: Post[];
@@ -39,7 +37,7 @@ export function AsideTags({ allPosts = [] }: AsideTagsProps) {
           <Aside.Menu
             title={tag}
             handleClick={() => router.push(`/tags/${toSafeUrlStr(tag)}`)}
-            icon={<Squircle src={getIcon(tag)} size={26} />}
+            icon={<TagCon src={getIcon(tag)} size="20px" />}
           />
         ))}
       </Aside.Group>
@@ -67,11 +65,15 @@ const StyledAsideTags = styled.div`
   }
 `;
 
-const StyledTag = styled.img`
-  height: 1.2em;
-  width: 1.2em;
-  border-radius: 50%;
-  margin-right: 0.3em;
+const TagCon = styled(Squircle)`
+  && {
+    ${mobile(css`
+      height: 26px;
+      svg {
+        width: 26px;
+      }
+    `)}
+  }
 `;
 
 export function getIcon(tag: string) {

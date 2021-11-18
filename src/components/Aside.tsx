@@ -95,7 +95,4 @@ const ThemeMenu = styled.div`
   span {
     padding: 0 0 0 8px;
   }
-  && svg {
-    width: 16px;
-  }
 `;
