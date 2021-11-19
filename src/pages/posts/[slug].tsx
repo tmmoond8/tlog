@@ -46,38 +46,31 @@ export default function Posts({ post }: PostProps) {
         <p>Loading…</p>
       ) : (
         <>
-          <section className="mb-32">
-            <Main>
-              <Title
-                as="H1"
-                marginTop={18}
-                isLongText={post.title.length >= 16}
-              >
-                <TitleTag src={getIcon(post.tags[0])} size="1.3em" />{' '}
-                {post.title}
-              </Title>
-              <ContentHead>
-                {post.tags && (
-                  <Tags>
-                    {post.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
-                    ))}
-                  </Tags>
-                )}
-                <CreatedDate fontSize={18} color={colors.grey60}>
-                  {getDateGoodLook(post.date)}
-                </CreatedDate>
-              </ContentHead>
-              <Cover>
-                <Image src={post.image} width={1024} height={500} />
-              </Cover>
-              <div
-                className="post-section"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-              <AuthorCard />
-            </Main>
-          </section>
+          <Main>
+            <Title as="H1" marginTop={18} isLongText={post.title.length >= 16}>
+              <TitleTag src={getIcon(post.tags[0])} size="1.3em" /> {post.title}
+            </Title>
+            <ContentHead>
+              {post.tags && (
+                <Tags>
+                  {post.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </Tags>
+              )}
+              <CreatedDate fontSize={18} color={colors.grey60}>
+                {getDateGoodLook(post.date)}
+              </CreatedDate>
+            </ContentHead>
+            <Cover>
+              <Image src={post.image} width={1024} height={500} />
+            </Cover>
+            <div
+              className="post-section"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+            <AuthorCard />
+          </Main>
         </>
       )}
     </div>
