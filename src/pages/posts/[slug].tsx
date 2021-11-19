@@ -158,6 +158,7 @@ const Tags = styled.ol`
 
 const CreatedDate = styled(Content.Text)`
   min-width: 132px;
+  justify-content: flex-end;
 `;
 
 const Title = styled(Content.Text)<{ isLongText: boolean }>`
