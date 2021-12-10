@@ -1,6 +1,6 @@
 ---
 title: HTML의 개요 이해하기
-date: '2021-12-25T08:56:56.243Z'
+date: '2021-12-04T08:56:56.243Z'
 description: 섹셔닝 콘텐츠와 헤딩의 적절한 작성 방법을 이해하여 HTML의 개요를 정확히 작성하는 방법을 알아보자.
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1636033473/tlog/cover/%E1%84%92%E1%85%AA%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%E1%84%92%E1%85%AA%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_r9ymiw.png'
 tags:
