@@ -20,6 +20,7 @@ interface AsideProps {
 
 export default function Aside({ allPosts }: AsideProps) {
   const theme = loadTheme();
+  const handleCloseAside = AsideUI.useCloseCallback();
   const [isDark, setIsDark] = React.useState(theme === 'Dark');
   const handleToggleTheme = React.useCallback(() => {
     setIsDark(!isDark);
@@ -31,7 +32,7 @@ export default function Aside({ allPosts }: AsideProps) {
       <Content.Spacing size={20} />
       <AsideRecentViewed />
       <Content.Spacing size={20} />
-      <AsideTags allPosts={allPosts} />
+      <AsideTags allPosts={allPosts} handleCloseAside={handleCloseAside} />
       <Content.Spacing size={20} />
       <BottomMenus>
         <GithubMenu

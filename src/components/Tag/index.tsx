@@ -10,9 +10,10 @@ import { toSafeUrlStr } from '../../libs/string';
 
 interface AsideTagsProps {
   allPosts: Post[];
+  handleCloseAside: () => void;
 }
 
-export function AsideTags({ allPosts = [] }: AsideTagsProps) {
+export function AsideTags({ allPosts = [], handleCloseAside }: AsideTagsProps) {
   const router = useRouter();
   const tags = allPosts.reduce((accum: Record<string, any>, post) => {
     if (post.tags) {
@@ -36,7 +37,10 @@ export function AsideTags({ allPosts = [] }: AsideTagsProps) {
         {tagKeys.map((tag) => (
           <Aside.Menu
             title={tag}
-            handleClick={() => router.push(`/tags/${toSafeUrlStr(tag)}`)}
+            handleClick={() => {
+              router.push(`/tags/${toSafeUrlStr(tag)}`);
+              handleCloseAside();
+            }}
             icon={<TagCon src={getIcon(tag)} size="20px" />}
           />
         ))}
