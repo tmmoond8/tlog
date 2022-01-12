@@ -4,7 +4,7 @@ date: '2021-12-28T08:56:56.263Z'
 description: 그런데 RN 환경에서는 조금 문제가 될 수 있는데, uuid 라이브러리는 node.js의 내장 모듈인 crypto를 사용하도록 되어...
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1641910411/tlog/cover/rn_cks99r.png'
 tags:
-  - React_Native
+  - React Native
 ---
 
 Created: January 8, 2022 11:27 PM
