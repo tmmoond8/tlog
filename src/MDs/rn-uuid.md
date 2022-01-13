@@ -1,7 +1,7 @@
 ---
 title: RN 에서 uuid 사용하기
 date: '2021-12-28T08:56:56.263Z'
-description: 그런데 RN 환경에서는 조금 문제가 될 수 있는데, uuid 라이브러리는 node.js의 내장 모듈인 crypto를 사용하도록 되어...
+description: uuid 라이브러리는 node.js의 내장 모듈인 crypto를 사용하도록 되어 있어서 RN 환경에서는 별도 모듈 설치가 필요하다.
 image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1641910411/tlog/cover/rn_cks99r.png'
 tags:
   - React Native
