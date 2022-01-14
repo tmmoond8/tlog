@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Content, colors } from 'notion-ui';
 import Link from 'next/link';
+import TextEllipsis from 'react-text-ellipsis';
 import Image from '../components/Image';
 import { getDateGoodLook } from '../libs/string';
 import { desktop } from '../styles';
@@ -18,7 +19,7 @@ export default function Gallery({ allPosts }) {
                 {title}
               </Content.Text>
               <Description marginTop={8} as="P">
-                {description}
+                <TextEllipsis lines={2}>{description}</TextEllipsis>
               </Description>
               <PostInfo>
                 <Tags>
@@ -105,6 +106,7 @@ const Description = styled(Content.Text)`
   height: 58px;
   line-height: 26px;
   max-height: 58px;
+  overflow: hidden;
 `;
 
 const CoverImage = styled(Image)`
