@@ -1,7 +1,5 @@
 # Tlog
 
-> blog by tamm  
-
 
 프론트엔드 기술을 주로 다루는 블로그 입니다.  [🔗 Tlog](https://tlog.tammolo.com/)  
 
