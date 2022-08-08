@@ -2,7 +2,7 @@
 title: Picar 프로젝트 리뷰
 date: '2022-07-27T08:56:56.243Z'
 description: React + Ionic 를 사용하여 iOS, Android 앱과 SEO 을 지원하기 위해 했던 삽질을 공유
-image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1659928314/tlog/xp1uag8gm5fdlteywl91.png'
+image: 'https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1659928459/tlog/kllydfrhqempcfdjq4ob.png'
 tags:
   - Log
   - Ionic
